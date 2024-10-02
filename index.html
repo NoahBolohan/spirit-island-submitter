@@ -1,18 +1,4 @@
 <!-- Taken from https://stackoverflow.com/questions/70767778/html-form-submission-to-google-sheets-using-apps-scripts-landing-thank-you-pag -->
-<form class="googleform" name="googleform" id="googleform" target="_top" method="POST" onsubmit="myFunction()" action="https://script.google.com/macros/s/AKfycbwSzW7MqEhMF3dpm_aGV2f-aUxKKb8j1888YBMjDIlCqbLRyao4mElFqDAfcebIXnTi/exec">
-	
-	<select id="n_players" name="n_players">
-		<option selected="">Please Select</option>
-		<option>1</option>
-		<option>2</option>
-		<option>3</option>
-		<option>4</option>
-	  </select>
-
-	<input name="player_1_name" type="player_1_name" placeholder="Player 1 name" required>
-    <button type="submit" class="btn-default btn" name="submit" access="false" style="default" id="submit">Submit</button>
-</form>
-
 <script>
 	window.addEventListener("load", function() {
 	  const form = document.getElementById('googleform');
@@ -28,3 +14,19 @@
 	  });
 	});
 </script>
+
+<form class="googleform" name="googleform" id="googleform" target="_top" method="POST" onsubmit="myFunction()" action="https://script.google.com/macros/s/AKfycbwSzW7MqEhMF3dpm_aGV2f-aUxKKb8j1888YBMjDIlCqbLRyao4mElFqDAfcebIXnTi/exec">
+	
+	<p> Number of players:</p><br>
+	<select id="n_players" name="n_players">
+		<option selected="">1</option>
+		<option>2</option>
+		<option>3</option>
+		<option>4</option>
+	</select><br><br>
+
+	<p> Player name(s):</p><br>
+	<input name="player_1_name" type="player_1_name" placeholder="Player 1 name" required><br><br>
+
+    <button type="submit" class="btn-default btn" name="submit" access="false" style="default" id="submit">Submit</button>
+</form>
