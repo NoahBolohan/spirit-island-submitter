@@ -1,16 +1,21 @@
-<form name="submit-to-google-sheet">
-  <input name="email" type="email" placeholder="Email" required>
-  <button type="submit">Send</button>
+<!-- Taken from https://stackoverflow.com/questions/70767778/html-form-submission-to-google-sheets-using-apps-scripts-landing-thank-you-pag -->
+<form class="googleform" name="googleform" id="googleform" target="_top" method="POST" onsubmit="myFunction()" action="https://script.google.com/macros/s/AKfycbwSzW7MqEhMF3dpm_aGV2f-aUxKKb8j1888YBMjDIlCqbLRyao4mElFqDAfcebIXnTi/exec">
+	<input name="email" type="email" placeholder="Email" required>
+    <button type="submit" class="btn-default btn" name="submit" access="false" style="default" id="submit">Submit</button>
 </form>
 
 <script>
-  const scriptURL = '<SCRIPT URL>'
-  const form = document.forms['submit-to-google-sheet']
-
-  form.addEventListener('submit', e => {
-    e.preventDefault()
-    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-      .then(response => console.log('Success!', response))
-      .catch(error => console.error('Error!', error.message))
-  })
+	window.addEventListener("load", function() {
+	  const form = document.getElementById('googleform');
+	  form.addEventListener("submit", function(e) {
+		e.preventDefault();
+		const data = new FormData(form);
+		const action = e.target.action;
+		fetch(action, {
+		  method: 'POST',
+		  body: data,
+		});
+		})
+	  });
+	});
 </script>
