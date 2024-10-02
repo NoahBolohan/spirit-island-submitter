@@ -2,8 +2,8 @@
 
 ## Links
 
-[Github page](https://noahbolohan.github.io/spirit-island-tracker/)
-[Google Sheets tracker](https://docs.google.com/spreadsheets/d/1mB2XEACzrntLOJt7lLXVSPLRd68pCaQZib8xjOhjFSE/edit?gid=0#gid=0)
+- [Github page](https://noahbolohan.github.io/spirit-island-tracker/)
+- [Google Sheets tracker](https://docs.google.com/spreadsheets/d/1mB2XEACzrntLOJt7lLXVSPLRd68pCaQZib8xjOhjFSE/edit?gid=0#gid=0)
 
 ## Have feedback/requests/issues?
 
