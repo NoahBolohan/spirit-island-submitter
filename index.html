@@ -58,8 +58,10 @@
 			
 			spirits_select_element = document.getElementById(`player_${input_idx}_spirit`);
 
+			spirits_select_element.options[0] = new Option(`Select player ${input_idx}'s spirit`, spirits_select_element.options.length);
+
 			for(index in spirits) {
-				spirits_select_element.options[spirits_select_element.options.length] = new Option(spirits[index], index);
+				spirits_select_element.options[spirits_select_element.options.length] = new Option(spirits[index], spirits_select_element.options.length);
 			}
 			
 			input_idx += 1;
@@ -70,7 +72,7 @@
 <body onload = "on_load()">
 
 <form class="googleform" name="googleform" id="googleform" target="_top" method="POST" onsubmit="myFunction()" action="https://script.google.com/macros/s/AKfycbwSzW7MqEhMF3dpm_aGV2f-aUxKKb8j1888YBMjDIlCqbLRyao4mElFqDAfcebIXnTi/exec">
-	
+<!-- <form class="googleform" name="googleform" id="googleform" target="_top" method="POST" onsubmit="myFunction()" action="URL"> -->
 	<div id="div_n_players">
         <p>Number of players:
 		<select id="n_players" name="n_players" onchange="player_inputs(this.value)">
