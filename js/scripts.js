@@ -61,3 +61,22 @@ function player_inputs(value) {
         input_idx += 1;
     }
 }
+
+
+function adversary_1_change(value) {
+    var adversary_1_level_div = document.getElementById("div_adversary_1_level")
+
+    adversary_1_level_div.innerHTML = "";
+
+    if (value != "No adversary") {
+        adversary_1_level_div.appendChild(
+            createElement("select", {name : `adversary_1_level`, id : `adversary_1_level`})
+        );
+
+        adversary_1_level_select_element = document.getElementById(`adversary_1_level`);
+
+        for(var i = 0; i <= 6; i++) {
+            adversary_1_level_select_element.options[adversary_1_level_select_element.options.length] = new Option(i, i);
+        }
+    }
+}

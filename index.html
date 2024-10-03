@@ -1,5 +1,5 @@
 <script src="js/scripts.js"></script>
-<script src="js/event_listener.js"></script>
+<script src="js/google_formevent_listener.js"></script>
 
 <body onload = "on_load()">
 
@@ -20,6 +20,18 @@
 	<div id="div_player_names"></div>
 
 	<div id="div_player_spirits"></div>
+
+	<div id="div_adversary_1" onchange="adversary_1_change(this.value)">
+		<p>Select an adversary (if you're playing with one):<br>
+		<select id="adversary_1" name="adversary_1">
+				<option selected="">No adversary</option>
+				<option>Brandenburg-Prussia</option>
+				<option>Sweden</option>
+				<option>England</option>
+		</select>
+	</div>
+
+	<div id="div_adversary_1_level"></div>
 
     <button type="submit" class="btn-default btn" name="submit" access="false" style="default" id="submit">Submit</button>
 </form>
