@@ -1,5 +1,7 @@
 # Spirit Island Tracker
 
+Web app to track Spirit Island games.
+
 ## Links
 
 - [Github page](https://noahbolohan.github.io/spirit-island-tracker/)
