@@ -1,9 +1,17 @@
-<script src="js/scripts.js"></script>
-<script src="js/google_formevent_listener.js"></script>
+
+
+<head>
+	<link rel="stylesheet" type="text/css" href="css/styles.css" media="screen" />
+	<script src="js/jquery.min.js"></script>
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
+	<script src="js/scripts.js"></script>
+	<script src="js/google_formevent_listener.js"></script>
+</head>
 
 <body onload = "on_load()">
 
-	<form class="googleform" name="googleform" id="googleform" target="_top" method="POST" onsubmit="myFunction()" action="https://script.google.com/macros/s/AKfycbwSzW7MqEhMF3dpm_aGV2f-aUxKKb8j1888YBMjDIlCqbLRyao4mElFqDAfcebIXnTi/exec">
+	<!-- <form class="googleform" name="googleform" id="googleform" target="_top" method="POST" onsubmit="myFunction()" action="https://script.google.com/macros/s/AKfycbwSzW7MqEhMF3dpm_aGV2f-aUxKKb8j1888YBMjDIlCqbLRyao4mElFqDAfcebIXnTi/exec"> -->
+	<form class="googleform" name="googleform" id="googleform" target="_top" method="POST" onsubmit="myFunction()" action="URL"></form>
 
 	<div id="div_n_players">
         <p>Number of players:
@@ -24,14 +32,49 @@
 	<div id="div_adversary_1" onchange="adversary_1_change(this.value)">
 		<p>Select an adversary (if you're playing with one):<br>
 		<select id="adversary_1" name="adversary_1">
-				<option selected="">No adversary</option>
+				<option selected="" value = "No adversary">No adversary</option>
 				<option>Brandenburg-Prussia</option>
 				<option>Sweden</option>
 				<option>England</option>
 		</select>
 	</div>
 
-	<div id="div_adversary_1_level"></div>
+	<div id="div_adversary_1_level" class="is_hidden">
+		<select id="adversary_1_level" name="adversary_1_level">
+			<option disabled>Select the adversary level</option>
+			<option>0</option>
+			<option>1</option>
+			<option>2</option>
+			<option>3</option>
+			<option>4</option>
+			<option>5</option>
+			<option>6</option>
+		</select>
+	</div>
+
+	<button id="button_adversary_2">Add second adversary</button>
+
+	<div id="div_adversary_2" class="is_hidden">
+		<select id="adversary_2" name="adversary_2">
+				<option selected disabled>Select a second adversary</option>
+				<option>Brandenburg-Prussia</option>
+				<option>Sweden</option>
+				<option>England</option>
+		</select>
+
+		<div id="div_adversary_2_level">
+			<select id="adversary_2_level" name="adversary_2_level">
+				<option disabled>Select the adversary level</option>
+				<option>0</option>
+				<option>1</option>
+				<option>2</option>
+				<option>3</option>
+				<option>4</option>
+				<option>5</option>
+				<option>6</option>
+			</select>
+		</div>
+	</div>
 
     <button type="submit" class="btn-default btn" name="submit" access="false" style="default" id="submit">Submit</button>
 </form>

@@ -3,6 +3,7 @@ function on_load() {
     Stuff to do on app load.
     */
     player_inputs(1);
+    add_event_listener();
 }
 
 var createElement = function(type, props) {
@@ -17,6 +18,8 @@ var createElement = function(type, props) {
 
     return $e;
 }
+
+
 
 function player_inputs(value) {
     /*
@@ -79,4 +82,13 @@ function adversary_1_change(value) {
             adversary_1_level_select_element.options[adversary_1_level_select_element.options.length] = new Option(i, i);
         }
     }
+}
+
+function add_event_listener() {
+    const elToggle  = document.querySelector("#button_adversary_2");
+    const elContent = document.querySelector("#div_adversary_2");
+
+    elToggle.addEventListener("click", function() {
+    elContent.classList.toggle("is_hidden");
+    });
 }
