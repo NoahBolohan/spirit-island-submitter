@@ -1,5 +1,20 @@
-<!-- Taken from https://stackoverflow.com/questions/70767778/html-form-submission-to-google-sheets-using-apps-scripts-landing-thank-you-pag -->
+<!-- Inspired by https://stackoverflow.com/questions/70767778/html-form-submission-to-google-sheets-using-apps-scripts-landing-thank-you-pag -->
 <script>
+
+	function on_load() {
+		player_inputs(1);
+	}
+
+	var createElement = function(type, props) {
+		var $e = document.createElement(type);
+
+		for (var prop in props) {
+			$e.setAttribute(prop, props[prop]);
+		}
+
+		return $e;
+	}
+
 	window.addEventListener("load", function() {
 	  const form = document.getElementById('googleform');
 	  form.addEventListener("submit", function(e) {
@@ -11,22 +26,68 @@
 		  body: data,
 		});
 		})
-	  });
 	});
+
+	function player_inputs(value) {
+		var names_element = document.getElementById("div_player_names");
+		var spirits_element = document.getElementById("div_player_spirits");
+
+		var spirits = [
+			"Lightning's Swift Strike",
+			"River Surges in Sunlight",
+			"Shadows Flicker Like Flame",
+			"Vital Strength of Earth",
+		];
+		
+		var count = parseInt(value) ;
+		var input_idx = 1;
+
+		names_element.innerHTML = "";
+		spirits_element.innerHTML = "";
+
+		while (input_idx <= count) {
+			/* Create name input for player ${input_idx}*/
+			names_element.appendChild(
+				createElement("input", {name : `player_${input_idx}_name`, type : `player_${input_idx}_name`, placeholder : `Player ${input_idx} name`})
+			);
+
+			/* Create spirit select for player ${input_idx}*/
+			spirits_element.appendChild(
+				createElement("select", {name : `player_${input_idx}_spirit`, id : `player_${input_idx}_spirit`})
+			);
+			
+			spirits_select_element = document.getElementById(`player_${input_idx}_spirit`);
+
+			for(index in spirits) {
+				spirits_select_element.options[spirits_select_element.options.length] = new Option(spirits[index], index);
+			}
+			
+			input_idx += 1;
+		}
+	}
 </script>
 
-<form class="googleform" name="googleform" id="googleform" target="_top" method="POST" onsubmit="myFunction()" action="https://script.google.com/macros/s/AKfycbwSzW7MqEhMF3dpm_aGV2f-aUxKKb8j1888YBMjDIlCqbLRyao4mElFqDAfcebIXnTi/exec">
-	
-	<p> Number of players:</p><br>
-	<select id="n_players" name="n_players">
-		<option selected="">1</option>
-		<option>2</option>
-		<option>3</option>
-		<option>4</option>
-	</select><br><br>
+<body onload = "on_load()">
 
-	<p> Player name(s):</p><br>
-	<input name="player_1_name" type="player_1_name" placeholder="Player 1 name" required><br><br>
+<form class="googleform" name="googleform" id="googleform" target="_top" method="POST" onsubmit="myFunction()" action="URL">
+	
+	<div id="div_n_players">
+        <p>Number of players:
+		<select id="n_players" name="n_players" onchange="player_inputs(this.value)">
+			<option selected="">1</option>
+			<option>2</option>
+			<option>3</option>
+			<option>4</option>
+		</select></p>
+	</div>
+
+	Player info:
+
+	<div id="div_player_names"></div>
+
+	<div id="div_player_spirits"></div>
 
     <button type="submit" class="btn-default btn" name="submit" access="false" style="default" id="submit">Submit</button>
 </form>
+
+</body>
