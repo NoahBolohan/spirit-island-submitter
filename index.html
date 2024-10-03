@@ -57,7 +57,7 @@
 			spirits_select_element.options[0] = new Option(`Select player ${input_idx}'s spirit`, spirits_select_element.options.length);
 
 			for(index in spirits) {
-				spirits_select_element.options[spirits_select_element.options.length] = new Option(spirits[index], spirits_select_element.options.length);
+				spirits_select_element.options[spirits_select_element.options.length] = new Option(spirits[index], spirits[index]);
 			}
 			
 			input_idx += 1;
