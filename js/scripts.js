@@ -57,9 +57,12 @@ function player_inputs(value) {
         
         // Populate the spirit select element
         spirits_select_element = document.getElementById(`player_${input_idx}_spirit`);
-
+    
         spirits_select_element.options[0] = new Option(`Select player ${input_idx}'s spirit`, spirits_select_element.options.length);
         spirits_select_element.options[0].disabled = true;
+        spirits_select_element.options[0].value = "";
+
+        spirits_select_element.required = true;
 
         for(index in spirits) {
             spirits_select_element.options[spirits_select_element.options.length] = new Option(spirits[index], spirits[index]);
@@ -121,4 +124,12 @@ function scenario_event_listener() {
         select_scenario.value = "Select a scenario";
         content.classList.toggle("is_hidden");
     });
+}
+
+function checkForm() {
+    var e=document.getElementById("text_invader_cards_in_deck").value;//alert(e);
+    if(e===""){
+        alert("nothing selected");
+        return false;
+    }
 }
