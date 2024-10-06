@@ -29,26 +29,28 @@
 
 	<div id="div_player_spirits"></div>
 
-	<div id="div_adversary_1" onchange="adversary_1_change(this.value)">
+	<div id="div_adversary_1">
 		<p>Select an adversary (if you're playing with one):<br>
-		<select id="adversary_1" name="adversary_1">
-				<option selected="" value = "No adversary">No adversary</option>
+		<select id="select_adversary_1" name="adversary_1">
+				<option selected>No adversary</option>
 				<option>Brandenburg-Prussia</option>
 				<option>Sweden</option>
 				<option>England</option>
 		</select>
 	</div>
 
+	<div id="div_select_adversary_1_value"></div>
+
 	<div id="div_adversary_1_level" class="is_hidden">
-		<select id="adversary_1_level" name="adversary_1_level">
-			<option disabled>Select the adversary level</option>
-			<option>0</option>
-			<option>1</option>
-			<option>2</option>
-			<option>3</option>
-			<option>4</option>
-			<option>5</option>
-			<option>6</option>
+		Select the adversary level:
+		<select id="select_adversary_1_level" name="adversary_1_level">
+			<option value = "0">0</option>
+			<option value = "1">1</option>
+			<option value = "2">2</option>
+			<option value = "3">3</option>
+			<option value = "4">4</option>
+			<option value = "5">5</option>
+			<option value = "6">6</option>
 		</select>
 	</div>
 
@@ -63,15 +65,15 @@
 		</select>
 
 		<div id="div_adversary_2_level">
+			Select the adversary level:
 			<select id="select_adversary_2_level" name="adversary_2_level">
-				<option disabled>Select the adversary level</option>
-				<option>0</option>
-				<option>1</option>
-				<option>2</option>
-				<option>3</option>
-				<option>4</option>
-				<option>5</option>
-				<option>6</option>
+				<option value = "0">0</option>
+			<option value = "1">1</option>
+			<option value = "2">2</option>
+			<option value = "3">3</option>
+			<option value = "4">4</option>
+			<option value = "5">5</option>
+			<option value = "6">6</option>
 			</select>
 		</div>
 	</div>

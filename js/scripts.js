@@ -4,6 +4,8 @@ function on_load() {
     */
     player_inputs(1);
     adversary_2_event_listener();
+    adversary_1_level_event_listener();
+    adversary_2_level_event_listener();
 }
 
 var createElement = function(type, props) {
@@ -65,23 +67,38 @@ function player_inputs(value) {
     }
 }
 
+function adversary_1_level_event_listener() {
+    const select  = document.querySelector("#select_adversary_1");
+    const content = document.querySelector("#div_adversary_1_level");
+    const select_level = document.querySelector("#select_adversary_1_level");
 
-function adversary_1_change(value) {
-    var adversary_1_level_div = document.getElementById("div_adversary_1_level")
-
-    adversary_1_level_div.innerHTML = "";
-
-    if (value != "No adversary") {
-        adversary_1_level_div.appendChild(
-            createElement("select", {name : `adversary_1_level`, id : `adversary_1_level`})
-        );
-
-        adversary_1_level_select_element = document.getElementById(`adversary_1_level`);
-
-        for(var i = 0; i <= 6; i++) {
-            adversary_1_level_select_element.options[adversary_1_level_select_element.options.length] = new Option(i, i);
+    select.addEventListener("change", function() {
+        if (!content.checkVisibility() && select.value != "No adversary") {
+            content.classList.toggle("is_hidden");
         }
-    }
+        else if (content.checkVisibility() && select.value == "No adversary") {
+            content.classList.toggle("is_hidden");
+        }
+
+        select_level.value = "0";
+    });
+}
+
+function adversary_2_level_event_listener() {
+    const select  = document.querySelector("#select_adversary_2");
+    const content = document.querySelector("#div_adversary_2_level");
+    const select_level = document.querySelector("#select_adversary_2_level");
+
+    select.addEventListener("change", function() {
+        if (!content.checkVisibility() && select.value != "No adversary") {
+            content.classList.toggle("is_hidden");
+        }
+        else if (content.checkVisibility() && select.value == "No adversary") {
+            content.classList.toggle("is_hidden");
+        }
+
+        select_level.value = "0";
+    });
 }
 
 function adversary_2_event_listener() {
