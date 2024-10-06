@@ -7,6 +7,7 @@ function on_load() {
     adversary_1_level_event_listener();
     adversary_2_level_event_listener();
     scenario_event_listener();
+    form_checkbox_listener();
 }
 
 var createElement = function(type, props) {
@@ -132,4 +133,12 @@ function checkForm() {
         alert("nothing selected");
         return false;
     }
+}
+
+function form_checkbox_listener() {
+    document.getElementById("googleform").addEventListener("submit", () => {
+        if(document.getElementById("checkbox_win").checked) {
+            document.getElementById("checkbox_win_hidden").disabled = true;
+        }
+    });
 }
