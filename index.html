@@ -78,6 +78,26 @@
 		</div>
 	</div>
 
+	<button id="button_scenario">Add scenario</button>
+
+	<div id="div_scenario" class="is_hidden">
+		<select id="select_scenario" name="scenario">
+				<option selected disabled>Select a scenario</option>
+				<option>Blitz</option>
+				<option>Guard the Isle's Heart</option>
+				<option>Ritual of Terror</option>
+				<option>Dahan Insurrection</option>
+		</select>
+	</div>
+
+	<div id="div_end_of_game_stats">
+		At game end:
+		<div id="div_win">
+			Did you win?
+			<input type="checkbox" id="checkbox_win" name="victory"></input>
+		</div>
+	</div>
+
     <button type="submit" class="btn-default btn" name="submit" access="false" style="default" id="submit">Submit</button>
 </form>
 

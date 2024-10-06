@@ -6,6 +6,7 @@ function on_load() {
     adversary_2_event_listener();
     adversary_1_level_event_listener();
     adversary_2_level_event_listener();
+    scenario_event_listener();
 }
 
 var createElement = function(type, props) {
@@ -106,6 +107,17 @@ function adversary_2_event_listener() {
     const content = document.querySelector("#div_adversary_2");
 
     button.addEventListener("click", function() {
+        content.classList.toggle("is_hidden");
+    });
+}
+
+function scenario_event_listener() {
+    const button  = document.querySelector("#button_scenario");
+    const content = document.querySelector("#div_scenario");
+    const select_scenario = document.querySelector("#select_scenario");
+
+    button.addEventListener("click", function() {
+        select_scenario.value = "Select a scenario";
         content.classList.toggle("is_hidden");
     });
 }
