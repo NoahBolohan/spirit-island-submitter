@@ -2,16 +2,16 @@
 
 <head>
 	<link rel="stylesheet" type="text/css" href="css/styles.css" media="screen" />
-	<script src="js/jquery.min.js"></script>
-	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
+	<!-- <script src="js/jquery.min.js"></script> -->
+	<script src="https://github.com/NoahBolohan/spirit-island-tracker/blob/master/js/jquery-3.7.1.min.js"></script>
 	<script src="js/scripts.js"></script>
 	<script src="js/google_formevent_listener.js"></script>
 </head>
 
 <body onload = "on_load()">
 
-	<!-- <form class="googleform" name="googleform" id="googleform" target="_top" method="POST" onsubmit="myFunction()" action="https://script.google.com/macros/s/AKfycbwSzW7MqEhMF3dpm_aGV2f-aUxKKb8j1888YBMjDIlCqbLRyao4mElFqDAfcebIXnTi/exec"> -->
-	<form class="googleform" name="googleform" id="googleform" target="_top" method="POST" onsubmit="myFunction()" action="URL"></form>
+	<form class="googleform" name="googleform" id="googleform" target="_top" method="POST" onsubmit="myFunction()" action="https://script.google.com/macros/s/AKfycbwSzW7MqEhMF3dpm_aGV2f-aUxKKb8j1888YBMjDIlCqbLRyao4mElFqDAfcebIXnTi/exec">
+	<!-- <form class="googleform" name="googleform" id="googleform" target="_top" method="POST" onsubmit="myFunction()" action="URL"></form> -->
 
 	<div id="div_n_players">
         <p>Number of players:
@@ -98,19 +98,19 @@
 		</div>
 		<div id="div_invader_cards_in_deck"></div>
 			How many invader cards are left in the deck?
-			<input type="text" id="text_invader_cards_in_deck" name="invader_cards_in_deck"></input>
+			<input type="number" min="0" step="1" id="text_invader_cards_in_deck" name="invader_cards_in_deck"></input>
 		</div>
 		<div id="div_invader_cards_not_in_deck"></div>
 			How many invader cards are not in the deck?
-			<input type="text" id="text_invader_cards_not_in_deck" name="invader_cards_not_in_deck"></input>
+			<input type="number" min="0" step="1" id="text_invader_cards_not_in_deck" name="invader_cards_not_in_deck"></input>
 		</div>
 		<div id="div_remaining_dehan"></div>
 			How many living Dehan remain on the island?
-			<input type="text" id="text_remaining_dehan" name="remaining_dehan"></input>
+			<input type="number" min="0" step="1" id="text_remaining_dehan" name="remaining_dehan"></input>
 		</div>
 		<div id="div_blight_on_island"></div>
 			How much blight is on the island?
-			<input type="text" id="text_blight_on_island" name="blight_on_island"></input>
+			<input type="number" min="0" step="1" id="text_blight_on_island" name="blight_on_island"></input>
 		</div>
 	</div>
 

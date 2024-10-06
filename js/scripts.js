@@ -59,6 +59,7 @@ function player_inputs(value) {
         spirits_select_element = document.getElementById(`player_${input_idx}_spirit`);
 
         spirits_select_element.options[0] = new Option(`Select player ${input_idx}'s spirit`, spirits_select_element.options.length);
+        spirits_select_element.options[0].disabled = true;
 
         for(index in spirits) {
             spirits_select_element.options[spirits_select_element.options.length] = new Option(spirits[index], spirits[index]);
