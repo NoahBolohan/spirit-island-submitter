@@ -3,7 +3,7 @@ function on_load() {
     Stuff to do on app load.
     */
     player_inputs(1);
-    add_event_listener();
+    adversary_2_event_listener();
 }
 
 var createElement = function(type, props) {
@@ -84,11 +84,11 @@ function adversary_1_change(value) {
     }
 }
 
-function add_event_listener() {
-    const elToggle  = document.querySelector("#button_adversary_2");
-    const elContent = document.querySelector("#div_adversary_2");
+function adversary_2_event_listener() {
+    const button  = document.querySelector("#button_adversary_2");
+    const content = document.querySelector("#div_adversary_2");
 
-    elToggle.addEventListener("click", function() {
-    elContent.classList.toggle("is_hidden");
+    button.addEventListener("click", function() {
+        content.classList.toggle("is_hidden");
     });
 }
