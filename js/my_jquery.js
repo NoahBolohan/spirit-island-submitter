@@ -1,3 +1,40 @@
+// Populate the player info divs
+$(document).ready(
+    function() {
+        var spirits = [
+                {text : "Lightning's Swift Strike"},
+                {text : "River Surges in Sunlight"},
+                {text : "Shadows Flicker Like Flame"},
+                {text : "Vital Strength of Earth"},
+            ];
+
+        for (var i=1; i <= 4; i++) {
+            $('<input type="text" />').attr(
+                {
+                    name : `player_${i}_name`,
+                    type : `player_${i}_name`,
+                    placeholder : `Player ${i} name`
+                }
+            ).appendTo(`#div_player_${i}_name`);
+
+            var spirit_select = $('<select>').attr(
+                {
+                    name : `player_${i}_spirit`,
+                    id : `player_${i}_spirit`
+                }
+            ).appendTo(`#div_player_${i}_spirit`);
+
+            $(spirits).each(
+                function() {
+                    spirit_select.append(
+                        $("<option>").text(this.text)
+                    );
+                }
+            );
+        }
+    }
+)
+
 // Set an event listener for showing adversary 1 level by choosing an adversary 1
 $(document).ready(
     function() {
