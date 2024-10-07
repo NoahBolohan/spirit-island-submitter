@@ -22,13 +22,14 @@ $(document).ready(
                     name : `player_${i}_spirit`,
                     id : `player_${i}_spirit`
                 }
-            ).appendTo(`#div_player_${i}_spirit`);
+            ).prop('required',true).appendTo(`#div_player_${i}_spirit`);
 
             spirit_select.append(
-                $("<option>").text(
-                    `Select player ${i}'s spirit`
-                ).attr(
-                    "disabled", true
+                $("<option>", {
+                    value: "",
+                    text: `Select player ${i}'s spirit`,
+                    disabled : true
+                }
                 )
             );
 
@@ -42,7 +43,8 @@ $(document).ready(
 
             $(`#player_${i}_spirit`).prop('selectedIndex',0);
 
-            if (i >= 2) {
+            if (i > 1) {
+                spirit_select.prop('required',false);
                 $(`#col_player_${i}_info`).hide();
             }
         }
@@ -57,9 +59,11 @@ $(document).ready(
             function() {
                 for (var i=1; i<=4; i++) {
                     if (i <= this.value) {
+                        $(`#player_${i}_spirit`).prop("required",true);
                         $(`#col_player_${i}_info`).show();
                     }
                     else {
+                        $(`#player_${i}_spirit`).prop("required",false);
                         $(`#col_player_${i}_info`).hide();
                         $(`#player_${i}_spirit`).prop('selectedIndex',0);
                     }
