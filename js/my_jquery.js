@@ -13,7 +13,7 @@ $(document).ready(
                 {
                     name : `player_${i}_name`,
                     type : `player_${i}_name`,
-                    placeholder : `Player ${i} name`
+                    placeholder : `Player ${i} name (optional)`
                 }
             ).appendTo(`#div_player_${i}_name`);
 
@@ -24,6 +24,14 @@ $(document).ready(
                 }
             ).appendTo(`#div_player_${i}_spirit`);
 
+            spirit_select.append(
+                $("<option>").text(
+                    `Select player ${i}'s spirit`
+                ).attr(
+                    "disabled", true
+                )
+            );
+
             $(spirits).each(
                 function() {
                     spirit_select.append(
@@ -31,7 +39,33 @@ $(document).ready(
                     );
                 }
             );
+
+            $(`#player_${i}_spirit`).prop('selectedIndex',0);
+
+            if (i >= 2) {
+                $(`#col_player_${i}_info`).hide();
+            }
         }
+    }
+)
+
+// Set an event listener for showing player info divs by choosing the number of players
+$(document).ready(
+    function() {
+        $("#select_n_players").on(
+            "change",
+            function() {
+                for (var i=1; i<=4; i++) {
+                    if (i <= this.value) {
+                        $(`#col_player_${i}_info`).show();
+                    }
+                    else {
+                        $(`#col_player_${i}_info`).hide();
+                        $(`#player_${i}_spirit`).prop('selectedIndex',0);
+                    }
+                }
+            }
+        )
     }
 )
 
