@@ -2,62 +2,116 @@
 $(document).ready(
     function() {
 
-        // Spirits from which players select
-        var spirits = [
-                {text : "Lightning's Swift Strike"},
-                {text : "River Surges in Sunlight"},
-                {text : "Shadows Flicker Like Flame"},
-                {text : "Vital Strength of Earth"},
-            ];
+        $.getJSON('https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/refs/heads/master/data/config.json', function(data) {
+            // Spirits from which players select
+            var spirits = data["spirits"];
 
-        // Populate divs for each player
-        for (var i=1; i <= 4; i++) {
+            // Populate divs for each player
+            for (var i=1; i <= 4; i++) {
 
-            // Player name text input
-            $('<input type="text" />').attr(
-                {
-                    name : `player_${i}_name`,
-                    type : `player_${i}_name`,
-                    placeholder : `Player ${i} name (optional)`
+                // Player name text input
+                $('<input type="text" />').attr(
+                    {
+                        name : `player_${i}_name`,
+                        type : `player_${i}_name`,
+                        placeholder : `Player ${i} name (optional)`
+                    }
+                ).appendTo(`#div_player_${i}_name`);
+
+                // Player spirit select
+                var spirit_select = $('<select>').attr(
+                    {
+                        name : `player_${i}_spirit`,
+                        id : `player_${i}_spirit`
+                    }
+                ).prop('required',true).appendTo(`#div_player_${i}_spirit`);
+
+                // Append the disabled default option
+                spirit_select.append(
+                    $("<option>", {
+                        value: "",
+                        text: `Select player ${i}'s spirit`,
+                        disabled : true
+                    }
+                    )
+                );
+
+                // Append the spirit options
+                $(spirits).each(
+                    function() {
+                        spirit_select.append(
+                            $("<option>").text(this)
+                        );
+                    }
+                );
+
+                // Reset the select to the first option
+                $(`#player_${i}_spirit`).prop('selectedIndex',0);
+
+                // Hide columns for players 2+
+                if (i > 1) {
+                    spirit_select.prop('required',false);
+                    $(`#col_player_${i}_info`).hide();
                 }
-            ).appendTo(`#div_player_${i}_name`);
-
-            // Player spirit select
-            var spirit_select = $('<select>').attr(
-                {
-                    name : `player_${i}_spirit`,
-                    id : `player_${i}_spirit`
-                }
-            ).prop('required',true).appendTo(`#div_player_${i}_spirit`);
-
-            // Append the disabled default option
-            spirit_select.append(
-                $("<option>", {
-                    value: "",
-                    text: `Select player ${i}'s spirit`,
-                    disabled : true
-                }
-                )
-            );
-
-            // Append the spirit options
-            $(spirits).each(
-                function() {
-                    spirit_select.append(
-                        $("<option>").text(this.text)
-                    );
-                }
-            );
-
-            // Reset the select to the first option
-            $(`#player_${i}_spirit`).prop('selectedIndex',0);
-
-            // Hide columns for players 2+
-            if (i > 1) {
-                spirit_select.prop('required',false);
-                $(`#col_player_${i}_info`).hide();
             }
-        }
+        });
+
+        // // Spirits from which players select
+        // var spirits = [
+        //     {text : "Lightning's Swift Strike"},
+        //     {text : "River Surges in Sunlight"},
+        //     {text : "Shadows Flicker Like Flame"},
+        //     {text : "Vital Strength of Earth"},
+        // ];
+
+        // // Populate divs for each player
+        // for (var i=1; i <= 4; i++) {
+
+        //     // Player name text input
+        //     $('<input type="text" />').attr(
+        //         {
+        //             name : `player_${i}_name`,
+        //             type : `player_${i}_name`,
+        //             placeholder : `Player ${i} name (optional)`
+        //         }
+        //     ).appendTo(`#div_player_${i}_name`);
+
+        //     // Player spirit select
+        //     var spirit_select = $('<select>').attr(
+        //         {
+        //             name : `player_${i}_spirit`,
+        //             id : `player_${i}_spirit`
+        //         }
+        //     ).prop('required',true).appendTo(`#div_player_${i}_spirit`);
+
+        //     // Append the disabled default option
+        //     spirit_select.append(
+        //         $("<option>", {
+        //             value: "",
+        //             text: `Select player ${i}'s spirit`,
+        //             disabled : true
+        //         }
+        //         )
+        //     );
+
+        //     // Append the spirit options
+        //     $(spirits).each(
+        //         function() {
+        //             spirit_select.append(
+        //                 $("<option>").text(this.text)
+        //             );
+        //         }
+        //     );
+
+        //     // Reset the select to the first option
+        //     $(`#player_${i}_spirit`).prop('selectedIndex',0);
+
+        //     // Hide columns for players 2+
+        //     if (i > 1) {
+        //         spirit_select.prop('required',false);
+        //         $(`#col_player_${i}_info`).hide();
+        //     }
+        // }
     }
 )
 
