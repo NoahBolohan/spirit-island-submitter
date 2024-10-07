@@ -73,24 +73,6 @@ function player_inputs(value) {
     }
 }
 
-
-function adversary_2_level_event_listener() {
-    const select  = document.querySelector("#select_adversary_2");
-    const content = document.querySelector("#div_adversary_2_level");
-    const select_level = document.querySelector("#select_adversary_2_level");
-
-    select.addEventListener("change", function() {
-        if (!content.checkVisibility() && select.value != "No adversary") {
-            content.classList.toggle("is_hidden");
-        }
-        else if (content.checkVisibility() && select.value == "No adversary") {
-            content.classList.toggle("is_hidden");
-        }
-
-        select_level.value = "0";
-    });
-}
-
 function adversary_2_event_listener() {
     const button  = document.querySelector("#button_adversary_2");
     const content = document.querySelector("#div_adversary_2");
