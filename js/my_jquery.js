@@ -16,6 +16,18 @@ $(document).ready(
     }
 )
 
+// Set an event listener for showing adversary 2 options by toggling the adversary 2 button
+$(document).ready(
+    function() {
+        $("#button_adversary_2").on(
+            "click",
+            function() {
+                $("#div_adversary_2").toggle();
+            }
+        )
+    }
+)
+
 // Set an event listener for showing adversary 2 level by choosing an adversary 2
 $(document).ready(
     function() {

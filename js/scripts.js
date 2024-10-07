@@ -73,15 +73,6 @@ function player_inputs(value) {
     }
 }
 
-function adversary_2_event_listener() {
-    const button  = document.querySelector("#button_adversary_2");
-    const content = document.querySelector("#div_adversary_2");
-
-    button.addEventListener("click", function() {
-        content.classList.toggle("is_hidden");
-    });
-}
-
 function scenario_event_listener() {
     const button  = document.querySelector("#button_scenario");
     const content = document.querySelector("#div_scenario");
