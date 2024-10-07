@@ -17,7 +17,7 @@ $(document).ready(
                 }
             ).appendTo(`#div_player_${i}_name`);
 
-            var spirit_select = $('<select>').attr(
+            var spirit_select = $('<select required>').attr(
                 {
                     name : `player_${i}_spirit`,
                     id : `player_${i}_spirit`
@@ -28,7 +28,10 @@ $(document).ready(
                 $("<option>").text(
                     `Select player ${i}'s spirit`
                 ).attr(
-                    "disabled", true
+                    {
+                        value : "",
+                        disabled: true
+                    }
                 )
             );
 
