@@ -1,5 +1,5 @@
 window.addEventListener("load", function() {
-    const form = document.getElementById('googleform');
+    const form = document.getElementById('google_form');
     form.addEventListener("submit", function(e) {
         e.preventDefault();
         const data = new FormData(form);
