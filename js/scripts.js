@@ -1,6 +1,8 @@
 // Populate the player info divs
 $(document).ready(
     function() {
+
+        // Spirits from which players select
         var spirits = [
                 {text : "Lightning's Swift Strike"},
                 {text : "River Surges in Sunlight"},
@@ -8,7 +10,10 @@ $(document).ready(
                 {text : "Vital Strength of Earth"},
             ];
 
+        // Populate divs for each player
         for (var i=1; i <= 4; i++) {
+
+            // Player name text input
             $('<input type="text" />').attr(
                 {
                     name : `player_${i}_name`,
@@ -17,6 +22,7 @@ $(document).ready(
                 }
             ).appendTo(`#div_player_${i}_name`);
 
+            // Player spirit select
             var spirit_select = $('<select>').attr(
                 {
                     name : `player_${i}_spirit`,
@@ -24,6 +30,7 @@ $(document).ready(
                 }
             ).prop('required',true).appendTo(`#div_player_${i}_spirit`);
 
+            // Append the disabled default option
             spirit_select.append(
                 $("<option>", {
                     value: "",
@@ -33,6 +40,7 @@ $(document).ready(
                 )
             );
 
+            // Append the spirit options
             $(spirits).each(
                 function() {
                     spirit_select.append(
@@ -41,8 +49,10 @@ $(document).ready(
                 }
             );
 
+            // Reset the select to the first option
             $(`#player_${i}_spirit`).prop('selectedIndex',0);
 
+            // Hide columns for players 2+
             if (i > 1) {
                 spirit_select.prop('required',false);
                 $(`#col_player_${i}_info`).hide();
@@ -58,10 +68,12 @@ $(document).ready(
             "change",
             function() {
                 for (var i=1; i<=4; i++) {
+                    // Show columns for players <= this.value
                     if (i <= this.value) {
                         $(`#player_${i}_spirit`).prop("required",true);
                         $(`#col_player_${i}_info`).show();
                     }
+                    // Hide columns for players > this.value
                     else {
                         $(`#player_${i}_spirit`).prop("required",false);
                         $(`#col_player_${i}_info`).hide();
@@ -79,12 +91,15 @@ $(document).ready(
         $("#select_adversary_1").on(
             "change",
             function() {
+                // Show adversary 1 level select if this.value changed to an adversary
                 if ($("#div_adversary_1_level").is(":hidden") && this.value != "No adversary") {
                     $("#div_adversary_1_level").show();
                 }
+                // Hide adversary 1 level select if this.value changed to "No adversary"
                 else if ($("#div_adversary_1_level").is(":visible") && this.value == "No adversary") {
                     $("#div_adversary_1_level").hide();
                 }
+                // Reset the adversary 1 level select
                 $("#select_adversary_1_level").val("0").change();
             }
         )
@@ -109,12 +124,15 @@ $(document).ready(
         $("#select_adversary_2").on(
             "change",
             function() {
+                // Show adversary 2 level select if this.value changed to an adversary
                 if ($("#div_adversary_2_level").is(":hidden") && this.value != "No adversary") {
                     $("#div_adversary_2_level").show();
                 }
+                // Hide adversary 2 level select if this.value changed to no adversary
                 else if ($("#div_adversary_2_level").is(":visible") && this.value == "No adversary") {
                     $("#div_adversary_2_level").hide();
                 }
+                // Reset the adversary 2 level select
                 $("#select_adversary_2_level").val("0").change();
             }
         )
