@@ -1,121 +1,141 @@
-
-
 <head>
 	<link rel="stylesheet" type="text/css" href="css/styles.css" media="screen" />
 	<!-- <script src="js/jquery.min.js"></script> -->
 	<script src="https://github.com/NoahBolohan/spirit-island-tracker/blob/master/js/jquery-3.7.1.min.js"></script>
+	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
+	<link rel="stylesheet" href="https://github.com/NoahBolohan/spirit-island-tracker/blob/master/css/bootstrap.min.css">
 	<script src="js/scripts.js"></script>
 	<script src="js/google_formevent_listener.js"></script>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body onload="on_load()">
 
-	<form class="googleform" name="googleform" id="googleform" target="_top" method="POST" onsubmit="myFunction()" action="https://script.google.com/macros/s/AKfycbwSzW7MqEhMF3dpm_aGV2f-aUxKKb8j1888YBMjDIlCqbLRyao4mElFqDAfcebIXnTi/exec">
+<form class="googleform" name="googleform" id="googleform" target="_top" method="POST" onsubmit="myFunction()" action="https://script.google.com/macros/s/AKfycbwSzW7MqEhMF3dpm_aGV2f-aUxKKb8j1888YBMjDIlCqbLRyao4mElFqDAfcebIXnTi/exec">
 	<!-- <form class="googleform" name="googleform" id="googleform" target="_top" method="POST" onsubmit="return checkForm()" action="URL"></form> -->
+	
+	<div class="container">
 
-	<div id="div_n_players">
-        <p>Number of players:
-		<select id="n_players" name="n_players" onchange="player_inputs(this.value)">
-			<option selected>1</option>
-			<option>2</option>
-			<option>3</option>
-			<option>4</option>
-		</select></p>
-	</div>
+		<div class="row">
+			<div id="div_n_players">
+				<p>Number of players:
+				<select id="n_players" name="n_players" onchange="player_inputs(this.value)">
+					<option selected>1</option>
+					<option>2</option>
+					<option>3</option>
+					<option>4</option>
+				</select></p>
+			</div>
+		</div>
 
-	Player info:
+		<div class="row">
+			Player info:
 
-	<div id="div_player_names"></div>
+			<div id="div_player_info">
+				<div id="div_player_names"></div>
+				<div id="div_player_spirits"></div>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div id="div_adversary_1">
+				<p>Select an adversary (if you're playing with one):<br>
+				<select id="select_adversary_1" name="adversary_1">
+						<option selected>No adversary</option>
+						<option>Brandenburg-Prussia</option>
+						<option>Sweden</option>
+						<option>England</option>
+				</select>
+			</div>
+	
+			<div id="div_select_adversary_1_value"></div>
+	
+			<div id="div_adversary_1_level" class="is_hidden">
+				Select the adversary level:
+				<select id="select_adversary_1_level" name="adversary_1_level">
+					<option>0</option>
+					<option>1</option>
+					<option>2</option>
+					<option>3</option>
+					<option>4</option>
+					<option>5</option>
+					<option>6</option>
+				</select>
+			</div>
+		</div>
 
-	<div id="div_player_spirits"></div>
+		<div class="row">
+			<button type="button" class="btn btn-secondary" id="button_adversary_2">Add second adversary</button>
 
-	<div id="div_adversary_1">
-		<p>Select an adversary (if you're playing with one):<br>
-		<select id="select_adversary_1" name="adversary_1">
-				<option selected>No adversary</option>
-				<option>Brandenburg-Prussia</option>
-				<option>Sweden</option>
-				<option>England</option>
-		</select>
-	</div>
+			<div id="div_adversary_2" class="is_hidden">
+				<select id="select_adversary_2" name="adversary_2">
+						<option selected disabled>Select a second adversary</option>
+						<option>Brandenburg-Prussia</option>
+						<option>Sweden</option>
+						<option>England</option>
+				</select>
+	
+				<div id="div_adversary_2_level">
+					Select the adversary level:
+					<select id="select_adversary_2_level" name="adversary_2_level">
+						<option>0</option>
+						<option>1</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+						<option>5</option>
+						<option>6</option>
+					</select>
+				</div>
+			</div>
+		</div>
+		
+		<div class="row">
+			<button type="button" class="btn btn-secondary" id="button_scenario">Add scenario</button>
 
-	<div id="div_select_adversary_1_value"></div>
+			<div id="div_scenario" class="is_hidden">
+				<select id="select_scenario" name="scenario">
+						<option selected disabled>Select a scenario</option>
+						<option>Blitz</option>
+						<option>Guard the Isle's Heart</option>
+						<option>Ritual of Terror</option>
+						<option>Dehan Insurrection</option>
+				</select>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div id="div_end_of_game_stats">
+				At game end:
+				<div id="div_win">
+					Did you win?
+					<input type="hidden" id="checkbox_win_hidden" name="victory" value="no"></input>
+					<input type="checkbox" id="checkbox_win" name="victory" value="yes"></input>
+				</div>
+				<div id="div_invader_cards_in_deck"></div>
+					How many invader cards are left in the deck?
+					<input type="number" min="0" step="1" id="text_invader_cards_in_deck" name="invader_cards_in_deck" required></input>
+				</div>
+				<div id="div_invader_cards_not_in_deck"></div>
+					How many invader cards are not in the deck?
+					<input type="number" min="0" step="1" id="text_invader_cards_not_in_deck" name="invader_cards_not_in_deck" required></input>
+				</div>
+				<div id="div_remaining_dehan"></div>
+					How many living Dehan remain on the island?
+					<input type="number" min="0" step="1" id="text_remaining_dehan" name="remaining_dehan" required></input>
+				</div>
+				<div id="div_blight_on_island"></div>
+					How much blight is on the island?
+					<input type="number" min="0" step="1" id="text_blight_on_island" name="blight_on_island" required></input>
+				</div>
+			</div>
+		</div>
 
-	<div id="div_adversary_1_level" class="is_hidden">
-		Select the adversary level:
-		<select id="select_adversary_1_level" name="adversary_1_level">
-			<option>0</option>
-			<option>1</option>
-			<option>2</option>
-			<option>3</option>
-			<option>4</option>
-			<option>5</option>
-			<option>6</option>
-		</select>
-	</div>
-
-	<button type="button" id="button_adversary_2">Add second adversary</button>
-
-	<div id="div_adversary_2" class="is_hidden">
-		<select id="select_adversary_2" name="adversary_2">
-				<option selected disabled>Select a second adversary</option>
-				<option>Brandenburg-Prussia</option>
-				<option>Sweden</option>
-				<option>England</option>
-		</select>
-
-		<div id="div_adversary_2_level">
-			Select the adversary level:
-			<select id="select_adversary_2_level" name="adversary_2_level">
-				<option>0</option>
-				<option>1</option>
-				<option>2</option>
-				<option>3</option>
-				<option>4</option>
-				<option>5</option>
-				<option>6</option>
-			</select>
+		<div class="row">
+			<button type="submit" class="btn btn-primary" name="submit" access="false" style="default" id="submit">Submit</button>
 		</div>
 	</div>
-
-	<button type="button" id="button_scenario">Add scenario</button>
-
-	<div id="div_scenario" class="is_hidden">
-		<select id="select_scenario" name="scenario">
-				<option selected disabled>Select a scenario</option>
-				<option>Blitz</option>
-				<option>Guard the Isle's Heart</option>
-				<option>Ritual of Terror</option>
-				<option>Dehan Insurrection</option>
-		</select>
-	</div>
-
-	<div id="div_end_of_game_stats">
-		At game end:
-		<div id="div_win">
-			Did you win?
-			<input type="hidden" id="checkbox_win_hidden" name="victory" value="no"></input>
-			<input type="checkbox" id="checkbox_win" name="victory" value="yes"></input>
-		</div>
-		<div id="div_invader_cards_in_deck"></div>
-			How many invader cards are left in the deck?
-			<input type="number" min="0" step="1" id="text_invader_cards_in_deck" name="invader_cards_in_deck" required></input>
-		</div>
-		<div id="div_invader_cards_not_in_deck"></div>
-			How many invader cards are not in the deck?
-			<input type="number" min="0" step="1" id="text_invader_cards_not_in_deck" name="invader_cards_not_in_deck" required></input>
-		</div>
-		<div id="div_remaining_dehan"></div>
-			How many living Dehan remain on the island?
-			<input type="number" min="0" step="1" id="text_remaining_dehan" name="remaining_dehan" required></input>
-		</div>
-		<div id="div_blight_on_island"></div>
-			How much blight is on the island?
-			<input type="number" min="0" step="1" id="text_blight_on_island" name="blight_on_island" required></input>
-		</div>
-	</div>
-
-    <button type="submit" class="btn-default btn" name="submit" access="false" style="default" id="submit">Submit</button>
 </form>
 
 </body>
