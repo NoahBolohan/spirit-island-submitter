@@ -22,7 +22,7 @@ $(document).ready(
                 var spirit_select = $('<select>').attr(
                     {
                         name : `player_${i}_spirit`,
-                        id : `player_${i}_spirit`
+                        id : `select_player_${i}_spirit`
                     }
                 ).prop('required',true).appendTo(`#div_player_${i}_spirit`);
 
@@ -46,7 +46,7 @@ $(document).ready(
                 );
 
                 // Reset the select to the first option
-                $(`#player_${i}_spirit`).prop('selectedIndex',0);
+                $(`#select_player_${i}_spirit`).prop('selectedIndex',0);
 
                 // Hide columns for players 2+
                 if (i > 1) {
@@ -67,19 +67,33 @@ $(document).ready(
                 for (var i=1; i<=4; i++) {
                     // Show columns for players <= this.value
                     if (i <= this.value) {
-                        $(`#player_${i}_spirit`).prop("required",true);
+                        $(`#select_player_${i}_spirit`).prop("required",true);
                         $(`#col_player_${i}_info`).show();
                     }
                     // Hide columns for players > this.value
                     else {
-                        $(`#player_${i}_spirit`).prop("required",false);
+                        $(`#select_player_${i}_spirit`).prop("required",false);
                         $(`#col_player_${i}_info`).hide();
-                        $(`#player_${i}_spirit`).prop('selectedIndex',0);
+                        $(`#select_player_${i}_spirit`).prop('selectedIndex',0);
                     }
                 }
             }
         )
     }
+)
+
+// Set an event listener for showing spirit choice image by choosing a spirit
+$(document).ready(
+    $(document).on(
+        "change",
+        "#select_player_1_spirit",
+        function() {
+            $("#img_player_1_spirit_image").attr(
+                "src",
+                `https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/${$("#select_player_1_spirit").val().split(' ').join('_')}.png`
+            );
+        }
+    )
 )
 
 // Set an event listener for showing adversary 1 level by choosing an adversary 1
