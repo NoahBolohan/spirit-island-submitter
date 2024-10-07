@@ -73,17 +73,6 @@ function player_inputs(value) {
     }
 }
 
-function scenario_event_listener() {
-    const button  = document.querySelector("#button_scenario");
-    const content = document.querySelector("#div_scenario");
-    const select_scenario = document.querySelector("#select_scenario");
-
-    button.addEventListener("click", function() {
-        select_scenario.value = "Select a scenario";
-        content.classList.toggle("is_hidden");
-    });
-}
-
 function checkForm() {
     var e=document.getElementById("text_invader_cards_in_deck").value;//alert(e);
     if(e===""){

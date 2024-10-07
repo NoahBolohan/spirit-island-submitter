@@ -45,3 +45,16 @@ $(document).ready(
         )
     }
 )
+
+// Set an event listener for showing scenario options by toggling the scenario button
+$(document).ready(
+    function() {
+        $("#button_scenario").on(
+            "click",
+            function() {
+                $("#div_scenario").toggle();
+                $('#select_scenario').prop('selectedIndex',0);
+            }
+        )
+    }
+)
