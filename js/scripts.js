@@ -90,7 +90,7 @@ $(document).ready(
                         $(`#col_select_player_${i}_spirit`).prop('selectedIndex',0);
                         $(`#col_input_player_${i}_name`).hide();
                         $(`#col_select_player_${i}_spirit`).hide();
-                        $(`#col_select_player_${i}_spirit_image`).hide();
+                        $(`#col_player_${i}_spirit_image`).hide();
                     }
                 }
             }
