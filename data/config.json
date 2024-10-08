@@ -14,5 +14,11 @@
         "Brandenburg-Prussia",
         "Sweden",
         "England"
+    ],
+    "scenarios" : [
+        "Blitz",
+        "Guard the Isle's Heart",
+        "Ritual of Terror",
+        "Dehan Insurrection"
     ]
 }
