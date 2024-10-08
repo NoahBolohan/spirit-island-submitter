@@ -12,19 +12,22 @@ $(document).ready(
                 // Player name text input
                 $('<input type="text" />').attr(
                     {
+                        class : "col-3",
+                        id : `col_input_player_${i}_name`,
                         name : `player_${i}_name`,
-                        type : `player_${i}_name`,
-                        placeholder : `Player ${i} name (optional)`
+                        placeholder : `Player ${i} name`
                     }
-                ).appendTo(`#col_player_${i}_name`);
+                ).appendTo(`#row_player_name`);
 
                 // Player spirit select
                 var spirit_select = $('<select>').attr(
                     {
+                        class : "col-3",
+                        id : `col_select_player_${i}_spirit`,
                         name : `player_${i}_spirit`,
-                        id : `select_player_${i}_spirit`
+                        
                     }
-                ).prop('required',true).appendTo(`#col_player_${i}_spirit`);
+                ).prop('required',true).appendTo(`#row_player_spirit`);
 
                 // Append the disabled default option
                 spirit_select.append(
@@ -46,14 +49,14 @@ $(document).ready(
                 );
 
                 // Reset the select to the first option
-                $(`#select_player_${i}_spirit`).prop('selectedIndex',0);
+                $(`#col_select_player_${i}_spirit`).prop('selectedIndex',0);
 
                 // Hide columns for players 2+
                 if (i > 1) {
                     spirit_select.prop('required',false);
-                    $(`#col_player_${i}_name`).hide();
-                    $(`#col_player_${i}_spirit`).hide();
-                    $(`#col_player_${i}_spirit_image`).hide();
+                    $(`#col_input_player_${i}_name`).hide();
+                    $(`#col_select_player_${i}_spirit`).hide();
+                    $(`#col_select_player_${i}_spirit_image`).hide();
                 }
             }
         });
@@ -69,17 +72,17 @@ $(document).ready(
                 for (var i=1; i<=4; i++) {
                     // Show columns for players <= this.value
                     if (i <= this.value) {
-                        $(`#select_player_${i}_spirit`).prop("required",true);
-                        $(`#col_player_${i}_name`).show();
-                        $(`#col_player_${i}_spirit`).show();
+                        $(`#col_select_player_${i}_spirit`).prop("required",true);
+                        $(`#col_input_player_${i}_name`).show();
+                        $(`#col_select_player_${i}_spirit`).show();
                     }
                     // Hide columns for players > this.value
                     else {
-                        $(`#select_player_${i}_spirit`).prop("required",false);
-                        $(`#select_player_${i}_spirit`).prop('selectedIndex',0);
-                        $(`#col_player_${i}_name`).hide();
-                        $(`#col_player_${i}_spirit`).hide();
-                        $(`#col_player_${i}_spirit_image`).hide();
+                        $(`#col_select_player_${i}_spirit`).prop("required",false);
+                        $(`#col_select_player_${i}_spirit`).prop('selectedIndex',0);
+                        $(`#col_input_player_${i}_name`).hide();
+                        $(`#col_select_player_${i}_spirit`).hide();
+                        $(`#col_select_player_${i}_spirit_image`).hide();
                     }
                 }
             }
@@ -91,11 +94,11 @@ $(document).ready(
 $(document).ready(
     $(document).on(
         "change",
-        "#select_player_1_spirit",
+        "#col_select_player_1_spirit",
         function() {
             $("#col_player_1_spirit_image").attr(
                 "src",
-                `https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/${$("#select_player_1_spirit").val().split(' ').join('_')}.png`
+                `https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/${$("#col_select_player_1_spirit").val().split(' ').join('_')}.png`
             );
             $("#col_player_1_spirit_image").show();
         }
@@ -106,11 +109,11 @@ $(document).ready(
 $(document).ready(
     $(document).on(
         "change",
-        "#select_player_2_spirit",
+        "#col_select_player_2_spirit",
         function() {
             $("#col_player_2_spirit_image").attr(
                 "src",
-                `https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/${$("#select_player_2_spirit").val().split(' ').join('_')}.png`
+                `https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/${$("#col_select_player_2_spirit").val().split(' ').join('_')}.png`
             );
             $("#col_player_2_spirit_image").show();
         }
@@ -121,11 +124,11 @@ $(document).ready(
 $(document).ready(
     $(document).on(
         "change",
-        "#select_player_3_spirit",
+        "#col_select_player_3_spirit",
         function() {
             $("#col_player_3_spirit_image").attr(
                 "src",
-                `https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/${$("#select_player_3_spirit").val().split(' ').join('_')}.png`
+                `https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/${$("#col_select_player_3_spirit").val().split(' ').join('_')}.png`
             );
             $("#col_player_3_spirit_image").show();
         }
@@ -136,11 +139,11 @@ $(document).ready(
 $(document).ready(
     $(document).on(
         "change",
-        "#select_player_4_spirit",
+        "#col_select_player_4_spirit",
         function() {
             $("#col_player_4_spirit_image").attr(
                 "src",
-                `https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/${$("#select_player_4_spirit").val().split(' ').join('_')}.png`
+                `https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/${$("#col_select_player_4_spirit").val().split(' ').join('_')}.png`
             );
             $("#col_player_4_spirit_image").show();
         }
