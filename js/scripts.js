@@ -9,25 +9,33 @@ $(document).ready(
             // Populate divs for each player
             for (var i=1; i <= 4; i++) {
 
+                if (i<=2) {
+                    var player_number_group = "1_2";
+                }
+                else {
+                    var player_number_group = "3_4";
+                }
+                
+
                 // Player name text input
                 $('<input type="text" />').attr(
                     {
-                        class : "col-3",
+                        class : "col-6",
                         id : `col_input_player_${i}_name`,
                         name : `player_${i}_name`,
                         placeholder : `Player ${i} name`
                     }
-                ).appendTo(`#row_player_name`);
+                ).appendTo(`#row_player_${player_number_group}_name`);
 
                 // Player spirit select
                 var spirit_select = $('<select>').attr(
                     {
-                        class : "col-3",
+                        class : "col-6",
                         id : `col_select_player_${i}_spirit`,
                         name : `player_${i}_spirit`,
                         
                     }
-                ).prop('required',true).appendTo(`#row_player_spirit`);
+                ).prop('required',true).appendTo(`#row_player_${player_number_group}_spirit`);
 
                 // Append the disabled default option
                 spirit_select.append(
