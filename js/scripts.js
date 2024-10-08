@@ -218,8 +218,8 @@ $(document).ready(
         $("#button_scenario").on(
             "click",
             function() {
-                $("#div_scenario").toggle();
-                $('#select_scenario').prop('selectedIndex',0);
+                $("#col_select_scenario").toggle();
+                $('#col_select_scenario').prop('selectedIndex',0);
             }
         )
     }
