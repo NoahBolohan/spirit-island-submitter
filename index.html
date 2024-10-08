@@ -11,10 +11,9 @@
 
 <body onload="on_load()">
 
-<form class="google_form" name="google_form" id="google_form" target="_top" method="POST" onsubmit="myFunction()" action="https://script.google.com/macros/s/AKfycbwSzW7MqEhMF3dpm_aGV2f-aUxKKb8j1888YBMjDIlCqbLRyao4mElFqDAfcebIXnTi/exec">
+<form class="google_form" id="google_form" name="google_form"  target="_top" method="POST" onsubmit="myFunction()" action="https://script.google.com/macros/s/AKfycbwSzW7MqEhMF3dpm_aGV2f-aUxKKb8j1888YBMjDIlCqbLRyao4mElFqDAfcebIXnTi/exec">
 	
 	<div class="container">
-
 		<div class="row" id="row_n_players">
 			<div id="div_n_players">
 				Number of players:
@@ -106,34 +105,38 @@
 					<option>Dehan Insurrection</option>
 			</select>
 		</div>
-		
-		<div class="row">
-			<div class="col">
-				<div id="div_end_of_game_stats">
-					At game end:
-					<div id="div_win">
-						Did you win?
-						<input type="hidden" id="checkbox_win_hidden" name="victory" value="no"></input>
-						<input type="checkbox" id="checkbox_win" name="victory" value="yes"></input>
-					</div>
-					<div id="div_invader_cards_in_deck"></div>
-						How many invader cards are left in the deck?
-						<input type="number" min="0" step="1" id="text_invader_cards_in_deck" name="invader_cards_in_deck" required></input>
-					</div>
-					<div id="div_invader_cards_not_in_deck"></div>
-						How many invader cards are not in the deck?
-						<input type="number" min="0" step="1" id="text_invader_cards_not_in_deck" name="invader_cards_not_in_deck" required></input>
-					</div>
-					<div id="div_remaining_dehan"></div>
-						How many living Dehan remain on the island?
-						<input type="number" min="0" step="1" id="text_remaining_dehan" name="remaining_dehan" required></input>
-					</div>
-					<div id="div_blight_on_island"></div>
-						How much blight is on the island?
-						<input type="number" min="0" step="1" id="text_blight_on_island" name="blight_on_island" required></input>
-					</div>
-				</div>
+
+		<div class="row justify-content-center" id="row_game_end_text">
+			<div class="col-4">At game end:</div> 
+		</div>
+
+		<div class="row" id="row_victory">
+			<div class="col-6" id="col_victory_text">
+				Did you win?
 			</div>
+			<input id="checkbox_win_hidden" name="victory" type="hidden" value="no"></input>
+			<input class="col-6" id="checkbox_win" name="victory" type="checkbox" value="yes"></input>
+		</div>
+
+		<div class="row" id="row_invader_cards">
+			<div class="col-6" id="col_invader_cards_text">
+				How many invader cards are left in the deck?
+			</div>
+			<input class="col-6" id="text_invader_cards_in_deck" name="invader_cards_in_deck" type="number" min="0" step="1" required></input>
+		</div>
+
+		<div class="row" id="row_remaining_dehan">
+			<div class="col-6" id="col_remaining_dehan">
+				How many living Dehan remain on the island?
+			</div>
+			<input class="col-6" id="text_remaining_dehan" name="remaining_dehan" type="number" min="0" step="1" required></input>
+		</div>
+
+		<div class="row" id="row_blight_on_island">
+			<div class="col-6" id="col_blight_on_island">
+				How much blight is on the island?
+			</div>
+			<input class="col-6" id="text_blight_on_island" name="blight_on_island type="number" min="0" step="1" required></input>
 		</div>
 
 		<div class="row justify-content-center">
