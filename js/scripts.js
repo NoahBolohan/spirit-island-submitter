@@ -161,19 +161,19 @@ $(document).ready(
 // Set an event listener for showing adversary 1 level by choosing an adversary 1
 $(document).ready(
     function() {
-        $("#select_adversary_1").on(
+        $("#col_select_adversary_1").on(
             "change",
             function() {
                 // Show adversary 1 level select if this.value changed to an adversary
-                if ($("#div_adversary_1_level").is(":hidden") && this.value != "No adversary") {
-                    $("#div_adversary_1_level").show();
+                if ($("#col_select_adversary_1_level").is(":hidden") && this.value != "No adversary") {
+                    $("#col_select_adversary_1_level").show();
                 }
                 // Hide adversary 1 level select if this.value changed to "No adversary"
-                else if ($("#div_adversary_1_level").is(":visible") && this.value == "No adversary") {
-                    $("#div_adversary_1_level").hide();
+                else if ($("#col_select_adversary_1_level").is(":visible") && this.value == "No adversary") {
+                    $("#col_select_adversary_1_level").hide();
                 }
                 // Reset the adversary 1 level select
-                $("#select_adversary_1_level").val("0").change();
+                $("#col_select_adversary_1_level").val("0").change();
             }
         )
     }
@@ -182,10 +182,10 @@ $(document).ready(
 // Set an event listener for showing adversary 2 options by toggling the adversary 2 button
 $(document).ready(
     function() {
-        $("#button_adversary_2").on(
+        $("#col_button_adversary_2").on(
             "click",
             function() {
-                $("#div_adversary_2").toggle();
+                $("#col_select_adversary_2").toggle();
             }
         )
     }
@@ -194,19 +194,19 @@ $(document).ready(
 // Set an event listener for showing adversary 2 level by choosing an adversary 2
 $(document).ready(
     function() {
-        $("#select_adversary_2").on(
+        $("#col_select_adversary_2").on(
             "change",
             function() {
                 // Show adversary 2 level select if this.value changed to an adversary
-                if ($("#div_adversary_2_level").is(":hidden") && this.value != "No adversary") {
-                    $("#div_adversary_2_level").show();
+                if ($("#col_select_adversary_2_level").is(":hidden") && this.value != "No adversary") {
+                    $("#col_select_adversary_2_level").show();
                 }
                 // Hide adversary 2 level select if this.value changed to no adversary
-                else if ($("#div_adversary_2_level").is(":visible") && this.value == "No adversary") {
-                    $("#div_adversary_2_level").hide();
+                else if ($("#col_select_adversary_2_level").is(":visible") && this.value == "No adversary") {
+                    $("#col_select_adversary_2_level").hide();
                 }
                 // Reset the adversary 2 level select
-                $("#select_adversary_2_level").val("0").change();
+                $("#col_select_adversary_2_level").val("0").change();
             }
         )
     }

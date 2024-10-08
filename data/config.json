@@ -9,5 +9,10 @@
         "Thunderspeaker",
         "Bringer of Dreams and Nightmares",
         "Ocean's Hungry Grasp"
+    ],
+    "adversaries" : [
+        "Brandenburg-Prussia",
+        "Sweden",
+        "England"
     ]
 }

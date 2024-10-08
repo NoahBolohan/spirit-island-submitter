@@ -48,60 +48,50 @@
 			<img class="col-6 h-100" id="col_player_3_spirit_image"></img>
 			<img class="col-6 h-100" id="col_player_4_spirit_image"></img>
 		</div>
-		
-		<div class="row">
-			<div class="col-6">
-				<div id="div_adversary_1">
-					<p>Select an adversary (if you're playing with one):<br>
-					<select id="select_adversary_1" name="adversary_1">
-							<option selected>No adversary</option>
-							<option>Brandenburg-Prussia</option>
-							<option>Sweden</option>
-							<option>England</option>
-					</select>
-				</div>
-		
-				<div id="div_select_adversary_1_value"></div>
-		
-				<div id="div_adversary_1_level" class="is_hidden">
-					Select the adversary level:
-					<select id="select_adversary_1_level" name="adversary_1_level">
-						<option>0</option>
-						<option>1</option>
-						<option>2</option>
-						<option>3</option>
-						<option>4</option>
-						<option>5</option>
-						<option>6</option>
-					</select>
-				</div>
-			</div>
 
-			<div class="col-6">
-				<button type="button" class="btn btn-secondary" id="button_adversary_2">Add second adversary</button>
-
-				<div id="div_adversary_2" class="is_hidden">
-					<select id="select_adversary_2" name="adversary_2">
-							<option selected disabled>Select a second adversary</option>
-							<option>Brandenburg-Prussia</option>
-							<option>Sweden</option>
-							<option>England</option>
-					</select>
-		
-					<div id="div_adversary_2_level">
-						Select the adversary level:
-						<select id="select_adversary_2_level" name="adversary_2_level">
-							<option>0</option>
-							<option>1</option>
-							<option>2</option>
-							<option>3</option>
-							<option>4</option>
-							<option>5</option>
-							<option>6</option>
-						</select>
-					</div>
-				</div>
+		<div class="row" id="row_adversary_text">
+			<div class="col-6" id="col_adversary_1_text">
+				Select an adversary (if you're playing with one):
 			</div>
+			<button class="btn btn-secondary col-6" id="col_button_adversary_2" type="button">
+				Add second adversary
+			</button>
+		</div>
+		
+		<div class="row" id="row_adversaries">
+			<select class="col-6" id="col_select_adversary_1" name="adversary_1">
+				<option selected>No adversary</option>
+				<option>Brandenburg-Prussia</option>
+				<option>Sweden</option>
+				<option>England</option>
+			</select>
+			<select class="col-6 is_hidden" id="col_select_adversary_2" name="adversary_2">
+				<option selected disabled>Select a second adversary</option>
+				<option>Brandenburg-Prussia</option>
+				<option>Sweden</option>
+				<option>England</option>
+			</select>
+		</div>
+
+		<div class="row" id="row_adversary_levels">
+			<select class="col-6 is_hidden" id="col_select_adversary_1_level" name="adversary_1_level">
+				<option>0</option>
+				<option>1</option>
+				<option>2</option>
+				<option>3</option>
+				<option>4</option>
+				<option>5</option>
+				<option>6</option>
+			</select>
+			<select class="col-6 is_hidden" id="col_select_adversary_2_level" name="adversary_2_level">
+				<option>0</option>
+				<option>1</option>
+				<option>2</option>
+				<option>3</option>
+				<option>4</option>
+				<option>5</option>
+				<option>6</option>
+			</select>
 		</div>
 		
 		<div class="row">
