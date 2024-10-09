@@ -5,6 +5,7 @@ $(document).ready(
         $.getJSON('https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/refs/heads/master/data/config.json', function(data) {
             // Spirits from which players select
             var spirits = data["spirits"];
+            var boards = data["boards"];
 
             // Populate divs for each player
             for (var i=1; i <= 4; i++) {
@@ -19,22 +20,67 @@ $(document).ready(
                     }
                 ).appendTo("#row_player_info");
                 
+                // Player name and board row
+                $(
+                    "<div>",
+                    {
+                        class : "row border",
+                        id : `row_input_player_${i}_name_board`,
+                    }
+                ).appendTo(`#col_player_${i}_info`);
 
                 // Player name text input
                 $(
                     "<input>",
                     {
-                        class : "row border",
-                        id : `row_input_player_${i}_name`,
+                        class : "col-6 border",
+                        id : `col_input_player_${i}_name`,
                         name : `player_${i}_name`,
                         type : "text",
                         placeholder : `Player ${i} name`
                     }
-                ).appendTo(`#col_player_${i}_info`);
+                ).appendTo(`#row_input_player_${i}_name_board`);
+
+                // Player board select
+                var board_select = $(
+                    "<select>",
+                    {
+                        class : "col-6 border",
+                        id : `col_select_player_${i}_board`,
+                        name : `player_${i}_board`
+                    }
+                ).prop(
+                    'required',
+                    true
+                ).appendTo(`#row_input_player_${i}_name_board`);
+
+                // Append the disabled default option
+                board_select.append(
+                    $(
+                        "<option>",
+                            {
+                            value: "",
+                            text: `Player ${i}'s board`,
+                            disabled : true
+                        }
+                    )
+                );
+
+                // Append the board options
+                $(boards).each(
+                    function() {
+                        board_select.append(
+                            $("<option>").text(this)
+                        );
+                    }
+                );
+
+                // Reset the select to the first option
+                $(`#col_select_player_${i}_board`).prop('selectedIndex',0);
 
                 // Player spirit select
                 var spirit_select = $(
-                    '<select>',
+                    "<select>",
                     {
                         class : "row border",
                         id : `row_select_player_${i}_spirit`,
@@ -85,10 +131,10 @@ $(document).ready(
                         'required',
                         false
                     );
-                    $(`#row_input_player_${i}_info`).hide();
-                    $(`#row_input_player_${i}_name`).hide();
-                    $(`#row_select_player_${i}_spirit`).hide();
                     $(`#col_player_${i}_info`).hide();
+                    $(`#row_select_player_${i}_spirit`).hide();
+
+                    
                 }
             }
         });
@@ -108,7 +154,7 @@ $(document).ready(
                             "required",
                             true
                         );
-                        $(`#row_input_player_${i}_name`).show();
+                        // $(`#row_input_player_${i}_name`).show();
                         $(`#row_select_player_${i}_spirit`).show();
                         $(`#col_player_${i}_info`).show();
                     }
@@ -122,7 +168,7 @@ $(document).ready(
                             'selectedIndex',
                             0
                         );
-                        $(`#row_input_player_${i}_name`).hide();
+                        // $(`#row_input_player_${i}_name`).hide();
                         $(`#row_select_player_${i}_spirit`).hide();
                         $(`#row_player_${i}_spirit_image`).hide();
                         $(`#col_player_${i}_info`).hide();

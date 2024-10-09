@@ -20,5 +20,13 @@
         "Guard the Isle's Heart",
         "Ritual of Terror",
         "Dehan Insurrection"
+    ],
+    "boards" : [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
     ]
 }
