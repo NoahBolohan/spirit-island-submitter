@@ -10,6 +10,14 @@
         "Bringer of Dreams and Nightmares",
         "Ocean's Hungry Grasp"
     ],
+    "boards" : [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+    ],
     "adversaries" : [
         "Brandenburg-Prussia",
         "Sweden",
@@ -20,13 +28,5 @@
         "Guard the Isle's Heart",
         "Ritual of Terror",
         "Dehan Insurrection"
-    ],
-    "boards" : [
-        "A",
-        "B",
-        "C",
-        "D",
-        "E",
-        "F"
     ]
 }

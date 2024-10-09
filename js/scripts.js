@@ -3,12 +3,8 @@ $(document).ready(
     function() {
 
         $.getJSON('https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/refs/heads/master/data/config.json', function(data) {
-            // Spirits from which players select
-            var spirits = data["spirits"];
-            var boards = data["boards"];
-
             // Populate divs for each player
-            for (var i=1; i <= 4; i++) {
+            for (var i=1; i <= data["max_players"]; i++) {
 
                 $(
                     "<div>",
@@ -67,7 +63,7 @@ $(document).ready(
                 );
 
                 // Append the board options
-                $(boards).each(
+                $(data["boards"]).each(
                     function() {
                         board_select.append(
                             $("<option>").text(this)
@@ -105,7 +101,7 @@ $(document).ready(
                 );
 
                 // Append the spirit options
-                $(spirits).each(
+                $(data["spirits"]).each(
                     function() {
                         spirit_select.append(
                             $("<option>").text(this)
@@ -120,7 +116,7 @@ $(document).ready(
                 $(
                     "<img>",
                     {
-                        class : "border col-6 is_hidden",
+                        class : "border col is_hidden",
                         id : `row_player_${i}_spirit_image`
                     }
                 ).appendTo(`#col_player_${i}_info`);
@@ -150,16 +146,27 @@ $(document).ready(
                 for (var i=1; i<=4; i++) {
                     // Show columns for players <= this.value
                     if (i <= this.value) {
+                        $(`#col_select_player_${i}_board`).prop(
+                            "required",
+                            true
+                        );
                         $(`#row_select_player_${i}_spirit`).prop(
                             "required",
                             true
                         );
-                        // $(`#row_input_player_${i}_name`).show();
                         $(`#row_select_player_${i}_spirit`).show();
                         $(`#col_player_${i}_info`).show();
                     }
                     // Hide columns for players > this.value
                     else {
+                        $(`#col_select_player_${i}_board`).prop(
+                            "required",
+                            false
+                        );
+                        $(`#col_select_player_${i}_board`).prop(
+                            'selectedIndex',
+                            0
+                        );
                         $(`#row_select_player_${i}_spirit`).prop(
                             "required",
                             false
@@ -168,7 +175,6 @@ $(document).ready(
                             'selectedIndex',
                             0
                         );
-                        // $(`#row_input_player_${i}_name`).hide();
                         $(`#row_select_player_${i}_spirit`).hide();
                         $(`#row_player_${i}_spirit_image`).hide();
                         $(`#col_player_${i}_info`).hide();
