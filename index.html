@@ -58,49 +58,69 @@
 
 			<div class="row m-1 justify-content-center" id="row_player_info"></div>
 
-			<div class="row border" id="row_adversary_text">
-				<div class="border col-6" id="col_adversary_1_text">
-					Select an adversary (if you're playing with one):
+			<div class="row" id="row_adversary_header">
+				<div class="col text-center" id="col_adversary_header_text">
+					Select adversaries (if you're playing with them):
 				</div>
-				<button class="btn btn-secondary col-6" id="col_button_adversary_2" type="button">
-					Add second adversary
-				</button>
-			</div>
-			
-			<div class="row border" id="row_adversaries">
-				<select class="border col-6" id="col_select_adversary_1" name="adversary_1">
-					<option selected>No adversary</option>
-					<option>Brandenburg-Prussia</option>
-					<option>Sweden</option>
-					<option>England</option>
-				</select>
-				<select class="border col-6 is_hidden" id="col_select_adversary_2" name="adversary_2">
-					<option selected disabled>Select a second adversary</option>
-					<option>Brandenburg-Prussia</option>
-					<option>Sweden</option>
-					<option>England</option>
-				</select>
 			</div>
 
-			<div class="row border justify-content-end my-1" id="row_adversary_levels">
-				<select class="border col-6 is_hidden" id="col_select_adversary_1_level" name="adversary_1_level">
-					<option>0</option>
-					<option>1</option>
-					<option>2</option>
-					<option>3</option>
-					<option>4</option>
-					<option>5</option>
-					<option>6</option>
-				</select>
-				<select class="border col-6 is_hidden" id="col_select_adversary_2_level" name="adversary_2_level">
-					<option>0</option>
-					<option>1</option>
-					<option>2</option>
-					<option>3</option>
-					<option>4</option>
-					<option>5</option>
-					<option>6</option>
-				</select>
+			<div class="row justify-content-center" id="row_adversary_info">
+
+				<div class="col-5 m-1" id="col_adversary_1">
+
+					<div class="row m-1 justify-content-center " id="row_select_adversary_1">
+						<select class="col m-1" id="col_select_adversary_1" name="adversary_1">
+							<option selected>No adversary</option>
+							<option>Brandenburg-Prussia</option>
+							<option>Sweden</option>
+							<option>England</option>
+						</select>
+					</div>
+
+					<div class="row m-1 justify-content-center is_hidden" id="row_select_adversary_1_level">
+						<select class="col m-1" id="col_select_adversary_1_level" name="adversary_1_level">
+							<option disabled>Select adversary level</option>
+							<option>0</option>
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+							<option>5</option>
+							<option>6</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="col-5 m-1" id="col_adversary_2">
+
+					<div class="row m-1 justify-content-center " id="row_button_adversary_2">
+						<button class="col btn btn-secondary" id="col_button_adversary_2" type="button">
+							Add second adversary
+						</button>
+					</div>
+
+					<div class="row m-1 justify-content-center is_hidden" id="row_select_adversary_2">
+						<select class="col m-1" id="col_select_adversary_2" name="adversary_2">
+							<option selected>No adversary</option>
+							<option>Brandenburg-Prussia</option>
+							<option>Sweden</option>
+							<option>England</option>
+						</select>
+					</div>
+
+					<div class="row m-1 justify-content-center is_hidden" id="row_select_adversary_2_level">
+						<select class="col m-1" id="col_select_adversary_2_level" name="adversary_2_level">
+							<option disabled>Select adversary level</option>
+							<option>0</option>
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+							<option>5</option>
+							<option>6</option>
+						</select>
+					</div>
+				</div>
 			</div>
 			
 			<div class="row border" id="row_scenario">
