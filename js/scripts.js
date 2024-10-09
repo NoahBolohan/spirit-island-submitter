@@ -9,7 +9,7 @@ $(document).ready(
                 // Player ${i} column
                 $("<div>").attr(
                     {
-                        class : "col-6 border",
+                        class : "col-6 p-1",
                         id : `col_player_${i}_info`,
                         name : `player_${i}_info`,
                         
@@ -19,7 +19,7 @@ $(document).ready(
                 // Player ${i} header text row
                 $("<div>").attr(
                     {
-                        class : "row border",
+                        class : "row",
                         id : `row_player_${i}_header`,
                         
                     }
@@ -28,7 +28,7 @@ $(document).ready(
                 // Player ${i} header text
                 $("<div>").attr(
                     {
-                        class : "col border text-center",
+                        class : "col text-center",
                         id : `col_player_${i}_header`,
                         
                     }
@@ -41,7 +41,7 @@ $(document).ready(
                 // Player name and board row
                 $("<div>").attr(
                     {
-                        class : "row border",
+                        class : "row justify-content-center",
                         id : `row_input_player_${i}_name_board`,
                     }
                 ).appendTo(`#col_player_${i}_info`);
@@ -49,7 +49,7 @@ $(document).ready(
                 // Player name text input
                 $("<input>").attr(
                     {
-                        class : "col-6 border",
+                        class : "col-5 m-1",
                         id : `col_input_player_${i}_name`,
                         name : `player_${i}_name`,
                         type : "text",
@@ -60,7 +60,7 @@ $(document).ready(
                 // Player board select
                 var board_select = $("<select>").attr(
                     {
-                        class : "col-6 border",
+                        class : "col-5 m-1",
                         id : `col_select_player_${i}_board`,
                         name : `player_${i}_board`
                     }
@@ -91,18 +91,26 @@ $(document).ready(
                 // Reset the select to the first option
                 $(`#col_select_player_${i}_board`).prop('selectedIndex',0);
 
+                // Player name and board row
+                $("<div>").attr(
+                    {
+                        class : "row justify-content-center",
+                        id : `row_input_player_${i}_spirit`,
+                    }
+                ).appendTo(`#col_player_${i}_info`);
+
                 // Player spirit select
                 var spirit_select = $("<select>").attr(
                     {
-                        class : "row border",
-                        id : `row_select_player_${i}_spirit`,
+                        class : "col-11 m-1",
+                        id : `col_select_player_${i}_spirit`,
                         name : `player_${i}_spirit`,
                         
                     }
                 ).prop(
                     'required',
                     true
-                ).appendTo(`#col_player_${i}_info`);
+                ).appendTo(`#row_input_player_${i}_spirit`);
 
                 // Append the disabled default option
                 spirit_select.append(
@@ -124,12 +132,12 @@ $(document).ready(
                 );
 
                 // Reset the select to the first option
-                $(`#row_select_player_${i}_spirit`).prop('selectedIndex',0);
+                $(`#col_select_player_${i}_spirit`).prop('selectedIndex',0);
 
                 // Append the spirit img
                 $("<img>").attr(
                     {
-                        class : "border col is_hidden",
+                        class : "col is_hidden",
                         id : `row_player_${i}_spirit_image`
                     }
                 ).appendTo(`#col_player_${i}_info`);
@@ -141,7 +149,7 @@ $(document).ready(
                         false
                     );
                     $(`#col_player_${i}_info`).hide();
-                    $(`#row_select_player_${i}_spirit`).hide();
+                    $(`#col_select_player_${i}_spirit`).hide();
 
                     
                 }
@@ -165,12 +173,12 @@ $(document).ready(
                             true
                         );
                         // Set player ${i} spirit choice required
-                        $(`#row_select_player_${i}_spirit`).prop(
+                        $(`#col_select_player_${i}_spirit`).prop(
                             "required",
                             true
                         );
                         // Show content for player ${i}
-                        $(`#row_select_player_${i}_spirit`).show();
+                        $(`#col_select_player_${i}_spirit`).show();
                         $(`#col_player_${i}_info`).show();
                     }
                     // Hide columns for players > this.value
@@ -186,17 +194,17 @@ $(document).ready(
                             0
                         );
                         // Set player ${i} spirit choice required
-                        $(`#row_select_player_${i}_spirit`).prop(
+                        $(`#col_select_player_${i}_spirit`).prop(
                             "required",
                             false
                         );
                         // Reset player ${i} spirit choice
-                        $(`#row_select_player_${i}_spirit`).prop(
+                        $(`#col_select_player_${i}_spirit`).prop(
                             'selectedIndex',
                             0
                         );
                         // Hide player ${i} content
-                        $(`#row_select_player_${i}_spirit`).hide();
+                        $(`#col_select_player_${i}_spirit`).hide();
                         $(`#row_player_${i}_spirit_image`).hide();
                         $(`#col_player_${i}_info`).hide();
                     }
@@ -210,12 +218,12 @@ $(document).ready(
 $(document).ready(
     $(document).on(
         "change",
-        "#row_select_player_1_spirit",
+        "#col_select_player_1_spirit",
         function() {
             // Assign appropriate image to player 1 spirit image div
             $("#row_player_1_spirit_image").attr(
                 "src",
-                `https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/${$("#row_select_player_1_spirit").val().split(' ').join('_')}.png`
+                `https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/${$("#col_select_player_1_spirit").val().split(' ').join('_')}.png`
             );
             // Show player 1 image
             $("#row_player_1_spirit_image").show();
@@ -227,12 +235,12 @@ $(document).ready(
 $(document).ready(
     $(document).on(
         "change",
-        "#row_select_player_2_spirit",
+        "#col_select_player_2_spirit",
         function() {
             // Assign appropriate image to player 2 spirit image div
             $("#row_player_2_spirit_image").attr(
                 "src",
-                `https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/${$("#row_select_player_2_spirit").val().split(' ').join('_')}.png`
+                `https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/${$("#col_select_player_2_spirit").val().split(' ').join('_')}.png`
             );
             // Show player 2 image
             $("#row_player_2_spirit_image").show();
@@ -244,12 +252,12 @@ $(document).ready(
 $(document).ready(
     $(document).on(
         "change",
-        "#row_select_player_3_spirit",
+        "#col_select_player_3_spirit",
         function() {
             // Assign appropriate image to player 3 spirit image div
             $("#row_player_3_spirit_image").attr(
                 "src",
-                `https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/${$("#row_select_player_3_spirit").val().split(' ').join('_')}.png`
+                `https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/${$("#col_select_player_3_spirit").val().split(' ').join('_')}.png`
             );
             // Show player 3 image
             $("#row_player_3_spirit_image").show();
@@ -261,12 +269,12 @@ $(document).ready(
 $(document).ready(
     $(document).on(
         "change",
-        "#row_select_player_4_spirit",
+        "#col_select_player_4_spirit",
         function() {
             // Assign appropriate image to player 4 spirit image div
             $("#row_player_4_spirit_image").attr(
                 "src",
-                `https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/${$("#row_select_player_4_spirit").val().split(' ').join('_')}.png`
+                `https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/${$("#col_select_player_4_spirit").val().split(' ').join('_')}.png`
             );
             // Show player 4 image
             $("#row_player_4_spirit_image").show();
