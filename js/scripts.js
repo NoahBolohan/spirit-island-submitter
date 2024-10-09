@@ -9,7 +9,8 @@ $(document).ready(
             // Populate divs for each player
             for (var i=1; i <= 4; i++) {
 
-                $('<div>').attr(
+                $(
+                    "<div>",
                     {
                         class : "border col-6",
                         id : `col_player_${i}_info`,
@@ -20,32 +21,40 @@ $(document).ready(
                 
 
                 // Player name text input
-                $('<input type="text" />').attr(
+                $(
+                    "<input>",
                     {
                         class : "row border",
                         id : `row_input_player_${i}_name`,
                         name : `player_${i}_name`,
+                        type : "text",
                         placeholder : `Player ${i} name`
                     }
                 ).appendTo(`#col_player_${i}_info`);
 
                 // Player spirit select
-                var spirit_select = $('<select>').attr(
+                var spirit_select = $(
+                    '<select>',
                     {
                         class : "row border",
                         id : `row_select_player_${i}_spirit`,
                         name : `player_${i}_spirit`,
                         
                     }
-                ).prop('required',true).appendTo(`#col_player_${i}_info`);
+                ).prop(
+                    'required',
+                    true
+                ).appendTo(`#col_player_${i}_info`);
 
                 // Append the disabled default option
                 spirit_select.append(
-                    $("<option>", {
-                        value: "",
-                        text: `Select player ${i}'s spirit`,
-                        disabled : true
-                    }
+                    $(
+                        "<option>",
+                            {
+                            value: "",
+                            text: `Select player ${i}'s spirit`,
+                            disabled : true
+                        }
                     )
                 );
 
@@ -62,7 +71,9 @@ $(document).ready(
                 $(`#row_select_player_${i}_spirit`).prop('selectedIndex',0);
 
                 // Append the spirit img
-                $("<img>", {
+                $(
+                    "<img>",
+                    {
                         class : "border col-6 is_hidden",
                         id : `row_player_${i}_spirit_image`
                     }
@@ -70,7 +81,10 @@ $(document).ready(
 
                 // Hide columns for players 2+
                 if (i > 1) {
-                    spirit_select.prop('required',false);
+                    spirit_select.prop(
+                        'required',
+                        false
+                    );
                     $(`#row_input_player_${i}_info`).hide();
                     $(`#row_input_player_${i}_name`).hide();
                     $(`#row_select_player_${i}_spirit`).hide();
@@ -90,15 +104,24 @@ $(document).ready(
                 for (var i=1; i<=4; i++) {
                     // Show columns for players <= this.value
                     if (i <= this.value) {
-                        $(`#row_select_player_${i}_spirit`).prop("required",true);
+                        $(`#row_select_player_${i}_spirit`).prop(
+                            "required",
+                            true
+                        );
                         $(`#row_input_player_${i}_name`).show();
                         $(`#row_select_player_${i}_spirit`).show();
                         $(`#col_player_${i}_info`).show();
                     }
                     // Hide columns for players > this.value
                     else {
-                        $(`#row_select_player_${i}_spirit`).prop("required",false);
-                        $(`#row_select_player_${i}_spirit`).prop('selectedIndex',0);
+                        $(`#row_select_player_${i}_spirit`).prop(
+                            "required",
+                            false
+                        );
+                        $(`#row_select_player_${i}_spirit`).prop(
+                            'selectedIndex',
+                            0
+                        );
                         $(`#row_input_player_${i}_name`).hide();
                         $(`#row_select_player_${i}_spirit`).hide();
                         $(`#row_player_${i}_spirit_image`).hide();
@@ -233,7 +256,10 @@ $(document).ready(
             "click",
             function() {
                 $("#col_select_scenario").toggle();
-                $('#col_select_scenario').prop('selectedIndex',0);
+                $('#col_select_scenario').prop(
+                    "selectedIndex",
+                    0
+                );
             }
         )
     }
