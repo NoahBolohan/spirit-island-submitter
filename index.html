@@ -13,43 +13,42 @@
 
 <form class="google_form" id="google_form" name="google_form"  target="_top" method="POST" onsubmit="myFunction()" action="https://script.google.com/macros/s/AKfycbwSzW7MqEhMF3dpm_aGV2f-aUxKKb8j1888YBMjDIlCqbLRyao4mElFqDAfcebIXnTi/exec">
 	
-	<div class="container">
-		<div class="row" id="row_n_players">
-			<div id="div_n_players">
-				Number of players:
-				<select id="select_n_players" name="n_players">
-					<option selected>1</option>
-					<option>2</option>
-					<option>3</option>
-					<option>4</option>
-				</select>
+	<div class="container pb-1">
+		<div class="row border" id="row_header">
+			<div class="col border text-center" id="col_header">
+				Spirit Island Tracker
 			</div>
 		</div>
+	</div>
 
-		<div class="row" id="row_player_info_text">
-			<div class="col">Player info:</div> 
+	<div class="container pb-1">
+		<div class="row border justify-content-center" id="row_game_end_text">
+			<div class="border col text-center">Before game:</div> 
 		</div>
 
-		<div class="row" id="row_player_1_2_name"></div>
+		<div class="row border" id="row_n_players">
+			<div class="col-6" id="div_n_players">
+				Number of players:
+			</div>
 
-		<div class="row" id="row_player_1_2_spirit"></div>
-
-		<div class="row" id="row_player_1_2_image">
-			<img class="col-6 h-100" id="col_player_1_spirit_image"></img>
-			<img class="col-6 h-100" id="col_player_2_spirit_image"></img>
+			<select class="col-6" id="col_select_n_players" name="n_players">
+				<option selected>1</option>
+				<option>2</option>
+				<option>3</option>
+				<option>4</option>
+			</select>
 		</div>
 
-		<div class="row" id="row_player_3_4_name"></div>
-
-		<div class="row" id="row_player_3_4_spirit"></div>
-
-		<div class="row" id="row_player_3_4_image">
-			<img class="col-6 h-100" id="col_player_3_spirit_image"></img>
-			<img class="col-6 h-100" id="col_player_4_spirit_image"></img>
+		<div class="row border" id="row_player_info_text">
+			<div class="border col">
+				Player info:
+			</div> 
 		</div>
 
-		<div class="row" id="row_adversary_text">
-			<div class="col-6" id="col_adversary_1_text">
+		<div class="row border" id="row_player_info"></div>
+
+		<div class="row border" id="row_adversary_text">
+			<div class="border col-6" id="col_adversary_1_text">
 				Select an adversary (if you're playing with one):
 			</div>
 			<button class="btn btn-secondary col-6" id="col_button_adversary_2" type="button">
@@ -57,14 +56,14 @@
 			</button>
 		</div>
 		
-		<div class="row" id="row_adversaries">
-			<select class="col-6" id="col_select_adversary_1" name="adversary_1">
+		<div class="row border" id="row_adversaries">
+			<select class="border col-6" id="col_select_adversary_1" name="adversary_1">
 				<option selected>No adversary</option>
 				<option>Brandenburg-Prussia</option>
 				<option>Sweden</option>
 				<option>England</option>
 			</select>
-			<select class="col-6 is_hidden" id="col_select_adversary_2" name="adversary_2">
+			<select class="border col-6 is_hidden" id="col_select_adversary_2" name="adversary_2">
 				<option selected disabled>Select a second adversary</option>
 				<option>Brandenburg-Prussia</option>
 				<option>Sweden</option>
@@ -72,8 +71,8 @@
 			</select>
 		</div>
 
-		<div class="row" id="row_adversary_levels">
-			<select class="col-6 is_hidden" id="col_select_adversary_1_level" name="adversary_1_level">
+		<div class="row border justify-content-end" id="row_adversary_levels">
+			<select class="border col-6 is_hidden" id="col_select_adversary_1_level" name="adversary_1_level">
 				<option>0</option>
 				<option>1</option>
 				<option>2</option>
@@ -82,7 +81,7 @@
 				<option>5</option>
 				<option>6</option>
 			</select>
-			<select class="col-6 is_hidden" id="col_select_adversary_2_level" name="adversary_2_level">
+			<select class="border col-6 is_hidden" id="col_select_adversary_2_level" name="adversary_2_level">
 				<option>0</option>
 				<option>1</option>
 				<option>2</option>
@@ -93,11 +92,11 @@
 			</select>
 		</div>
 		
-		<div class="row" id="row_scenario">
+		<div class="row border" id="row_scenario">
 			<button class="btn btn-secondary col-6" id="button_scenario" type="button">
 				Add scenario
 			</button>
-			<select class="col-6 is_hidden" id="col_select_scenario" name="scenario">
+			<select class="border col-6 is_hidden" id="col_select_scenario" name="scenario">
 					<option selected disabled>Select a scenario</option>
 					<option>Blitz</option>
 					<option>Guard the Isle's Heart</option>
@@ -105,41 +104,43 @@
 					<option>Dehan Insurrection</option>
 			</select>
 		</div>
+	</div>
 
-		<div class="row justify-content-center" id="row_game_end_text">
-			<div class="col-4">At game end:</div> 
+	<div class="container">
+		<div class="row border justify-content-center" id="row_game_end_text">
+			<div class="border col text-center">After game:</div> 
 		</div>
 
-		<div class="row" id="row_victory">
-			<div class="col-6" id="col_victory_text">
+		<div class="row border" id="row_victory">
+			<div class="border col-6" id="col_victory_text">
 				Did you win?
 			</div>
 			<input id="checkbox_win_hidden" name="victory" type="hidden" value="no"></input>
-			<input class="col-6" id="checkbox_win" name="victory" type="checkbox" value="yes"></input>
+			<input class="border col-6" id="checkbox_win" name="victory" type="checkbox" value="yes"></input>
 		</div>
 
-		<div class="row" id="row_invader_cards">
-			<div class="col-6" id="col_invader_cards_text">
+		<div class="row border" id="row_invader_cards">
+			<div class="border col-6" id="col_invader_cards_text">
 				How many invader cards are left in the deck?
 			</div>
-			<input class="col-6" id="text_invader_cards_in_deck" name="invader_cards_in_deck" type="number" min="0" step="1" required></input>
+			<input class="border col-6" id="text_invader_cards_in_deck" name="invader_cards_in_deck" type="number" min="0" step="1" required></input>
 		</div>
 
-		<div class="row" id="row_remaining_dehan">
-			<div class="col-6" id="col_remaining_dehan">
+		<div class="row border" id="row_remaining_dehan">
+			<div class="border col-6" id="col_remaining_dehan">
 				How many living Dehan remain on the island?
 			</div>
-			<input class="col-6" id="text_remaining_dehan" name="remaining_dehan" type="number" min="0" step="1" required></input>
+			<input class="border col-6" id="text_remaining_dehan" name="remaining_dehan" type="number" min="0" step="1" required></input>
 		</div>
 
-		<div class="row" id="row_blight_on_island">
-			<div class="col-6" id="col_blight_on_island">
+		<div class="row border" id="row_blight_on_island">
+			<div class="border col-6" id="col_blight_on_island">
 				How much blight is on the island?
 			</div>
-			<input class="col-6" id="text_blight_on_island" name="blight_on_island type="number" min="0" step="1" required></input>
+			<input class="border col-6" id="text_blight_on_island" name="blight_on_island type="number" min="0" step="1" required></input>
 		</div>
 
-		<div class="row justify-content-center">
+		<div class="row border justify-content-center">
 			<button class="btn btn-primary col-3" id="submit" name="submit" access="false" style="default" type="submit">
 				Submit
 			</button>
