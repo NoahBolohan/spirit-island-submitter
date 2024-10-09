@@ -6,8 +6,8 @@ $(document).ready(
             // Populate divs for each player
             for (var i=1; i <= data["max_players"]; i++) {
 
-                $(
-                    "<div>",
+                // Player ${i} column
+                $("<div>").attr(
                     {
                         class : "border col-6",
                         id : `col_player_${i}_info`,
@@ -17,8 +17,7 @@ $(document).ready(
                 ).appendTo("#row_player_info");
                 
                 // Player name and board row
-                $(
-                    "<div>",
+                $("<div>").attr(
                     {
                         class : "row border",
                         id : `row_input_player_${i}_name_board`,
@@ -26,8 +25,7 @@ $(document).ready(
                 ).appendTo(`#col_player_${i}_info`);
 
                 // Player name text input
-                $(
-                    "<input>",
+                $("<input>").attr(
                     {
                         class : "col-6 border",
                         id : `col_input_player_${i}_name`,
@@ -38,8 +36,7 @@ $(document).ready(
                 ).appendTo(`#row_input_player_${i}_name_board`);
 
                 // Player board select
-                var board_select = $(
-                    "<select>",
+                var board_select = $("<select>").attr(
                     {
                         class : "col-6 border",
                         id : `col_select_player_${i}_board`,
@@ -52,14 +49,12 @@ $(document).ready(
 
                 // Append the disabled default option
                 board_select.append(
-                    $(
-                        "<option>",
+                    $("<option>").attr(
                             {
                             value: "",
-                            text: `Player ${i}'s board`,
                             disabled : true
                         }
-                    )
+                    ).text(`Player ${i}'s board`)
                 );
 
                 // Append the board options
@@ -75,8 +70,7 @@ $(document).ready(
                 $(`#col_select_player_${i}_board`).prop('selectedIndex',0);
 
                 // Player spirit select
-                var spirit_select = $(
-                    "<select>",
+                var spirit_select = $("<select>").attr(
                     {
                         class : "row border",
                         id : `row_select_player_${i}_spirit`,
@@ -90,14 +84,12 @@ $(document).ready(
 
                 // Append the disabled default option
                 spirit_select.append(
-                    $(
-                        "<option>",
+                    $("<option>").attr(
                             {
                             value: "",
-                            text: `Select player ${i}'s spirit`,
                             disabled : true
                         }
-                    )
+                    ).text(`Select player ${i}'s spirit`)
                 );
 
                 // Append the spirit options
@@ -113,8 +105,7 @@ $(document).ready(
                 $(`#row_select_player_${i}_spirit`).prop('selectedIndex',0);
 
                 // Append the spirit img
-                $(
-                    "<img>",
+                $("<img>").attr(
                     {
                         class : "border col is_hidden",
                         id : `row_player_${i}_spirit_image`
@@ -146,35 +137,43 @@ $(document).ready(
                 for (var i=1; i<=4; i++) {
                     // Show columns for players <= this.value
                     if (i <= this.value) {
+                        // Set player ${i} board choice required
                         $(`#col_select_player_${i}_board`).prop(
                             "required",
                             true
                         );
+                        // Set player ${i} spirit choice required
                         $(`#row_select_player_${i}_spirit`).prop(
                             "required",
                             true
                         );
+                        // Show content for player ${i}
                         $(`#row_select_player_${i}_spirit`).show();
                         $(`#col_player_${i}_info`).show();
                     }
                     // Hide columns for players > this.value
                     else {
+                        // Set player ${i} board choice not required
                         $(`#col_select_player_${i}_board`).prop(
                             "required",
                             false
                         );
+                        // Reset player ${i} board choice
                         $(`#col_select_player_${i}_board`).prop(
                             'selectedIndex',
                             0
                         );
+                        // Set player ${i} spirit choice required
                         $(`#row_select_player_${i}_spirit`).prop(
                             "required",
                             false
                         );
+                        // Reset player ${i} spirit choice
                         $(`#row_select_player_${i}_spirit`).prop(
                             'selectedIndex',
                             0
                         );
+                        // Hide player ${i} content
                         $(`#row_select_player_${i}_spirit`).hide();
                         $(`#row_player_${i}_spirit_image`).hide();
                         $(`#col_player_${i}_info`).hide();
@@ -191,10 +190,12 @@ $(document).ready(
         "change",
         "#row_select_player_1_spirit",
         function() {
+            // Assign appropriate image to player 1 spirit image div
             $("#row_player_1_spirit_image").attr(
                 "src",
                 `https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/${$("#row_select_player_1_spirit").val().split(' ').join('_')}.png`
             );
+            // Show player 1 image
             $("#row_player_1_spirit_image").show();
         }
     )
@@ -206,10 +207,12 @@ $(document).ready(
         "change",
         "#row_select_player_2_spirit",
         function() {
+            // Assign appropriate image to player 2 spirit image div
             $("#row_player_2_spirit_image").attr(
                 "src",
                 `https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/${$("#row_select_player_2_spirit").val().split(' ').join('_')}.png`
             );
+            // Show player 2 image
             $("#row_player_2_spirit_image").show();
         }
     )
@@ -221,10 +224,12 @@ $(document).ready(
         "change",
         "#row_select_player_3_spirit",
         function() {
+            // Assign appropriate image to player 3 spirit image div
             $("#row_player_3_spirit_image").attr(
                 "src",
                 `https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/${$("#row_select_player_3_spirit").val().split(' ').join('_')}.png`
             );
+            // Show player 3 image
             $("#row_player_3_spirit_image").show();
         }
     )
@@ -236,10 +241,12 @@ $(document).ready(
         "change",
         "#row_select_player_4_spirit",
         function() {
+            // Assign appropriate image to player 4 spirit image div
             $("#row_player_4_spirit_image").attr(
                 "src",
                 `https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/${$("#row_select_player_4_spirit").val().split(' ').join('_')}.png`
             );
+            // Show player 4 image
             $("#row_player_4_spirit_image").show();
         }
     )
@@ -272,7 +279,9 @@ $(document).ready(
         $("#col_button_adversary_2").on(
             "click",
             function() {
+                // Toggle adversary 2 column
                 $("#col_select_adversary_2").toggle();
+                // Hide and reset adversary 2 level
                 $("#col_select_adversary_2_level").hide();
                 $("#col_select_adversary_2_level").val("0").change();
             }
@@ -307,6 +316,7 @@ $(document).ready(
         $("#button_scenario").on(
             "click",
             function() {
+                // Toggle scenario column and reset it
                 $("#col_select_scenario").toggle();
                 $('#col_select_scenario').prop(
                     "selectedIndex",
