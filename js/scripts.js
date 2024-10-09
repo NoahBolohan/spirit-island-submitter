@@ -9,12 +9,34 @@ $(document).ready(
                 // Player ${i} column
                 $("<div>").attr(
                     {
-                        class : "border col-6",
+                        class : "col-6 border",
                         id : `col_player_${i}_info`,
                         name : `player_${i}_info`,
                         
                     }
                 ).appendTo("#row_player_info");
+
+                // Player ${i} header text row
+                $("<div>").attr(
+                    {
+                        class : "row border",
+                        id : `row_player_${i}_header`,
+                        
+                    }
+                ).appendTo(`#col_player_${i}_info`);
+
+                // Player ${i} header text
+                $("<div>").attr(
+                    {
+                        class : "col border text-center",
+                        id : `col_player_${i}_header`,
+                        
+                    }
+                ).appendTo(`#row_player_${i}_header`);
+
+                $(`#col_player_${i}_header`).text(
+                    `Player ${i}`
+                );
                 
                 // Player name and board row
                 $("<div>").attr(
@@ -31,7 +53,7 @@ $(document).ready(
                         id : `col_input_player_${i}_name`,
                         name : `player_${i}_name`,
                         type : "text",
-                        placeholder : `Player ${i} name`
+                        placeholder : `Name (optional)`
                     }
                 ).appendTo(`#row_input_player_${i}_name_board`);
 
@@ -54,7 +76,7 @@ $(document).ready(
                             value: "",
                             disabled : true
                         }
-                    ).text(`Player ${i}'s board`)
+                    ).text(`Select board`)
                 );
 
                 // Append the board options
@@ -89,7 +111,7 @@ $(document).ready(
                             value: "",
                             disabled : true
                         }
-                    ).text(`Select player ${i}'s spirit`)
+                    ).text(`Select spirit`)
                 );
 
                 // Append the spirit options
