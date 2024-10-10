@@ -469,6 +469,19 @@ $(document).ready(
                     "selectedIndex",
                     0
                 );
+
+                // Toggle button text
+                if ($("#col_select_scenario").is(":visible")) {
+                    $("#button_scenario").text(
+                        "Remove scenario"
+                    );
+                }
+                else {
+                    $("#button_scenario").text(
+                        "Add scenario"
+                    );
+                }
+                
             }
         )
     }
