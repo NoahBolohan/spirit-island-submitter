@@ -430,7 +430,7 @@ $(document).ready(
                     "disabled",
                     true
                 );
-                // Hide and reset adversary 2 button
+                // Hide adversary 2 button
                 $("#row_button_adversary_2").show();
 
                 // Toggle remove adversary 2 button
@@ -470,30 +470,44 @@ $(document).ready(
     }
 )
 
-// Set an event listener for showing scenario options by toggling the scenario button
+// Set an event listener for showing scenario options by clicking the add scenario button
 $(document).ready(
     function() {
         $("#button_scenario").on(
             "click",
             function() {
-                // Toggle scenario column and reset it
-                $("#col_select_scenario").toggle();
+                // Show scenario column and reset it
                 $('#col_select_scenario').prop(
                     "selectedIndex",
                     0
                 );
+                $("#card_header_scenario").show();
+                $("#col_select_scenario").show();
+                // Hide scenario button and show remove scenario button
+                $("#row_button_scenario").hide();
+                $("#row_button_remove_scenario").show();
+                
+            }
+        )
+    }
+)
 
-                // Toggle button text
-                if ($("#col_select_scenario").is(":visible")) {
-                    $("#button_scenario").text(
-                        "Remove scenario"
-                    );
-                }
-                else {
-                    $("#button_scenario").text(
-                        "Add scenario"
-                    );
-                }
+// Set an event listener for removing scenario options by clicking the remove scenario button
+$(document).ready(
+    function() {
+        $("#button_remove_scenario").on(
+            "click",
+            function() {
+                // Hide scenario column and reset it
+                $("#card_header_scenario").hide();
+                $("#col_select_scenario").hide();
+                $('#col_select_scenario').prop(
+                    "selectedIndex",
+                    0
+                );
+                // Show scenario button and hide remove scenario button
+                $("#row_button_scenario").show();
+                $("#row_button_remove_scenario").hide();
                 
             }
         )
