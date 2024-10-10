@@ -214,6 +214,32 @@ $(document).ready(
                     
                 }
             }
+
+            // Populate adversary selects
+            $(data["adversaries"]).each(
+                function() {
+                    $("#col_select_adversary_1").append(
+                        $("<option>").text(this)
+                    );
+                }
+            );
+
+            $(data["adversaries"]).each(
+                function() {
+                    $("#col_select_adversary_2").append(
+                        $("<option>").text(this)
+                    );
+                }
+            );
+
+            // Populate scenario select
+            $(data["scenarios"]).each(
+                function() {
+                    $("#col_select_scenario").append(
+                        $("<option>").text(this)
+                    );
+                }
+            );
         });
     }
 )
