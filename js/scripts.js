@@ -49,7 +49,7 @@ $(document).ready(
                 // Player name display text
                 $("<div>").attr(
                     {
-                        class : "col-2 m-1",
+                        class : "col-3 m-1",
                         id : `row_player_${i}_name_display_text`,
                     }
                 ).appendTo(`#row_player_${i}_name`);
@@ -61,7 +61,7 @@ $(document).ready(
                 // Player name text input
                 $("<input>").attr(
                     {
-                        class : "col-8 m-1",
+                        class : "col-7 m-1",
                         id : `col_input_player_${i}_name`,
                         name : `player_${i}_name`,
                         type : "text",
@@ -80,7 +80,7 @@ $(document).ready(
                 // Player board display text
                 $("<div>").attr(
                     {
-                        class : "col-2 m-1",
+                        class : "col-3 m-1",
                         id : `row_player_${i}_board_display_text`,
                     }
                 ).appendTo(`#row_player_${i}_board`);
@@ -92,7 +92,7 @@ $(document).ready(
                 // Player board select
                 var board_select = $("<select>").attr(
                     {
-                        class : "col-8 m-1",
+                        class : "col-7 m-1",
                         id : `col_select_player_${i}_board`,
                         name : `player_${i}_board`
                     }
