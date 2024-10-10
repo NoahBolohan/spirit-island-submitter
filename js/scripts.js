@@ -182,7 +182,7 @@ $(document).ready(
                 // Append the spirit img
                 $("<img>").attr(
                     {
-                        class : "col is_hidden",
+                        class : "col is_hidden img-fluid",
                         id : `row_player_${i}_spirit_image`
                     }
                 ).appendTo(`#col_player_${i}_info`);
