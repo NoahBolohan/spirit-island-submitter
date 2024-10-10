@@ -77,7 +77,7 @@ $(document).ready(
                 // Player name display text
                 $("<div>").attr(
                     {
-                        class : "col-4 my-1",
+                        class : "col-5 my-1",
                         id : `row_player_${i}_name_display_text`,
                     }
                 ).appendTo(`#row_player_${i}_name`);
@@ -108,7 +108,7 @@ $(document).ready(
                 // Player board display text
                 $("<div>").attr(
                     {
-                        class : "col-4 my-1",
+                        class : "col-5 my-1",
                         id : `row_player_${i}_board_display_text`,
                     }
                 ).appendTo(`#row_player_${i}_board`);
@@ -162,7 +162,7 @@ $(document).ready(
                 // Player spirit select
                 var spirit_select = $("<select>").attr(
                     {
-                        class : "col-10 my-1",
+                        class : "col-11 my-1",
                         id : `col_select_player_${i}_spirit`,
                         name : `player_${i}_spirit`
                     }
