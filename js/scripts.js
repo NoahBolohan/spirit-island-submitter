@@ -19,7 +19,7 @@ $(document).ready(
                 else {
                     $("<div>").attr(
                         {
-                            class : "col-6 p-0",
+                            class : "col-5 m-1 p-0",
                             id : `col_player_${i}_info`,
                             name : `player_${i}_info`
                             
@@ -77,7 +77,7 @@ $(document).ready(
                 // Player name display text
                 $("<div>").attr(
                     {
-                        class : "col-4 m-1",
+                        class : "col-4 my-1",
                         id : `row_player_${i}_name_display_text`,
                     }
                 ).appendTo(`#row_player_${i}_name`);
@@ -89,7 +89,7 @@ $(document).ready(
                 // Player name text input
                 $("<input>").attr(
                     {
-                        class : "col-6 m-1",
+                        class : "col-6 my-1",
                         id : `col_input_player_${i}_name`,
                         name : `player_${i}_name`,
                         type : "text",
@@ -108,7 +108,7 @@ $(document).ready(
                 // Player board display text
                 $("<div>").attr(
                     {
-                        class : "col-4 m-1",
+                        class : "col-4 my-1",
                         id : `row_player_${i}_board_display_text`,
                     }
                 ).appendTo(`#row_player_${i}_board`);
@@ -120,7 +120,7 @@ $(document).ready(
                 // Player board select
                 var board_select = $("<select>").attr(
                     {
-                        class : "col-6 m-1",
+                        class : "col-6 my-1",
                         id : `col_select_player_${i}_board`,
                         name : `player_${i}_board`
                     }
@@ -136,7 +136,7 @@ $(document).ready(
                             value: "",
                             disabled : true
                         }
-                    ).text(`Select board`)
+                    ).text(`Select`)
                 );
 
                 // Append the board options
@@ -162,10 +162,9 @@ $(document).ready(
                 // Player spirit select
                 var spirit_select = $("<select>").attr(
                     {
-                        class : "col-10 m-2",
+                        class : "col-10 my-1",
                         id : `col_select_player_${i}_spirit`,
-                        name : `player_${i}_spirit`,
-                        
+                        name : `player_${i}_spirit`
                     }
                 ).prop(
                     'required',
@@ -262,7 +261,7 @@ $(document).ready(
                     else {
                         $(`#col_player_1_info`).attr(
                             {
-                                class : "col-6 p-0"
+                                class : "col-5 m-1 p-0"
                             }
                         );
                     }
