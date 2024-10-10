@@ -193,13 +193,13 @@ $(document).ready(
                 // Reset the select to the first option
                 $(`#col_select_player_${i}_spirit`).prop('selectedIndex',0);
 
-                // Append the spirit img
-                $("<img>").attr(
-                    {
-                        class : "col is_hidden img-fluid p-1",
-                        id : `row_player_${i}_spirit_image`
-                    }
-                ).appendTo(`#card_player_${i}_info`);
+                // // Append the spirit img
+                // $("<img>").attr(
+                //     {
+                //         class : "col is_hidden img-fluid p-1",
+                //         id : `row_player_${i}_spirit_image`
+                //     }
+                // ).appendTo(`#card_player_${i}_info`);
 
                 // Hide columns for players 2+
                 if (i > 1) {
@@ -320,14 +320,17 @@ $(document).ready(
     $(document).on(
         "change",
         "#col_select_player_1_spirit",
-        function() {
+        function() {    
             // Assign appropriate image to player 1 spirit image div
-            $("#row_player_1_spirit_image").attr(
-                "src",
-                `https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/${$("#col_select_player_1_spirit").val().split(' ').join('_')}.png`
+
+            var new_url = encodeURI("https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/" + $("#col_select_player_1_spirit").val().split(' ').join('_') + ".png");
+
+            new_url = new_url.replace(/'/g, '%27')
+
+            $("#card_player_1_info").attr(
+                "style",
+                `background-image : url(${new_url}); background-size: cover; background-color: rgba(255,255,255,0.6); background-blend-mode: lighten;`
             );
-            // Show player 1 image
-            $("#row_player_1_spirit_image").show();
         }
     )
 )
@@ -337,14 +340,17 @@ $(document).ready(
     $(document).on(
         "change",
         "#col_select_player_2_spirit",
-        function() {
-            // Assign appropriate image to player 2 spirit image div
-            $("#row_player_2_spirit_image").attr(
-                "src",
-                `https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/${$("#col_select_player_2_spirit").val().split(' ').join('_')}.png`
+        function() {    
+            // Assign appropriate image to player 1 spirit image div
+
+            var new_url = encodeURI("https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/" + $("#col_select_player_2_spirit").val().split(' ').join('_') + ".png");
+
+            new_url = new_url.replace(/'/g, '%27')
+
+            $("#card_player_2_info").attr(
+                "style",
+                `background-image : url(${new_url}); background-size: cover; background-color: rgba(255,255,255,0.6); background-blend-mode: lighten;`
             );
-            // Show player 2 image
-            $("#row_player_2_spirit_image").show();
         }
     )
 )
@@ -354,14 +360,17 @@ $(document).ready(
     $(document).on(
         "change",
         "#col_select_player_3_spirit",
-        function() {
-            // Assign appropriate image to player 3 spirit image div
-            $("#row_player_3_spirit_image").attr(
-                "src",
-                `https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/${$("#col_select_player_3_spirit").val().split(' ').join('_')}.png`
+        function() {    
+            // Assign appropriate image to player 1 spirit image div
+
+            var new_url = encodeURI("https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/" + $("#col_select_player_3_spirit").val().split(' ').join('_') + ".png");
+
+            new_url = new_url.replace(/'/g, '%27')
+
+            $("#card_player_3_info").attr(
+                "style",
+                `background-image : url(${new_url}); background-size: cover; background-color: rgba(255,255,255,0.6); background-blend-mode: lighten;`
             );
-            // Show player 3 image
-            $("#row_player_3_spirit_image").show();
         }
     )
 )
@@ -371,14 +380,17 @@ $(document).ready(
     $(document).on(
         "change",
         "#col_select_player_4_spirit",
-        function() {
-            // Assign appropriate image to player 4 spirit image div
-            $("#row_player_4_spirit_image").attr(
-                "src",
-                `https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/${$("#col_select_player_4_spirit").val().split(' ').join('_')}.png`
+        function() {    
+            // Assign appropriate image to player 1 spirit image div
+
+            var new_url = encodeURI("https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/" + $("#col_select_player_4_spirit").val().split(' ').join('_') + ".png");
+
+            new_url = new_url.replace(/'/g, '%27')
+
+            $("#card_player_4_info").attr(
+                "style",
+                `background-image : url(${new_url}); background-size: cover; background-color: rgba(255,255,255,0.6); background-blend-mode: lighten;`
             );
-            // Show player 4 image
-            $("#row_player_4_spirit_image").show();
         }
     )
 )
