@@ -10,23 +10,30 @@ $(document).ready(
                 if (i==1) {
                     $("<div>").attr(
                         {
-                            class : "col p-1",
+                            class : "col-12",
                             id : `col_player_${i}_info`,
-                            name : `player_${i}_info`,
-                            
+                            name : `player_${i}_info`
                         }
                     ).appendTo("#row_player_info");
                 }
                 else {
                     $("<div>").attr(
                         {
-                            class : "col-6 p-1",
+                            class : "col-6",
                             id : `col_player_${i}_info`,
-                            name : `player_${i}_info`,
+                            name : `player_${i}_info`
                             
                         }
                     ).appendTo("#row_player_info");
                 }
+
+                $("<div>").attr(
+                    {
+                        class : "card",
+                        id : `card_player_${i}_info`
+                        
+                    }
+                ).appendTo(`#col_player_${i}_info`);
                 
 
                 // Player ${i} header text row
@@ -36,7 +43,7 @@ $(document).ready(
                         id : `row_player_${i}_header`,
                         
                     }
-                ).appendTo(`#col_player_${i}_info`);
+                ).appendTo(`#card_player_${i}_info`);
 
                 // Player ${i} header text
                 $("<div>").attr(
@@ -47,9 +54,17 @@ $(document).ready(
                     }
                 ).appendTo(`#row_player_${i}_header`);
 
-                $(`#col_player_${i}_header`).text(
+                // $(`#col_player_${i}_header`).text(
+                //     `Player ${i}`
+                // );
+
+                $(`<div>`).attr(
+                    {
+                        class : "card-header"
+                    }
+                ).text(
                     `Player ${i}`
-                );
+                ).appendTo(`#col_player_${i}_header`);
                 
                 // Player name row
                 $("<div>").attr(
@@ -57,7 +72,7 @@ $(document).ready(
                         class : "row justify-content-center",
                         id : `row_player_${i}_name`,
                     }
-                ).appendTo(`#col_player_${i}_info`);
+                ).appendTo(`#card_player_${i}_info`);
 
                 // Player name display text
                 $("<div>").attr(
@@ -88,7 +103,7 @@ $(document).ready(
                         class : "row justify-content-center",
                         id : `row_player_${i}_board`,
                     }
-                ).appendTo(`#col_player_${i}_info`);
+                ).appendTo(`#card_player_${i}_info`);
 
                 // Player board display text
                 $("<div>").attr(
@@ -142,7 +157,7 @@ $(document).ready(
                         class : "row justify-content-center",
                         id : `row_input_player_${i}_spirit`,
                     }
-                ).appendTo(`#col_player_${i}_info`);
+                ).appendTo(`#card_player_${i}_info`);
 
                 // Player spirit select
                 var spirit_select = $("<select>").attr(
@@ -182,10 +197,10 @@ $(document).ready(
                 // Append the spirit img
                 $("<img>").attr(
                     {
-                        class : "col is_hidden img-fluid",
+                        class : "col is_hidden img-fluid p-1",
                         id : `row_player_${i}_spirit_image`
                     }
-                ).appendTo(`#col_player_${i}_info`);
+                ).appendTo(`#card_player_${i}_info`);
 
                 // Hide columns for players 2+
                 if (i > 1) {
@@ -193,7 +208,7 @@ $(document).ready(
                         'required',
                         false
                     );
-                    $(`#col_player_${i}_info`).hide();
+                    $(`#card_player_${i}_info`).hide();
                     $(`#col_select_player_${i}_spirit`).hide();
 
                     
@@ -214,14 +229,14 @@ $(document).ready(
                     if (this.value == 1) {
                         $(`#col_player_1_info`).attr(
                             {
-                                class : "col p-1"
+                                class : "col-12"
                             }
                         );
                     }
                     else {
                         $(`#col_player_1_info`).attr(
                             {
-                                class : "col-6 p-1"
+                                class : "col-6"
                             }
                         );
                     }
@@ -240,7 +255,7 @@ $(document).ready(
                         );
                         // Show content for player ${i}
                         $(`#col_select_player_${i}_spirit`).show();
-                        $(`#col_player_${i}_info`).show();
+                        $(`#card_player_${i}_info`).show();
                     }
                     // Hide columns for players > this.value
                     else {
@@ -267,7 +282,7 @@ $(document).ready(
                         // Hide player ${i} content
                         $(`#col_select_player_${i}_spirit`).hide();
                         $(`#row_player_${i}_spirit_image`).hide();
-                        $(`#col_player_${i}_info`).hide();
+                        $(`#card_player_${i}_info`).hide();
                     }
                 }
             }
