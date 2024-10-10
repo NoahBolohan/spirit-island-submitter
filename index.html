@@ -47,11 +47,11 @@
 				
 				<div class="row margin_auto" id="row_n_players" style="width: 100%;">
 					
-					<div class="col-7 m-1" id="div_n_players">
+					<div class="col-7" id="div_n_players">
 						Number of players:
 					</div>
 
-					<select class="col-3 m-1" id="col_select_n_players" name="n_players">
+					<select class="col-3" id="col_select_n_players" name="n_players">
 						<option selected>1</option>
 						<option>2</option>
 						<option>3</option>
@@ -60,38 +60,32 @@
 				</div>
 			</div>
 
-			<div class="row justify-content-center margin_auto" id="row_player_info"></div>
+			<div class="row p-0 justify-content-center margin_auto" id="row_player_info"></div>
 
-			<div class="row margin_auto" id="row_adversary_header">
-				<div class="col text-center" id="col_adversary_header_text">
-					Select adversaries (if you're playing with them):
+			<div class="card p-0 margin_auto">
+				<div class="card-header" >
+					Primary adversary (if using)
 				</div>
-			</div>
 
-			<div class="row margin_auto" id="row_adversary_1_header_text">
-				<div class="col m-1" id="col_adversary_1_header_text">
-					Primary:
+				<div class="row justify-content-center margin_auto" id="row_adversary_1_info" style="width:100%;">
+					<select class="col-7" id="col_select_adversary_1" name="adversary_1">
+						<option selected>No adversary</option>
+						<option>Brandenburg-Prussia</option>
+						<option>Sweden</option>
+						<option>England</option>
+					</select>
+
+					<select class="col-3" id="col_select_adversary_1_level" name="adversary_1_level" disabled>
+						<option disabled selected>Level</option>
+						<option>0</option>
+						<option>1</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+						<option>5</option>
+						<option>6</option>
+					</select>
 				</div>
-			</div>
-
-			<div class="row justify-content-center margin_auto" id="row_adversary_1_info">
-				<select class="col-7 m-1" id="col_select_adversary_1" name="adversary_1">
-					<option selected>No adversary</option>
-					<option>Brandenburg-Prussia</option>
-					<option>Sweden</option>
-					<option>England</option>
-				</select>
-
-				<select class="col-3 m-1" id="col_select_adversary_1_level" name="adversary_1_level" disabled>
-					<option disabled selected>Level</option>
-					<option>0</option>
-					<option>1</option>
-					<option>2</option>
-					<option>3</option>
-					<option>4</option>
-					<option>5</option>
-					<option>6</option>
-				</select>
 			</div>
 
 			<div class="row margin_auto" id="row_adversary_2_header_text">

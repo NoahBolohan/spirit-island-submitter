@@ -10,7 +10,7 @@ $(document).ready(
                 if (i==1) {
                     $("<div>").attr(
                         {
-                            class : "col-12",
+                            class : "col-12 p-0",
                             id : `col_player_${i}_info`,
                             name : `player_${i}_info`
                         }
@@ -19,7 +19,7 @@ $(document).ready(
                 else {
                     $("<div>").attr(
                         {
-                            class : "col-6",
+                            class : "col-6 p-0",
                             id : `col_player_${i}_info`,
                             name : `player_${i}_info`
                             
@@ -229,14 +229,14 @@ $(document).ready(
                     if (this.value == 1) {
                         $(`#col_player_1_info`).attr(
                             {
-                                class : "col-12"
+                                class : "col-12 p-0"
                             }
                         );
                     }
                     else {
                         $(`#col_player_1_info`).attr(
                             {
-                                class : "col-6"
+                                class : "col-6 p-0"
                             }
                         );
                     }
