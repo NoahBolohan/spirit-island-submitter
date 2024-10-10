@@ -67,10 +67,12 @@
 					Adversaries
 				</div>
 
-				<div class="card-title" id="card_title_adversary_1">
-					Primary
+				<div class="row margin_auto" style="width:100%">
+					<div class="card-title" id="card_title_adversary_1">
+						Primary
+					</div>
 				</div>
-
+				
 				<div class="row justify-content-center margin_auto" id="row_adversary_1_info" style="width:100%;">
 					<select class="col-7" id="col_select_adversary_1" name="adversary_1">
 						<option selected>No adversary</option>
@@ -97,19 +99,21 @@
 					</button>
 				</div>
 	
-				<div class="card-title is_hidden" id="card_title_adversary_2">
-					Secondary
+				<div class="row margin_auto" style="width:100%">
+					<div class="card-title is_hidden" id="card_title_adversary_2">
+						Secondary
+					</div>
 				</div>
 
-				<div class="row justify-content-center margin_auto is_hidden" id="row_adversary_2_info" style="width:100%;">
-					<select class="col-7" id="col_select_adversary_2" name="adversary_2">
+				<div class="row justify-content-center margin_auto" id="row_adversary_2_info" style="width:100%;">
+					<select class="col-7 is_hidden" id="col_select_adversary_2" name="adversary_2">
 						<option selected>No adversary</option>
 						<option>Brandenburg-Prussia</option>
 						<option>Sweden</option>
 						<option>England</option>
 					</select>
 
-					<select class="col-3" id="col_select_adversary_2_level" name="adversary_2_level" disabled>
+					<select class="col-3 is_hidden" id="col_select_adversary_2_level" name="adversary_2_level" disabled>
 						<option disabled selected>Level</option>
 						<option>0</option>
 						<option>1</option>
@@ -122,7 +126,7 @@
 				</div>
 
 				<div class="row p-0 justify-content-center margin_auto is_hidden" id="row_button_remove_adversary_2">
-					<button class="col btn btn-primary" id="col_button_remove_adversary_2" type="button">
+					<button class="col btn btn-danger" id="col_button_remove_adversary_2" type="button">
 						Remove second adversary
 					</button>
 				</div>
@@ -145,8 +149,8 @@
 						<option>Ritual of Terror</option>
 						<option>Dehan Insurrection</option>
 				</select>
-				<div class="row p-0 justify-content-center margin_auto is_hidden" id="row_button_remove_scenario" style="width:100%;">
-					<button class="col btn btn-primary" id="button_remove_scenario" type="button">
+				<div class="row p-0 justify-content-center margin_auto is_hidden" id="row_button_remove_scenario">
+					<button class="col btn btn-danger" id="button_remove_scenario" type="button">
 						Remove scenario
 					</button>
 				</div>
@@ -154,7 +158,17 @@
 		</div>
 
 		<div class="container-fluid tab-pane fade row p-3" id="container_tab_content_during" role="tabpanel" aria-labelledby="during-tab">
-			Element tracker
+			<ul>
+				<li>
+					Element tracker
+				</li>
+				<li>
+					Game component lookup
+				</li>
+				<li>
+					Record turned cards
+				</li>
+			</ul>
 		</div>
 
 		<div class="container-fluid tab-pane fade row p-3" id="container_tab_content_after" role="tabpanel" aria-labelledby="after-tab">
