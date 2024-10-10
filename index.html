@@ -62,9 +62,13 @@
 
 			<div class="row p-0 justify-content-center margin_auto" id="row_player_info"></div>
 
-			<div class="card p-0 margin_auto" id="card_adversary_1">
+			<div class="card p-0 margin_auto" id="card_adversaries">
 				<div class="card-header" >
-					Primary adversary (if using)
+					Adversaries
+				</div>
+
+				<div class="card-title" id="card_title_adversary_1">
+					Primary
 				</div>
 
 				<div class="row justify-content-center margin_auto" id="row_adversary_1_info" style="width:100%;">
@@ -86,20 +90,18 @@
 						<option>6</option>
 					</select>
 				</div>
-			</div>
 
-			<div class="row p-0 justify-content-center margin_auto" id="row_button_adversary_2" style="width:100%">
-				<button class="col btn btn-primary" id="col_button_adversary_2" type="button">
-					Add second adversary
-				</button>
-			</div>
-
-			<div class="card p-0 margin_auto is_hidden" id="card_adversary_2">
-				<div class="card-header" >
-					Secondary adversary
+				<div class="row p-0 justify-content-center margin_auto" id="row_button_adversary_2" style="width:100%">
+					<button class="col btn btn-primary" id="col_button_adversary_2" type="button">
+						Add second adversary
+					</button>
+				</div>
+	
+				<div class="card-title is_hidden" id="card_title_adversary_2">
+					Secondary
 				</div>
 
-				<div class="row justify-content-center margin_auto" id="row_adversary_2_info" style="width:100%;">
+				<div class="row justify-content-center margin_auto is_hidden" id="row_adversary_2_info" style="width:100%;">
 					<select class="col-7" id="col_select_adversary_2" name="adversary_2">
 						<option selected>No adversary</option>
 						<option>Brandenburg-Prussia</option>

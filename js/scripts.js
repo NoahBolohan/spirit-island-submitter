@@ -395,7 +395,8 @@ $(document).ready(
             "click",
             function() {
                 // Show adversary 2 row
-                $("#card_adversary_2").show();
+                $("#card_title_adversary_2").show();
+                $("#row_adversary_2_info").show();
                 $("#col_select_adversary_2_level").prop(
                     'selectedIndex',
                     0
@@ -417,7 +418,8 @@ $(document).ready(
             "click",
             function() {
                 // Hide adversary 2 row
-                $("#card_adversary_2").hide();
+                $("#card_title_adversary_2").hide();
+                $("#row_adversary_2_info").hide();
                 $("#col_select_adversary_2").prop(
                     'selectedIndex',
                     0
