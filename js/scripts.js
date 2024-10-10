@@ -7,14 +7,27 @@ $(document).ready(
             for (var i=1; i <= data["max_players"]; i++) {
 
                 // Player ${i} column
-                $("<div>").attr(
-                    {
-                        class : "col-6 p-1",
-                        id : `col_player_${i}_info`,
-                        name : `player_${i}_info`,
-                        
-                    }
-                ).appendTo("#row_player_info");
+                if (i==1) {
+                    $("<div>").attr(
+                        {
+                            class : "col p-1",
+                            id : `col_player_${i}_info`,
+                            name : `player_${i}_info`,
+                            
+                        }
+                    ).appendTo("#row_player_info");
+                }
+                else {
+                    $("<div>").attr(
+                        {
+                            class : "col-6 p-1",
+                            id : `col_player_${i}_info`,
+                            name : `player_${i}_info`,
+                            
+                        }
+                    ).appendTo("#row_player_info");
+                }
+                
 
                 // Player ${i} header text row
                 $("<div>").attr(
@@ -197,6 +210,22 @@ $(document).ready(
             "change",
             function() {
                 for (var i=1; i<=4; i++) {
+
+                    if (this.value == 1) {
+                        $(`#col_player_1_info`).attr(
+                            {
+                                class : "col p-1"
+                            }
+                        );
+                    }
+                    else {
+                        $(`#col_player_1_info`).attr(
+                            {
+                                class : "col-6 p-1"
+                            }
+                        );
+                    }
+                    
                     // Show columns for players <= this.value
                     if (i <= this.value) {
                         // Set player ${i} board choice required
