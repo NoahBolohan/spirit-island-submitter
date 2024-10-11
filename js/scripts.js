@@ -517,17 +517,17 @@ $(document).ready(
         $("#button_scenario").on(
             "click",
             function() {
-                // Show scenario column and reset it
+                // Show scenario card and reset it
                 $('#col_select_scenario').prop(
                     "selectedIndex",
                     0
                 );
+                $("#card_scenario").show();
                 $("#card_header_scenario").show();
                 $("#col_select_scenario").show();
                 // Hide scenario button and show remove scenario button
                 $("#row_button_scenario").hide();
                 $("#row_button_remove_scenario").show();
-                
             }
         )
     }
@@ -539,7 +539,8 @@ $(document).ready(
         $("#button_remove_scenario").on(
             "click",
             function() {
-                // Hide scenario column and reset it
+                // Hide scenario card and reset it
+                $("#card_scenario").hide();
                 $("#card_header_scenario").hide();
                 $("#col_select_scenario").hide();
                 $('#col_select_scenario').prop(
