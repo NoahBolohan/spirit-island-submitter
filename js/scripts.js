@@ -60,7 +60,8 @@ $(document).ready(
 
                 $(`<div>`).attr(
                     {
-                        class : "card-header"
+                        class : "card-header",
+                        style : "background-color: rgba(255,255,255,0.8);"
                     }
                 ).text(
                     `Player ${i}`
@@ -69,7 +70,7 @@ $(document).ready(
                 // Player name row
                 $("<div>").attr(
                     {
-                        class : "row justify-content-center",
+                        class : "row mt-2 mx-2 justify-content-center",
                         id : `row_player_${i}_name`,
                     }
                 ).appendTo(`#card_player_${i}_info`);
@@ -100,7 +101,7 @@ $(document).ready(
                 // Player board row
                 $("<div>").attr(
                     {
-                        class : "row justify-content-center",
+                        class : "row mt-2 mx-2 justify-content-center",
                         id : `row_player_${i}_board`,
                     }
                 ).appendTo(`#card_player_${i}_info`);
@@ -154,7 +155,7 @@ $(document).ready(
                 // Player name and board row
                 $("<div>").attr(
                     {
-                        class : "row justify-content-center",
+                        class : "row m-2 justify-content-center",
                         id : `row_input_player_${i}_spirit`,
                     }
                 ).appendTo(`#card_player_${i}_info`);
@@ -162,7 +163,7 @@ $(document).ready(
                 // Player spirit select
                 var spirit_select = $("<select>").attr(
                     {
-                        class : "col-11 my-1",
+                        class : "col-11",
                         id : `col_select_player_${i}_spirit`,
                         name : `player_${i}_spirit`
                     }
@@ -192,14 +193,6 @@ $(document).ready(
 
                 // Reset the select to the first option
                 $(`#col_select_player_${i}_spirit`).prop('selectedIndex',0);
-
-                // // Append the spirit img
-                // $("<img>").attr(
-                //     {
-                //         class : "col is_hidden img-fluid p-1",
-                //         id : `row_player_${i}_spirit_image`
-                //     }
-                // ).appendTo(`#card_player_${i}_info`);
 
                 // Hide columns for players 2+
                 if (i > 1) {
