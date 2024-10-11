@@ -158,7 +158,7 @@ $(document).ready(
                 );
 
                 // Append the spirit options
-                $(data["spirits"]).each(
+                $(Object.keys(data["spirits"])).each(
                     function() {
                         spirit_select.append(
                             $("<option>").text(this)
@@ -296,17 +296,31 @@ $(document).ready(
     $(document).on(
         "change",
         "#col_select_player_1_spirit",
-        function() {    
-            // Assign appropriate image to player 1 spirit image div
+        function() {
+            $.getJSON('https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/refs/heads/master/data/config.json', function(data) {
 
-            var new_url = encodeURI("https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/spirit_images/" + $("#col_select_player_1_spirit").val().split(' ').join('_') + ".png");
+                // Assign appropriate image to player 1 spirit image div
+                var spirit_config = data["spirits"][$("#col_select_player_1_spirit").val()]
 
-            new_url = new_url.replace(/'/g, '%27')
+                if ("alt_name" in spirit_config & "aspect_art" in spirit_config & spirit_config["aspect_art"] == "true") {
+                    var spirit_image_file_name = spirit_config["alt_name"]
+                }
+                else if ("aspect_for" in spirit_config) {
+                    var spirit_image_file_name = spirit_config["aspect_for"].split(' ').join('_')
+                }
+                else {
+                    var spirit_image_file_name = $("#col_select_player_1_spirit").val().split(' ').join('_')
+                }
 
-            $("#card_player_1_info").attr(
-                "style",
-                `background-image : url(${new_url}); background-size: cover; background-color: rgba(255,255,255,0.6); background-blend-mode: lighten;`
-            );
+                var new_url = encodeURI("https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/spirit_images/" + spirit_image_file_name + ".png");
+
+                new_url = new_url.replace(/'/g, '%27')
+
+                $("#card_player_1_info").attr(
+                    "style",
+                    `background-image : url(${new_url}); background-size: cover; background-color: rgba(255,255,255,0.6); background-blend-mode: lighten;`
+                );
+            })
         }
     )
 )

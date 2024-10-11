@@ -6,12 +6,12 @@
             "complexity" : "moderate"
         },
         "A Spread of Rampant Green (Regrowth)" : {
-            "alt_name" : "Tangles",
+            "alt_name" : "Regrowth",
             "aspect_for" : "A Spread of Rampant Green",
             "expansion" : "nature_incarnate",
             "complexity" : "up",
             "aspect_art" : "false"
-        },
+        }, 
         "A Spread of Rampant Green (Tangles)" : {
             "alt_name" : "Tangles",
             "aspect_for" : "A Spread of Rampant Green",
