@@ -26,7 +26,7 @@ html *
 }
 
 body {
-    background-image: url("https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/Spirit_Island_Cover_Art.jpg");
+    background-image: url("https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/misc/Spirit_Island_Cover_Art.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;

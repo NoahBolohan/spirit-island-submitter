@@ -299,7 +299,7 @@ $(document).ready(
         function() {    
             // Assign appropriate image to player 1 spirit image div
 
-            var new_url = encodeURI("https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/" + $("#col_select_player_1_spirit").val().split(' ').join('_') + ".png");
+            var new_url = encodeURI("https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/spirit_images/" + $("#col_select_player_1_spirit").val().split(' ').join('_') + ".png");
 
             new_url = new_url.replace(/'/g, '%27')
 
@@ -319,7 +319,7 @@ $(document).ready(
         function() {    
             // Assign appropriate image to player 1 spirit image div
 
-            var new_url = encodeURI("https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/" + $("#col_select_player_2_spirit").val().split(' ').join('_') + ".png");
+            var new_url = encodeURI("https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/spirit_images/" + $("#col_select_player_2_spirit").val().split(' ').join('_') + ".png");
 
             new_url = new_url.replace(/'/g, '%27')
 
@@ -339,7 +339,7 @@ $(document).ready(
         function() {    
             // Assign appropriate image to player 1 spirit image div
 
-            var new_url = encodeURI("https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/" + $("#col_select_player_3_spirit").val().split(' ').join('_') + ".png");
+            var new_url = encodeURI("https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/spirit_images/" + $("#col_select_player_3_spirit").val().split(' ').join('_') + ".png");
 
             new_url = new_url.replace(/'/g, '%27')
 
@@ -359,7 +359,7 @@ $(document).ready(
         function() {    
             // Assign appropriate image to player 1 spirit image div
 
-            var new_url = encodeURI("https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/" + $("#col_select_player_4_spirit").val().split(' ').join('_') + ".png");
+            var new_url = encodeURI("https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/spirit_images/" + $("#col_select_player_4_spirit").val().split(' ').join('_') + ".png");
 
             new_url = new_url.replace(/'/g, '%27')
 
