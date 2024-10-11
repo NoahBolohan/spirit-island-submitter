@@ -221,12 +221,15 @@ $(document).ready(
             function() {
                 for (var i=1; i<=4; i++) {
 
+                    // Size rows and columns accordingly
                     if (this.value == 1) {
                         $(`#col_player_1_info`).attr(
                             {
                                 class : "col-12"
                             }
                         );
+                        $("#row_player_info").removeClass("g-2");
+                        $("#row_player_info").addClass("g-0");
                     }
                     else {
                         $(`#col_player_1_info`).attr(
@@ -234,6 +237,8 @@ $(document).ready(
                                 class : "col-6"
                             }
                         );
+                        $("#row_player_info").removeClass("g-0");
+                        $("#row_player_info").addClass("g-2");
                     }
                     
                     // Show columns for players <= this.value
