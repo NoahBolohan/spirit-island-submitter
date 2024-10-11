@@ -1,72 +1,372 @@
 {
     "max_players" : 4,
-    "spirits" : [
-        "A Spread of Rampant Green",
-        "A Spread of Rampant Green (Regrowth)",
-        "A Spread of Rampant Green (Tangles)",
-        "Breath of Darkness Down Your Spine",
-        "Bringer of Dreams and Nightmares",
-        "Bringer of Dreams and Nightmares (Enticing)",
-        "Bringer of Dreams and Nightmares (Violence)",
-        "Dances Up Earthquakes",
-        "Devouring Teeth Lurk Underfoot",
-        "Downpour Drenches the World",
-        "Ember-Eyed Behemoth",
-        "Eyes Watch from the Trees",
-        "Fathomless Mud of the Swamp",
-        "Finder of Paths Unseen",
-        "Fractured Days Split the Sky",
-        "Grinning Trickster Stirs Up Trouble",
-        "Heart of the Wildfire",
-        "Heart of the Wildfire (Transforming)",
-        "Hearth-Vigil",
-        "Keeper of the Forbidden Wilds",
-        "Keeper of the Forbidden Wilds (Spreading Hostility)",
-        "Lightning's Swift Strike",
-        "Lightning's Swift Strike (Pandemonium)",
-        "Lightning's Swift Strike (Wind)",
-        "Lightning's Swift Strike (Immense)",
-        "Lightning's Swift Strike (Sparking)",
-        "Lure of the Deep Wilderness",
-        "Lure of the Deep Wilderness (Lair)",
-        "Many Minds Move as One",
-        "Ocean's Hungry Grasp",
-        "Ocean's Hungry Grasp (Deeps)",
-        "Relentless Gaze of the Sun",
-        "Rising Heat of Stone and Sand",
-        "River Surges in Sunlight",
-        "River Surges in Sunlight (Sunshine)",
-        "River Surges in Sunlight (Travel)",
-        "River Surges in Sunlight (Haven)",
-        "Serpent Slumbering Beneath the Island",
-        "Serpent Slumbering Beneath the Island (Locus)",
-        "Shadows Flicker Like Flame",
-        "Shadows Flicker Like Flame (Madness)",
-        "Shadows Flicker Like Flame (Reach)",
-        "Shadows Flicker Like Flame (Amorphous)",
-        "Shadows Flicker Like Flame (Foreboding)",
-        "Shadows Flicker Like Flame (Dark Fire)",
-        "Sharp Fangs Behind the Leaves",
-        "Sharp Fangs Behind the Leaves (Encircle)",
-        "Sharp Fangs Behind the Leaves (Unconstrained)",
-        "Shifting Memory of Ages",
-        "Shifting Memory of Ages (Intensify)",
-        "Shifting Memory of Ages (Mentor)",
-        "Shroud of Silent Mist",
-        "Shroud of Silent Mist (Stranded)",
-        "Starlight Seeks Its Form",
-        "Stone's Unyielding Defiance",
-        "Sun-Bright Whirlwind",
-        "Thunderspeaker",
-        "Vengeance as a Burning Plague",
-        "Vital Strength of the Earth",
-        "Vital Strength of the Earth (Resilience)",
-        "Vital Strength of the Earth (Might)",
-        "Vital Strength of the Earth (Nourishing)",
-        "Volcano Looming High",
-        "Wandering Voice Keens Delirium",
-        "Wounded Waters Bleeding"
-    ],
+    "spirits" : {
+        "A Spread of Rampant Green" : {
+            "expansion" : "base",
+            "complexity" : "moderate"
+        },
+        "A Spread of Rampant Green (Regrowth)" : {
+            "alt_name" : "Tangles",
+            "aspect_for" : "A Spread of Rampant Green",
+            "expansion" : "nature_incarnate",
+            "complexity" : "up",
+            "aspect_art" : "false"
+        },
+        "A Spread of Rampant Green (Tangles)" : {
+            "alt_name" : "Tangles",
+            "aspect_for" : "A Spread of Rampant Green",
+            "expansion" : "nature_incarnate",
+            "complexity" : "up",
+            "aspect_art" : "false"
+        },
+        "Breath of Darkness Down Your Spine" : {
+            "expansion" : "nature_incarnate",
+            "complexity" : "high"
+        },
+        "Bringer of Dreams and Nightmares" : {
+            "expansion" : "base",
+            "complexity" : "high"
+        },
+        "Bringer of Dreams and Nightmares (Enticing)" : {
+            "alt_name" : "Enticing",
+            "aspect_for" : "Bringer of Dreams and Nightmares",
+            "expansion" : "nature_incarnate",
+            "complexity" : "same",
+            "aspect_art" : "false"
+        },
+        "Bringer of Dreams and Nightmares (Violence)" : {
+            "alt_name" : "violence",
+            "aspect_for" : "Bringer of Dreams and Nightmares",
+            "expansion" : "nature_incarnate",
+            "complexity" : "up",
+            "aspect_art" : "false"
+        },
+        "Dances Up Earthquakes" : {
+            "expansion" : "nature_incarnate",
+            "complexity" : "very_high"
+        },
+        "Devouring Teeth Lurk Underfoot" : {
+            "expansion" : "horizons_of_spirit_island",
+            "complexity" : "low"
+        },
+        "Downpour Drenches the World" : {
+            "expansion" : "feather_and_flame",
+            "complexity" : "high"
+        },
+        "Ember-Eyed Behemoth" : {
+            "expansion" : "nature_incarnate",
+            "complexity" : "moderate"
+        },
+        "Eyes Watch from the Trees" : {
+            "expansion" : "horizons_of_spirit_island",
+            "complexity" : "low"
+        },
+        "Fathomless Mud of the Swamp" : {
+            "expansion" : "horizons_of_spirit_island",
+            "complexity" : "low"
+        },
+        "Finder of Paths Unseen" : {
+            "expansion" : "feather_and_flame",
+            "complexity" : "very_high"
+        },
+        "Fractured Days Split the Sky" : {
+            "expansion" : "jagged_earth",
+            "complexity" : "very_high"
+        },
+        "Grinning Trickster Stirs Up Trouble" : {
+            "expansion" : "jagged_earth",
+            "complexity" : "moderate"
+        },
+        "Heart of the Wildfire" : {
+            "expansion" : "feather_and_flame",
+            "complexity" : "high"
+        },
+        "Heart of the Wildfire (Transforming)" : {
+            "alt_name" : "Transforming",
+            "aspect_for" : "Heart of the Wildfire",
+            "expansion" : "nature_incarnate",
+            "complexity" : "up",
+            "aspect_art" : "false"
+        },
+        "Hearth-Vigil" : {
+            "expansion" : "nature_incarnate",
+            "complexity" : "moderate"
+        },
+        "Keeper of the Forbidden Wilds" : {
+            "expansion" : "branch_and_claw",
+            "complexity" : "moderate"
+        },
+        "Keeper of the Forbidden Wilds (Spreading Hostility)" : {
+            "alt_name" : "Spreading Hostility",
+            "aspect_for" : "Keeper of the Forbidden Wilds",
+            "expansion" : "nature_incarnate",
+            "complexity" : "up",
+            "aspect_art" : "false"
+        },
+        "Lightning's Swift Strike" : {
+            "expansion" : "base",
+            "complexity" : "low"
+        },
+        "Lightning's Swift Strike (Pandemonium)" : {
+            "alt_name" : "Pandemonium",
+            "aspect_for" : "Lightning's Swift Strike",
+            "expansion" : "jagged_earth",
+            "complexity" : "up",
+            "aspect_art" : "true"
+        },
+        "Lightning's Swift Strike (Wind)" : {
+            "alt_name" : "Wind",
+            "aspect_for" : "Lightning's Swift Strike",
+            "expansion" : "jagged_earth",
+            "complexity" : "up",
+            "aspect_art" : "true"
+        },
+        "Lightning's Swift Strike (Immense)" : {
+            "alt_name" : "Immense",
+            "aspect_for" : "Lightning's Swift Strike",
+            "expansion" : "feather_and_flame",
+            "complexity" : "up",
+            "aspect_art" : "false"
+        },
+        "Lightning's Swift Strike (Sparking)" : {
+            "alt_name" : "Sparking",
+            "aspect_for" : "Lightning's Swift Strike",
+            "expansion" : "nature_incarnate",
+            "complexity" : "up",
+            "aspect_art" : "false"
+        },
+        "Lure of the Deep Wilderness" : {
+            "expansion" : "jagged_earth",
+            "complexity" : "moderate"
+        },
+        "Lure of the Deep Wilderness (Lair)" : {
+            "alt_name" : "Lair",
+            "aspect_for" : "Lure of the Deep Wilderness",
+            "expansion" : "nature_incarnate",
+            "complexity" : "up",
+            "aspect_art" : "false"
+        },
+        "Many Minds Move as One" : {
+            "expansion" : "jagged_earth",
+            "complexity" : "moderate"
+        },
+        "Ocean's Hungry Grasp" : {
+            "expansion" : "base",
+            "complexity" : "high"
+        },
+        "Ocean's Hungry Grasp (Deeps)" : {
+            "alt_name" : "Deeps",
+            "aspect_for" : "Ocean's Hungry Grasp",
+            "expansion" : "nature_incarnate",
+            "complexity" : "up",
+            "aspect_art" : "false"
+        },
+        "Relentless Gaze of the Sun" : {
+            "expansion" : "nature_incarnate",
+            "complexity" : "high"
+        },
+        "Rising Heat of Stone and Sand" : {
+            "expansion" : "horizons_of_spirit_island",
+            "complexity" : "low"
+        },
+        "River Surges in Sunlight" : {
+            "expansion" : "base",
+            "complexity" : "low"
+        },
+        "River Surges in Sunlight (Sunshine)" : {
+            "alt_name" : "Sunshine",
+            "aspect_for" : "River Surges in Sunlight",
+            "expansion" : "jagged_earth",
+            "complexity" : "up",
+            "aspect_art" : "true"
+        },
+        "River Surges in Sunlight (Travel)" : {
+            "alt_name" : "Travel",
+            "aspect_for" : "River Surges in Sunlight",
+            "expansion" : "feather_and_flame",
+            "complexity" : "up",
+            "aspect_art" : "false"
+        },
+        "River Surges in Sunlight (Haven)" : {
+            "alt_name" : "Haven",
+            "aspect_for" : "River Surges in Sunlight",
+            "expansion" : "nature_incarnate",
+            "complexity" : "up",
+            "aspect_art" : "false"
+        },
+        "Serpent Slumbering Beneath the Island" : {
+            "expansion" : "feather_and_flame",
+            "complexity" : "high"
+        },
+        "Serpent Slumbering Beneath the Island (Locus)" : {
+            "alt_name" : "Locus",
+            "aspect_for" : "Serpent Slumbering Beneath the Island",
+            "expansion" : "nature_incarnate",
+            "complexity" : "up",
+            "aspect_art" : "false"
+        },
+        "Shadows Flicker Like Flame" : {
+            "expansion" : "base",
+            "complexity" : "low"
+        },
+        "Shadows Flicker Like Flame (Madness)" : {
+            "alt_name" : "Madness",
+            "aspect_for" : "Shadows Flicker Like Flame",
+            "expansion" : "jagged_earth",
+            "complexity" : "up",
+            "aspect_art" : "true"
+        },
+        "Shadows Flicker Like Flame (Reach)" : {
+            "alt_name" : "Reach",
+            "aspect_for" : "Shadows Flicker Like Flame",
+            "expansion" : "jagged_earth",
+            "complexity" : "down",
+            "aspect_art" : "true"
+        },
+        "Shadows Flicker Like Flame (Amorphous)" : {
+            "alt_name" : "Amorphous",
+            "aspect_for" : "Shadows Flicker Like Flame",
+            "expansion" : "feather_and_flame",
+            "complexity" : "up",
+            "aspect_art" : "false"
+        },
+        "Shadows Flicker Like Flame (Foreboding)" : {
+            "alt_name" : "Foreboding",
+            "aspect_for" : "Shadows Flicker Like Flame",
+            "expansion" : "feather_and_flame",
+            "complexity" : "up",
+            "aspect_art" : "false"
+        },
+        "Shadows Flicker Like Flame (Dark Fire)" : {
+            "alt_name" : "Dark Fire",
+            "aspect_for" : "Shadows Flicker Like Flame",
+            "expansion" : "nature_incarnate",
+            "complexity" : "up",
+            "aspect_art" : "false"
+        },
+        "Sharp Fangs Behind the Leaves" : {
+            "expansion" : "branch_and_claw",
+            "complexity" : "moderate"
+        },
+        "Sharp Fangs Behind the Leaves (Encircle)" : {
+            "alt_name" : "Encircle",
+            "aspect_for" : "Sharp Fangs Behind the Leaves",
+            "expansion" : "nature_incarnate",
+            "complexity" : "same",
+            "aspect_art" : "false"
+        },
+        "Sharp Fangs Behind the Leaves (Unconstrained)" : {
+            "alt_name" : "Unconstrained",
+            "aspect_for" : "Sharp Fangs Behind the Leaves",
+            "expansion" : "nature_incarnate",
+            "complexity" : "down",
+            "aspect_art" : "false"
+        },
+        "Shifting Memory of Ages" : {
+            "expansion" : "jagged_earth",
+            "complexity" : "moderate"
+        },
+        "Shifting Memory of Ages (Intensify)" : {
+            "alt_name" : "Intensify",
+            "aspect_for" : "Shifting Memory of Ages",
+            "expansion" : "nature_incarnate",
+            "complexity" : "up",
+            "aspect_art" : "false"
+        },
+        "Shifting Memory of Ages (Mentor)" : {
+            "alt_name" : "Mentor",
+            "aspect_for" : "Shifting Memory of Ages",
+            "expansion" : "nature_incarnate",
+            "complexity" : "up",
+            "aspect_art" : "false"
+        },
+        "Shroud of Silent Mist" : {
+            "expansion" : "jagged_earth",
+            "complexity" : "high"
+        },
+        "Shroud of Silent Mist (Stranded)" : {
+            "alt_name" : "Stranded",
+            "aspect_for" : "Shroud of Silent Mist",
+            "expansion" : "nature_incarnate",
+            "complexity" : "down",
+            "aspect_art" : "false"
+        },
+        "Starlight Seeks Its Form" : {
+            "expansion" : "jagged_earth",
+            "complexity" : "very_high"
+        },
+        "Stone's Unyielding Defiance" : {
+            "expansion" : "jagged_earth",
+            "complexity" : "moderate"
+        },
+        "Sun-Bright Whirlwind" : {
+            "expansion" : "horizons_of_spirit_island",
+            "complexity" : "low"
+        },
+        "Towering Roots of the Jungle" : {
+            "expansion" : "nature_incarnate",
+            "complexity" : "moderate"
+        },
+        "Thunderspeaker" : {
+            "expansion" : "base",
+            "complexity" : "moderate"
+        },
+        "Thunderspeaker (Tactician)" : {
+            "alt_name" : "Tactician",
+            "aspect_for" : "Thunderspeaker",
+            "expansion" : "nature_incarnate",
+            "complexity" : "same",
+            "aspect_art" : "false"
+        },
+        "Thunderspeaker (Warrior)" : {
+            "alt_name" : "Warrior",
+            "aspect_for" : "Thunderspeaker",
+            "expansion" : "nature_incarnate",
+            "complexity" : "up",
+            "aspect_art" : "false"
+        },
+        "Vengeance as a Burning Plague" : {
+            "expansion" : "jagged_earth",
+            "complexity" : "high"
+        },
+        "Vital Strength of the Earth" : {
+            "expansion" : "base",
+            "complexity" : "low"
+        },
+        "Vital Strength of the Earth (Resilience)" : {
+            "alt_name" : "Resilience",
+            "aspect_for" : "Vital Strength of the Earth",
+            "expansion" : "jagged_earth",
+            "complexity" : "same",
+            "aspect_art" : "true"
+        },
+        "Vital Strength of the Earth (Might)" : {
+            "alt_name" : "Might",
+            "aspect_for" : "Vital Strength of the Earth",
+            "expansion" : "feather_and_flame",
+            "complexity" : "up",
+            "aspect_art" : "false"
+        },
+        "Vital Strength of the Earth (Nourishing)" : {
+            "alt_name" : "Nourishing",
+            "aspect_for" : "Vital Strength of the Earth",
+            "expansion" : "nature_incarnate",
+            "complexity" : "up",
+            "aspect_art" : "false"
+        },
+        "Volcano Looming High" : {
+            "expansion" : "jagged_earth",
+            "complexity" : "moderate"
+        },
+        "Wandering Voice Keens Delirium" : {
+            "expansion" : "nature_incarnate",
+            "complexity" : "high"
+        },
+        "Wounded Waters Bleeding" : {
+            "expansion" : "nature_incarnate",
+            "complexity" : "high"
+        }
+    },
     "boards" : [
         "A",
         "B",
