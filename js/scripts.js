@@ -10,7 +10,7 @@ $(document).ready(
                 if (i==1) {
                     $("<div>").attr(
                         {
-                            class : "col-12 p-0",
+                            class : "col-12",
                             id : `col_player_${i}_info`,
                             name : `player_${i}_info`
                         }
@@ -19,7 +19,7 @@ $(document).ready(
                 else {
                     $("<div>").attr(
                         {
-                            class : "col-6 p-0",
+                            class : "col-6",
                             id : `col_player_${i}_info`,
                             name : `player_${i}_info`
                             
@@ -34,38 +34,15 @@ $(document).ready(
                         
                     }
                 ).appendTo(`#col_player_${i}_info`);
-                
-
-                // Player ${i} header text row
-                $("<div>").attr(
-                    {
-                        class : "row",
-                        id : `row_player_${i}_header`,
-                        
-                    }
-                ).appendTo(`#card_player_${i}_info`);
-
-                // Player ${i} header text
-                $("<div>").attr(
-                    {
-                        class : "col text-center",
-                        id : `col_player_${i}_header`,
-                        
-                    }
-                ).appendTo(`#row_player_${i}_header`);
-
-                // $(`#col_player_${i}_header`).text(
-                //     `Player ${i}`
-                // );
 
                 $(`<div>`).attr(
                     {
-                        class : "card-header",
+                        class : "card-header text-center",
                         style : "background-color: rgba(255,255,255,0.8);"
                     }
                 ).text(
                     `Player ${i}`
-                ).appendTo(`#col_player_${i}_header`);
+                ).appendTo(`#card_player_${i}_info`);
                 
                 // Player name row
                 $("<div>").attr(
@@ -247,14 +224,14 @@ $(document).ready(
                     if (this.value == 1) {
                         $(`#col_player_1_info`).attr(
                             {
-                                class : "col-12 p-0"
+                                class : "col-12"
                             }
                         );
                     }
                     else {
                         $(`#col_player_1_info`).attr(
                             {
-                                class : "col-6 p-0"
+                                class : "col-6"
                             }
                         );
                     }

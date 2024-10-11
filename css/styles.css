@@ -13,3 +13,6 @@ html *
    color: #000 !important;
    font-family: Josefin Sans !important;
 }
+
+.g-2 div:nth-child(odd) { padding-left: 0; }
+.g-2 div:nth-child(even) { padding-right: 0; }
