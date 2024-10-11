@@ -31,7 +31,6 @@ $(document).ready(
                     {
                         class : "card",
                         id : `card_player_${i}_info`
-                        
                     }
                 ).appendTo(`#col_player_${i}_info`);
 
@@ -178,6 +177,7 @@ $(document).ready(
                         false
                     );
                     $(`#card_player_${i}_info`).hide();
+                    $(`#col_player_${i}_info`).hide();
                     $(`#col_select_player_${i}_spirit`).hide();
 
                     
@@ -251,6 +251,7 @@ $(document).ready(
                         // Show content for player ${i}
                         $(`#col_select_player_${i}_spirit`).show();
                         $(`#card_player_${i}_info`).show();
+                        $(`#col_player_${i}_info`).show();
                     }
                     // Hide columns for players > this.value
                     else {
@@ -278,6 +279,7 @@ $(document).ready(
                         $(`#col_select_player_${i}_spirit`).hide();
                         $(`#row_player_${i}_spirit_image`).hide();
                         $(`#card_player_${i}_info`).hide();
+                        $(`#col_player_${i}_info`).hide();
                     }
                 }
             }
