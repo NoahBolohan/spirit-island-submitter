@@ -4,7 +4,7 @@
 
 .margin_auto {
     margin-left: auto;
-    margin-right : auto
+    margin-right : auto;
 }
 
 html *
@@ -16,3 +16,7 @@ html *
 
 .g-2 div:nth-child(odd) { padding-left: 0; }
 .g-2 div:nth-child(even) { padding-right: 0; }
+
+.card-header {
+    background-color: rgba(246, 246, 246, 0.8);
+}

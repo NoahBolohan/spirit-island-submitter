@@ -36,8 +36,7 @@ $(document).ready(
 
                 $(`<div>`).attr(
                     {
-                        class : "card-header text-center",
-                        style : "background-color: rgba(255,255,255,0.8);"
+                        class : "card-header text-center"
                     }
                 ).text(
                     `Player ${i}`
