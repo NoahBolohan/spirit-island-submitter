@@ -19,7 +19,7 @@ $(document).ready(
                 else {
                     $("<div>").attr(
                         {
-                            class : "col-5 m-1 p-0",
+                            class : "col-6 p-0",
                             id : `col_player_${i}_info`,
                             name : `player_${i}_info`
                             
@@ -261,7 +261,7 @@ $(document).ready(
                     else {
                         $(`#col_player_1_info`).attr(
                             {
-                                class : "col-5 m-1 p-0"
+                                class : "col-6 p-0"
                             }
                         );
                     }
