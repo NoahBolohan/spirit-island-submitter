@@ -386,7 +386,7 @@ $(document).ready(
     )
 )
 
-// Set an event listener for enabling adversary 1 level by choosing an adversary 1
+// Set an event listener for enabling adversary 1 level and assigning the adversary 1 background image url by choosing an adversary 1
 $(document).ready(
     function() {
         $("#col_select_adversary_1").on(
@@ -410,10 +410,7 @@ $(document).ready(
                         $("#card_adversaries").data("background_url_1", new_url);
                     }
 
-                    $("#card_adversaries").attr(
-                        "style",
-                        `background-image : url(${$("#card_adversaries").data("background_url_1")}); background-position: center; background-size: center; background-size: cover; background-color: rgba(255,255,255,0.6); background-blend-mode: lighten;`
-                    );
+                    set_card_adversary_background()
 
                     // Enable adversary 1 level select if this.value changed to an adversary
                     if ($("#col_select_adversary_1_level").is(":disabled") && this.value != "No adversary") {
@@ -470,6 +467,10 @@ $(document).ready(
         $("#col_button_remove_adversary_2").on(
             "click",
             function() {
+                // Remove adversary 2 background URL data
+                $("#card_adversaries").removeData("background_url_2");
+                set_card_adversary_background();
+
                 // Hide adversary 2 row
                 $("#card_title_adversary_2").hide();
                 $("#col_select_adversary_2").hide();
@@ -496,7 +497,7 @@ $(document).ready(
     }
 )
 
-// Set an event listener for enabling adversary 2 level by choosing an adversary 2
+// Set an event listener for enabling adversary 2 level and assigning the adversary 2 background image url by choosing an adversary 2
 $(document).ready(
     function() {
         $("#col_select_adversary_2").on(
@@ -519,11 +520,8 @@ $(document).ready(
 
                         $("#card_adversaries").data("background_url_2", new_url);
                     }
-            
-                    $("#card_adversaries").attr(
-                        "style",
-                        `background-image : url(${$("#card_adversaries").data("background_url_2")}); background-position: center; background-size: center; background-size: cover; background-color: rgba(255,255,255,0.6); background-blend-mode: lighten;`
-                    );
+
+                    set_card_adversary_background()
 
                     // Enable adversary 1 level select if this.value changed to an adversary
                     if ($("#col_select_adversary_2_level").is(":disabled") && this.value != "No adversary") {
@@ -550,17 +548,37 @@ $(document).ready(
     }
 )
 
-// Set an event listener for setting the adversary card background
-$(document).ready(
-    function() {
-        $("#col_select_adversary_2").on(
-            "change",
-            function() {
+// Define a function for setting the adversary card background
 
-            }
-        )
+function set_card_adversary_background() {
+    if ($("#card_adversaries").data("background_url_1") & $("#card_adversaries").data("background_url_2")) {
+
+        $("#card_adversaries").attr(
+            "style",
+            `background-image : url(${$("#card_adversaries").data("background_url_1")}); background-position: center; background-size: center; background-size: cover; background-color: rgba(255,255,255,0.6); background-blend-mode: lighten;`
+        );
     }
-)
+    else if ($("#card_adversaries").data("background_url_1")) {
+
+        $("#card_adversaries").attr(
+            "style",
+            `background-image : url(${$("#card_adversaries").data("background_url_1")}); background-position: center; background-size: center; background-size: cover; background-color: rgba(255,255,255,0.6); background-blend-mode: lighten;`
+        );
+    }
+    else if ($("#card_adversaries").data("background_url_2")) {
+
+        $("#card_adversaries").attr(
+            "style",
+            `background-image : url(${$("#card_adversaries").data("background_url_2")}); background-position: center; background-size: center; background-size: cover; background-color: rgba(255,255,255,0.6); background-blend-mode: lighten;`
+        );
+    }
+    else {
+        $("#card_adversaries").attr(
+            "style",
+            `background-image : url(); background-position: center; background-size: center; background-size: cover; background-color: rgba(255,255,255,0.6); background-blend-mode: lighten;`
+        );
+    }
+}
 
 // Set an event listener for showing scenario options by clicking the add scenario button
 $(document).ready(
