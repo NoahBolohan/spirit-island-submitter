@@ -185,7 +185,7 @@ $(document).ready(
             }
 
             // Populate adversary selects
-            $(data["adversaries"]).each(
+            $(Object.keys(data["adversaries"])).each(
                 function() {
                     $("#col_select_adversary_1").append(
                         $("<option>").text(this)
@@ -193,7 +193,7 @@ $(document).ready(
                 }
             );
 
-            $(data["adversaries"]).each(
+            $(Object.keys(data["adversaries"])).each(
                 function() {
                     $("#col_select_adversary_2").append(
                         $("<option>").text(this)
@@ -202,7 +202,7 @@ $(document).ready(
             );
 
             // Populate scenario select
-            $(data["scenarios"]).each(
+            $(Object.keys(data["scenarios"])).each(
                 function() {
                     $("#col_select_scenario").append(
                         $("<option>").text(this)
