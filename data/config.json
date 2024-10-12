@@ -394,21 +394,54 @@
         "Scotland",
         "Sweden"
     ],
-    "scenarios" : [
-        "A Diversity of Spirits",
-        "Blitz",
-        "Dahan Insurrection",
-        "Despicable Theft",
-        "Destiny Unfolds",
-        "Elemental Invocation",
-        "Guard the Isle's Heart",
-        "Powers Long Forgotten",
-        "Ritual of Terror",
-        "Rituals of the Destroying Flame",
-        "Second Wave",
-        "Surges of Colonization",
-        "The Great River",
-        "Varied Terrains",
-        "Ward the Shores"
-    ]
+    "scenarios" : {
+        "A Diversity of Spirits" : {
+            "difficulty" : "0"
+        },
+        "Blitz" : {
+            "difficulty" : "0"
+        },
+        "Dahan Insurrection" : {
+            "difficulty" : "4"
+        },
+        "Despicable Theft" : {
+            "difficulty" : "2"
+        },
+        "Destiny Unfolds" : {
+            "difficulty" : "1"
+        },
+        "Elemental Invocation" : {
+            "difficulty" : "1"
+        },
+        "Guard the Isle's Heart" : {
+            "difficulty" : "0"
+        },
+        "Powers Long Forgotten" : {
+            "difficulty" : "1"
+        },
+        "Ritual of Terror" : {
+            "difficulty" : "3"
+        },
+        "Rituals of the Destroying Flame" : {
+            "difficulty" : "3"
+        },
+        "Second Wave" : {
+            "difficulty" : "1/-1"
+        },
+        "Surges of Colonization (+2)" : {
+            "difficulty" : "2"
+        },
+        "Surges of Colonization (+7)" : {
+            "difficulty" : "7"
+        },
+        "The Great River" : {
+            "difficulty" : "3"
+        },
+        "Varied Terrains" : {
+            "difficulty" : "2"
+        },
+        "Ward the Shores" : {
+            "difficulty" : "2"
+        }
+    }
 }
