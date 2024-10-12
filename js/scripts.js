@@ -55,7 +55,7 @@ $(document).ready(
                 // Player name display text
                 $("<div>").attr(
                     {
-                        class : "col-5",
+                        class : "col-4",
                         id : `row_player_${i}_name_display_text`,
                     }
                 ).appendTo(`#row_player_${i}_name`);
@@ -67,7 +67,7 @@ $(document).ready(
                 // Player name text input
                 $("<input>").attr(
                     {
-                        class : "col-6",
+                        class : "col-8",
                         id : `col_input_player_${i}_name`,
                         name : `player_${i}_name`,
                         type : "text",
@@ -86,7 +86,7 @@ $(document).ready(
                 // Player board display text
                 $("<div>").attr(
                     {
-                        class : "col-5",
+                        class : "col-4",
                         id : `row_player_${i}_board_display_text`,
                     }
                 ).appendTo(`#row_player_${i}_board`);
@@ -98,7 +98,7 @@ $(document).ready(
                 // Player board select
                 var board_select = $("<select>").attr(
                     {
-                        class : "col-6",
+                        class : "col-8",
                         id : `col_select_player_${i}_board`,
                         name : `player_${i}_board`
                     }
@@ -140,7 +140,7 @@ $(document).ready(
                 // Player spirit input
                 var spirit_select = $("<input>").attr(
                     {
-                        class : "col-11",
+                        class : "col",
                         list : `col_select_player_${i}_spirit_list`,
                         id : `col_select_player_${i}_spirit`,
                         name : `player_${i}_spirit`,
