@@ -21,9 +21,11 @@
 	<!-- All other images are from the Spirit Island wiki-->
 
 	<div class="container-fluid mb-1">
+		
 		<div class="row justify-content-center">
 			<img class="col" src="https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/misc/Spirit_Island_Logo.png"></img>
 		</div>
+		
 		<div class="row" id="row_header">
 			<div class="col text-center" style="font-size:1.5em;">
 				<b>Game Tracker</b>
@@ -32,17 +34,23 @@
 	</div>
 
 	<ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
+		
 		<li class="nav-item" role="presentation">
+			
 			<button class="nav-link active" id="before-tab" data-bs-toggle="tab" data-bs-target="#container_tab_content_before" type="button" role="tab" aria-controls="container_tab_content_before" aria-selected="true">
 				Before game
 			</button>
 		</li>
+
 		<li class="nav-item" role="presentation">
+			
 			<button class="nav-link" id="during-tab" data-bs-toggle="tab" data-bs-target="#container_tab_content_during" type="button" role="tab" aria-controls="container_tab_content_during" aria-selected="false">
 				During game
 			</button>
 		</li>
+
 		<li class="nav-item" role="presentation">
+			
 			<button class="nav-link" id="after-tab" data-bs-toggle="tab" data-bs-target="#container_tab_content_after" type="button" role="tab" aria-controls="container_tab_content_after" aria-selected="false">
 				After game
 			</button>
@@ -69,68 +77,71 @@
 
 			<div class="row mt-2 p-0 g-0 justify-content-center margin_auto" id="row_player_info"></div>
 
-			<div class="card mt-3 p-0 margin_auto" id="card_adversaries">
-				<div class="card-header text-center">
-					Adversaries
-				</div>
+			<div class="row mt-2 p-0 g-2 justify-content-center margin_auto" id="row_adversaries">
 
-				<div class="row mt-1 mx-1 margin_auto" style="width:100%">
-					<div class="card-title" id="card_title_adversary_1">
-						Primary
-					</div>
-				</div>
-				
-				<div class="row mb-1 mx-1 justify-content-center margin_auto" id="row_adversary_1_info" style="width:100%;">
-					<select class="col-7 m-1" id="col_select_adversary_1" name="adversary_1">
-						<option selected value="">No adversary</option>
-					</select>
+				<div class="col-6">
 
-					<select class="col-3 m-1" id="col_select_adversary_1_level" name="adversary_1_level" disabled>
-						<option disabled selected>Level</option>
-						<option>0</option>
-						<option>1</option>
-						<option>2</option>
-						<option>3</option>
-						<option>4</option>
-						<option>5</option>
-						<option>6</option>
-					</select>
-				</div>
+					<div class="card margin_auto" id="card_adversary_1">
 
-				<div class="row my-2 p-0 justify-content-center margin_auto" id="row_button_adversary_2" style="width:100%"">
-					<button class="col-9 btn btn-primary" id="col_button_adversary_2" type="button">
-						Add second adversary
-					</button>
-				</div>
-	
-				<div class="row mt-1 mx-1 margin_auto" style="width:100%">
-					<div class="card-title is_hidden" id="card_title_adversary_2">
-						Secondary
+						<div class="card-header text-center">
+							Leading Adversary
+						</div>
+
+						<select class="row my-3 mx-3 justify-content-center" id="row_select_adversary_1" name="adversary_1">
+							<option selected value="">No adversary</option>
+						</select>
+
+						<select class="row mb-3 mx-3 justify-content-center" id="row_select_adversary_1_level" name="adversary_1_level" disabled>
+							<option disabled selected>Level</option>
+							<option>0</option>
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+							<option>5</option>
+							<option>6</option>
+						</select>
 					</div>
 				</div>
 
-				<div class="row mx-1 justify-content-center margin_auto" id="row_adversary_2_info" style="width:100%;">
-					<select class="col-7 m-1 is_hidden" id="col_select_adversary_2" name="adversary_2">
-						<option selected value="">No adversary</option>
-					</select>
 
-					<select class="col-3 m-1 is_hidden" id="col_select_adversary_2_level" name="adversary_2_level" disabled>
-						<option disabled selected>Level</option>
-						<option>0</option>
-						<option>1</option>
-						<option>2</option>
-						<option>3</option>
-						<option>4</option>
-						<option>5</option>
-						<option>6</option>
-					</select>
-				</div>
+				<div class="col-6">
 
-				<div class="row my-1 p-0 justify-content-center margin_auto is_hidden" id="row_button_remove_adversary_2">
-					<button class="col btn btn-danger" id="col_button_remove_adversary_2" type="button">
-						Remove second adversary
-					</button>
+					<div class="row" id="row_button_adversary_2">
+
+						<button class="btn btn-primary" id="button_adversary_2" type="button">
+							Add supporting adversary
+						</button>
+					</div>
+
+					<div class="card margin_auto is_hidden" id="card_adversary_2">
+
+						<div class="card-header text-center">
+							Supporting Adversary
+						</div>
+
+						<select class="row my-3 mx-3 justify-content-center" id="row_select_adversary_1" name="adversary_1">
+							<option selected value="">No adversary</option>
+						</select>
+
+						<select class="row mb-3 mx-3 justify-content-center" id="row_select_adversary_1_level" name="adversary_1_level" disabled>
+							<option disabled selected>Level</option>
+							<option>0</option>
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+							<option>5</option>
+							<option>6</option>
+						</select>
+					</div>
 				</div>
+			</div>
+
+			<div class="row my-1 p-0 justify-content-center margin_auto is_hidden" id="row_button_remove_adversary_2">
+				<button class="col btn btn-danger" id="col_button_remove_adversary_2" type="button">
+					Remove second adversary
+				</button>
 			</div>
 
 			<div class="row my-3 p-0 justify-content-center margin_auto" id="row_button_scenario">

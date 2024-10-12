@@ -187,7 +187,7 @@ $(document).ready(
             // Populate adversary selects
             $(Object.keys(data["adversaries"])).each(
                 function() {
-                    $("#col_select_adversary_1").append(
+                    $("#row_select_adversary_1").append(
                         $("<option>").text(this)
                     );
                 }
@@ -389,19 +389,19 @@ $(document).ready(
 // Set an event listener for enabling adversary 1 level and assigning the adversary 1 background image url by choosing an adversary 1
 $(document).ready(
     function() {
-        $("#col_select_adversary_1").on(
+        $("#row_select_adversary_1").on(
             "change",
             function() {
                 $.getJSON('https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/refs/heads/master/data/config.json', function(data) {
                     
-                    if ($("#col_select_adversary_1").val() == "") {
+                    if ($("#row_select_adversary_1").val() == "") {
                         $("#card_adversaries").removeData("background_url_1");
                     }
                     else {
                         // Assign appropriate image to adversary 1 card
-                        var adversary_config = data["adversaries"][$("#col_select_adversary_1").val()];
+                        var adversary_config = data["adversaries"][$("#row_select_adversary_1").val()];
 
-                        var adversary_image_file_name = $("#col_select_adversary_1").val().split(' ').join('_');
+                        var adversary_image_file_name = $("#row_select_adversary_1").val().split(' ').join('_');
 
                         var new_url = encodeURI("https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/adversaries/" + adversary_image_file_name + ".png");
 
@@ -413,21 +413,21 @@ $(document).ready(
                     set_card_adversary_background()
 
                     // Enable adversary 1 level select if this.value changed to an adversary
-                    if ($("#col_select_adversary_1_level").is(":disabled") && this.value != "No adversary") {
-                        $("#col_select_adversary_1_level").prop(
+                    if ($("#row_select_adversary_1_level").is(":disabled") && this.value != "No adversary") {
+                        $("#row_select_adversary_1_level").prop(
                             "disabled",
                             false
                         );
                     }
                     // Disable adversary 1 level select if this.value changed to "No adversary"
-                    else if (!$("#col_select_adversary_1_level").is(":disabled") && this.value == "No adversary") {
-                        $("#col_select_adversary_1_level").prop(
+                    else if (!$("#row_select_adversary_1_level").is(":disabled") && this.value == "No adversary") {
+                        $("#row_select_adversary_1_level").prop(
                             "disabled",
                             true
                         );
                     }
                     // Reset the adversary 1 level select
-                    $("#col_select_adversary_1_level").prop(
+                    $("#row_select_adversary_1_level").prop(
                         'selectedIndex',
                         0
                     );
@@ -440,13 +440,11 @@ $(document).ready(
 // Set an event listener for showing adversary 2 options by toggling the adversary 2 button
 $(document).ready(
     function() {
-        $("#col_button_adversary_2").on(
+        $("#button_adversary_2").on(
             "click",
             function() {
                 // Show adversary 2 row
-                $("#card_title_adversary_2").show();
-                $("#col_select_adversary_2").show();
-                $("#col_select_adversary_2_level").show();
+                $("#card_adversary_2").show();
                 $("#col_select_adversary_2_level").prop(
                     'selectedIndex',
                     0
@@ -472,9 +470,7 @@ $(document).ready(
                 set_card_adversary_background();
 
                 // Hide adversary 2 row
-                $("#card_title_adversary_2").hide();
-                $("#col_select_adversary_2").hide();
-                $("#col_select_adversary_2_level").hide();
+                $("#card_adversary_2").hide();
                 $("#col_select_adversary_2").prop(
                     'selectedIndex',
                     0
