@@ -319,7 +319,7 @@ $(document).ready(
 
                 $("#card_player_1_info").attr(
                     "style",
-                    `background-image : url(${new_url}); background-size: cover; background-color: rgba(255,255,255,0.6); background-blend-mode: lighten;`
+                    `background-image : url(${new_url}); background-size: center; background-size: cover; background-color: rgba(255,255,255,0.6); background-blend-mode: lighten;`
                 );
             })
         }
@@ -405,7 +405,7 @@ $(document).ready(
 
                     $("#card_adversaries").attr(
                         "style",
-                        `background-image : url(${new_url}); background-size: cover; background-color: rgba(255,255,255,0.6); background-blend-mode: lighten;`
+                        `background-image : url(${new_url}); background-position: center; background-size: center; background-size: cover; background-color: rgba(255,255,255,0.6); background-blend-mode: lighten;`
                     );
 
                     // Enable adversary 1 level select if this.value changed to an adversary
