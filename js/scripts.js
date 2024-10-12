@@ -27,6 +27,7 @@ $(document).ready(
                     ).appendTo("#row_player_info");
                 }
 
+                // Player ${i} card
                 $("<div>").attr(
                     {
                         class : "card",
@@ -34,6 +35,7 @@ $(document).ready(
                     }
                 ).appendTo(`#col_player_${i}_info`);
 
+                // Player ${i} card header
                 $(`<div>`).attr(
                     {
                         class : "card-header text-center"
