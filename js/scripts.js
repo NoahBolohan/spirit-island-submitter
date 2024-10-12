@@ -55,7 +55,7 @@ $(document).ready(
                 // Player name display text
                 $("<div>").attr(
                     {
-                        class : "col-4",
+                        class : "col-5",
                         id : `row_player_${i}_name_display_text`,
                     }
                 ).appendTo(`#row_player_${i}_name`);
@@ -67,7 +67,7 @@ $(document).ready(
                 // Player name text input
                 $("<input>").attr(
                     {
-                        class : "col-8",
+                        class : "col-7",
                         id : `col_input_player_${i}_name`,
                         name : `player_${i}_name`,
                         type : "text",
@@ -86,7 +86,7 @@ $(document).ready(
                 // Player board display text
                 $("<div>").attr(
                     {
-                        class : "col-4",
+                        class : "col-5",
                         id : `row_player_${i}_board_display_text`,
                     }
                 ).appendTo(`#row_player_${i}_board`);
@@ -98,7 +98,7 @@ $(document).ready(
                 // Player board select
                 var board_select = $("<select>").attr(
                     {
-                        class : "col-8",
+                        class : "col-7",
                         id : `col_select_player_${i}_board`,
                         name : `player_${i}_board`
                     }
@@ -195,7 +195,7 @@ $(document).ready(
 
             $(Object.keys(data["adversaries"])).each(
                 function() {
-                    $("#col_select_adversary_2").append(
+                    $("#row_select_adversary_2").append(
                         $("<option>").text(this)
                     );
                 }
@@ -393,24 +393,20 @@ $(document).ready(
             "change",
             function() {
                 $.getJSON('https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/refs/heads/master/data/config.json', function(data) {
-                    
-                    if ($("#row_select_adversary_1").val() == "") {
-                        $("#card_adversaries").removeData("background_url_1");
-                    }
-                    else {
-                        // Assign appropriate image to adversary 1 card
-                        var adversary_config = data["adversaries"][$("#row_select_adversary_1").val()];
 
-                        var adversary_image_file_name = $("#row_select_adversary_1").val().split(' ').join('_');
+                    // Assign appropriate image to adversary 1 card
+                    var adversary_config = data["adversaries"][$("#row_select_adversary_1").val()];
 
-                        var new_url = encodeURI("https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/adversaries/" + adversary_image_file_name + ".png");
+                    var adversary_image_file_name = $("#row_select_adversary_1").val().split(' ').join('_');
 
-                        new_url = new_url.replace(/'/g, '%27').replace(/\(/g, "%28").replace(/\)/g, "%29");
+                    var new_url = encodeURI("https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/adversaries/" + adversary_image_file_name + ".png");
 
-                        $("#card_adversaries").data("background_url_1", new_url);
-                    }
+                    new_url = new_url.replace(/'/g, '%27').replace(/\(/g, "%28").replace(/\)/g, "%29");
 
-                    set_card_adversary_background()
+                    $("#card_adversary_1").attr(
+                        "style",
+                        `background-image : url(${new_url}); background-position: center; background-size: center; background-size: cover; background-color: rgba(255,255,255,0.6); background-blend-mode: lighten;`
+                    );
 
                     // Enable adversary 1 level select if this.value changed to an adversary
                     if ($("#row_select_adversary_1_level").is(":disabled") && this.value != "No adversary") {
@@ -445,7 +441,7 @@ $(document).ready(
             function() {
                 // Show adversary 2 row
                 $("#card_adversary_2").show();
-                $("#col_select_adversary_2_level").prop(
+                $("#row_select_adversary_2_level").prop(
                     'selectedIndex',
                     0
                 );
@@ -465,21 +461,17 @@ $(document).ready(
         $("#col_button_remove_adversary_2").on(
             "click",
             function() {
-                // Remove adversary 2 background URL data
-                $("#card_adversaries").removeData("background_url_2");
-                set_card_adversary_background();
-
                 // Hide adversary 2 row
                 $("#card_adversary_2").hide();
-                $("#col_select_adversary_2").prop(
+                $("#row_select_adversary_2").prop(
                     'selectedIndex',
                     0
                 );
-                $("#col_select_adversary_2_level").prop(
+                $("#row_select_adversary_2_level").prop(
                     'selectedIndex',
                     0
                 );
-                $("#col_select_adversary_2_level").prop(
+                $("#row_select_adversary_2_level").prop(
                     "disabled",
                     true
                 );
@@ -496,45 +488,41 @@ $(document).ready(
 // Set an event listener for enabling adversary 2 level and assigning the adversary 2 background image url by choosing an adversary 2
 $(document).ready(
     function() {
-        $("#col_select_adversary_2").on(
+        $("#row_select_adversary_2").on(
             "change",
             function() {
                 $.getJSON('https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/refs/heads/master/data/config.json', function(data) {
                     
-                    if ($("#col_select_adversary_2").val() == "") {
-                        $("#card_adversaries").removeData("background_url_2");
-                    }
-                    else {
-                        // Assign appropriate image to adversary 1 card
-                        var adversary_config = data["adversaries"][$("#col_select_adversary_2").val()];
+                    // Assign appropriate image to adversary 1 card
+                    var adversary_config = data["adversaries"][$("#row_select_adversary_2").val()];
 
-                        var adversary_image_file_name = $("#col_select_adversary_2").val().split(' ').join('_');
+                    var adversary_image_file_name = $("#row_select_adversary_2").val().split(' ').join('_');
 
-                        var new_url = encodeURI("https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/adversaries/" + adversary_image_file_name + ".png");
+                    var new_url = encodeURI("https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/adversaries/" + adversary_image_file_name + ".png");
 
-                        new_url = new_url.replace(/'/g, '%27').replace(/\(/g, "%28").replace(/\)/g, "%29");
+                    new_url = new_url.replace(/'/g, '%27').replace(/\(/g, "%28").replace(/\)/g, "%29");
 
-                        $("#card_adversaries").data("background_url_2", new_url);
-                    }
-
-                    set_card_adversary_background()
+                    $("#card_adversary_2").attr(
+                        "style",
+                        `background-image : url(${new_url}); background-position: center; background-size: center; background-size: cover; background-color: rgba(255,255,255,0.6); background-blend-mode: lighten;`
+                    );
 
                     // Enable adversary 1 level select if this.value changed to an adversary
-                    if ($("#col_select_adversary_2_level").is(":disabled") && this.value != "No adversary") {
-                        $("#col_select_adversary_2_level").prop(
+                    if ($("#row_select_adversary_2_level").is(":disabled") && this.value != "No adversary") {
+                        $("#row_select_adversary_2_level").prop(
                             "disabled",
                             false
                         );
                     }
                     // Disable adversary 1 level select if this.value changed to "No adversary"
-                    else if (!$("#col_select_adversary_2_level").is(":disabled") && this.value == "No adversary") {
-                        $("#col_select_adversary_2_level").prop(
+                    else if (!$("#row_select_adversary_2_level").is(":disabled") && this.value == "No adversary") {
+                        $("#row_select_adversary_2_level").prop(
                             "disabled",
                             true
                         );
                     }
                     // Reset the adversary 1 level select
-                    $("#col_select_adversary_2_level").prop(
+                    $("#row_select_adversary_2_level").prop(
                         'selectedIndex',
                         0
                     );
