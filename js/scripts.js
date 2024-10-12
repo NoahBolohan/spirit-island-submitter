@@ -392,25 +392,42 @@ $(document).ready(
         $("#col_select_adversary_1").on(
             "change",
             function() {
-                // Enable adversary 1 level select if this.value changed to an adversary
-                if ($("#col_select_adversary_1_level").is(":disabled") && this.value != "No adversary") {
-                    $("#col_select_adversary_1_level").prop(
-                        "disabled",
-                        false
+                $.getJSON('https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/refs/heads/master/data/config.json', function(data) {
+                    
+                    // Assign appropriate image to adversary 1 card
+                    var adversary_config = data["adversaries"][$("#col_select_adversary_1").val()];
+
+                    var adversary_image_file_name = $("#col_select_adversary_1").val().split(' ').join('_');
+
+                    var new_url = encodeURI("https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/adversaries/" + adversary_image_file_name + ".png");
+
+                    new_url = new_url.replace(/'/g, '%27');
+
+                    $("#card_adversaries").attr(
+                        "style",
+                        `background-image : url(${new_url}); background-size: cover; background-color: rgba(255,255,255,0.6); background-blend-mode: lighten;`
                     );
-                }
-                // Disable adversary 1 level select if this.value changed to "No adversary"
-                else if (!$("#col_select_adversary_1_level").is(":disabled") && this.value == "No adversary") {
+
+                    // Enable adversary 1 level select if this.value changed to an adversary
+                    if ($("#col_select_adversary_1_level").is(":disabled") && this.value != "No adversary") {
+                        $("#col_select_adversary_1_level").prop(
+                            "disabled",
+                            false
+                        );
+                    }
+                    // Disable adversary 1 level select if this.value changed to "No adversary"
+                    else if (!$("#col_select_adversary_1_level").is(":disabled") && this.value == "No adversary") {
+                        $("#col_select_adversary_1_level").prop(
+                            "disabled",
+                            true
+                        );
+                    }
+                    // Reset the adversary 1 level select
                     $("#col_select_adversary_1_level").prop(
-                        "disabled",
-                        true
+                        'selectedIndex',
+                        0
                     );
-                }
-                // Reset the adversary 1 level select
-                $("#col_select_adversary_1_level").prop(
-                    'selectedIndex',
-                    0
-                );
+                });
             }
         )
     }

@@ -384,16 +384,16 @@
         "West"
 
     ],
-    "adversaries" : [
-        "Brandenburg-Prussia",
-        "England",
-        "France (Plantation Colony)",
-        "Hapsburg Mining Expedition",
-        "Hapsburg Monarchy (Livestock Colony)",
-        "Russia",
-        "Scotland",
-        "Sweden"
-    ],
+    "adversaries" : {
+        "Brandenburg-Prussia" :{},
+        "England" :{},
+        "France (Plantation Colony)" :{},
+        "Hapsburg Mining Expedition" :{},
+        "Hapsburg Monarchy (Livestock Colony)" :{},
+        "Russia" :{},
+        "Scotland" :{},
+        "Sweden" : {}
+    },
     "scenarios" : {
         "A Diversity of Spirits" : {
             "difficulty" : "0"
