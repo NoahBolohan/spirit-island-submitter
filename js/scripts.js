@@ -47,7 +47,7 @@ $(document).ready(
                 // Player name row
                 $("<div>").attr(
                     {
-                        class : "row mt-2 mx-2 justify-content-center",
+                        class : "row m-3 justify-content-center",
                         id : `row_player_${i}_name`,
                     }
                 ).appendTo(`#card_player_${i}_info`);
@@ -55,7 +55,7 @@ $(document).ready(
                 // Player name display text
                 $("<div>").attr(
                     {
-                        class : "col-5 my-1",
+                        class : "col-5",
                         id : `row_player_${i}_name_display_text`,
                     }
                 ).appendTo(`#row_player_${i}_name`);
@@ -67,7 +67,7 @@ $(document).ready(
                 // Player name text input
                 $("<input>").attr(
                     {
-                        class : "col-6 my-1",
+                        class : "col-6",
                         id : `col_input_player_${i}_name`,
                         name : `player_${i}_name`,
                         type : "text",
@@ -78,7 +78,7 @@ $(document).ready(
                 // Player board row
                 $("<div>").attr(
                     {
-                        class : "row mt-2 mx-2 justify-content-center",
+                        class : "row mb-3 mx-3 justify-content-center",
                         id : `row_player_${i}_board`,
                     }
                 ).appendTo(`#card_player_${i}_info`);
@@ -86,7 +86,7 @@ $(document).ready(
                 // Player board display text
                 $("<div>").attr(
                     {
-                        class : "col-5 my-1",
+                        class : "col-5",
                         id : `row_player_${i}_board_display_text`,
                     }
                 ).appendTo(`#row_player_${i}_board`);
@@ -98,7 +98,7 @@ $(document).ready(
                 // Player board select
                 var board_select = $("<select>").attr(
                     {
-                        class : "col-6 my-1",
+                        class : "col-6",
                         id : `col_select_player_${i}_board`,
                         name : `player_${i}_board`
                     }
@@ -132,7 +132,7 @@ $(document).ready(
                 // Player name and board row
                 $("<div>").attr(
                     {
-                        class : "row m-2 justify-content-center",
+                        class : "row mb-3 mx-3 justify-content-center",
                         id : `row_input_player_${i}_spirit`,
                     }
                 ).appendTo(`#card_player_${i}_info`);
