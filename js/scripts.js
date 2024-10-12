@@ -138,31 +138,39 @@ $(document).ready(
                 ).appendTo(`#card_player_${i}_info`);
 
                 // Player spirit select
-                var spirit_select = $("<select>").attr(
+                var spirit_select = $("<input>").attr(
                     {
                         class : "col-11",
+                        list : `col_select_player_${i}_spirit_list`,
                         id : `col_select_player_${i}_spirit`,
-                        name : `player_${i}_spirit`
+                        name : `player_${i}_spirit`,
+                        placeholder : "Enter spirit"
                     }
                 ).prop(
                     'required',
                     true
                 ).appendTo(`#row_input_player_${i}_spirit`);
 
-                // Append the disabled default option
-                spirit_select.append(
-                    $("<option>").attr(
-                            {
-                            value: "",
-                            disabled : true
-                        }
-                    ).text(`Select spirit`)
-                );
+                $("<datalist>").attr(
+                    {
+                        id : `col_select_player_${i}_spirit_list`
+                    }
+                ).appendTo(`#row_input_player_${i}_spirit`);
+
+                // // Append the disabled default option
+                // spirit_select.append(
+                //     $("<option>").attr(
+                //             {
+                //             value: "",
+                //             disabled : true
+                //         }
+                //     ).text(`Select spirit`)
+                // );
 
                 // Append the spirit options
                 $(Object.keys(data["spirits"])).each(
                     function() {
-                        spirit_select.append(
+                        $(`#col_select_player_${i}_spirit_list`).append(
                             $("<option>").text(this)
                         );
                     }
