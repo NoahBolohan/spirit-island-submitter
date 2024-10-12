@@ -401,7 +401,7 @@ $(document).ready(
 
                     var new_url = encodeURI("https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/adversaries/" + adversary_image_file_name + ".png");
 
-                    new_url = new_url.replace(/'/g, '%27');
+                    new_url = new_url.replace(/'/g, '%27').replace(/\(/g, "%28").replace(/\)/g, "%29");
 
                     $("#card_adversaries").attr(
                         "style",
