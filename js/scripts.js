@@ -137,7 +137,7 @@ $(document).ready(
                     }
                 ).appendTo(`#card_player_${i}_info`);
 
-                // Player spirit select
+                // Player spirit input
                 var spirit_select = $("<input>").attr(
                     {
                         class : "col-11",
@@ -151,21 +151,12 @@ $(document).ready(
                     true
                 ).appendTo(`#row_input_player_${i}_spirit`);
 
+                // Player spirit datalist
                 $("<datalist>").attr(
                     {
                         id : `col_select_player_${i}_spirit_list`
                     }
                 ).appendTo(`#row_input_player_${i}_spirit`);
-
-                // // Append the disabled default option
-                // spirit_select.append(
-                //     $("<option>").attr(
-                //             {
-                //             value: "",
-                //             disabled : true
-                //         }
-                //     ).text(`Select spirit`)
-                // );
 
                 // Append the spirit options
                 $(Object.keys(data["spirits"])).each(
