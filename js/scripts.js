@@ -394,16 +394,21 @@ $(document).ready(
             function() {
                 $.getJSON('https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/refs/heads/master/data/config.json', function(data) {
                     
-                    // Assign appropriate image to adversary 1 card
-                    var adversary_config = data["adversaries"][$("#col_select_adversary_1").val()];
+                    if ($("#col_select_adversary_1").val() == "") {
+                        $("#card_adversaries").removeData("background_url_1");
+                    }
+                    else {
+                        // Assign appropriate image to adversary 1 card
+                        var adversary_config = data["adversaries"][$("#col_select_adversary_1").val()];
 
-                    var adversary_image_file_name = $("#col_select_adversary_1").val().split(' ').join('_');
+                        var adversary_image_file_name = $("#col_select_adversary_1").val().split(' ').join('_');
 
-                    var new_url = encodeURI("https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/adversaries/" + adversary_image_file_name + ".png");
+                        var new_url = encodeURI("https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/adversaries/" + adversary_image_file_name + ".png");
 
-                    new_url = new_url.replace(/'/g, '%27').replace(/\(/g, "%28").replace(/\)/g, "%29");
+                        new_url = new_url.replace(/'/g, '%27').replace(/\(/g, "%28").replace(/\)/g, "%29");
 
-                    $("#card_adversaries").data("background_url_1", new_url);
+                        $("#card_adversaries").data("background_url_1", new_url);
+                    }
 
                     $("#card_adversaries").attr(
                         "style",
@@ -499,17 +504,22 @@ $(document).ready(
             function() {
                 $.getJSON('https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/refs/heads/master/data/config.json', function(data) {
                     
-                    // Assign appropriate image to adversary 1 card
-                    var adversary_config = data["adversaries"][$("#col_select_adversary_2").val()];
+                    if ($("#col_select_adversary_2").val() == "") {
+                        $("#card_adversaries").removeData("background_url_2");
+                    }
+                    else {
+                        // Assign appropriate image to adversary 1 card
+                        var adversary_config = data["adversaries"][$("#col_select_adversary_2").val()];
 
-                    var adversary_image_file_name = $("#col_select_adversary_2").val().split(' ').join('_');
+                        var adversary_image_file_name = $("#col_select_adversary_2").val().split(' ').join('_');
 
-                    var new_url = encodeURI("https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/adversaries/" + adversary_image_file_name + ".png");
+                        var new_url = encodeURI("https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/adversaries/" + adversary_image_file_name + ".png");
 
-                    new_url = new_url.replace(/'/g, '%27').replace(/\(/g, "%28").replace(/\)/g, "%29");
+                        new_url = new_url.replace(/'/g, '%27').replace(/\(/g, "%28").replace(/\)/g, "%29");
 
-                    $("#card_adversaries").data("background_url_2", new_url);
-
+                        $("#card_adversaries").data("background_url_2", new_url);
+                    }
+            
                     $("#card_adversaries").attr(
                         "style",
                         `background-image : url(${$("#card_adversaries").data("background_url_2")}); background-position: center; background-size: center; background-size: cover; background-color: rgba(255,255,255,0.6); background-blend-mode: lighten;`
@@ -535,6 +545,18 @@ $(document).ready(
                         0
                     );
                 });
+            }
+        )
+    }
+)
+
+// Set an event listener for setting the adversary card background
+$(document).ready(
+    function() {
+        $("#col_select_adversary_2").on(
+            "change",
+            function() {
+
             }
         )
     }
