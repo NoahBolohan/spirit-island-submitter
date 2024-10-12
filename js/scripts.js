@@ -403,9 +403,11 @@ $(document).ready(
 
                     new_url = new_url.replace(/'/g, '%27').replace(/\(/g, "%28").replace(/\)/g, "%29");
 
+                    $("#card_adversaries").data("background_url_1", new_url);
+
                     $("#card_adversaries").attr(
                         "style",
-                        `background-image : url(${new_url}); background-position: center; background-size: center; background-size: cover; background-color: rgba(255,255,255,0.6); background-blend-mode: lighten;`
+                        `background-image : url(${$("#card_adversaries").data("background_url_1")}); background-position: center; background-size: center; background-size: cover; background-color: rgba(255,255,255,0.6); background-blend-mode: lighten;`
                     );
 
                     // Enable adversary 1 level select if this.value changed to an adversary
