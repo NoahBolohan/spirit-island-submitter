@@ -21,6 +21,21 @@ function custom_hide(div_id) {
     );
 }
 
+//Check required inputs before submitting
+function check_required_inputs() {
+    $('.required').each(function(){
+        if( $(this).val() == "" ){
+          alert('Please fill all the fields');
+
+          return false;
+        }
+        else {
+            alert('All fields good');
+        }
+    });
+    return true;
+}
+
 // Populate the player info divs
 $(document).ready(
     function() {
@@ -611,6 +626,17 @@ $(document).ready(
                 if(document.getElementById("checkbox_win").checked) {
                     document.getElementById("checkbox_win_hidden").disabled = true;
                 }
+            }
+        )
+    }
+)
+
+$(document).ready(
+    function () {
+        $("submit").on(
+            "click",
+            function() {
+                check_required_inputs();
             }
         )
     }
