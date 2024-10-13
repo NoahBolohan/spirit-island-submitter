@@ -75,73 +75,85 @@
 				</select>
 			</div>
 
-			<div class="row my-3 p-0 g-0 justify-content-center margin_auto" id="row_player_info"></div>
+			<div class="row mt-3 p-0 g-0 justify-content-center margin_auto" id="row_player_info"></div>
 
-			<div class="row mt-2 p-0 g-2 justify-content-center margin_auto" id="row_adversaries">
+			<div class="row mt-3 p-0 g-0 justify-content-center margin_auto" id="row_adversaries_card">
+				
+				<div class="card p-0 margin-auto" id="col_adversaries_card">
 
-				<div class="col-6">
-
-					<div class="card margin_auto" id="card_adversary_1">
-
-						<div class="card-header text-center">
-							Leading Adv.
-						</div>
-
-						<select class="row m-3 justify-content-center" id="row_select_adversary_1" name="adversary_1">
-							<option selected value="">No adversary</option>
-						</select>
-
-						<select class="row mb-3 mx-3 justify-content-center" id="row_select_adversary_1_level" name="adversary_1_level" disabled>
-							<option disabled selected>Level</option>
-							<option>0</option>
-							<option>1</option>
-							<option>2</option>
-							<option>3</option>
-							<option>4</option>
-							<option>5</option>
-							<option>6</option>
-						</select>
-					</div>
-				</div>
-
-
-				<div class="col-6 align-self-center">
-
-					<div class="row p-0 justify-content-center " id="row_button_adversary_2">
-
-						<button class="col-6 btn btn-primary" id="button_adversary_2" type="button">
-							Add supporting adversary
-						</button>
+					<div class="card-header text-center">
+						Adversaries
 					</div>
 
-					<div class="card margin_auto is_hidden" id="card_adversary_2">
+					<div class="row m-2 p-0 g-2 justify-content-center margin_auto" id="row_adversaries">
 
-						<div class="card-header text-center">
+						<div class="col-6">
 
-							<div class="row p-0">
+							<div class="card margin_auto" id="card_adversary_1">
 
-								<div class="col-6 offset-md-3">
-									Supporting Adv.
+								<div class="card-header text-center">
+									Leading
 								</div>
 
-								<button class="col-2 offset-md-1 btn btn-sm btn-danger" id="col_button_remove_adversary_2" type="button"></button>
+								<select class="row m-3 justify-content-center" id="row_select_adversary_1" name="adversary_1">
+									<option selected value="">No adversary</option>
+								</select>
+
+								<select class="row mb-3 mx-3 justify-content-center" id="row_select_adversary_1_level" name="adversary_1_level" disabled>
+									<option disabled selected>Level</option>
+									<option>0</option>
+									<option>1</option>
+									<option>2</option>
+									<option>3</option>
+									<option>4</option>
+									<option>5</option>
+									<option>6</option>
+								</select>
 							</div>
 						</div>
 
-						<select class="row m-3 justify-content-center" id="row_select_adversary_2" name="adversary_2">
-							<option selected value="">No adversary</option>
-						</select>
 
-						<select class="row mb-3 mx-3 justify-content-center" id="row_select_adversary_2_level" name="adversary_2_level" disabled>
-							<option disabled selected>Level</option>
-							<option>0</option>
-							<option>1</option>
-							<option>2</option>
-							<option>3</option>
-							<option>4</option>
-							<option>5</option>
-							<option>6</option>
-						</select>
+						<div class="col-6 align-self-center">
+
+							<div class="row p-0 justify-content-center " id="row_button_adversary_2">
+
+								<button class="col-6 btn btn-primary" id="button_adversary_2" type="button">
+									Add supporting adversary
+								</button>
+							</div>
+
+							<div class="card margin_auto is_hidden" id="card_adversary_2">
+
+								<div class="card-header text-center">
+
+									<div class="row p-0 align-items-center">
+
+										<div class="col-6 offset-md-3">
+											Supporting
+										</div>
+
+										<button class="col-1 offset-md-2 btn btn-sm btn-danger" id="col_button_remove_adversary_2" type="button">
+											X
+										</button>
+									</div>
+								</div>
+
+								<select class="row m-3 justify-content-center" id="row_select_adversary_2" name="adversary_2">
+									<option selected value="">No adversary</option>
+								</select>
+
+								<select class="row mb-3 mx-3 justify-content-center" id="row_select_adversary_2_level" name="adversary_2_level" disabled>
+									<option disabled selected>Level</option>
+									<option>0</option>
+									<option>1</option>
+									<option>2</option>
+									<option>3</option>
+									<option>4</option>
+									<option>5</option>
+									<option>6</option>
+								</select>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -152,7 +164,7 @@
 				</button>
 			</div> -->
 
-			<div class="row my-3 p-0 justify-content-center margin_auto" id="row_button_scenario">
+			<div class="row mt-3 p-0 justify-content-center margin_auto" id="row_button_scenario">
 				<button class="col-9 btn btn-primary" id="button_scenario" type="button">
 					Add scenario
 				</button>
