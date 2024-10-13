@@ -1,5 +1,6 @@
 .is_hidden {
-    display: none;
+    visibility : hidden;
+    max-height : 0;
 }
 
 .margin_auto {

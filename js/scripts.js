@@ -440,16 +440,16 @@ $(document).ready(
             "click",
             function() {
                 // Show adversary 2 row
-                $("#card_adversary_2").show();
+                custom_show("#card_adversary_2");
                 $("#row_select_adversary_2_level").prop(
                     'selectedIndex',
                     0
                 );
                 // Hide and reset adversary 2 button
-                $("#row_button_adversary_2").hide();
+                custom_hide("#row_button_adversary_2");
 
                 // Toggle remove adversary 2 button
-                $("#row_button_remove_adversary_2").show();
+                custom_show("#row_button_remove_adversary_2");
             }
         )
     }
@@ -462,7 +462,7 @@ $(document).ready(
             "click",
             function() {
                 // Hide adversary 2 row
-                $("#card_adversary_2").hide();
+                custom_hide("#card_adversary_2");
                 $("#row_select_adversary_2").prop(
                     'selectedIndex',
                     0
@@ -476,10 +476,10 @@ $(document).ready(
                     true
                 );
                 // Hide adversary 2 button
-                $("#row_button_adversary_2").show();
+                custom_show("#row_button_adversary_2");
 
                 // Toggle remove adversary 2 button
-                $("#row_button_remove_adversary_2").hide();
+                custom_hide("#row_button_remove_adversary_2");
             }
         )
     }
@@ -534,34 +534,26 @@ $(document).ready(
 
 // Define a function for setting the adversary card background
 
-function set_card_adversary_background() {
-    if ($("#card_adversaries").data("background_url_1") & $("#card_adversaries").data("background_url_2")) {
+function custom_show(div_id) {
+    $(div_id).css(
+        "visibility",
+        "visible"
+    );
+    $(div_id).css(
+        "max-height",
+        "100%"
+    );
+}
 
-        $("#card_adversaries").attr(
-            "style",
-            `background-image : url(${$("#card_adversaries").data("background_url_1")}); background-position: center; background-size: center; background-size: cover; background-color: rgba(255,255,255,0.6); background-blend-mode: lighten;`
-        );
-    }
-    else if ($("#card_adversaries").data("background_url_1")) {
-
-        $("#card_adversaries").attr(
-            "style",
-            `background-image : url(${$("#card_adversaries").data("background_url_1")}); background-position: center; background-size: center; background-size: cover; background-color: rgba(255,255,255,0.6); background-blend-mode: lighten;`
-        );
-    }
-    else if ($("#card_adversaries").data("background_url_2")) {
-
-        $("#card_adversaries").attr(
-            "style",
-            `background-image : url(${$("#card_adversaries").data("background_url_2")}); background-position: center; background-size: center; background-size: cover; background-color: rgba(255,255,255,0.6); background-blend-mode: lighten;`
-        );
-    }
-    else {
-        $("#card_adversaries").attr(
-            "style",
-            `background-image : url(); background-position: center; background-size: center; background-size: cover; background-color: rgba(255,255,255,0.6); background-blend-mode: lighten;`
-        );
-    }
+function custom_hide(div_id) {
+    $(div_id).css(
+        "visibility",
+        "hidden"
+    );
+    $(div_id).css(
+        "max-height",
+        "0"
+    );
 }
 
 // Set an event listener for showing scenario options by clicking the add scenario button
@@ -575,12 +567,12 @@ $(document).ready(
                     "selectedIndex",
                     0
                 );
-                $("#card_scenario").show();
-                $("#card_header_scenario").show();
-                $("#col_select_scenario").show();
+                custom_show("#card_scenario");
+                custom_show("#card_header_scenario");
+                custom_show("#col_select_scenario");
                 // Hide scenario button and show remove scenario button
-                $("#row_button_scenario").hide();
-                $("#row_button_remove_scenario").show();
+                custom_hide("#row_button_scenario");
+                custom_show("#row_button_remove_scenario");
             }
         )
     }
@@ -593,16 +585,16 @@ $(document).ready(
             "click",
             function() {
                 // Hide scenario card and reset it
-                $("#card_scenario").hide();
-                $("#card_header_scenario").hide();
-                $("#col_select_scenario").hide();
+                custom_hide("#card_scenario");
+                custom_hide("#card_header_scenario");
+                custom_hide("#col_select_scenario");
                 $('#col_select_scenario').prop(
                     "selectedIndex",
                     0
                 );
                 // Show scenario button and hide remove scenario button
-                $("#row_button_scenario").show();
-                $("#row_button_remove_scenario").hide();
+                custom_show("#row_button_scenario");
+                custom_hide("#row_button_remove_scenario");
                 
             }
         )
