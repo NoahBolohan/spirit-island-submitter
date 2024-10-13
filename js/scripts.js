@@ -160,12 +160,12 @@ $(document).ready(
                     }
                 ).appendTo(`#card_player_${i}_info`);
 
-                // Player spirit input
+                // Player spirit text input
                 var spirit_select = $("<input>").attr(
                     {
                         class : "col",
-                        list : `col_select_player_${i}_spirit_list`,
-                        id : `col_select_player_${i}_spirit`,
+                        list : `col_input_player_${i}_spirit_list`,
+                        id : `col_input_player_${i}_spirit`,
                         name : `player_${i}_spirit`,
                         placeholder : "Enter spirit"
                     }
@@ -177,21 +177,21 @@ $(document).ready(
                 // Player spirit datalist
                 $("<datalist>").attr(
                     {
-                        id : `col_select_player_${i}_spirit_list`
+                        id : `col_input_player_${i}_spirit_list`
                     }
                 ).appendTo(`#row_input_player_${i}_spirit`);
 
                 // Append the spirit options
                 $(Object.keys(data["spirits"])).each(
                     function() {
-                        $(`#col_select_player_${i}_spirit_list`).append(
+                        $(`#col_input_player_${i}_spirit_list`).append(
                             $("<option>").text(this)
                         );
                     }
                 );
 
                 // Reset the select to the first option
-                $(`#col_select_player_${i}_spirit`).prop('selectedIndex',0);
+                $(`#col_input_player_${i}_spirit`).prop('selectedIndex',0);
 
                 // Hide columns for players 2+
                 if (i > 1) {
@@ -201,7 +201,7 @@ $(document).ready(
                     );
                     $(`#card_player_${i}_info`).hide();
                     $(`#col_player_${i}_info`).hide();
-                    $(`#col_select_player_${i}_spirit`).hide();
+                    $(`#col_input_player_${i}_spirit`).hide();
 
                     
                 }
@@ -272,12 +272,12 @@ $(document).ready(
                             true
                         );
                         // Set player ${i} spirit choice required
-                        $(`#col_select_player_${i}_spirit`).prop(
+                        $(`#col_input_player_${i}_spirit`).prop(
                             "required",
                             true
                         );
                         // Show content for player ${i}
-                        $(`#col_select_player_${i}_spirit`).show();
+                        $(`#col_input_player_${i}_spirit`).show();
                         $(`#card_player_${i}_info`).show();
                         $(`#col_player_${i}_info`).show();
                     }
@@ -294,17 +294,19 @@ $(document).ready(
                             0
                         );
                         // Set player ${i} spirit choice required
-                        $(`#col_select_player_${i}_spirit`).prop(
+                        $(`#col_input_player_${i}_spirit`).prop(
                             "required",
                             false
                         );
                         // Reset player ${i} spirit choice
-                        $(`#col_select_player_${i}_spirit`).prop(
-                            'selectedIndex',
-                            0
+                        $(`#col_input_player_${i}_spirit`).val("");
+                        $(`#card_player_${i}_info`).attr(
+                            "style",
+                            ""
                         );
+
                         // Hide player ${i} content
-                        $(`#col_select_player_${i}_spirit`).hide();
+                        $(`#col_input_player_${i}_spirit`).hide();
                         $(`#row_player_${i}_spirit_image`).hide();
                         $(`#card_player_${i}_info`).hide();
                         $(`#col_player_${i}_info`).hide();
@@ -319,12 +321,12 @@ $(document).ready(
 $(document).ready(
     $(document).on(
         "change",
-        "#col_select_player_1_spirit",
+        "#col_input_player_1_spirit",
         function() {
             $.getJSON('https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/refs/heads/master/data/config.json', function(data) {
 
                 // Assign appropriate image to player 1 spirit image div
-                var spirit_config = data["spirits"][$("#col_select_player_1_spirit").val()]
+                var spirit_config = data["spirits"][$("#col_input_player_1_spirit").val()]
 
                 if ("alt_name" in spirit_config & "aspect_art" in spirit_config & spirit_config["aspect_art"] == "true") {
                     var spirit_image_file_name = spirit_config["alt_name"]
@@ -333,7 +335,7 @@ $(document).ready(
                     var spirit_image_file_name = spirit_config["aspect_for"].split(' ').join('_')
                 }
                 else {
-                    var spirit_image_file_name = $("#col_select_player_1_spirit").val().split(' ').join('_')
+                    var spirit_image_file_name = $("#col_input_player_1_spirit").val().split(' ').join('_')
                 }
 
                 var new_url = encodeURI("https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/spirit_images/" + spirit_image_file_name + ".png");
@@ -353,11 +355,11 @@ $(document).ready(
 $(document).ready(
     $(document).on(
         "change",
-        "#col_select_player_2_spirit",
+        "#col_input_player_2_spirit",
         function() {    
             // Assign appropriate image to player 1 spirit image div
 
-            var new_url = encodeURI("https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/spirit_images/" + $("#col_select_player_2_spirit").val().split(' ').join('_') + ".png");
+            var new_url = encodeURI("https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/spirit_images/" + $("#col_input_player_2_spirit").val().split(' ').join('_') + ".png");
 
             new_url = new_url.replace(/'/g, '%27')
 
@@ -373,11 +375,11 @@ $(document).ready(
 $(document).ready(
     $(document).on(
         "change",
-        "#col_select_player_3_spirit",
+        "#col_input_player_3_spirit",
         function() {    
             // Assign appropriate image to player 1 spirit image div
 
-            var new_url = encodeURI("https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/spirit_images/" + $("#col_select_player_3_spirit").val().split(' ').join('_') + ".png");
+            var new_url = encodeURI("https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/spirit_images/" + $("#col_input_player_3_spirit").val().split(' ').join('_') + ".png");
 
             new_url = new_url.replace(/'/g, '%27')
 
@@ -393,11 +395,11 @@ $(document).ready(
 $(document).ready(
     $(document).on(
         "change",
-        "#col_select_player_4_spirit",
+        "#col_input_player_4_spirit",
         function() {    
             // Assign appropriate image to player 1 spirit image div
 
-            var new_url = encodeURI("https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/spirit_images/" + $("#col_select_player_4_spirit").val().split(' ').join('_') + ".png");
+            var new_url = encodeURI("https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/spirit_images/" + $("#col_input_player_4_spirit").val().split(' ').join('_') + ".png");
 
             new_url = new_url.replace(/'/g, '%27')
 
