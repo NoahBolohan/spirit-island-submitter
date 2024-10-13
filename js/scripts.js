@@ -515,7 +515,7 @@ $(document).ready(
             "change",
             function() {
                 $.getJSON('https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/refs/heads/master/data/config.json', function(data) {
-                    
+
                     // Assign appropriate image to adversary 2 card
                     var adversary_config = data["adversaries"][$("#row_select_adversary_2").val()];
 
