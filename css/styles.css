@@ -17,6 +17,10 @@ html *
 
 .g-2 div:nth-child(odd) { padding-left: 0; }
 .g-2 div:nth-child(even) { padding-right: 0; }
+.g-2 div:nth-child(1) { margin-top: 0; }
+.g-2 div:nth-child(2) { margin-top: 0; }
+.g-2 div:nth-last-child(even) { margin-bottom: 0; }
+.g-2 div:nth-last-child(even) { margin-bottom: 0; }
 
 .card-header {
     background-color: rgba(246, 246, 246, 0.8);
