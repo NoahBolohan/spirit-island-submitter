@@ -39,3 +39,10 @@ body {
     background-color: rgba(255,255,255,0.7);
     background-blend-mode: lighten;
 }
+
+.loginBtn span {
+    display: block;
+    padding-top: 22px;
+    text-align: center;
+    line-height: 1em;
+}
