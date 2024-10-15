@@ -608,6 +608,35 @@ $(document).ready(
     }
 )
 
+// Set an event listener for assigning the scenario background image url by choosing a scenario
+$(document).ready(
+    function() {
+        $("#col_select_scenario").on(
+            "change",
+            function() {
+                $.getJSON('https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/refs/heads/master/data/config.json', function(data) {
+
+                    // Assign appropriate image to scenario card
+                    var scenario_config = data["scenarios"][$("#col_select_scenario").val()];
+
+                    var scenario_image_file_name = $("#col_select_scenario").val().split(' ').join('_');
+
+                    var new_url = encodeURI("https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/scenarios/" + scenario_image_file_name + ".png");
+
+                    new_url = new_url.replace(/'/g, '%27').replace(/\(/g, "%28").replace(/\)/g, "%29");
+
+                    $("#card_scenario").attr(
+                        "style",
+                        `background-image : url(${new_url}); background-position: center; background-size: center; background-size: cover; background-color: rgba(255,255,255,0.6); background-blend-mode: lighten;`
+                    );
+
+                    custom_show("#card_scenario");
+                });
+            }
+        )
+    }
+)
+
 // Set an event listener for checking the victory checkbox on submit
 $(document).ready(
     function() {
