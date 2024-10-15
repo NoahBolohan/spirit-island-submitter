@@ -536,6 +536,8 @@ $(document).ready(
                         `background-image : url(${new_url}); background-position: center; background-size: center; background-size: cover; background-color: rgba(255,255,255,0.6); background-blend-mode: lighten;`
                     );
 
+                    custom_show("#card_adversary_2");
+
                     // Enable adversary 2 level select if this.value changed to an adversary
                     if ($("#row_select_adversary_2_level").is(":disabled") && this.value != "No adversary") {
                         $("#row_select_adversary_2_level").prop(
