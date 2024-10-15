@@ -579,11 +579,6 @@ $(document).ready(
         $("#button_scenario").on(
             "click",
             function() {
-                // Show scenario card and reset it
-                $('#col_select_scenario').prop(
-                    "selectedIndex",
-                    0
-                ).trigger("change");
                 custom_show("#card_scenario");
                 // Hide scenario button and show remove scenario button
                 custom_hide("#row_button_scenario");
@@ -641,8 +636,6 @@ $(document).ready(
                             "background-blend-mode" : "lighten"
                         }
                     );
-
-                    custom_show("#card_scenario");
                 });
             }
         )
