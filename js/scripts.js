@@ -432,9 +432,15 @@ $(document).ready(
 
                     new_url = new_url.replace(/'/g, '%27').replace(/\(/g, "%28").replace(/\)/g, "%29");
 
-                    $("#card_adversary_1").attr(
-                        "style",
-                        `background-image : url(${new_url}); background-position: center; background-size: center; background-size: cover; background-color: rgba(255,255,255,0.6); background-blend-mode: lighten;`
+                    $("#card_adversary_1").css(
+                        {
+                            "background-image" : `url(${new_url})`,
+                            "background-position" : "center",
+                            "background-size" : "center",
+                            "background-size" : "cover",
+                            "background-color" : "rgba(255,255,255,0.6)",
+                            "background-blend-mode" : "lighten"
+                        }
                     );
 
                     // Enable adversary 1 level select if this.value changed to an adversary
@@ -495,7 +501,7 @@ $(document).ready(
                 $("#row_select_adversary_2").prop(
                     'selectedIndex',
                     0
-                );
+                ).trigger("change");
                 $("#row_select_adversary_2_level").prop(
                     'selectedIndex',
                     0
@@ -531,12 +537,16 @@ $(document).ready(
 
                     new_url = new_url.replace(/'/g, '%27').replace(/\(/g, "%28").replace(/\)/g, "%29");
 
-                    $("#card_adversary_2").attr(
-                        "style",
-                        `background-image : url(${new_url}); background-position: center; background-size: center; background-size: cover; background-color: rgba(255,255,255,0.6); background-blend-mode: lighten;`
+                    $("#card_adversary_2").css(
+                        {
+                            "background-image" : `url(${new_url})`,
+                            "background-position" : "center",
+                            "background-size" : "center",
+                            "background-size" : "cover",
+                            "background-color" : "rgba(255,255,255,0.6)",
+                            "background-blend-mode" : "lighten"
+                        }
                     );
-
-                    custom_show("#card_adversary_2");
 
                     // Enable adversary 2 level select if this.value changed to an adversary
                     if ($("#row_select_adversary_2_level").is(":disabled") && this.value != "No adversary") {
@@ -573,10 +583,8 @@ $(document).ready(
                 $('#col_select_scenario').prop(
                     "selectedIndex",
                     0
-                );
+                ).trigger("change");
                 custom_show("#card_scenario");
-                custom_show("#card_header_scenario");
-                custom_show("#col_select_scenario");
                 // Hide scenario button and show remove scenario button
                 custom_hide("#row_button_scenario");
                 custom_show("#row_button_remove_scenario");
@@ -593,12 +601,10 @@ $(document).ready(
             function() {
                 // Hide scenario card and reset it
                 custom_hide("#card_scenario");
-                custom_hide("#card_header_scenario");
-                custom_hide("#col_select_scenario");
                 $('#col_select_scenario').prop(
                     "selectedIndex",
                     0
-                );
+                ).trigger("change");
                 // Show scenario button and hide remove scenario button
                 custom_show("#row_button_scenario");
                 custom_hide("#row_button_remove_scenario");
@@ -625,9 +631,15 @@ $(document).ready(
 
                     new_url = new_url.replace(/'/g, '%27').replace(/\(/g, "%28").replace(/\)/g, "%29");
 
-                    $("#card_scenario").attr(
-                        "style",
-                        `background-image : url(${new_url}); background-position: center; background-size: center; background-size: cover; background-color: rgba(255,255,255,0.6); background-blend-mode: lighten;`
+                    $("#card_scenario").css(
+                        {
+                            "background-image" : `url(${new_url})`,
+                            "background-position" : "center",
+                            "background-size" : "center",
+                            "background-size" : "cover",
+                            "background-color" : "rgba(255,255,255,0.6)",
+                            "background-blend-mode" : "lighten"
+                        }
                     );
 
                     custom_show("#card_scenario");
