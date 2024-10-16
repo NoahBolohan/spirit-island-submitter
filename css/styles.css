@@ -32,22 +32,16 @@ html *
 
 body {
     background-image: url("https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/misc/Spirit_Island_Cover_Art.jpg");
-    /* background-repeat: no-repeat; */
-    /* background-attachment: fixed; */
-    background-size: cover;
+
+    height: 100vh;
+
+    background-attachment: fixed;
     background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
     background-color: rgba(255,255,255,0.7);
     background-blend-mode: lighten;
-
-    /* https://stackoverflow.com/a/55360370 */
-    /* position: fixed; */
-    /* top: 0; */
-    /* left: 0; */
-    width: 100%;
-    height: 100vh;
-    /* background-image: url(../images/background.jpg); */
-    /* background-size: cover; */
-    /* z-index: -1; */
 }
 
 .btn-xs span {

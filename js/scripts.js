@@ -344,7 +344,7 @@ $(document).ready(
 
                 var new_url = encodeURI("https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/spirit_images/" + spirit_image_file_name + ".png");
 
-                new_url = new_url.replace(/'/g, '%27')
+                new_url = new_url.replace(/'/g, '%27').replace(/\(/g, "%28").replace(/\)/g, "%29");
 
                 $("#card_player_1_info").attr(
                     "style",
@@ -361,16 +361,30 @@ $(document).ready(
         "change",
         "#col_input_player_2_spirit",
         function() {    
-            // Assign appropriate image to player 1 spirit image div
+            $.getJSON('https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/refs/heads/master/data/config.json', function(data) {
 
-            var new_url = encodeURI("https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/spirit_images/" + $("#col_input_player_2_spirit").val().split(' ').join('_') + ".png");
+                // Assign appropriate image to player 2 spirit image div
+                var spirit_config = data["spirits"][$("#col_input_player_2_spirit").val()]
 
-            new_url = new_url.replace(/'/g, '%27')
+                if ("alt_name" in spirit_config & "aspect_art" in spirit_config & spirit_config["aspect_art"] == "true") {
+                    var spirit_image_file_name = spirit_config["alt_name"]
+                }
+                else if ("aspect_for" in spirit_config) {
+                    var spirit_image_file_name = spirit_config["aspect_for"].split(' ').join('_')
+                }
+                else {
+                    var spirit_image_file_name = $("#col_input_player_2_spirit").val().split(' ').join('_')
+                }
 
-            $("#card_player_2_info").attr(
-                "style",
-                `background-image : url(${new_url}); background-size: cover; background-color: rgba(255,255,255,0.6); background-blend-mode: lighten;`
-            );
+                var new_url = encodeURI("https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/spirit_images/" + spirit_image_file_name + ".png");
+
+                new_url = new_url.replace(/'/g, '%27').replace(/\(/g, "%28").replace(/\)/g, "%29");
+
+                $("#card_player_2_info").attr(
+                    "style",
+                    `background-image : url(${new_url}); background-size: center; background-size: cover; background-color: rgba(255,255,255,0.6); background-blend-mode: lighten;`
+                );
+            })
         }
     )
 )
@@ -381,16 +395,30 @@ $(document).ready(
         "change",
         "#col_input_player_3_spirit",
         function() {    
-            // Assign appropriate image to player 1 spirit image div
+            $.getJSON('https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/refs/heads/master/data/config.json', function(data) {
 
-            var new_url = encodeURI("https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/spirit_images/" + $("#col_input_player_3_spirit").val().split(' ').join('_') + ".png");
+                // Assign appropriate image to player 3 spirit image div
+                var spirit_config = data["spirits"][$("#col_input_player_3_spirit").val()]
 
-            new_url = new_url.replace(/'/g, '%27')
+                if ("alt_name" in spirit_config & "aspect_art" in spirit_config & spirit_config["aspect_art"] == "true") {
+                    var spirit_image_file_name = spirit_config["alt_name"]
+                }
+                else if ("aspect_for" in spirit_config) {
+                    var spirit_image_file_name = spirit_config["aspect_for"].split(' ').join('_')
+                }
+                else {
+                    var spirit_image_file_name = $("#col_input_player_3_spirit").val().split(' ').join('_')
+                }
 
-            $("#card_player_3_info").attr(
-                "style",
-                `background-image : url(${new_url}); background-size: cover; background-color: rgba(255,255,255,0.6); background-blend-mode: lighten;`
-            );
+                var new_url = encodeURI("https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/spirit_images/" + spirit_image_file_name + ".png");
+
+                new_url = new_url.replace(/'/g, '%27').replace(/\(/g, "%28").replace(/\)/g, "%29");
+
+                $("#card_player_3_info").attr(
+                    "style",
+                    `background-image : url(${new_url}); background-size: center; background-size: cover; background-color: rgba(255,255,255,0.6); background-blend-mode: lighten;`
+                );
+            })
         }
     )
 )
@@ -401,16 +429,30 @@ $(document).ready(
         "change",
         "#col_input_player_4_spirit",
         function() {    
-            // Assign appropriate image to player 1 spirit image div
+            $.getJSON('https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/refs/heads/master/data/config.json', function(data) {
 
-            var new_url = encodeURI("https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/spirit_images/" + $("#col_input_player_4_spirit").val().split(' ').join('_') + ".png");
+                // Assign appropriate image to player 4 spirit image div
+                var spirit_config = data["spirits"][$("#col_input_player_4_spirit").val()]
 
-            new_url = new_url.replace(/'/g, '%27')
+                if ("alt_name" in spirit_config & "aspect_art" in spirit_config & spirit_config["aspect_art"] == "true") {
+                    var spirit_image_file_name = spirit_config["alt_name"]
+                }
+                else if ("aspect_for" in spirit_config) {
+                    var spirit_image_file_name = spirit_config["aspect_for"].split(' ').join('_')
+                }
+                else {
+                    var spirit_image_file_name = $("#col_input_player_4_spirit").val().split(' ').join('_')
+                }
 
-            $("#card_player_4_info").attr(
-                "style",
-                `background-image : url(${new_url}); background-size: cover; background-color: rgba(255,255,255,0.6); background-blend-mode: lighten;`
-            );
+                var new_url = encodeURI("https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/spirit_images/" + spirit_image_file_name + ".png");
+
+                new_url = new_url.replace(/'/g, '%27').replace(/\(/g, "%28").replace(/\)/g, "%29");
+
+                $("#card_player_4_info").attr(
+                    "style",
+                    `background-image : url(${new_url}); background-size: center; background-size: cover; background-color: rgba(255,255,255,0.6); background-blend-mode: lighten;`
+                );
+            })
         }
     )
 )
@@ -651,9 +693,16 @@ $(document).ready(
                         );
                     }
                     else {
+
+                        // Assign appropriate image to player 2 spirit image div
                         var scenario_config = data["scenarios"][$("#col_select_scenario").val()];
 
-                        var scenario_image_file_name = $("#col_select_scenario").val().split(' ').join('_');
+                        if ("alt_name" in scenario_config) {
+                            var scenario_image_file_name = scenario_config["alt_name"]
+                        }
+                        else {
+                            var scenario_image_file_name = $("#col_select_scenario").val().split(' ').join('_')
+                        }
     
                         var new_url = encodeURI("https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/scenarios/" + scenario_image_file_name + ".png");
     

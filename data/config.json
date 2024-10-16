@@ -509,9 +509,11 @@
             "difficulty" : "1/-1"
         },
         "Surges of Colonization (+2)" : {
+            "alt_name" : "Surges of Colonization",
             "difficulty" : "2"
         },
         "Surges of Colonization (+7)" : {
+            "alt_name" : "Surges of Colonization",
             "difficulty" : "7"
         },
         "The Great River" : {
