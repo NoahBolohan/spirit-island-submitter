@@ -61,8 +61,23 @@ body {
     cursor: pointer;
 }
 
+.element_img_col {
+    position: relative;
+    display: inline-block;
+  }
+
 .element_img {
-    width : 100%;
+    display: block;
+}
+
+.element_img_text_overlay{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate( -50%, -50% );
+    text-align: center;
+    color: white;
+    font-weight: bold;
 }
 /* 
 .plus_button {
