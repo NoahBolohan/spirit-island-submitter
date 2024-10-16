@@ -33,7 +33,7 @@ html *
 body {
     background-image: url("https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/misc/Spirit_Island_Cover_Art.jpg");
     background-repeat: no-repeat;
-    background-attachment: scroll;
+    background-attachment: local;
     background-size: cover;
     background-position: center;
     background-color: rgba(255,255,255,0.7);
