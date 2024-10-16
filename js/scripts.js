@@ -424,25 +424,36 @@ $(document).ready(
                 $.getJSON('https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/refs/heads/master/data/config.json', function(data) {
 
                     // Assign appropriate image to adversary 1 card
-                    var adversary_config = data["adversaries"][$("#row_select_adversary_1").val()];
+                    if ($("#row_select_adversary_1").val() == "") {
+                        $("#card_adversary_1").css(
+                            {
+                                "background-image" : "",
+                                "background-color" : "",
+                                "background-blend-mode" : ""
+                            }
+                        );
+                    }
+                    else {
+                        var adversary_config = data["adversaries"][$("#row_select_adversary_1").val()];
 
-                    var adversary_image_file_name = $("#row_select_adversary_1").val().split(' ').join('_');
+                        var adversary_image_file_name = $("#row_select_adversary_1").val().split(' ').join('_');
 
-                    var new_url = encodeURI("https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/adversaries/" + adversary_image_file_name + ".png");
+                        var new_url = encodeURI("https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/adversaries/" + adversary_image_file_name + ".png");
 
-                    new_url = new_url.replace(/'/g, '%27').replace(/\(/g, "%28").replace(/\)/g, "%29");
+                        new_url = new_url.replace(/'/g, '%27').replace(/\(/g, "%28").replace(/\)/g, "%29");
 
-                    $("#card_adversary_1").css(
-                        {
-                            "background-image" : `url(${new_url})`,
-                            "background-position" : "center",
-                            "background-size" : "center",
-                            "background-size" : "cover",
-                            "background-color" : "rgba(255,255,255,0.6)",
-                            "background-blend-mode" : "lighten"
-                        }
-                    );
-
+                        $("#card_adversary_1").css(
+                            {
+                                "background-image" : `url(${new_url})`,
+                                "background-position" : "center",
+                                "background-size" : "center",
+                                "background-size" : "cover",
+                                "background-color" : "rgba(255,255,255,0.6)",
+                                "background-blend-mode" : "lighten"
+                            }
+                        );
+                    }
+        
                     // Enable adversary 1 level select if this.value changed to an adversary
                     if ($("#row_select_adversary_1_level").is(":disabled") && this.value != "No adversary") {
                         $("#row_select_adversary_1_level").prop(
@@ -529,24 +540,36 @@ $(document).ready(
                 $.getJSON('https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/refs/heads/master/data/config.json', function(data) {
 
                     // Assign appropriate image to adversary 2 card
-                    var adversary_config = data["adversaries"][$("#row_select_adversary_2").val()];
+                    if ($("#row_select_adversary_2").val() == "") {
+                        $("#card_adversary_2").css(
+                            {
+                                "background-image" : "",
+                                "background-color" : "",
+                                "background-blend-mode" : ""
+                            }
+                        );
+                    }
+                    else {
+                        var adversary_config = data["adversaries"][$("#row_select_adversary_2").val()];
 
-                    var adversary_image_file_name = $("#row_select_adversary_2").val().split(' ').join('_');
+                        var adversary_image_file_name = $("#row_select_adversary_2").val().split(' ').join('_');
 
-                    var new_url = encodeURI("https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/adversaries/" + adversary_image_file_name + ".png");
+                        var new_url = encodeURI("https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/adversaries/" + adversary_image_file_name + ".png");
 
-                    new_url = new_url.replace(/'/g, '%27').replace(/\(/g, "%28").replace(/\)/g, "%29");
+                        new_url = new_url.replace(/'/g, '%27').replace(/\(/g, "%28").replace(/\)/g, "%29");
 
-                    $("#card_adversary_2").css(
-                        {
-                            "background-image" : `url(${new_url})`,
-                            "background-position" : "center",
-                            "background-size" : "center",
-                            "background-size" : "cover",
-                            "background-color" : "rgba(255,255,255,0.6)",
-                            "background-blend-mode" : "lighten"
-                        }
-                    );
+                        $("#card_adversary_2").css(
+                            {
+                                "background-image" : `url(${new_url})`,
+                                "background-position" : "center",
+                                "background-size" : "center",
+                                "background-size" : "cover",
+                                "background-color" : "rgba(255,255,255,0.6)",
+                                "background-blend-mode" : "lighten"
+                            }
+                        );
+                    }
+                    
 
                     // Enable adversary 2 level select if this.value changed to an adversary
                     if ($("#row_select_adversary_2_level").is(":disabled") && this.value != "No adversary") {
@@ -616,26 +639,38 @@ $(document).ready(
             "change",
             function() {
                 $.getJSON('https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/refs/heads/master/data/config.json', function(data) {
-
+                    
                     // Assign appropriate image to scenario card
-                    var scenario_config = data["scenarios"][$("#col_select_scenario").val()];
+                    if ($("#col_select_scenario").val() == null) {
+                        $("#card_scenario").css(
+                            {
+                                "background-image" : "",
+                                "background-color" : "",
+                                "background-blend-mode" : ""
+                            }
+                        );
+                    }
+                    else {
+                        var scenario_config = data["scenarios"][$("#col_select_scenario").val()];
 
-                    var scenario_image_file_name = $("#col_select_scenario").val().split(' ').join('_');
-
-                    var new_url = encodeURI("https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/scenarios/" + scenario_image_file_name + ".png");
-
-                    new_url = new_url.replace(/'/g, '%27').replace(/\(/g, "%28").replace(/\)/g, "%29");
-
-                    $("#card_scenario").css(
-                        {
-                            "background-image" : `url(${new_url})`,
-                            "background-position" : "center",
-                            "background-size" : "center",
-                            "background-size" : "cover",
-                            "background-color" : "rgba(255,255,255,0.6)",
-                            "background-blend-mode" : "lighten"
-                        }
-                    );
+                        var scenario_image_file_name = $("#col_select_scenario").val().split(' ').join('_');
+    
+                        var new_url = encodeURI("https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/scenarios/" + scenario_image_file_name + ".png");
+    
+                        new_url = new_url.replace(/'/g, '%27').replace(/\(/g, "%28").replace(/\)/g, "%29");
+    
+                        $("#card_scenario").css(
+                            {
+                                "background-image" : `url(${new_url})`,
+                                "background-position" : "center",
+                                "background-size" : "center",
+                                "background-size" : "cover",
+                                "background-color" : "rgba(255,255,255,0.6)",
+                                "background-blend-mode" : "lighten"
+                            }
+                        );
+                    }
+                    
                 });
             }
         )
