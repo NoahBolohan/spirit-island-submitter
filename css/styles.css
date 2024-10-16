@@ -60,3 +60,16 @@ body {
     padding:0;
     cursor: pointer;
 }
+
+.element_img {
+    width : 100%;
+}
+/* 
+.plus_button {
+    width : 50%;
+    height : 50%;
+}
+.minus_button {
+    width : 50%;
+    height : 50%;
+} */
