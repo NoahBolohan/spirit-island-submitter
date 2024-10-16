@@ -36,10 +36,11 @@ body {
 
     background-image: url("https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/misc/Spirit_Island_Cover_Art.jpg");
 
-    height: 100vh;
+    height: 99vh;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    position: fixed;
 
     background-color: rgba(255,255,255,0.7);
     background-blend-mode: lighten;
