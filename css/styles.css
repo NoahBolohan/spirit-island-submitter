@@ -38,6 +38,15 @@ body {
     background-position: center;
     background-color: rgba(255,255,255,0.7);
     background-blend-mode: lighten;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    /* background-image: url(../images/background.jpg);
+    background-size: cover; */
+    z-index: -1;
 }
 
 .btn-xs span {
@@ -53,14 +62,4 @@ body {
     margin:0;
     padding:0;
     cursor: pointer;
-}
-
-.wrapper {
-    position: fixed;
-    top: 0.5px;
-    left: 0;
-    right: 0;
-    bottom: 0.5px;
-    overflow-x: hidden; /* or any other value */
-    overflow-y: auto; /* or any other value */
 }
