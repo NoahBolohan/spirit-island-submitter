@@ -31,14 +31,15 @@ html *
 }
 
 body {
+    margin:0;
+    padding:0;
+
     background-image: url("https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/misc/Spirit_Island_Cover_Art.jpg");
 
     height: 100vh;
-
-    background-attachment: fixed;
-    background-position: center;
     background-repeat: no-repeat;
-    /* background-size: cover; */
+    background-position: center;
+    background-size: cover;
 
     background-color: rgba(255,255,255,0.7);
     background-blend-mode: lighten;
