@@ -747,6 +747,16 @@ $(document).ready(
                                 ) + 1
                             );
 
+                            // Display counter value is the value is 2 or greater
+                            if ( $(`#element_${element}`).data("counter") >= 2) {
+                                $(`#element_${element}_overlay_text`).text(
+                                    $(`#element_${element}`).data("counter")
+                                )
+                            } else {
+                                $(`#element_${element}_overlay_text`).empty()
+                            }
+                            
+
                             // If element counter is greater than zero, remove image opacity
                             if ( $(`#element_${element}`).data("counter") > 0) {
                                 
@@ -787,6 +797,15 @@ $(document).ready(
                                 )
                             );
 
+                            // Display counter value is the value is 2 or greater
+                            if ( $(`#element_${element}`).data("counter") >= 2) {
+                                $(`#element_${element}_overlay_text`).text(
+                                    $(`#element_${element}`).data("counter")
+                                )
+                            } else {
+                                $(`#element_${element}_overlay_text`).empty()
+                            }
+
                             // If element counter is zero, restore image opacity
                             if ( $(`#element_${element}`).data("counter") == 0) {
                                 
@@ -821,6 +840,15 @@ $(document).ready(
                                 "counter",
                                 0
                             );
+
+                            // Display counter value is the value is 2 or greater
+                            if ( $(`#element_${element}`).data("counter") >= 2) {
+                                $(`#element_${element}_overlay_text`).text(
+                                    $(`#element_${element}`).data("counter")
+                                )
+                            } else {
+                                $(`#element_${element}_overlay_text`).empty()
+                            }
 
                             // If element counter is zero, restore image opacity
                             if ( $(`#element_${element}`).data("counter") == 0) {
