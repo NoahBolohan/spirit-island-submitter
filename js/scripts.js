@@ -734,9 +734,11 @@ $(document).ready(
             $.each(
                 data["elements"],
                 function(key, element) {
+
                     $(`#button_${element}_plus`).on(
                         "click",
                         function() {
+
                             // Increase the data counter by 1
                             $(`#element_${element}`).data(
                                 "counter",
@@ -744,6 +746,15 @@ $(document).ready(
                                     "counter"
                                 ) + 1
                             );
+
+                            // If element counter is greater than zero, remove image opacity
+                            if ( $(`#element_${element}`).data("counter") > 0) {
+                                
+                                $(`#element_${element}`).css(
+                                    "opacity",
+                                    1
+                                )
+                            }
                         }
                     );
                 }
@@ -760,9 +771,11 @@ $(document).ready(
             $.each(
                 data["elements"],
                 function(key, element) {
+
                     $(`#button_${element}_minus`).on(
                         "click",
                         function() {
+
                             // Increase the data counter by 1
                             $(`#element_${element}`).data(
                                 "counter",
@@ -773,6 +786,15 @@ $(document).ready(
                                     ) - 1
                                 )
                             );
+
+                            // If element counter is zero, restore image opacity
+                            if ( $(`#element_${element}`).data("counter") == 0) {
+                                
+                                $(`#element_${element}`).css(
+                                    "opacity",
+                                    0.3
+                                )
+                            }
                         }
                     );
                 }
@@ -785,17 +807,29 @@ $(document).ready(
 $(document).ready(
     function() {
         $.getJSON('https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/refs/heads/master/data/config.json', function(data) {
+
             $.each(
                 data["elements"],
                 function(key, element) {
+
                     $("#button_reset_element_tracker").on(
                         "click",
                         function() {
+
                             // Increase the data counter by 1
                             $(`#element_${element}`).data(
                                 "counter",
                                 0
                             );
+
+                            // If element counter is zero, restore image opacity
+                            if ( $(`#element_${element}`).data("counter") == 0) {
+                                
+                                $(`#element_${element}`).css(
+                                    "opacity",
+                                    0.3
+                                )
+                            }
                         }
                     );
                 }
