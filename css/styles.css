@@ -67,7 +67,11 @@ body {
   }
 
 .element_img {
-    display: block;
+    /* display: block; */
+    object-fit: cover;
+    width: auto;
+    height: 35px
+    /* border-radius: 100%; */
 }
 
 .element_img_text_overlay{
