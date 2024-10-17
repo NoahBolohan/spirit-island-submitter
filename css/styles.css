@@ -11,7 +11,7 @@
 html *
 {
    font-size: 1em;
-   color: #000 !important;
+   color: #000;
    font-family: Josefin Sans !important;
 }
 
@@ -75,22 +75,15 @@ body {
 
 .element_img_text_overlay{
     position: absolute;
-    top: 50%;
+    top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: white;
-    font-size: 24px;
-    font-weight: bold;
     text-align: center;
-}
 
-position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; font-size: 24px; font-weight: bold; text-align: center;
-/* 
-.plus_button {
-    width : 50%;
-    height : 50%;
+    font-size: 35px;
+    color: white;
+    margin: 0;
+    -webkit-text-stroke: 2px black;
+    paint-order: stroke fill;
+    
 }
-.minus_button {
-    width : 50%;
-    height : 50%;
-} */
