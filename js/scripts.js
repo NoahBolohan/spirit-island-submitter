@@ -745,12 +745,12 @@ $(document).ready(
                                 ) + 1
                             );
                         }
-                    )
+                    );
                 }
-            )
+            );
         });
     }
-)
+);
 
 // Set an event listener for decreasing the element data counters by 1 when the minus button is pressed
 $(document).ready(
@@ -774,29 +774,35 @@ $(document).ready(
                                 )
                             );
                         }
-                    )
+                    );
                 }
-            )
+            );
         });
     }
-)
+);
 
 // Set an event listener for resetting the  element data counters when the reset button is pressed
 $(document).ready(
     function() {
-        $("#button_reset_element_tracker").on(
-            "click",
-            function() {
-                // Increase the data counter by 1
-                $('#element_sun').data(
-                    "counter",
-                    0
-                );
-                alert(`New counter value: ${$('#element_sun').data("counter")}`)
-            }
-        )
+        $.getJSON('https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/refs/heads/master/data/config.json', function(data) {
+            $.each(
+                data["elements"],
+                function(key, element) {
+                    $("#button_reset_element_tracker").on(
+                        "click",
+                        function() {
+                            // Increase the data counter by 1
+                            $(`#element_${element}`).data(
+                                "counter",
+                                0
+                            );
+                        }
+                    );
+                }
+            );
+        });
     }
-)
+);
 
 // Set an event listener for checking the victory checkbox on submit
 $(document).ready(
