@@ -726,6 +726,62 @@ $(document).ready(
     }
 )
 
+// Set an event listener for increasing the element data counters by 1 when the plus button is pressed
+$(document).ready(
+    function() {
+        $("#button_sun_plus").on(
+            "click",
+            function() {
+                // Increase the data counter by 1
+                $('#element_sun').data(
+                    "counter",
+                    $('#element_sun').data(
+                        "counter"
+                    ) + 1
+                );
+            }
+        )
+    }
+)
+
+// Set an event listener for decreasing the element data counters by 1 when the minus button is pressed
+$(document).ready(
+    function() {
+        $("#button_sun_minus").on(
+            "click",
+            function() {
+                // Increase the data counter by 1
+                $('#element_sun').data(
+                    "counter",
+                    Math.max(
+                        0,
+                        $('#element_sun').data(
+                            "counter"
+                        ) - 1
+                    )
+                );
+            }
+        )
+    }
+)
+
+// Set an event listener for resetting the  element data counters when the reset button is pressed
+$(document).ready(
+    function() {
+        $("#button_reset_element_tracker").on(
+            "click",
+            function() {
+                // Increase the data counter by 1
+                $('#element_sun').data(
+                    "counter",
+                    0
+                );
+                alert(`New counter value: ${$('#element_sun').data("counter")}`)
+            }
+        )
+    }
+)
+
 // Set an event listener for checking the victory checkbox on submit
 $(document).ready(
     function() {

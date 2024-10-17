@@ -525,5 +525,16 @@
         "Ward the Shores" : {
             "difficulty" : "2"
         }
-    }
+    },
+    "elements" : [
+        "air",
+        "animal",
+        "any",
+        "earth",
+        "fire",
+        "moon",
+        "plant",
+        "sun",
+        "water"
+    ]
 }
