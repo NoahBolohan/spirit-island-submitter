@@ -7,6 +7,12 @@ Web app to track Spirit Island games.
 - [Github page](https://noahbolohan.github.io/spirit-island-tracker/)
 - [Google Sheets tracker](https://docs.google.com/spreadsheets/d/1mB2XEACzrntLOJt7lLXVSPLRd68pCaQZib8xjOhjFSE/edit?gid=0#gid=0)
 
+## To-do
+
+- Game component lookup
+- Record turned cards (invader, fear, blight, event)
+- Expansion toggle in top right of before to filter content
+
 ## Have feedback/requests/issues?
 
 Please [create a new issue](https://github.com/jamiewilson/form-to-google-sheet/issues). PRs are definitely welcome, but please run your ideas by me before putting in a lot of work. Thanks!
