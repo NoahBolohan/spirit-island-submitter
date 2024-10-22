@@ -54,8 +54,8 @@ body {
 }
 
 .astext {
-    background:none;
-    border:none;
+    background:transparent;
+    border:none !important;
     margin:0;
     padding:0;
     cursor: pointer;
