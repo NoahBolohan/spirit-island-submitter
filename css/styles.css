@@ -54,7 +54,7 @@ body {
 }
 
 .astext {
-    background:transparent;
+    /* background:transparent; */
     border:none !important;
     margin:0;
     padding:0;
