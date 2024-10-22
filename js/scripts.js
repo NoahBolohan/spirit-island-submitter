@@ -683,7 +683,8 @@ $(document).ready(
                 $.getJSON('https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/refs/heads/master/data/config.json', function(data) {
                     
                     // Assign appropriate image to scenario card
-                    if ($("#col_select_scenario").val() == null) {
+                    if ($("#col_select_scenario").val() == "") {
+                        
                         $("#card_scenario").css(
                             {
                                 "background-image" : "",
@@ -697,27 +698,40 @@ $(document).ready(
                         // Assign appropriate image to player 2 spirit image div
                         var scenario_config = data["scenarios"][$("#col_select_scenario").val()];
 
-                        if ("alt_name" in scenario_config) {
-                            var scenario_image_file_name = scenario_config["alt_name"]
+                        if (scenario_config["has_image"] == "no") {
+                            $("#card_scenario").css(
+                                {
+                                    "background-image" : "",
+                                    "background-color" : "",
+                                    "background-blend-mode" : ""
+                                }
+                            );
                         }
+
                         else {
-                            var scenario_image_file_name = $("#col_select_scenario").val().split(' ').join('_')
-                        }
-    
-                        var new_url = encodeURI("https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/scenarios/" + scenario_image_file_name + ".png");
-    
-                        new_url = new_url.replace(/'/g, '%27').replace(/\(/g, "%28").replace(/\)/g, "%29");
-    
-                        $("#card_scenario").css(
-                            {
-                                "background-image" : `url(${new_url})`,
-                                "background-position" : "center",
-                                "background-size" : "center",
-                                "background-size" : "cover",
-                                "background-color" : "rgba(255,255,255,0.6)",
-                                "background-blend-mode" : "lighten"
+
+                            if ("alt_name" in scenario_config) {
+                                var scenario_image_file_name = scenario_config["alt_name"]
                             }
-                        );
+                            else {
+                                var scenario_image_file_name = $("#col_select_scenario").val().split(' ').join('_')
+                            }
+        
+                            var new_url = encodeURI("https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/scenarios/" + scenario_image_file_name + ".png");
+        
+                            new_url = new_url.replace(/'/g, '%27').replace(/\(/g, "%28").replace(/\)/g, "%29");
+        
+                            $("#card_scenario").css(
+                                {
+                                    "background-image" : `url(${new_url})`,
+                                    "background-position" : "center",
+                                    "background-size" : "center",
+                                    "background-size" : "cover",
+                                    "background-color" : "rgba(255,255,255,0.6)",
+                                    "background-blend-mode" : "lighten"
+                                }
+                            );
+                        }
                     }
                     
                 });
