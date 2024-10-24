@@ -880,6 +880,45 @@ $(document).ready(
     }
 );
 
+// Difficulty calculator
+function difficulty_calculator() {
+    $.getJSON('https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/refs/heads/master/data/config.json', function(data) {
+        // Compute adversary 1 difficulty
+        if ($("#row_select_adversary_1_level").val() == null) {
+            var adv_1_difficulty = data["adversaries"][$("#row_select_adversary_1").val()]["difficulty"]["0"];
+        }
+        else {
+            var adv_1_difficulty = data["adversaries"][$("#row_select_adversary_1").val()]["difficulty"][$("#row_select_adversary_1_level").val()];
+        }
+
+        // Compute adversary 2 difficulty
+        if ($("#row_select_adversary_2").val() == "") {
+            var adv_2_difficulty = 0;
+        }
+        else {
+            if ($("#row_select_adversary_2_level").val() == "") {
+                var adv_2_difficulty = data["adversaries"][$("#row_select_adversary_2").val()]["difficulty"]["0"];
+            }
+            else {
+                var adv_2_difficulty = data["adversaries"][$("#row_select_adversary_2").val()]["difficulty"][$("#row_select_adversary_2_level").val()];
+            }
+        }
+        
+
+        alert(adv_1_difficulty);
+    })
+}
+
+// Set an event listener for computing difficulty on adversary 1 change
+$(document).ready(
+    function() {
+        $("#row_select_adversary_1").on(
+            "change",
+            difficulty_calculator
+        )
+    }
+)
+
 // Set an event listener for checking the victory checkbox on submit
 $(document).ready(
     function() {
