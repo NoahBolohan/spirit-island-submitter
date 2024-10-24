@@ -61,26 +61,38 @@
 
 		<div class="container tab-pane fade show active row margin_auto" id="container_tab_content_before" role="tabpanel" aria-labelledby="before-tab">
 			
-			<div class="row mt-3 justify-content-around margin-auto" id="row_n_players">
+			<div class="row mt-3 p-0 justify-content-center margin_auto" id="row_difficulty_n_players">
 
-				<div class="col-3" id="div_difficulty_text">
-					Difficulty:
+				<div class="col-4 p-0" id="col_difficulty">
+
+					<div class="row justify-content-start" id="row_difficulty">
+						
+						<div class="col-6 p-0" id="col_difficulty_text">
+							Difficulty:
+						</div>
+
+						<div class="col-2 p-0" id="col_difficulty_number">
+							0
+						</div>
+					</div>
 				</div>
 
-				<div class="col-1" id="div_difficulty_number">
-					0
-				</div>
-				
-				<div class="col-6" id="div_n_players">
-					Number of players:
-				</div>
+				<div class="col-6 p-0" id="col_n_players">
 
-				<select class="col-2" id="col_select_n_players" name="n_players">
-					<option selected>1</option>
-					<option>2</option>
-					<option>3</option>
-					<option>4</option>
-				</select>
+					<div class="row justify-content-end" id="row_n_players">
+						
+						<div class="col-8 p-0" id="col_n_players_text">
+							Number of players:
+						</div>
+
+						<select class="col-2 p-0" id="col_select_n_players" name="n_players">
+							<option selected>1</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+						</select>
+					</div>
+				</div>
 			</div>
 
 			<div class="row mt-3 p-0 g-0 justify-content-center margin_auto" id="row_player_info"></div>
