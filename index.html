@@ -227,7 +227,7 @@
 	
 					<div class="row m-2 p-0 justify-content-center margin_auto" id="row_counters_element_tracker">
 
-						<div class="col p-0" id="col_sun_element_counter">
+						<div class="col p-0" id="col_sun_element_counter" data-locked_count = 0>
 
 							<div class="row p-0 justify-content-center margin_auto">
 								<button class="col btn btn-xs astext" id="button_sun_plus" type="button">
@@ -247,7 +247,7 @@
 							</div>
 						</div>
 
-						<div class="col p-0" id="col_moon_element_counter">
+						<div class="col p-0" id="col_moon_element_counter" data-locked_count = 0>
 
 							<div class="row p-0 justify-content-center margin_auto">
 								<button class="col btn btn-xs astext" id="button_moon_plus" type="button">
@@ -267,7 +267,7 @@
 							</div>
 						</div>
 
-						<div class="col p-0" id="col_fire_element_counter">
+						<div class="col p-0" id="col_fire_element_counter" data-locked_count = 0>
 
 							<div class="row p-0 justify-content-center margin_auto">
 								<button class="col btn btn-xs astext" id="button_fire_plus" type="button">
@@ -287,7 +287,7 @@
 							</div>
 						</div>
 
-						<div class="col p-0" id="col_air_element_counter">
+						<div class="col p-0" id="col_air_element_counter" data-locked_count = 0>
 
 							<div class="row p-0 justify-content-center margin_auto">
 								<button class="col btn btn-xs astext" id="button_air_plus" type="button">
@@ -307,7 +307,7 @@
 							</div>
 						</div>
 
-						<div class="col p-0" id="col_water_element_counter">
+						<div class="col p-0" id="col_water_element_counter" data-locked_count = 0>
 
 							<div class="row p-0 justify-content-center margin_auto">
 								<button class="col btn btn-xs astext" id="button_water_plus" type="button">
@@ -327,7 +327,7 @@
 							</div>
 						</div>
 
-						<div class="col p-0" id="col_earth_element_counter">
+						<div class="col p-0" id="col_earth_element_counter" data-locked_count = 0>
 
 							<div class="row p-0 justify-content-center margin_auto">
 								<button class="col btn btn-xs astext" id="button_earth_plus" type="button">
@@ -347,7 +347,7 @@
 							</div>
 						</div>
 
-						<div class="col p-0" id="col_plant_element_counter">
+						<div class="col p-0" id="col_plant_element_counter" data-locked_count = 0>
 
 							<div class="row p-0 justify-content-center margin_auto">
 								<button class="col btn btn-xs astext" id="button_plant_plus" type="button">
@@ -367,7 +367,7 @@
 							</div>
 						</div>
 
-						<div class="col p-0" id="col_animal_element_counter">
+						<div class="col p-0" id="col_animal_element_counter" data-locked_count = 0>
 
 							<div class="row p-0 justify-content-center margin_auto">
 								<button class="col btn btn-xs astext" id="button_animal_plus" type="button">
@@ -387,7 +387,7 @@
 							</div>
 						</div>
 
-						<div class="col p-0" id="col_any_element_counter">
+						<div class="col p-0" id="col_any_element_counter" data-locked_count = 0>
 
 							<div class="row p-0 justify-content-center margin_auto">
 								<button class="col btn btn-xs astext" id="button_any_plus" type="button">
@@ -408,8 +408,9 @@
 						</div>
 					</div>
 
-					<div class="row mb-2 p-0 justify-content-center margin_auto">
-						<button class="col btn btn-danger" id="button_reset_element_tracker" type="button">
+					<div class="row my-2 mb-2 p-0 justify-content-center margin-auto">
+						<button class="col-3 btn btn-primary" id="button_toggle_lock_element_tracker" type="button">Lock</button>
+						<button class="col-3 offset-1 btn btn-danger" id="button_reset_element_tracker" type="button">
 							Reset
 						</button>
 					</div>

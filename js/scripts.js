@@ -836,7 +836,7 @@ $(document).ready(
     }
 );
 
-// Set an event listener for resetting the  element data counters when the reset button is pressed
+// Set an event listener for resetting the element data counters when the reset button is pressed
 $(document).ready(
     function() {
         $.getJSON('https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/refs/heads/master/data/config.json', function(data) {
@@ -849,10 +849,10 @@ $(document).ready(
                         "click",
                         function() {
 
-                            // Increase the data counter by 1
+                            // Reset each element counter to its locked value
                             $(`#element_${element}`).data(
                                 "counter",
-                                0
+                                $(`#col_${element}_element_counter`).data("locked_count")
                             );
 
                             // Display counter value is the value is 2 or greater
@@ -872,11 +872,65 @@ $(document).ready(
                                     0.3
                                 )
                             }
+                            else {
+                                
+                                $(`#element_${element}`).css(
+                                    "opacity",
+                                    1
+                                )
+                            }
                         }
                     );
                 }
             );
         });
+    }
+);
+
+// Set an event listener for locking the elemental counters when the toggle lock button is pressed
+$(document).ready(
+    function() {
+        $("#button_toggle_lock_element_tracker").on(
+            "click",
+            function() {
+                if ($("#button_toggle_lock_element_tracker").text() == "Lock") {
+                    $("#button_toggle_lock_element_tracker").text(
+                        "Unlock"
+                    );
+                    $("#button_toggle_lock_element_tracker").removeClass("btn-primary");
+                    $("#button_toggle_lock_element_tracker").addClass("btn-secondary");
+
+                    $.getJSON('https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/refs/heads/master/data/config.json', function(data) {
+
+                        $.each(
+                            data["elements"],
+                            function(key, element) {
+            
+                               $(`#col_${element}_element_counter`).data("locked_count",$(`#element_${element}`).data("counter"));
+                            }
+                        );
+                    });
+                }
+                else {
+                    $("#button_toggle_lock_element_tracker").text(
+                        "Lock"
+                    );
+                    $("#button_toggle_lock_element_tracker").removeClass("btn-secondary");
+                    $("#button_toggle_lock_element_tracker").addClass("btn-primary");
+
+                    $.getJSON('https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/refs/heads/master/data/config.json', function(data) {
+
+                        $.each(
+                            data["elements"],
+                            function(key, element) {
+            
+                                $(`#col_${element}_element_counter`).data("locked_count",0);
+                            }
+                        );
+                    });
+                }
+            }
+        );
     }
 );
 
