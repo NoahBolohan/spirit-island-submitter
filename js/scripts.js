@@ -683,7 +683,7 @@ $(document).ready(
                 $.getJSON('https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/refs/heads/master/data/config.json', function(data) {
                     
                     // Assign appropriate image to scenario card
-                    if ($("#col_select_scenario").val() == "") {
+                    if ($("#col_select_scenario").val() == null) {
                         
                         $("#card_scenario").css(
                             {
@@ -916,6 +916,21 @@ function difficulty_calculator() {
 
         total_difficulty += adv_2_difficulty;
 
+        // Compute scenario difficulty
+        if ($("#col_select_scenario").val() == "Second Wave") {
+            total_difficulty = `${total_difficulty + 1}/${total_difficulty - 1}`;
+        }
+        else {
+            if ($("#col_select_scenario").val() == null) {
+                var scenario_difficulty = 0;
+            }
+            else {
+                var scenario_difficulty = data["scenarios"][$("#col_select_scenario").val()]["difficulty"];
+            }
+
+            total_difficulty += scenario_difficulty;
+        }
+
         // Assign the difficulty value to the difficulty display div
         $("#col_difficulty_number").text(
             total_difficulty
@@ -957,6 +972,16 @@ $(document).ready(
 $(document).ready(
     function() {
         $("#row_select_adversary_2_level").on(
+            "change",
+            difficulty_calculator
+        )
+    }
+)
+
+// Set an event listener for computing difficulty on scenario level change
+$(document).ready(
+    function() {
+        $("#col_select_scenario").on(
             "change",
             difficulty_calculator
         )
