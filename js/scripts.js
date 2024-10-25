@@ -883,29 +883,43 @@ $(document).ready(
 // Difficulty calculator
 function difficulty_calculator() {
     $.getJSON('https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/refs/heads/master/data/config.json', function(data) {
+
+        var total_difficulty = 0;
+
         // Compute adversary 1 difficulty
-        if ($("#row_select_adversary_1_level").val() == null) {
-            var adv_1_difficulty = data["adversaries"][$("#row_select_adversary_1").val()]["difficulty"]["0"];
+        if ($("#row_select_adversary_1").val() == "") {
+            var adv_1_difficulty = 0;
         }
         else {
-            var adv_1_difficulty = data["adversaries"][$("#row_select_adversary_1").val()]["difficulty"][$("#row_select_adversary_1_level").val()];
+            if ($("#row_select_adversary_1_level").val() == null) {
+                var adv_1_difficulty = data["adversaries"][$("#row_select_adversary_1").val()]["difficulty"]["0"];
+            }
+            else {
+                var adv_1_difficulty = data["adversaries"][$("#row_select_adversary_1").val()]["difficulty"][$("#row_select_adversary_1_level").val()];
+            }
         }
+
+        total_difficulty += adv_1_difficulty;
 
         // Compute adversary 2 difficulty
         if ($("#row_select_adversary_2").val() == "") {
             var adv_2_difficulty = 0;
         }
         else {
-            if ($("#row_select_adversary_2_level").val() == "") {
+            if ($("#row_select_adversary_2_level").val() == null) {
                 var adv_2_difficulty = data["adversaries"][$("#row_select_adversary_2").val()]["difficulty"]["0"];
             }
             else {
                 var adv_2_difficulty = data["adversaries"][$("#row_select_adversary_2").val()]["difficulty"][$("#row_select_adversary_2_level").val()];
             }
         }
-        
 
-        alert(adv_1_difficulty);
+        total_difficulty += adv_2_difficulty;
+
+        // Assign the difficulty value to the difficulty display div
+        $("#col_difficulty_number").text(
+            total_difficulty
+        )
     })
 }
 
@@ -913,6 +927,36 @@ function difficulty_calculator() {
 $(document).ready(
     function() {
         $("#row_select_adversary_1").on(
+            "change",
+            difficulty_calculator
+        )
+    }
+)
+
+// Set an event listener for computing difficulty on adversary 1 level change
+$(document).ready(
+    function() {
+        $("#row_select_adversary_1_level").on(
+            "change",
+            difficulty_calculator
+        )
+    }
+)
+
+// Set an event listener for computing difficulty on adversary 2 change
+$(document).ready(
+    function() {
+        $("#row_select_adversary_2").on(
+            "change",
+            difficulty_calculator
+        )
+    }
+)
+
+// Set an event listener for computing difficulty on adversary 2 level change
+$(document).ready(
+    function() {
+        $("#row_select_adversary_2_level").on(
             "change",
             difficulty_calculator
         )
