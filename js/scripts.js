@@ -897,8 +897,7 @@ $(document).ready(
                     $("#button_toggle_lock_element_tracker").text(
                         "Unlock"
                     );
-                    $("#button_toggle_lock_element_tracker").removeClass("btn-primary");
-                    $("#button_toggle_lock_element_tracker").addClass("btn-secondary");
+                    $("#button_toggle_lock_element_tracker").addClass("btn-secondary").removeClass("btn-primary");
 
                     $.getJSON('https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/refs/heads/master/data/config.json', function(data) {
 
@@ -915,8 +914,7 @@ $(document).ready(
                     $("#button_toggle_lock_element_tracker").text(
                         "Lock"
                     );
-                    $("#button_toggle_lock_element_tracker").removeClass("btn-secondary");
-                    $("#button_toggle_lock_element_tracker").addClass("btn-primary");
+                    $("#button_toggle_lock_element_tracker").addClass("btn-primary").removeClass("btn-secondary");
 
                     $.getJSON('https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/refs/heads/master/data/config.json', function(data) {
 
