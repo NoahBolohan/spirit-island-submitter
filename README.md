@@ -12,8 +12,8 @@ Web app to track Spirit Island games.
 - Game component lookup
 - Record turned cards (invader, fear, blight, event)
 - Expansion toggle in top right of before to filter content
-- Difficulty calculator on the Before Game page
 - Score calculator on the After Game page
+- Element locker / unlocker (e.g. for spirit board elemental gains)
 
 ## Have feedback/requests/issues?
 
