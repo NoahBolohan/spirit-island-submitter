@@ -12,6 +12,7 @@ Web app to track Spirit Island games.
 - Game component lookup
 - Record turned cards (invader, fear, blight, event)
 - Expansion toggle in top right of before to filter content
+- Score and difficulty breakdown on hover or tap
 
 ## Have feedback/requests/issues?
 
