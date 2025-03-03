@@ -1,480 +1,486 @@
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+		<title>Spirit Island Tracker</title>
+        <link rel="icon" href="https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/misc/Spirit_Island_Logo.png" type="image/png">
 
-	<link rel="stylesheet" type="text/css" href="css/styles.css" media="screen" />
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-	<script src="js/scripts.js"></script>
-</head>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-<body class="parallax" onload="on_load()">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
 
-<form class="google_form" id="google_form" name="google_form"  target="_top" method="POST" onsubmit="myFunction()" action="https://script.google.com/macros/s/AKfycbwSzW7MqEhMF3dpm_aGV2f-aUxKKb8j1888YBMjDIlCqbLRyao4mElFqDAfcebIXnTi/exec">
-	
-	<!-- Background art by Joshua Wright: https://www.tsumea.com/journal/270618/spirit-island-board-game -->
-	<!-- All other images are from the Spirit Island wiki-->
+		<link rel="stylesheet" type="text/css" href="css/styles.css" media="screen" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+		<script src="js/scripts.js"></script>
+	</head>
 
-	<div class="container-fluid mb-1">
-		
-		<div class="row justify-content-center">
-			<img class="col" src="https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/misc/Spirit_Island_Logo.png"></img>
-		</div>
-		
-		<div class="row" id="row_header">
-			<div class="col text-center" style="font-size:1.5em;">
-				<b>Game Tracker</b>
-			</div>
-		</div>
-	</div>
+	<body class="parallax" onload="on_load()">
 
-	<ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
-		
-		<li class="nav-item" role="presentation">
+		<form class="google_form" id="google_form" name="google_form"  target="_top" method="POST" onsubmit="myFunction()" action="https://script.google.com/macros/s/AKfycbwSzW7MqEhMF3dpm_aGV2f-aUxKKb8j1888YBMjDIlCqbLRyao4mElFqDAfcebIXnTi/exec">
 			
-			<button class="nav-link active" id="before-tab" data-bs-toggle="tab" data-bs-target="#container_tab_content_before" type="button" role="tab" aria-controls="container_tab_content_before" aria-selected="true">
-				Before game
-			</button>
-		</li>
+			<!-- Background art by Joshua Wright: https://www.tsumea.com/journal/270618/spirit-island-board-game -->
+			<!-- All other images are from the Spirit Island wiki-->
 
-		<li class="nav-item" role="presentation">
-			
-			<button class="nav-link" id="during-tab" data-bs-toggle="tab" data-bs-target="#container_tab_content_during" type="button" role="tab" aria-controls="container_tab_content_during" aria-selected="false">
-				During game
-			</button>
-		</li>
-
-		<li class="nav-item" role="presentation">
-			
-			<button class="nav-link" id="after-tab" data-bs-toggle="tab" data-bs-target="#container_tab_content_after" type="button" role="tab" aria-controls="container_tab_content_after" aria-selected="false">
-				After game
-			</button>
-		</li>
-	</ul>
-
-	<div class="tab-content" id="myTabContent">
-
-		<div class="container tab-pane fade show active row margin_auto" id="container_tab_content_before" role="tabpanel" aria-labelledby="before-tab">
-			
-			<div class="row mt-3 p-0 justify-content-center margin_auto" id="row_difficulty_n_players">
-
-				<div class="col-4 p-0" id="col_difficulty">
-
-					<div class="row justify-content-start" id="row_difficulty">
-						
-						<div class="col-6 p-0" id="col_difficulty_text">
-							Difficulty:
-						</div>
-
-						<div class="col-2 p-0" id="col_difficulty_number">0</div>
-					</div>
-				</div>
-
-				<div class="col-6 p-0" id="col_n_players">
-
-					<div class="row justify-content-end" id="row_n_players">
-						
-						<div class="col-8 p-0" id="col_n_players_text">
-							Number of players:
-						</div>
-
-						<select class="col-2 p-0" id="col_select_n_players" name="n_players">
-							<option selected>1</option>
-							<option>2</option>
-							<option>3</option>
-							<option>4</option>
-						</select>
-					</div>
-				</div>
-			</div>
-
-			<div class="row mt-3 p-0 g-0 justify-content-center margin_auto" id="row_player_info"></div>
-
-			<div class="row my-3 p-0 g-0 justify-content-center margin_auto" id="row_adversaries_card">
+			<div class="container-fluid mb-1">
 				
-				<div class="card p-0 margin-auto" id="col_adversaries_card" style="background-color : rgba(255,255,255,0.6); background-blend-mode : lighten">
-
-					<div class="card-header text-center">
-						Adversaries
+				<div class="row justify-content-center">
+					<img class="col" src="https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/misc/Spirit_Island_Logo.png"></img>
+				</div>
+				
+				<div class="row" id="row_header">
+					<div class="col text-center" style="font-size:1.5em;">
+						<b>Game Tracker</b>
 					</div>
+				</div>
+			</div>
 
-					<div class="row m-2 p-0 g-2 justify-content-center margin_auto" id="row_adversaries">
+			<ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
+				
+				<li class="nav-item" role="presentation">
+					
+					<button class="nav-link active" id="before-tab" data-bs-toggle="tab" data-bs-target="#container_tab_content_before" type="button" role="tab" aria-controls="container_tab_content_before" aria-selected="true">
+						Before game
+					</button>
+				</li>
 
-						<div class="col-6">
+				<li class="nav-item" role="presentation">
+					
+					<button class="nav-link" id="during-tab" data-bs-toggle="tab" data-bs-target="#container_tab_content_during" type="button" role="tab" aria-controls="container_tab_content_during" aria-selected="false">
+						During game
+					</button>
+				</li>
 
-							<div class="card margin_auto" id="card_adversary_1">
+				<li class="nav-item" role="presentation">
+					
+					<button class="nav-link" id="after-tab" data-bs-toggle="tab" data-bs-target="#container_tab_content_after" type="button" role="tab" aria-controls="container_tab_content_after" aria-selected="false">
+						After game
+					</button>
+				</li>
+			</ul>
 
-								<div class="card-header bg-transparent text-center">
-									Leading
+			<div class="tab-content" id="myTabContent">
+
+				<div class="container tab-pane fade show active row margin_auto" id="container_tab_content_before" role="tabpanel" aria-labelledby="before-tab">
+					
+					<div class="row mt-3 p-0 justify-content-center margin_auto" id="row_difficulty_n_players">
+
+						<div class="col-4 p-0" id="col_difficulty">
+
+							<div class="row justify-content-start" id="row_difficulty">
+								
+								<div class="col-6 p-0" id="col_difficulty_text">
+									Difficulty:
 								</div>
 
-								<select class="row m-3 justify-content-center" id="row_select_adversary_1" name="adversary_1">
-									<option selected value="">No adversary</option>
-								</select>
+								<div class="col-2 p-0" id="col_difficulty_number">0</div>
+							</div>
+						</div>
 
-								<select class="row mb-3 mx-3 justify-content-center" id="row_select_adversary_1_level" name="adversary_1_level" disabled>
-									<option disabled selected>Level</option>
-									<option>0</option>
-									<option>1</option>
+						<div class="col-6 p-0" id="col_n_players">
+
+							<div class="row justify-content-end" id="row_n_players">
+								
+								<div class="col-8 p-0" id="col_n_players_text">
+									Number of players:
+								</div>
+
+								<select class="col-2 p-0" id="col_select_n_players" name="n_players">
+									<option selected>1</option>
 									<option>2</option>
 									<option>3</option>
 									<option>4</option>
-									<option>5</option>
-									<option>6</option>
 								</select>
 							</div>
 						</div>
+					</div>
 
+					<div class="row mt-3 p-0 g-0 justify-content-center margin_auto" id="row_player_info"></div>
 
-						<div class="col-6 align-self-center">
+					<div class="row my-3 p-0 g-0 justify-content-center margin_auto" id="row_adversaries_card">
+						
+						<div class="card p-0 margin-auto" id="col_adversaries_card" style="background-color : rgba(255,255,255,0.6); background-blend-mode : lighten">
 
-							<div class="row p-0 justify-content-center " id="row_button_adversary_2">
-
-								<button class="col-10 btn btn-primary" id="button_adversary_2" type="button">
-									Add supporting adversary
-								</button>
+							<div class="card-header text-center">
+								Adversaries
 							</div>
 
-							<div class="card margin_auto is_hidden" id="card_adversary_2">
+							<div class="row m-2 p-0 g-2 justify-content-center margin_auto" id="row_adversaries">
 
-								<div class="card-header bg-transparent text-center">
+								<div class="col-6">
 
-									<div class="row p-0">
-										<div class="col-3"></div>
+									<div class="card margin_auto" id="card_adversary_1">
 
-										<div class="col-6">
-											Supporting
+										<div class="card-header bg-transparent text-center">
+											Leading
 										</div>
 
-										<div class="col-1"></div>
+										<select class="row m-3 justify-content-center" id="row_select_adversary_1" name="adversary_1">
+											<option selected value="">No adversary</option>
+										</select>
 
-										<button class="col-2 btn btn-xs astext" id="col_button_remove_adversary_2" type="button">
-											&#x274c;
+										<select class="row mb-3 mx-3 justify-content-center" id="row_select_adversary_1_level" name="adversary_1_level" disabled>
+											<option disabled selected>Level</option>
+											<option>0</option>
+											<option>1</option>
+											<option>2</option>
+											<option>3</option>
+											<option>4</option>
+											<option>5</option>
+											<option>6</option>
+										</select>
+									</div>
+								</div>
+
+
+								<div class="col-6 align-self-center">
+
+									<div class="row p-0 justify-content-center " id="row_button_adversary_2">
+
+										<button class="col-10 btn btn-primary" id="button_adversary_2" type="button">
+											Add supporting adversary
+										</button>
+									</div>
+
+									<div class="card margin_auto is_hidden" id="card_adversary_2">
+
+										<div class="card-header bg-transparent text-center">
+
+											<div class="row p-0">
+												<div class="col-3"></div>
+
+												<div class="col-6">
+													Supporting
+												</div>
+
+												<div class="col-1"></div>
+
+												<button class="col-2 btn btn-xs astext" id="col_button_remove_adversary_2" type="button">
+													&#x274c;
+												</button>
+											</div>
+										</div>
+
+										<select class="row m-3 justify-content-center" id="row_select_adversary_2" name="adversary_2">
+											<option selected value="">No adversary</option>
+										</select>
+
+										<select class="row mb-3 mx-3 justify-content-center" id="row_select_adversary_2_level" name="adversary_2_level" disabled>
+											<option disabled selected>Level</option>
+											<option>0</option>
+											<option>1</option>
+											<option>2</option>
+											<option>3</option>
+											<option>4</option>
+											<option>5</option>
+											<option>6</option>
+										</select>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="row p-0 justify-content-center margin_auto" id="row_button_scenario">
+						<button class="col-9 btn btn-primary" id="button_scenario" type="button">
+							Add scenario
+						</button>
+					</div>
+
+					<div class="row mb-3 p-0 justify-content-center margin_auto" id="row_scenario">
+
+						<div class="card col p-0 margin_auto is_hidden" id="card_scenario">
+						
+							<div class="card-header text-center">
+			
+								<div class="row p-0">
+									<div class="col-3"></div>
+			
+									<div class="col-6">
+										Scenario
+									</div>
+			
+									<div class="col-2"></div>
+			
+									<button class="col-1 btn btn-xs astext" id="button_remove_scenario" type="button">
+										&#x274c;
+									</button>
+								</div>
+							</div>
+
+							<select class="row m-3 justify-content-center" id="col_select_scenario" name="scenario">
+								<option selected disabled>Select a scenario</option>
+							</select>
+						</div>
+					</div>
+				</div>
+
+				<div class="container-fluid tab-pane fade row row margin_auto" id="container_tab_content_during" role="tabpanel" aria-labelledby="during-tab">
+					
+					<div class="row my-3 p-0 justify-content-center margin_auto" id="row_element_tracker">
+
+						<div class="card col p-0 margin_auto" id="col_element_tracker_card" style="background-color : rgba(255,255,255,0.6); background-blend-mode : lighten">
+			
+							<div class="card-header text-center">
+								Element Trackers
+							</div>
+			
+							<div class="row m-2 p-0 justify-content-center margin_auto" id="row_counters_element_tracker">
+
+								<div class="col p-0" id="col_sun_element_counter" data-locked_count = 0>
+
+									<div class="row p-0 justify-content-center margin_auto">
+										<button class="col btn btn-xs astext" id="button_sun_plus" type="button">
+											&#x2795;
+										</button>
+									</div>
+
+									<div class="row justify-content-center" style="position: relative;">
+										<img class="col-1 element_img" data-counter = 0 src="https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/elements/Sun.png" id="element_sun">
+										<div class="element_img_text_overlay" id="element_sun_overlay_text"></div>
+									</div>
+
+									<div class="row p-0 justify-content-center margin_auto">
+										<button class="col btn btn-md astext" id="button_sun_minus" type="button">
+											&#x2796;
 										</button>
 									</div>
 								</div>
 
-								<select class="row m-3 justify-content-center" id="row_select_adversary_2" name="adversary_2">
-									<option selected value="">No adversary</option>
-								</select>
+								<div class="col p-0" id="col_moon_element_counter" data-locked_count = 0>
 
-								<select class="row mb-3 mx-3 justify-content-center" id="row_select_adversary_2_level" name="adversary_2_level" disabled>
-									<option disabled selected>Level</option>
-									<option>0</option>
-									<option>1</option>
-									<option>2</option>
-									<option>3</option>
-									<option>4</option>
-									<option>5</option>
-									<option>6</option>
-								</select>
+									<div class="row p-0 justify-content-center margin_auto">
+										<button class="col btn btn-xs astext" id="button_moon_plus" type="button">
+											&#x2795;
+										</button>
+									</div>
+
+									<div class="row justify-content-center" style="position: relative;">
+										<img class="col-1 element_img" data-counter = 0 src="https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/elements/Moon.png"  id="element_moon">
+										<div class="element_img_text_overlay" id="element_moon_overlay_text"></div>
+									</div>
+
+									<div class="row p-0 justify-content-center margin_auto">
+										<button class="col btn btn-md astext" id="button_moon_minus" type="button">
+											&#x2796;
+										</button>
+									</div>
+								</div>
+
+								<div class="col p-0" id="col_fire_element_counter" data-locked_count = 0>
+
+									<div class="row p-0 justify-content-center margin_auto">
+										<button class="col btn btn-xs astext" id="button_fire_plus" type="button">
+											&#x2795;
+										</button>
+									</div>
+
+									<div class="row justify-content-center" style="position: relative;">
+										<img class="col-1 element_img" data-counter = 0 src="https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/elements/Fire.png"  id="element_fire">
+										<div class="element_img_text_overlay" id="element_fire_overlay_text"></div>
+									</div>
+
+									<div class="row p-0 justify-content-center margin_auto">
+										<button class="col btn btn-md astext" id="button_fire_minus" type="button">
+											&#x2796;
+										</button>
+									</div>
+								</div>
+
+								<div class="col p-0" id="col_air_element_counter" data-locked_count = 0>
+
+									<div class="row p-0 justify-content-center margin_auto">
+										<button class="col btn btn-xs astext" id="button_air_plus" type="button">
+											&#x2795;
+										</button>
+									</div>
+
+									<div class="row justify-content-center" style="position: relative;">
+										<img class="col-1 element_img" data-counter = 0 src="https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/elements/Air.png"  id="element_air">
+										<div class="element_img_text_overlay" id="element_air_overlay_text"></div>
+									</div>
+
+									<div class="row p-0 justify-content-center margin_auto">
+										<button class="col btn btn-md astext" id="button_air_minus" type="button">
+											&#x2796;
+										</button>
+									</div>
+								</div>
+
+								<div class="col p-0" id="col_water_element_counter" data-locked_count = 0>
+
+									<div class="row p-0 justify-content-center margin_auto">
+										<button class="col btn btn-xs astext" id="button_water_plus" type="button">
+											&#x2795;
+										</button>
+									</div>
+
+									<div class="row justify-content-center" style="position: relative;">
+										<img class="col-1 element_img" data-counter = 0 src="https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/elements/Water.png"  id="element_water">
+										<div class="element_img_text_overlay" id="element_water_overlay_text"></div>
+									</div>
+
+									<div class="row p-0 justify-content-center margin_auto">
+										<button class="col btn btn-md astext" id="button_water_minus" type="button">
+											&#x2796;
+										</button>
+									</div>
+								</div>
+
+								<div class="col p-0" id="col_earth_element_counter" data-locked_count = 0>
+
+									<div class="row p-0 justify-content-center margin_auto">
+										<button class="col btn btn-xs astext" id="button_earth_plus" type="button">
+											&#x2795;
+										</button>
+									</div>
+
+									<div class="row justify-content-center" style="position: relative;">
+										<img class="col-1 element_img" data-counter = 0 src="https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/elements/Earth.png"  id="element_earth">
+										<div class="element_img_text_overlay" id="element_earth_overlay_text"></div>
+									</div>
+
+									<div class="row p-0 justify-content-center margin_auto">
+										<button class="col btn btn-md astext" id="button_earth_minus" type="button">
+											&#x2796;
+										</button>
+									</div>
+								</div>
+
+								<div class="col p-0" id="col_plant_element_counter" data-locked_count = 0>
+
+									<div class="row p-0 justify-content-center margin_auto">
+										<button class="col btn btn-xs astext" id="button_plant_plus" type="button">
+											&#x2795;
+										</button>
+									</div>
+
+									<div class="row justify-content-center" style="position: relative;">
+										<img class="col-1 element_img" data-counter = 0 src="https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/elements/Plant.png"  id="element_plant">
+										<div class="element_img_text_overlay" id="element_plant_overlay_text"></div>
+									</div>
+
+									<div class="row p-0 justify-content-center margin_auto">
+										<button class="col btn btn-md astext" id="button_plant_minus" type="button">
+											&#x2796;
+										</button>
+									</div>
+								</div>
+
+								<div class="col p-0" id="col_animal_element_counter" data-locked_count = 0>
+
+									<div class="row p-0 justify-content-center margin_auto">
+										<button class="col btn btn-xs astext" id="button_animal_plus" type="button">
+											&#x2795;
+										</button>
+									</div>
+
+									<div class="row justify-content-center" style="position: relative;">
+										<img class="col-1 element_img" data-counter = 0 src="https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/elements/Animal.png"  id="element_animal">
+										<div class="element_img_text_overlay" id="element_animal_overlay_text"></div>
+									</div>
+
+									<div class="row p-0 justify-content-center margin_auto">
+										<button class="col btn btn-md astext" id="button_animal_minus" type="button">
+											&#x2796;
+										</button>
+									</div>
+								</div>
+
+								<div class="col p-0" id="col_any_element_counter" data-locked_count = 0>
+
+									<div class="row p-0 justify-content-center margin_auto">
+										<button class="col btn btn-xs astext" id="button_any_plus" type="button">
+											&#x2795;
+										</button>
+									</div>
+
+									<div class="row justify-content-center" style="position: relative;">
+										<img class="col-1 element_img" data-counter = 0 src="https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/elements/Any.png"  id="element_any">
+										<div class="element_img_text_overlay" id="element_any_overlay_text"></div>
+									</div>
+
+									<div class="row p-0 justify-content-center margin_auto">
+										<button class="col btn btn-md astext" id="button_any_minus" type="button">
+											&#x2796;
+										</button>
+									</div>
+								</div>
+							</div>
+
+							<div class="row my-2 mb-2 p-0 justify-content-center margin-auto">
+								<button class="col-3 btn btn-primary" id="button_toggle_lock_element_tracker" type="button">Lock</button>
+								<button class="col-3 offset-1 btn btn-danger" id="button_reset_element_tracker" type="button">
+									Reset
+								</button>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
 
-			<div class="row p-0 justify-content-center margin_auto" id="row_button_scenario">
-				<button class="col-9 btn btn-primary" id="button_scenario" type="button">
-					Add scenario
-				</button>
-			</div>
+				<div class="container-fluid tab-pane fade row margin_auto" id="container_tab_content_after" role="tabpanel" aria-labelledby="after-tab">
 
-			<div class="row mb-3 p-0 justify-content-center margin_auto" id="row_scenario">
+					<div class="col mt-3 p-2 justify-content-center card" style="background-color : rgba(255,255,255,0.6); background-blend-mode : lighten">
 
-				<div class="card col p-0 margin_auto is_hidden" id="card_scenario">
-				
-					<div class="card-header text-center">
-	
-						<div class="row p-0">
-							<div class="col-3"></div>
-	
-							<div class="col-6">
-								Scenario
+						<div class="row margin_auto" id="row_victory">
+							<div class="col-10 p-0" id="col_victory_text">
+								Did you win?
 							</div>
-	
-							<div class="col-2"></div>
-	
-							<button class="col-1 btn btn-xs astext" id="button_remove_scenario" type="button">
-								&#x274c;
+							<input id="checkbox_win_hidden" name="victory" type="hidden" value="no"></input>
+							<input class="col-2 p-0" id="checkbox_win" name="victory" type="checkbox" value="yes"></input>
+						</div>
+
+						<div class="row mt-2 margin_auto" id="row_invader_cards_in_deck">
+							<div class=" col-10 p-0" id="col_invader_cards_in_deck_text">
+								How many invader cards are left in the deck?
+							</div>
+							<input class=" col-2 p-0" id="text_invader_cards_in_deck" name="invader_cards_in_deck" type="number" min="0" step="1" required></input>
+						</div>
+
+						<div class="row mt-2 margin_auto" id="row_invader_cards_not_in_deck">
+							<div class=" col-10 p-0" id="col_invader_cards_not_in_deck_text">
+								How many invader cards are not in the deck?
+							</div>
+							<input class=" col-2 p-0" id="text_invader_cards_not_in_deck" name="invader_cards_not_in_deck" type="number" min="0" step="1" required></input>
+						</div>
+
+						<div class="row mt-2 margin_auto" id="row_remaining_dahan">
+							<div class=" col-10 p-0" id="col_remaining_dahan">
+								How many living Dahan remain on the island?
+							</div>
+							<input class=" col-2 p-0" id="text_remaining_dahan" name="remaining_dahan" type="number" min="0" step="1" required></input>
+						</div>
+
+						<div class="row mt-2 margin_auto" id="row_blight_on_island">
+							<div class=" col-10 p-0" id="col_blight_on_island">
+								How much blight is on the island?
+							</div>
+							<input class=" col-2 p-0" id="text_blight_on_island" name="blight_on_island" type="number" min="0" step="1" required></input>
+						</div>
+
+						<div class="row  mt-2 justify-content-center" id="row_score">
+							
+							<div class="col-2 p-0" id="col_score_text">
+								Score:
+							</div>
+
+							<div class="col-1 p-0" id="col_score_number">
+								0
+							</div>
+						</div>
+
+						<div class="row mt-2 justify-content-center">
+							<button class="btn btn-primary col-3" id="submit" name="submit" access="false" type="submit">
+								Submit
 							</button>
 						</div>
 					</div>
-
-					<select class="row m-3 justify-content-center" id="col_select_scenario" name="scenario">
-						<option selected disabled>Select a scenario</option>
-					</select>
 				</div>
 			</div>
-		</div>
-
-		<div class="container-fluid tab-pane fade row row margin_auto" id="container_tab_content_during" role="tabpanel" aria-labelledby="during-tab">
-			
-			<div class="row my-3 p-0 justify-content-center margin_auto" id="row_element_tracker">
-
-				<div class="card col p-0 margin_auto" id="col_element_tracker_card" style="background-color : rgba(255,255,255,0.6); background-blend-mode : lighten">
-	
-					<div class="card-header text-center">
-						Element Trackers
-					</div>
-	
-					<div class="row m-2 p-0 justify-content-center margin_auto" id="row_counters_element_tracker">
-
-						<div class="col p-0" id="col_sun_element_counter" data-locked_count = 0>
-
-							<div class="row p-0 justify-content-center margin_auto">
-								<button class="col btn btn-xs astext" id="button_sun_plus" type="button">
-									&#x2795;
-								</button>
-							</div>
-
-							<div class="row justify-content-center" style="position: relative;">
-								<img class="col-1 element_img" data-counter = 0 src="https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/elements/Sun.png" id="element_sun">
-								<div class="element_img_text_overlay" id="element_sun_overlay_text"></div>
-							</div>
-
-							<div class="row p-0 justify-content-center margin_auto">
-								<button class="col btn btn-md astext" id="button_sun_minus" type="button">
-									&#x2796;
-								</button>
-							</div>
-						</div>
-
-						<div class="col p-0" id="col_moon_element_counter" data-locked_count = 0>
-
-							<div class="row p-0 justify-content-center margin_auto">
-								<button class="col btn btn-xs astext" id="button_moon_plus" type="button">
-									&#x2795;
-								</button>
-							</div>
-
-							<div class="row justify-content-center" style="position: relative;">
-								<img class="col-1 element_img" data-counter = 0 src="https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/elements/Moon.png"  id="element_moon">
-								<div class="element_img_text_overlay" id="element_moon_overlay_text"></div>
-							</div>
-
-							<div class="row p-0 justify-content-center margin_auto">
-								<button class="col btn btn-md astext" id="button_moon_minus" type="button">
-									&#x2796;
-								</button>
-							</div>
-						</div>
-
-						<div class="col p-0" id="col_fire_element_counter" data-locked_count = 0>
-
-							<div class="row p-0 justify-content-center margin_auto">
-								<button class="col btn btn-xs astext" id="button_fire_plus" type="button">
-									&#x2795;
-								</button>
-							</div>
-
-							<div class="row justify-content-center" style="position: relative;">
-								<img class="col-1 element_img" data-counter = 0 src="https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/elements/Fire.png"  id="element_fire">
-								<div class="element_img_text_overlay" id="element_fire_overlay_text"></div>
-							</div>
-
-							<div class="row p-0 justify-content-center margin_auto">
-								<button class="col btn btn-md astext" id="button_fire_minus" type="button">
-									&#x2796;
-								</button>
-							</div>
-						</div>
-
-						<div class="col p-0" id="col_air_element_counter" data-locked_count = 0>
-
-							<div class="row p-0 justify-content-center margin_auto">
-								<button class="col btn btn-xs astext" id="button_air_plus" type="button">
-									&#x2795;
-								</button>
-							</div>
-
-							<div class="row justify-content-center" style="position: relative;">
-								<img class="col-1 element_img" data-counter = 0 src="https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/elements/Air.png"  id="element_air">
-								<div class="element_img_text_overlay" id="element_air_overlay_text"></div>
-							</div>
-
-							<div class="row p-0 justify-content-center margin_auto">
-								<button class="col btn btn-md astext" id="button_air_minus" type="button">
-									&#x2796;
-								</button>
-							</div>
-						</div>
-
-						<div class="col p-0" id="col_water_element_counter" data-locked_count = 0>
-
-							<div class="row p-0 justify-content-center margin_auto">
-								<button class="col btn btn-xs astext" id="button_water_plus" type="button">
-									&#x2795;
-								</button>
-							</div>
-
-							<div class="row justify-content-center" style="position: relative;">
-								<img class="col-1 element_img" data-counter = 0 src="https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/elements/Water.png"  id="element_water">
-								<div class="element_img_text_overlay" id="element_water_overlay_text"></div>
-							</div>
-
-							<div class="row p-0 justify-content-center margin_auto">
-								<button class="col btn btn-md astext" id="button_water_minus" type="button">
-									&#x2796;
-								</button>
-							</div>
-						</div>
-
-						<div class="col p-0" id="col_earth_element_counter" data-locked_count = 0>
-
-							<div class="row p-0 justify-content-center margin_auto">
-								<button class="col btn btn-xs astext" id="button_earth_plus" type="button">
-									&#x2795;
-								</button>
-							</div>
-
-							<div class="row justify-content-center" style="position: relative;">
-								<img class="col-1 element_img" data-counter = 0 src="https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/elements/Earth.png"  id="element_earth">
-								<div class="element_img_text_overlay" id="element_earth_overlay_text"></div>
-							</div>
-
-							<div class="row p-0 justify-content-center margin_auto">
-								<button class="col btn btn-md astext" id="button_earth_minus" type="button">
-									&#x2796;
-								</button>
-							</div>
-						</div>
-
-						<div class="col p-0" id="col_plant_element_counter" data-locked_count = 0>
-
-							<div class="row p-0 justify-content-center margin_auto">
-								<button class="col btn btn-xs astext" id="button_plant_plus" type="button">
-									&#x2795;
-								</button>
-							</div>
-
-							<div class="row justify-content-center" style="position: relative;">
-								<img class="col-1 element_img" data-counter = 0 src="https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/elements/Plant.png"  id="element_plant">
-								<div class="element_img_text_overlay" id="element_plant_overlay_text"></div>
-							</div>
-
-							<div class="row p-0 justify-content-center margin_auto">
-								<button class="col btn btn-md astext" id="button_plant_minus" type="button">
-									&#x2796;
-								</button>
-							</div>
-						</div>
-
-						<div class="col p-0" id="col_animal_element_counter" data-locked_count = 0>
-
-							<div class="row p-0 justify-content-center margin_auto">
-								<button class="col btn btn-xs astext" id="button_animal_plus" type="button">
-									&#x2795;
-								</button>
-							</div>
-
-							<div class="row justify-content-center" style="position: relative;">
-								<img class="col-1 element_img" data-counter = 0 src="https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/elements/Animal.png"  id="element_animal">
-								<div class="element_img_text_overlay" id="element_animal_overlay_text"></div>
-							</div>
-
-							<div class="row p-0 justify-content-center margin_auto">
-								<button class="col btn btn-md astext" id="button_animal_minus" type="button">
-									&#x2796;
-								</button>
-							</div>
-						</div>
-
-						<div class="col p-0" id="col_any_element_counter" data-locked_count = 0>
-
-							<div class="row p-0 justify-content-center margin_auto">
-								<button class="col btn btn-xs astext" id="button_any_plus" type="button">
-									&#x2795;
-								</button>
-							</div>
-
-							<div class="row justify-content-center" style="position: relative;">
-								<img class="col-1 element_img" data-counter = 0 src="https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/elements/Any.png"  id="element_any">
-								<div class="element_img_text_overlay" id="element_any_overlay_text"></div>
-							</div>
-
-							<div class="row p-0 justify-content-center margin_auto">
-								<button class="col btn btn-md astext" id="button_any_minus" type="button">
-									&#x2796;
-								</button>
-							</div>
-						</div>
-					</div>
-
-					<div class="row my-2 mb-2 p-0 justify-content-center margin-auto">
-						<button class="col-3 btn btn-primary" id="button_toggle_lock_element_tracker" type="button">Lock</button>
-						<button class="col-3 offset-1 btn btn-danger" id="button_reset_element_tracker" type="button">
-							Reset
-						</button>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="container-fluid tab-pane fade row margin_auto" id="container_tab_content_after" role="tabpanel" aria-labelledby="after-tab">
-
-			<div class="col mt-3 p-2 justify-content-center card" style="background-color : rgba(255,255,255,0.6); background-blend-mode : lighten">
-
-				<div class="row margin_auto" id="row_victory">
-					<div class="col-10 p-0" id="col_victory_text">
-						Did you win?
-					</div>
-					<input id="checkbox_win_hidden" name="victory" type="hidden" value="no"></input>
-					<input class="col-2 p-0" id="checkbox_win" name="victory" type="checkbox" value="yes"></input>
-				</div>
-
-				<div class="row mt-2 margin_auto" id="row_invader_cards_in_deck">
-					<div class=" col-10 p-0" id="col_invader_cards_in_deck_text">
-						How many invader cards are left in the deck?
-					</div>
-					<input class=" col-2 p-0" id="text_invader_cards_in_deck" name="invader_cards_in_deck" type="number" min="0" step="1" required></input>
-				</div>
-
-				<div class="row mt-2 margin_auto" id="row_invader_cards_not_in_deck">
-					<div class=" col-10 p-0" id="col_invader_cards_not_in_deck_text">
-						How many invader cards are not in the deck?
-					</div>
-					<input class=" col-2 p-0" id="text_invader_cards_not_in_deck" name="invader_cards_not_in_deck" type="number" min="0" step="1" required></input>
-				</div>
-
-				<div class="row mt-2 margin_auto" id="row_remaining_dahan">
-					<div class=" col-10 p-0" id="col_remaining_dahan">
-						How many living Dahan remain on the island?
-					</div>
-					<input class=" col-2 p-0" id="text_remaining_dahan" name="remaining_dahan" type="number" min="0" step="1" required></input>
-				</div>
-
-				<div class="row mt-2 margin_auto" id="row_blight_on_island">
-					<div class=" col-10 p-0" id="col_blight_on_island">
-						How much blight is on the island?
-					</div>
-					<input class=" col-2 p-0" id="text_blight_on_island" name="blight_on_island" type="number" min="0" step="1" required></input>
-				</div>
-
-				<div class="row  mt-2 justify-content-center" id="row_score">
-					
-					<div class="col-2 p-0" id="col_score_text">
-						Score:
-					</div>
-
-					<div class="col-1 p-0" id="col_score_number">
-						0
-					</div>
-				</div>
-
-				<div class="row mt-2 justify-content-center">
-					<button class="btn btn-primary col-3" id="submit" name="submit" access="false" style="default" type="submit">
-						Submit
-					</button>
-				</div>
-			</div>
-		</div>
-	</div>
-</form>
-
-</body>
+		</form>
+	</body>
+</html>
