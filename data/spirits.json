@@ -1367,21 +1367,189 @@
         "aspect_for" : "Lightning's Swift Strike",
         "expansion" : "jagged_earth",
         "complexity" : "up",
-        "aspect_art" : "true"
+        "aspect_art" : "true",
+        "setup" : "Put 2 PRESENCE on your starting board, in the highest-numbered Sands.",
+        "innate_power_1" : {
+            "name" : "lightning-torn skies incite pandemonium",
+            "tier_1" : {
+                "effect" : "2 FEAR. Add 1 STRIFE.",
+                "threshold" : {
+                    "sun" : 0,
+                    "moon" : 0,
+                    "fire" : 3,
+                    "air" : 2,
+                    "water" : 0,
+                    "earth" : 0,
+                    "plant" : 0,
+                    "animal" : 0
+                }
+            },
+            "tier_2" : {
+                "effect" : "2 FEAR. Add 1 STRIFE.",
+                "threshold" : {
+                    "sun" : 0,
+                    "moon" : 0,
+                    "fire" : 4,
+                    "air" : 3,
+                    "water" : 0,
+                    "earth" : 0,
+                    "plant" : 0,
+                    "animal" : 0
+                }
+            },
+            "tier_3" : {
+                "effect" : "3 FEAR. Add 1 STRIFE.",
+                "threshold" : {
+                    "sun" : 0,
+                    "moon" : 1,
+                    "fire" : 5,
+                    "air" : 4,
+                    "water" : 0,
+                    "earth" : 0,
+                    "plant" : 0,
+                    "animal" : 0
+                }
+            },
+            "tier_4" : {
+                "effect" : "4 FEAR> Add 1 STRIFE.",
+                "threshold" : {
+                    "sun" : 0,
+                    "moon" : 2,
+                    "fire" : 5,
+                    "air" : 5,
+                    "water" : 0,
+                    "earth" : 0,
+                    "plant" : 0,
+                    "animal" : 0
+                }
+            }
+        }
     },
     "Lightning's Swift Strike (Wind)" : {
         "alt_name" : "Wind",
         "aspect_for" : "Lightning's Swift Strike",
         "expansion" : "jagged_earth",
         "complexity" : "up",
-        "aspect_art" : "true"
+        "aspect_art" : "true",
+        "setup" : "Put 2 PRESENCE on your starting board, in the highest-numbered Sands.",
+        "innate_power_1" : {
+            "name" : "exaltation of the storm-wind",
+            "tier_1" : {
+                "effect" : "This turn, you and target Spirit may each make one of your non-Major SLOW Powers FAST.",
+                "threshold" : {
+                    "sun" : 0,
+                    "moon" : 0,
+                    "fire" : 0,
+                    "air" : 1,
+                    "water" : 0,
+                    "earth" : 0,
+                    "plant" : 0,
+                    "animal" : 0
+                }
+            },
+            "tier_2" : {
+                "effect" : "You and target Spirit each gain +1_RANGE with all your Powers this turn.",
+                "threshold" : {
+                    "sun" : 0,
+                    "moon" : 0,
+                    "fire" : 0,
+                    "air" : 3,
+                    "water" : 0,
+                    "earth" : 0,
+                    "plant" : 0,
+                    "animal" : 0
+                }
+            },
+            "tier_3" : {
+                "effect" : "You and target Spirit may each Push up to 2 EXPLORER from one of your respective lands.",
+                "threshold" : {
+                    "sun" : 0,
+                    "moon" : 0,
+                    "fire" : 0,
+                    "air" : 4,
+                    "water" : 1,
+                    "earth" : 0,
+                    "plant" : 0,
+                    "animal" : 0
+                }
+            },
+            "tier_4" : {
+                "effect" : "Repeat this Power.",
+                "threshold" : {
+                    "sun" : 0,
+                    "moon" : 0,
+                    "fire" : 5,
+                    "air" : 0,
+                    "water" : 2,
+                    "earth" : 0,
+                    "plant" : 0,
+                    "animal" : 0
+                }
+            }
+        }
     },
     "Lightning's Swift Strike (Immense)" : {
         "alt_name" : "Immense",
         "aspect_for" : "Lightning's Swift Strike",
         "expansion" : "feather_and_flame",
         "complexity" : "up",
-        "aspect_art" : "false"
+        "aspect_art" : "false",
+        "setup" : "Put 2 PRESENCE on your starting board, in the highest-numbered Sands.",
+        "innate_power_1" : {
+            "name" : "thundering destruction",
+            "tier_1" : {
+                "effect" : "Destroy 1 TOWN.",
+                "threshold" : {
+                    "sun" : 0,
+                    "moon" : 0,
+                    "fire" : 3,
+                    "air" : 2,
+                    "water" : 0,
+                    "earth" : 0,
+                    "plant" : 0,
+                    "animal" : 0
+                }
+            },
+            "tier_2" : {
+                "effect" : "You may instead destroy 1 CITY.",
+                "threshold" : {
+                    "sun" : 0,
+                    "moon" : 0,
+                    "fire" : 4,
+                    "air" : 3,
+                    "water" : 0,
+                    "earth" : 0,
+                    "plant" : 0,
+                    "animal" : 0
+                }
+            },
+            "tier_3" : {
+                "effect" : "Also, destroy 1 TOWN/CITY",
+                "threshold" : {
+                    "sun" : 0,
+                    "moon" : 0,
+                    "fire" : 5,
+                    "air" : 4,
+                    "water" : 1,
+                    "earth" : 0,
+                    "plant" : 0,
+                    "animal" : 0
+                }
+            },
+            "tier_4" : {
+                "effect" : "Also, destroy 1 TOWN/CITY",
+                "threshold" : {
+                    "sun" : 0,
+                    "moon" : 0,
+                    "fire" : 5,
+                    "air" : 5,
+                    "water" : 2,
+                    "earth" : 0,
+                    "plant" : 0,
+                    "animal" : 0
+                }
+            }
+        }
     },
     "Lightning's Swift Strike (Sparking)" : {
         "alt_name" : "Sparking",
@@ -1941,14 +2109,100 @@
         "aspect_for" : "River Surges in Sunlight",
         "expansion" : "jagged_earth",
         "complexity" : "up",
-        "aspect_art" : "true"
+        "aspect_art" : "true",
+        "setup" : "Put 1 PRESENCE on your starting board in the highest-numbered Wetland. Return Boon of Vigor to the box. Gain 1 Energy.",
+        "innate_power_1" : {
+            "name" : "boon of sunshine's promise",
+            "tier_1" : {
+                "effect" : "Target Spirit gains Energy equal to 1 less than the highest uncovered number on your Energy track.",
+                "threshold" : {
+                    "sun" : 2,
+                    "moon" : 0,
+                    "fire" : 0,
+                    "air" : 0,
+                    "water" : 0,
+                    "earth" : 0,
+                    "plant" : 0,
+                    "animal" : 0
+                }
+            },
+            "tier_2" : {
+                "effect" : "You also gain that much Energy.",
+                "threshold" : {
+                    "sun" : 3,
+                    "moon" : 0,
+                    "fire" : 0,
+                    "air" : 0,
+                    "water" : 1,
+                    "earth" : 0,
+                    "plant" : 0,
+                    "animal" : 0
+                }
+            },
+            "tier_3" : {
+                "effect" : "Target Spirit may Remove 1 BLIGHT from one of their lands with DAHAN.",
+                "threshold" : {
+                    "sun" : 4,
+                    "moon" : 0,
+                    "fire" : 0,
+                    "air" : 0,
+                    "water" : 2,
+                    "earth" : 0,
+                    "plant" : 0,
+                    "animal" : 0
+                }
+            }
+        }
     },
     "River Surges in Sunlight (Travel)" : {
         "alt_name" : "Travel",
         "aspect_for" : "River Surges in Sunlight",
         "expansion" : "feather_and_flame",
         "complexity" : "up",
-        "aspect_art" : "false"
+        "aspect_art" : "false",
+        "setup" : "Put 1 PRESENCE on your starting board in the highest-numbered Wetland.",
+        "innate_power_1" : {
+            "name" : "massive flooding",
+            "tier_1" : {
+                "effect" : "Push 1 EXPLORER/TOWN.",
+                "threshold" : {
+                    "sun" : 1,
+                    "moon" : 0,
+                    "fire" : 0,
+                    "air" : 0,
+                    "water" : 2,
+                    "earth" : 0,
+                    "plant" : 0,
+                    "animal" : 0
+                }
+            },
+            "tier_2" : {
+                "effect" : "Instead, 2 Damage. Push up to 3 EXPLORER/TOWN.",
+                "threshold" : {
+                    "sun" : 2,
+                    "moon" : 0,
+                    "fire" : 0,
+                    "air" : 0,
+                    "water" : 3,
+                    "earth" : 0,
+                    "plant" : 0,
+                    "animal" : 0
+                }
+            },
+            "tier_3" : {
+                "effect" : "Instead, 2 Damage to each Invader.",
+                "threshold" : {
+                    "sun" : 3,
+                    "moon" : 0,
+                    "fire" : 0,
+                    "air" : 0,
+                    "water" : 4,
+                    "earth" : 1,
+                    "plant" : 0,
+                    "animal" : 0
+                }
+            }
+        }
     },
     "River Surges in Sunlight (Haven)" : {
         "alt_name" : "Haven",
@@ -2059,7 +2313,7 @@
         "complexity" : "low",
         "setup" : "Put 3 PRESENCE on your starting board: 2 in the highest-numbered Jungle and 1 in land #5.",
         "innate_power_1" : {
-            "name" : "darkness swallows the unwawry",
+            "name" : "darkness swallows the unwary",
             "tier_1" : {
                 "effect" : "Gather 1 EXPLORER.",
                 "threshold" : {
@@ -2106,28 +2360,213 @@
         "aspect_for" : "Shadows Flicker Like Flame",
         "expansion" : "jagged_earth",
         "complexity" : "up",
-        "aspect_art" : "true"
+        "aspect_art" : "true",
+        "setup" : "Put 3 PRESENCE on your starting board: 2 in the highest-numbered Jungle and 1 in land #5.",
+        "innate_power_1" : {
+            "name" : "darkness swallows the unwary",
+            "tier_1" : {
+                "effect" : "Gather 1 EXPLORER.",
+                "threshold" : {
+                    "sun" : 0,
+                    "moon" : 2,
+                    "fire" : 1,
+                    "air" : 0,
+                    "water" : 0,
+                    "earth" : 0,
+                    "plant" : 0,
+                    "animal" : 0
+                }
+            },
+            "tier_2" : {
+                "effect" : "Destroy up to 2 EXPLORER. 1 FEAR per EXPLORER destroyed.",
+                "threshold" : {
+                    "sun" : 0,
+                    "moon" : 3,
+                    "fire" : 2,
+                    "air" : 0,
+                    "water" : 0,
+                    "earth" : 0,
+                    "plant" : 0,
+                    "animal" : 0
+                }
+            },
+            "tier_3" : {
+                "effect" : "3 Damage. 1 FEAR per Invader destroyed by this Damage.",
+                "threshold" : {
+                    "sun" : 0,
+                    "moon" : 4,
+                    "fire" : 3,
+                    "air" : 2,
+                    "water" : 0,
+                    "earth" : 0,
+                    "plant" : 0,
+                    "animal" : 0
+                }
+            }
+        }
     },
     "Shadows Flicker Like Flame (Reach)" : {
         "alt_name" : "Reach",
         "aspect_for" : "Shadows Flicker Like Flame",
         "expansion" : "jagged_earth",
         "complexity" : "down",
-        "aspect_art" : "true"
+        "aspect_art" : "true",
+        "setup" : "Put 3 PRESENCE on your starting board: 2 in the highest-numbered Jungle and 1 in land #5.",
+        "innate_power_1" : {
+            "name" : "darkness swallows the unwary",
+            "tier_1" : {
+                "effect" : "Gather 1 EXPLORER.",
+                "threshold" : {
+                    "sun" : 0,
+                    "moon" : 2,
+                    "fire" : 1,
+                    "air" : 0,
+                    "water" : 0,
+                    "earth" : 0,
+                    "plant" : 0,
+                    "animal" : 0
+                }
+            },
+            "tier_2" : {
+                "effect" : "Destroy up to 2 EXPLORER. 1 FEAR per EXPLORER destroyed.",
+                "threshold" : {
+                    "sun" : 0,
+                    "moon" : 3,
+                    "fire" : 2,
+                    "air" : 0,
+                    "water" : 0,
+                    "earth" : 0,
+                    "plant" : 0,
+                    "animal" : 0
+                }
+            },
+            "tier_3" : {
+                "effect" : "3 Damage. 1 FEAR per Invader destroyed by this Damage.",
+                "threshold" : {
+                    "sun" : 0,
+                    "moon" : 4,
+                    "fire" : 3,
+                    "air" : 2,
+                    "water" : 0,
+                    "earth" : 0,
+                    "plant" : 0,
+                    "animal" : 0
+                }
+            }
+        }
     },
     "Shadows Flicker Like Flame (Amorphous)" : {
         "alt_name" : "Amorphous",
         "aspect_for" : "Shadows Flicker Like Flame",
         "expansion" : "feather_and_flame",
         "complexity" : "up",
-        "aspect_art" : "false"
+        "aspect_art" : "false",
+        "setup" : "Put 3 PRESENCE on your starting board: 2 in the highest-numbered Jungle and 1 in land #5.",
+        "innate_power_1" : {
+            "name" : "darkness swallows the unwary",
+            "tier_1" : {
+                "effect" : "Gather 1 EXPLORER.",
+                "threshold" : {
+                    "sun" : 0,
+                    "moon" : 2,
+                    "fire" : 1,
+                    "air" : 0,
+                    "water" : 0,
+                    "earth" : 0,
+                    "plant" : 0,
+                    "animal" : 0
+                }
+            },
+            "tier_2" : {
+                "effect" : "Destroy up to 2 EXPLORER. 1 FEAR per EXPLORER destroyed.",
+                "threshold" : {
+                    "sun" : 0,
+                    "moon" : 3,
+                    "fire" : 2,
+                    "air" : 0,
+                    "water" : 0,
+                    "earth" : 0,
+                    "plant" : 0,
+                    "animal" : 0
+                }
+            },
+            "tier_3" : {
+                "effect" : "3 Damage. 1 FEAR per Invader destroyed by this Damage.",
+                "threshold" : {
+                    "sun" : 0,
+                    "moon" : 4,
+                    "fire" : 3,
+                    "air" : 2,
+                    "water" : 0,
+                    "earth" : 0,
+                    "plant" : 0,
+                    "animal" : 0
+                }
+            }
+        }
     },
     "Shadows Flicker Like Flame (Foreboding)" : {
         "alt_name" : "Foreboding",
         "aspect_for" : "Shadows Flicker Like Flame",
         "expansion" : "feather_and_flame",
         "complexity" : "up",
-        "aspect_art" : "false"
+        "aspect_art" : "false",
+        "setup" : "Put 3 PRESENCE on your starting board: 2 in the highest-numbered Jungle and 1 in land #5.",
+        "innate_power_1" : {
+            "name" : "stretch out coils of foreboding dread",
+            "tier_1" : {
+                "effect" : "Your other Powers may ignore Range when targeting the target land.",
+                "threshold" : {
+                    "sun" : 0,
+                    "moon" : 0,
+                    "fire" : 0,
+                    "air" : 2,
+                    "water" : 0,
+                    "earth" : 0,
+                    "plant" : 0,
+                    "animal" : 0
+                }
+            },
+            "tier_2" : {
+                "effect" : "After an Action generates FEAR in target land, including from Destroying TOWN/CITY: Push up to 1 EXPLORER per FEAR / 1 TOWN per 2 FEAR. (You may mix-and-match).",
+                "threshold" : {
+                    "sun" : 0,
+                    "moon" : 1,
+                    "fire" : 0,
+                    "air" : 0,
+                    "water" : 0,
+                    "earth" : 0,
+                    "plant" : 0,
+                    "animal" : 0
+                }
+            },
+            "tier_3" : {
+                "effect" : "1 FEAR.",
+                "threshold" : {
+                    "sun" : 0,
+                    "moon" : 0,
+                    "fire" : 2,
+                    "air" : 0,
+                    "water" : 0,
+                    "earth" : 0,
+                    "plant" : 0,
+                    "animal" : 0
+                }
+            },
+            "tier_4" : {
+                "effect" : "2 FEAR.",
+                "threshold" : {
+                    "sun" : 0,
+                    "moon" : 2,
+                    "fire" : 0,
+                    "air" : 4,
+                    "water" : 0,
+                    "earth" : 0,
+                    "plant" : 0,
+                    "animal" : 0
+                }
+            }
+        }
     },
     "Shadows Flicker Like Flame (Dark Fire)" : {
         "alt_name" : "Dark Fire",
@@ -3057,14 +3496,113 @@
         "aspect_for" : "Vital Strength of the Earth",
         "expansion" : "jagged_earth",
         "complexity" : "same",
-        "aspect_art" : "true"
+        "aspect_art" : "true",
+        "setup" : "Put 3 PRESENCE on your starting board: 2 in the highest-numbered Mountain,1 in the highest-numbered Jungle.",
+        "innate_power_1" : {
+            "name" : "gift of strength",
+            "tier_1" : {
+                "effect" : "Once this turn, Target Spirit may Repeat 1 Power Card with Energy cost of 1 or less.",
+                "threshold" : {
+                    "sun" : 1,
+                    "moon" : 0,
+                    "fire" : 0,
+                    "air" : 0,
+                    "water" : 0,
+                    "earth" : 2,
+                    "plant" : 2,
+                    "animal" : 0
+                }
+            },
+            "tier_2" : {
+                "effect" : "Instead, the Energy cost limit is 3 or less.",
+                "threshold" : {
+                    "sun" : 2,
+                    "moon" : 0,
+                    "fire" : 0,
+                    "air" : 0,
+                    "water" : 0,
+                    "earth" : 3,
+                    "plant" : 2,
+                    "animal" : 0
+                }
+            },
+            "tier_3" : {
+                "effect" : "Instead, the Energy cost limit is 6 or less.",
+                "threshold" : {
+                    "sun" : 2,
+                    "moon" : 0,
+                    "fire" : 0,
+                    "air" : 0,
+                    "water" : 0,
+                    "earth" : 4,
+                    "plant" : 3,
+                    "animal" : 0
+                }
+            }
+        }
     },
     "Vital Strength of the Earth (Might)" : {
         "alt_name" : "Might",
         "aspect_for" : "Vital Strength of the Earth",
         "expansion" : "feather_and_flame",
         "complexity" : "up",
-        "aspect_art" : "false"
+        "aspect_art" : "false",
+        "setup" : "Put 3 PRESENCE on your starting board: 2 in the highest-numbered Mountain,1 in the highest-numbered Jungle.",
+        "innate_power_1" : {
+            "name" : "earth moves with vigor and might",
+            "tier_1" : {
+                "effect" : "You may plan an additional Power Card by paying 1 Energy plus it's cost. <em>(Its Elements apply for the rest of this Innate Power's thresholds.)</em>",
+                "threshold" : {
+                    "sun" : 0,
+                    "moon" : 0,
+                    "fire" : 0,
+                    "air" : 0,
+                    "water" : 0,
+                    "earth" : 2,
+                    "plant" : 1,
+                    "animal" : 0
+                }
+            },
+            "tier_2" : {
+                "effect" : "You do +1 Damage with each Damage-dealing Power you use this turn.",
+                "threshold" : {
+                    "sun" : 1,
+                    "moon" : 0,
+                    "fire" : 0,
+                    "air" : 0,
+                    "water" : 0,
+                    "earth" : 2,
+                    "plant" : 0,
+                    "animal" : 0
+                }
+            },
+            "tier_3" : {
+                "effect" : "You do +1 Damage with each Damage-dealing Power you use this turn.",
+                "threshold" : {
+                    "sun" : 0,
+                    "moon" : 0,
+                    "fire" : 0,
+                    "air" : 0,
+                    "water" : 0,
+                    "earth" : 3,
+                    "plant" : 2,
+                    "animal" : 0
+                }
+            },
+            "tier_4" : {
+                "effect" : "Gain a Power Card.",
+                "threshold" : {
+                    "sun" : 1,
+                    "moon" : 0,
+                    "fire" : 0,
+                    "air" : 0,
+                    "water" : 0,
+                    "earth" : 0,
+                    "plant" : 3,
+                    "animal" : 0
+                }
+            }
+        }
     },
     "Vital Strength of the Earth (Nourishing)" : {
         "alt_name" : "Nourishing",
