@@ -141,7 +141,15 @@ $(document).ready(
                 );
 
                 // Append the board options
-                $(data["boards"]).each(
+                $(data["balance_boards"]).each(
+                    function() {
+                        board_select.append(
+                            $("<option>").text(this)
+                        );
+                    }
+                );
+
+                $(data["thematic_boards"]).each(
                     function() {
                         board_select.append(
                             $("<option>").text(this)
@@ -182,13 +190,16 @@ $(document).ready(
                 ).appendTo(`#row_input_player_${i}_spirit`);
 
                 // Append the spirit options
-                $(Object.keys(data["spirits"])).each(
-                    function() {
-                        $(`#col_input_player_${i}_spirit_list`).append(
-                            $("<option>").text(this)
-                        );
-                    }
-                );
+                $.getJSON('https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/refs/heads/master/data/spirits.json', function(data) {
+                    $(Object.keys(data)).each(
+                        function() {
+                            $(`#col_input_player_${i}_spirit_list`).append(
+                                $("<option>").text(this)
+                            );
+                        }
+                    );
+                })
+                
 
                 // Reset the select to the first option
                 $(`#col_input_player_${i}_spirit`).prop('selectedIndex',0);
@@ -212,30 +223,38 @@ $(document).ready(
             }
 
             // Populate adversary selects
-            $(Object.keys(data["adversaries"])).each(
-                function() {
-                    $("#row_select_adversary_1").append(
-                        $("<option>").text(this)
-                    );
-                }
-            );
+            $.getJSON('https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/refs/heads/master/data/adversaries.json', function(data) {
 
-            $(Object.keys(data["adversaries"])).each(
-                function() {
-                    $("#row_select_adversary_2").append(
-                        $("<option>").text(this)
-                    );
-                }
-            );
+                $(Object.keys(data)).each(
+                    function() {
+                        $("#row_select_adversary_1").append(
+                            $("<option>").text(this)
+                        );
+                    }
+                );
+    
+                $(Object.keys(data)).each(
+                    function() {
+                        $("#row_select_adversary_2").append(
+                            $("<option>").text(this)
+                        );
+                    }
+                );
+            })
+            
 
             // Populate scenario select
-            $(Object.keys(data["scenarios"])).each(
-                function() {
-                    $("#col_select_scenario").append(
-                        $("<option>").text(this)
-                    );
-                }
-            );
+
+            $.getJSON('https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/refs/heads/master/data/scenarios.json', function(data) {
+
+                $(Object.keys(data)).each(
+                    function() {
+                        $("#col_select_scenario").append(
+                            $("<option>").text(this)
+                        );
+                    }
+                );
+            })
         });
     }
 )
@@ -327,10 +346,10 @@ $(document).ready(
         "change",
         "#col_input_player_1_spirit",
         function() {
-            $.getJSON('https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/refs/heads/master/data/config.json', function(data) {
+            $.getJSON('https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/refs/heads/master/data/spirits.json', function(data) {
 
                 // Assign appropriate image to player 1 spirit image div
-                var spirit_config = data["spirits"][$("#col_input_player_1_spirit").val()]
+                var spirit_config = data[$("#col_input_player_1_spirit").val()]
 
                 if ("alt_name" in spirit_config & "aspect_art" in spirit_config & spirit_config["aspect_art"] == "true") {
                     var spirit_image_file_name = spirit_config["alt_name"]
@@ -361,10 +380,10 @@ $(document).ready(
         "change",
         "#col_input_player_2_spirit",
         function() {    
-            $.getJSON('https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/refs/heads/master/data/config.json', function(data) {
+            $.getJSON('https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/refs/heads/master/data/spirits.json', function(data) {
 
                 // Assign appropriate image to player 2 spirit image div
-                var spirit_config = data["spirits"][$("#col_input_player_2_spirit").val()]
+                var spirit_config = data[$("#col_input_player_2_spirit").val()]
 
                 if ("alt_name" in spirit_config & "aspect_art" in spirit_config & spirit_config["aspect_art"] == "true") {
                     var spirit_image_file_name = spirit_config["alt_name"]
@@ -395,10 +414,10 @@ $(document).ready(
         "change",
         "#col_input_player_3_spirit",
         function() {    
-            $.getJSON('https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/refs/heads/master/data/config.json', function(data) {
+            $.getJSON('https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/refs/heads/master/data/spirits.json', function(data) {
 
                 // Assign appropriate image to player 3 spirit image div
-                var spirit_config = data["spirits"][$("#col_input_player_3_spirit").val()]
+                var spirit_config = data[$("#col_input_player_3_spirit").val()]
 
                 if ("alt_name" in spirit_config & "aspect_art" in spirit_config & spirit_config["aspect_art"] == "true") {
                     var spirit_image_file_name = spirit_config["alt_name"]
@@ -429,10 +448,10 @@ $(document).ready(
         "change",
         "#col_input_player_4_spirit",
         function() {    
-            $.getJSON('https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/refs/heads/master/data/config.json', function(data) {
+            $.getJSON('https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/refs/heads/master/data/spirits.json', function(data) {
 
                 // Assign appropriate image to player 4 spirit image div
-                var spirit_config = data["spirits"][$("#col_input_player_4_spirit").val()]
+                var spirit_config = data[$("#col_input_player_4_spirit").val()]
 
                 if ("alt_name" in spirit_config & "aspect_art" in spirit_config & spirit_config["aspect_art"] == "true") {
                     var spirit_image_file_name = spirit_config["alt_name"]
@@ -463,7 +482,7 @@ $(document).ready(
         $("#row_select_adversary_1").on(
             "change",
             function() {
-                $.getJSON('https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/refs/heads/master/data/config.json', function(data) {
+                $.getJSON('https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/refs/heads/master/data/adversaries.json', function(data) {
 
                     // Assign appropriate image to adversary 1 card
                     if ($("#row_select_adversary_1").val() == "") {
@@ -476,7 +495,7 @@ $(document).ready(
                         );
                     }
                     else {
-                        var adversary_config = data["adversaries"][$("#row_select_adversary_1").val()];
+                        var adversary_config = data[$("#row_select_adversary_1").val()];
 
                         var adversary_image_file_name = $("#row_select_adversary_1").val().split(' ').join('_');
 
@@ -579,7 +598,7 @@ $(document).ready(
         $("#row_select_adversary_2").on(
             "change",
             function() {
-                $.getJSON('https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/refs/heads/master/data/config.json', function(data) {
+                $.getJSON('https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/refs/heads/master/data/adversaries.json', function(data) {
 
                     // Assign appropriate image to adversary 2 card
                     if ($("#row_select_adversary_2").val() == "") {
@@ -592,7 +611,7 @@ $(document).ready(
                         );
                     }
                     else {
-                        var adversary_config = data["adversaries"][$("#row_select_adversary_2").val()];
+                        var adversary_config = data[$("#row_select_adversary_2").val()];
 
                         var adversary_image_file_name = $("#row_select_adversary_2").val().split(' ').join('_');
 
@@ -680,7 +699,7 @@ $(document).ready(
         $("#col_select_scenario").on(
             "change",
             function() {
-                $.getJSON('https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/refs/heads/master/data/config.json', function(data) {
+                $.getJSON('https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/refs/heads/master/data/scenarios.json', function(data) {
                     
                     // Assign appropriate image to scenario card
                     if ($("#col_select_scenario").val() == null) {
@@ -696,7 +715,7 @@ $(document).ready(
                     else {
 
                         // Assign appropriate image to player 2 spirit image div
-                        var scenario_config = data["scenarios"][$("#col_select_scenario").val()];
+                        var scenario_config = data[$("#col_select_scenario").val()];
 
                         if (scenario_config["has_image"] == "no") {
                             $("#card_scenario").css(
@@ -934,61 +953,63 @@ $(document).ready(
 
 // Difficulty calculator
 function difficulty_calculator() {
-    $.getJSON('https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/refs/heads/master/data/config.json', function(data) {
+    $.getJSON('https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/refs/heads/master/data/adversaries.json', function(adversaries) {
+        $.getJSON('https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/refs/heads/master/data/scenarios.json', function(scenarios) {
 
-        var total_difficulty = 0;
+            var total_difficulty = 0;
 
-        // Compute adversary 1 difficulty
-        if ($("#row_select_adversary_1").val() == "") {
-            var adv_1_difficulty = 0;
-        }
-        else {
-            if ($("#row_select_adversary_1_level").val() == null) {
-                var adv_1_difficulty = data["adversaries"][$("#row_select_adversary_1").val()]["difficulty"]["0"];
+            // Compute adversary 1 difficulty
+            if ($("#row_select_adversary_1").val() == "") {
+                var adv_1_difficulty = 0;
             }
             else {
-                var adv_1_difficulty = data["adversaries"][$("#row_select_adversary_1").val()]["difficulty"][$("#row_select_adversary_1_level").val()];
+                if ($("#row_select_adversary_1_level").val() == null) {
+                    var adv_1_difficulty = adversaries[$("#row_select_adversary_1").val()]["difficulty"]["0"];
+                }
+                else {
+                    var adv_1_difficulty = adversaries[$("#row_select_adversary_1").val()]["difficulty"][$("#row_select_adversary_1_level").val()];
+                }
             }
-        }
 
-        total_difficulty += adv_1_difficulty;
+            total_difficulty += adv_1_difficulty;
 
-        // Compute adversary 2 difficulty
-        if ($("#row_select_adversary_2").val() == "") {
-            var adv_2_difficulty = 0;
-        }
-        else {
-            if ($("#row_select_adversary_2_level").val() == null) {
-                var adv_2_difficulty = data["adversaries"][$("#row_select_adversary_2").val()]["difficulty"]["0"];
-            }
-            else {
-                var adv_2_difficulty = data["adversaries"][$("#row_select_adversary_2").val()]["difficulty"][$("#row_select_adversary_2_level").val()];
-            }
-        }
-
-        total_difficulty += adv_2_difficulty;
-
-        // Compute scenario difficulty
-        if ($("#col_select_scenario").val() == "Second Wave") {
-            total_difficulty = `${total_difficulty + 1}/${total_difficulty - 1}`;
-        }
-        else {
-            if ($("#col_select_scenario").val() == null) {
-                var scenario_difficulty = 0;
+            // Compute adversary 2 difficulty
+            if ($("#row_select_adversary_2").val() == "") {
+                var adv_2_difficulty = 0;
             }
             else {
-                var scenario_difficulty = data["scenarios"][$("#col_select_scenario").val()]["difficulty"];
+                if ($("#row_select_adversary_2_level").val() == null) {
+                    var adv_2_difficulty = adversaries[$("#row_select_adversary_2").val()]["difficulty"]["0"];
+                }
+                else {
+                    var adv_2_difficulty = adversaries[$("#row_select_adversary_2").val()]["difficulty"][$("#row_select_adversary_2_level").val()];
+                }
             }
 
-            total_difficulty += scenario_difficulty;
-        }
+            total_difficulty += adv_2_difficulty;
 
-        // Assign the difficulty value to the difficulty display div
-        $("#col_difficulty_number").text(
-            total_difficulty
-        )
+            // Compute scenario difficulty
+            if ($("#col_select_scenario").val() == "Second Wave") {
+                total_difficulty = `${total_difficulty + 1}/${total_difficulty - 1}`;
+            }
+            else {
+                if ($("#col_select_scenario").val() == null) {
+                    var scenario_difficulty = 0;
+                }
+                else {
+                    var scenario_difficulty = scenarios[$("#col_select_scenario").val()]["difficulty"];
+                }
 
-        score_calculator();
+                total_difficulty += scenario_difficulty;
+            }
+
+            // Assign the difficulty value to the difficulty display div
+            $("#col_difficulty_number").text(
+                total_difficulty
+            )
+
+            score_calculator();
+        })
     })
 }
 
