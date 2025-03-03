@@ -680,7 +680,7 @@
                 }
             },
             "tier_3" : {
-                "effect" : "If you have at least 3 IMPENDING_CARDS, Add 1 QUAKLE in one of your lands.",
+                "effect" : "If you have at least 3 IMPENDING_CARDS, Add 1 QUAKE in one of your lands.",
                 "threshold" : {
                     "sun" : 0,
                     "moon" : 1,
@@ -904,9 +904,9 @@
     "Ember-Eyed Behemoth" : {
         "expansion" : "nature_incarnate",
         "complexity" : "moderate",
-        "setup" : "Put 2 PRESENCE and INCARNA_EMEBER_EYED_BEHEMOTH, Unempowered (INCARNA_UNEMPOWERED) side up, in the highest-numbered Wetland on your starting board that is adjacent to <b>any</b> Jungle.<br>You start with your 4 Unique Power Cards and 0 energy.",
+        "setup" : "Put 2 PRESENCE and INCARNA_EMBER_EYED_BEHEMOTH, Unempowered (INCARNA_UNEMPOWERED) side up, in the highest-numbered Wetland on your starting board that is adjacent to <b>any</b> Jungle.<br>You start with your 4 Unique Power Cards and 0 energy.",
         "innate_power_1" : {
-            "name" : "smach, stomp, and flatten",
+            "name" : "smash, stomp, and flatten",
             "tier_1" : {
                 "effect" : "2 Damage.",
                 "threshold" : {
@@ -1249,7 +1249,7 @@
     "Grinning Trickster Stirs Up Trouble" : {
         "expansion" : "jagged_earth",
         "complexity" : "moderate",
-        "setup" : "Put 2 PRESENCE on your starting board: 1 in the highest-numbered land with DAHAN, and 1 in ladn #4.",
+        "setup" : "Put 2 PRESENCE on your starting board: 1 in the highest-numbered land with DAHAN, and 1 in land #4.",
         "innate_power_1" : {
             "name" : "let's see what happens",
             "tier_1" : {
@@ -5178,7 +5178,7 @@
                 }
             },
             "tier_3" : {
-                "effect" : "In each land within 1_RANGE, 4 Damage. Add 1 BLIGHT to target land; doing so does not Destroy your PRESNECE.",
+                "effect" : "In each land within 1_RANGE, 4 Damage. Add 1 BLIGHT to target land; doing so does not Destroy your PRESENCE.",
                 "threshold" : {
                     "sun" : 0,
                     "moon" : 0,
