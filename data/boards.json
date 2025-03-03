@@ -1,0 +1,20 @@
+{
+    "balance_boards" : [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+    ],
+    "thematic_boards" : [
+        "East",
+        "N.East",
+        "N.West",
+        "S.East",
+        "S.West",
+        "West"
+    ]
+}

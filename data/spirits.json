@@ -1,0 +1,1131 @@
+{
+    "A Spread of Rampant Green" : {
+        "expansion" : "base",
+        "complexity" : "moderate",
+        "setup" : "Put 2 presence on your starting board: 1 in the highest-numbered Wetland, and 1 in the Jungle without any Dahan. (<em>If there is more than 1 such Jungle, you mar choose.</em>)",
+        "innate_power_1" : {
+            "name" : "creepers tear into mortar",
+            "tier_1" : {
+                "effect" : "1 Damage to 1 town/city.",
+                "threshold" : {
+                    "sun" : 0,
+                    "moon" : 1,
+                    "fire" : 0,
+                    "air" : 0,
+                    "water" : 0,
+                    "earth" : 0,
+                    "plant" : 2,
+                    "animal" : 0
+                }
+            },
+            "tier_2" : {
+                "effect" : "Repeat this Power.",
+                "threshold" : {
+                    "sun" : 0,
+                    "moon" : 2,
+                    "fire" : 0,
+                    "air" : 0,
+                    "water" : 0,
+                    "earth" : 0,
+                    "plant" : 3,
+                    "animal" : 0
+                }
+            },
+            "tier_3" : {
+                "effect" : "Repeat this Power again.",
+                "threshold" : {
+                    "sun" : 0,
+                    "moon" : 3,
+                    "fire" : 0,
+                    "air" : 0,
+                    "water" : 0,
+                    "earth" : 0,
+                    "plant" : 4,
+                    "animal" : 0
+                }
+            }
+        },
+        "innate_power_2" : {
+            "name" : "all-enveloping green",
+            "tier_1" : {
+                "effect" : "Defend 2.",
+                "threshold" : {
+                    "sun" : 0,
+                    "moon" : 0,
+                    "fire" : 0,
+                    "air" : 0,
+                    "water" : 1,
+                    "earth" : 0,
+                    "plant" : 3,
+                    "animal" : 0
+                }
+            },
+            "tier_2" : {
+                "effect" : "Instead, Defend 4.",
+                "threshold" : {
+                    "sun" : 0,
+                    "moon" : 0,
+                    "fire" : 0,
+                    "air" : 0,
+                    "water" : 2,
+                    "earth" : 0,
+                    "plant" : 4,
+                    "animal" : 0
+                }
+            },
+            "tier_3" : {
+                "effect" : "Also, remove 1 blight.",
+                "threshold" : {
+                    "sun" : 0,
+                    "moon" : 0,
+                    "fire" : 0,
+                    "air" : 0,
+                    "water" : 3,
+                    "earth" : 1,
+                    "plant" : 5,
+                    "animal" : 0
+                }
+            }
+        }
+    },
+    "A Spread of Rampant Green (Regrowth)" : {
+        "alt_name" : "Regrowth",
+        "aspect_for" : "A Spread of Rampant Green",
+        "expansion" : "nature_incarnate",
+        "complexity" : "up",
+        "aspect_art" : "false"
+    }, 
+    "A Spread of Rampant Green (Tangles)" : {
+        "alt_name" : "Tangles",
+        "aspect_for" : "A Spread of Rampant Green",
+        "expansion" : "nature_incarnate",
+        "complexity" : "up",
+        "aspect_art" : "false"
+    },
+    "Breath of Darkness Down Your Spine" : {
+        "expansion" : "nature_incarnate",
+        "complexity" : "high"
+    },
+    "Bringer of Dreams and Nightmares" : {
+        "expansion" : "base",
+        "complexity" : "high",
+        "setup" : "Put 2 presence on your starting board, in the highest-numbered Sands.",
+        "innate_power_1" : {
+            "name" : "spirits may yet dream",
+            "tier_1" : {
+                "effect" : "Turn any face-down Fear Card face-up. (It's earned/resolved normally, but players can see what's coming.)",
+                "threshold" : {
+                    "sun" : 0,
+                    "moon" : 2,
+                    "fire" : 0,
+                    "air" : 2,
+                    "water" : 0,
+                    "earth" : 0,
+                    "plant" : 0,
+                    "animal" : 0
+                }
+            },
+            "tier_2" : {
+                "effect" : "Target Spirit gains an Element they have at least 1 of.",
+                "threshold" : {
+                    "sun" : 0,
+                    "moon" : 3,
+                    "fire" : 0,
+                    "air" : 0,
+                    "water" : 0,
+                    "earth" : 0,
+                    "plant" : 0,
+                    "animal" : 0
+                }
+            }
+        },
+        "innate_power_2" : {
+            "name" : "night terrors",
+            "tier_1" : {
+                "effect" : "1 fear.",
+                "threshold" : {
+                    "sun" : 0,
+                    "moon" : 1,
+                    "fire" : 0,
+                    "air" : 1,
+                    "water" : 0,
+                    "earth" : 0,
+                    "plant" : 0,
+                    "animal" : 0
+                }
+            },
+            "tier_2" : {
+                "effect" : "+1 fear.",
+                "threshold" : {
+                    "sun" : 0,
+                    "moon" : 2,
+                    "fire" : 0,
+                    "air" : 1,
+                    "water" : 0,
+                    "earth" : 0,
+                    "plant" : 0,
+                    "animal" : 1
+                }
+            },
+            "tier_3" : {
+                "effect" : "+1 fear",
+                "threshold" : {
+                    "sun" : 0,
+                    "moon" : 3,
+                    "fire" : 0,
+                    "air" : 2,
+                    "water" : 0,
+                    "earth" : 0,
+                    "plant" : 0,
+                    "animal" : 1
+                }
+            }
+        }
+    },
+    "Bringer of Dreams and Nightmares (Enticing)" : {
+        "alt_name" : "Enticing",
+        "aspect_for" : "Bringer of Dreams and Nightmares",
+        "expansion" : "nature_incarnate",
+        "complexity" : "same",
+        "aspect_art" : "false"
+    },
+    "Bringer of Dreams and Nightmares (Violence)" : {
+        "alt_name" : "violence",
+        "aspect_for" : "Bringer of Dreams and Nightmares",
+        "expansion" : "nature_incarnate",
+        "complexity" : "up",
+        "aspect_art" : "false"
+    },
+    "Dances Up Earthquakes" : {
+        "expansion" : "nature_incarnate",
+        "complexity" : "very_high"
+    },
+    "Devouring Teeth Lurk Underfoot" : {
+        "expansion" : "horizons_of_spirit_island",
+        "complexity" : "low",
+        "setup" : "Put 1 presence on your starting board, in land #5. <br>You start with your 4 Unique Power Cards and 0 energy.",
+        "innate_power_1" : {
+            "name" : "death approaches from beneath the surface",
+            "tier_1" : {
+                "effect" : "If you don't have presence in target land, Gather 1 of your presence. (<em>This is required.</em>)",
+                "threshold" : {
+                    "sun" : 0,
+                    "moon" : 0,
+                    "fire" : 1,
+                    "air" : 0,
+                    "water" : 0,
+                    "earth" : 0,
+                    "plant" : 0,
+                    "animal" : 1
+                }
+            },
+            "tier_2" : {
+                "effect" : "1 Damage. (<em>+1 for your &quot;Territorial Aggression&quot; Special Rule)",
+                "threshold" : {
+                    "sun" : 0,
+                    "moon" : 0,
+                    "fire" : 2,
+                    "air" : 0,
+                    "water" : 0,
+                    "earth" : 1,
+                    "plant" : 0,
+                    "animal" : 2
+                }
+            },
+            "tier_3" : {
+                "effect" : "2 Damage.",
+                "threshold" : {
+                    "sun" : 0,
+                    "moon" : 0,
+                    "fire" : 3,
+                    "air" : 0,
+                    "water" : 0,
+                    "earth" : 1,
+                    "plant" : 0,
+                    "animal" : 3
+                }
+            },
+            "tier_4" : {
+                "effect" : "2 fear. 4 Damage.",
+                "threshold" : {
+                    "sun" : 0,
+                    "moon" : 0,
+                    "fire" : 4,
+                    "air" : 0,
+                    "water" : 0,
+                    "earth" : 2,
+                    "plant" : 0,
+                    "animal" : 5
+                }
+            }
+        }
+    },
+    "Downpour Drenches the World" : {
+        "expansion" : "feather_and_flame",
+        "complexity" : "high",
+        "setup" : "Put 1 presence on your starting board in the lowest-numbered Wetland.",
+        "innate_power_1" : {
+            "name" : "rain and mud suppress conflict",
+            "tier_1" : {
+                "effect" : "Each of your presence grants Defend 1 and lowers Dahan counterattack Damage by 1. (<em>Total, in its land.</em>)",
+                "threshold" : {
+                    "sun" : 0,
+                    "moon" : 0,
+                    "fire" : 0,
+                    "air" : 1,
+                    "water" : 3,
+                    "earth" : 0,
+                    "plant" : 0,
+                    "animal" : 0
+                }
+            },
+            "tier_2" : {
+                "effect" : "Each of your presence grants Defend 1 and lowers Dahan counterattack Damage by 1.",
+                "threshold" : {
+                    "sun" : 0,
+                    "moon" : 0,
+                    "fire" : 0,
+                    "air" : 0,
+                    "water" : 5,
+                    "earth" : 1,
+                    "plant" : 0,
+                    "animal" : 0
+                }
+            },
+            "tier_3" : {
+                "effect" : "2 fear. In your lands, Invaders and Dahan have -1 Health (min. 1).",
+                "threshold" : {
+                    "sun" : 0,
+                    "moon" : 0,
+                    "fire" : 0,
+                    "air" : 3,
+                    "water" : 9,
+                    "earth" : 2,
+                    "plant" : 0,
+                    "animal" : 0
+                }
+            }
+        },
+        "innate_power_2" : {
+            "name" : "water nourishes life's growth",
+            "tier_1" : {
+                "effect" : "Gain 1 Energy. You may Remove 1 blight by Removing 1 of your presence (<em> from target land</em>).",
+                "threshold" : {
+                    "sun" : 0,
+                    "moon" : 0,
+                    "fire" : 0,
+                    "air" : 0,
+                    "water" : 3,
+                    "earth" : 0,
+                    "plant" : 2,
+                    "animal" : 0
+                }
+            },
+            "tier_2" : {
+                "effect" : "Gain +1 Energy. Gather up to 1 Dahan.",
+                "threshold" : {
+                    "sun" : 0,
+                    "moon" : 0,
+                    "fire" : 0,
+                    "air" : 0,
+                    "water" : 5,
+                    "earth" : 1,
+                    "plant" : 2,
+                    "animal" : 0
+                }
+            },
+            "tier_3" : {
+                "effect" : "When blight would be added to target land, instead leave it on the card.",
+                "threshold" : {
+                    "sun" : 0,
+                    "moon" : 0,
+                    "fire" : 0,
+                    "air" : 0,
+                    "water" : 7,
+                    "earth" : 2,
+                    "plant" : 3,
+                    "animal" : 0
+                }
+            }
+        }
+    },
+    "Ember-Eyed Behemoth" : {
+        "expansion" : "nature_incarnate",
+        "complexity" : "moderate"
+    },
+    "Eyes Watch from the Trees" : {
+        "expansion" : "horizons_of_spirit_island",
+        "complexity" : "low",
+        "setup" : "Put 2 presence on your starting board, in the highest-numbered Jungle. <br>You start with your 4 Unique Power Cards and 0 energy.",
+        "innate_power_1" : {
+            "name" : "mischief and sabotage",
+            "tier_1" : {
+                "effect" : "1 fear and Defend 2.",
+                "threshold" : {
+                    "sun" : 0,
+                    "moon" : 1,
+                    "fire" : 0,
+                    "air" : 0,
+                    "water" : 0,
+                    "earth" : 0,
+                    "plant" : 2,
+                    "animal" : 0
+                }
+            },
+            "tier_2" : {
+                "effect" : "Instead, 1 fear and Defend 4.",
+                "threshold" : {
+                    "sun" : 0,
+                    "moon" : 2,
+                    "fire" : 0,
+                    "air" : 0,
+                    "water" : 0,
+                    "earth" : 0,
+                    "plant" : 3,
+                    "animal" : 0
+                }
+            },
+            "tier_3" : {
+                "effect" : "Instead, 3 fear and Defend 6.",
+                "threshold" : {
+                    "sun" : 0,
+                    "moon" : 2,
+                    "fire" : 0,
+                    "air" : 2,
+                    "water" : 0,
+                    "earth" : 0,
+                    "plant" : 4,
+                    "animal" : 0
+                }
+            },
+            "tier_4" : {
+                "effect" : "Instead, 5 fear and Defend 12.",
+                "threshold" : {
+                    "sun" : 0,
+                    "moon" : 3,
+                    "fire" : 0,
+                    "air" : 3,
+                    "water" : 0,
+                    "earth" : 0,
+                    "plant" : 5,
+                    "animal" : 0
+                }
+            }
+        }
+    },
+    "Fathomless Mud of the Swamp" : {
+        "expansion" : "horizons_of_spirit_island",
+        "complexity" : "low",
+        "setup" : "Put 2 presence on your starting board, in the lowest-numbered Wetland. <br>You start with your 4 UNique Power Cards and 0 Energy.",
+        "innate_power_1" : {
+            "name" : "spreading and dreadful mire",
+            "tier_1" : {
+                "effect" : "Move 1 of your presence from the origin shrine to the target land. (<em>This is required.</em>)",
+                "threshold" : {
+                    "sun" : 0,
+                    "moon" : 0,
+                    "fire" : 0,
+                    "air" : 0,
+                    "water" : 1,
+                    "earth" : 0,
+                    "plant" : 0,
+                    "animal" : 0
+                }
+            },
+            "tier_2" : {
+                "effect" : "1 fear. 1 Damage. Push 1 Dahan.",
+                "threshold" : {
+                    "sun" : 0,
+                    "moon" : 1,
+                    "fire" : 0,
+                    "air" : 0,
+                    "water" : 2,
+                    "earth" : 1,
+                    "plant" : 0,
+                    "animal" : 0
+                }
+            },
+            "tier_3" : {
+                "effect" : "1 fear. 1 Damage. Push 1 Dahan.",
+                "threshold" : {
+                    "sun" : 0,
+                    "moon" : 2,
+                    "fire" : 0,
+                    "air" : 0,
+                    "water" : 3,
+                    "earth" : 2,
+                    "plant" : 0,
+                    "animal" : 0
+                }
+            },
+            "tier_4" : {
+                "effect" : "2 Damage.",
+                "threshold" : {
+                    "sun" : 0,
+                    "moon" : 3,
+                    "fire" : 0,
+                    "air" : 0,
+                    "water" : 4,
+                    "earth" : 3,
+                    "plant" : 2,
+                    "animal" : 0
+                }
+            }
+        }
+    },
+    "Finder of Paths Unseen" : {
+        "expansion" : "feather_and_flame",
+        "complexity" : "very_high",
+        "setup" : "Put 1 presence on your starting board in land #3. Put 1 presence on any board in land #1. Note that you have 6 Unique Power Cards.",
+        "innate_power_1" : {
+            "name" : "lay paths they cannot help but walk",
+            "tier_1" : {
+                "effect" : "Push up to half (round down) of Invaders from target land. Do likewise for Dahan, presence, and beast (each separately).",
+                "threshold" : {
+                    "sun" : 0,
+                    "moon" : 2,
+                    "fire" : 0,
+                    "air" : 2,
+                    "water" : 0,
+                    "earth" : 0,
+                    "plant" : 0,
+                    "animal" : 0
+                }
+            },
+            "tier_2" : {
+                "effect" : "Push up to 1 Invader/Dahan/presence/beast.",
+                "threshold" : {
+                    "sun" : 2,
+                    "moon" : 0,
+                    "fire" : 0,
+                    "air" : 2,
+                    "water" : 0,
+                    "earth" : 0,
+                    "plant" : 0,
+                    "animal" : 0
+                }
+            },
+            "tier_3" : {
+                "effect" : "Repeat this Power.",
+                "threshold" : {
+                    "sun" : 0,
+                    "moon" : 2,
+                    "fire" : 0,
+                    "air" : 4,
+                    "water" : 3,
+                    "earth" : 0,
+                    "plant" : 0,
+                    "animal" : 0
+                }
+            }
+        },
+        "innate_power_2" : {
+            "name" : "close the ways",
+            "tier_1" : {
+                "effect" : "Isolate target land.",
+                "threshold" : {
+                    "sun" : 0,
+                    "moon" : 0,
+                    "fire" : 0,
+                    "air" : 1,
+                    "water" : 2,
+                    "earth" : 0,
+                    "plant" : 0,
+                    "animal" : 0
+                }
+            },
+            "tier_2" : {
+                "effect" : "Isolate target land.",
+                "threshold" : {
+                    "sun" : 0,
+                    "moon" : 0,
+                    "fire" : 0,
+                    "air" : 2,
+                    "water" : 0,
+                    "earth" : 2,
+                    "plant" : 0,
+                    "animal" : 0
+                }
+            },
+            "tier_3" : {
+                "effect" : "Isolate target land.",
+                "threshold" : {
+                    "sun" : 0,
+                    "moon" : 0,
+                    "fire" : 0,
+                    "air" : 3,
+                    "water" : 0,
+                    "earth" : 0,
+                    "plant" : 2,
+                    "animal" : 0
+                }
+            }
+        }
+    },
+    "Fractured Days Split the Sky" : {
+        "expansion" : "jagged_earth",
+        "complexity" : "very_high",
+        "setup" : "Put 3 presence on your starting board: 1 in the lowest-numbered land with Dahan, and 2 in the highest-numbered land without Dahan. Deal 4 Minor and 4 Major Powers face-up as your initial Days That Never Were cards; in a 1 or 2-player game, instead deal 6 of each. In a 1-board game, gain 1 Time.",
+        "innate_power_1" : {
+            "name" : "slip the flow of time",
+            "tier_1" : {
+                "effect" : "Target spirit may Resolve 1 slow Power now.",
+                "threshold" : {
+                    "sun" : 0,
+                    "moon" : 3,
+                    "fire" : 0,
+                    "air" : 1,
+                    "water" : 0,
+                    "earth" : 0,
+                    "plant" : 0,
+                    "animal" : 0
+                }
+            },
+            "tier_2" : {
+                "effect" : "Target Spirit may Reclaim 1 Power Card from their discarded or played cards. (<em>If they Reclaim a card from play, they lose its Elements.</em>)",
+                "threshold" : {
+                    "sun" : 2,
+                    "moon" : 2,
+                    "fire" : 0,
+                    "air" : 0,
+                    "water" : 0,
+                    "earth" : 0,
+                    "plant" : 0,
+                    "animal" : 0
+                }
+            },
+            "tier_3" : {
+                "effect" : "Target Spirit may play a Power Card by paying its cost.",
+                "threshold" : {
+                    "sun" : 3,
+                    "moon" : 0,
+                    "fire" : 0,
+                    "air" : 2,
+                    "water" : 0,
+                    "earth" : 0,
+                    "plant" : 0,
+                    "animal" : 0
+                }
+            }
+        },
+        "innate_power_2" : {
+            "name" : "visions of a shifting future",
+            "tier_1" : {
+                "effect" : "Look at the top card of  <b>either</b> the Invader Deck of (if relevant) the Event Deck. Return it, then shuffle that desk's top 2 cards. (<em>?For the Invader Deck, differing Invader Stages may give away which card is next.</em>)",
+                "threshold" : {
+                    "sun" : 1,
+                    "moon" : 2,
+                    "fire" : 0,
+                    "air" : 2,
+                    "water" : 0,
+                    "earth" : 0,
+                    "plant" : 0,
+                    "animal" : 0
+                }
+            },
+            "tier_2" : {
+                "effect" : "Instead of returning-and-shuffling, you may put the card you looked at on the bottom of its deck. You may not do this for cards specially placed during Setup.",
+                "threshold" : {
+                    "sun" : 2,
+                    "moon" : 3,
+                    "fire" : 0,
+                    "air" : 2,
+                    "water" : 0,
+                    "earth" : 0,
+                    "plant" : 0,
+                    "animal" : 0
+                }
+            }
+        }
+    },
+    "Grinning Trickster Stirs Up Trouble" : {
+        "expansion" : "jagged_earth",
+        "complexity" : "moderate",
+        "setup" : "Put 2 presence on your starting board: 1 in the highest-numbered land with Dahan, and 1 in ladn #4.",
+        "innate_power_1" : {
+            "name" : "let's see what happens",
+            "tier_1" : {
+                "effect" : "Discard Minor Powers from the desk until you get one that targets a land. Use its text effects on target land immediately, ignoring normal Range and targeting restrictions. All &quot;up to&quot; must be used at max. value. Treat all &quot;OR&quot; as &quot;AND&quot;s.<br>()<em>It is not considered a card of yours or a card in play. Its effects are treated as performed by this Power, as if its text were copied here.</em>)",
+                "threshold" : {
+                    "sun" : 0,
+                    "moon" : 1,
+                    "fire" : 1,
+                    "air" : 2,
+                    "water" : 0,
+                    "earth" : 0,
+                    "plant" : 0,
+                    "animal" : 0
+                }
+            },
+            "tier_2" : {
+                "effect" : "You may Forget a Power Card to gain the just-used Power Card (to hand) and 1 Energy.",
+                "threshold" : {
+                    "sun" : 0,
+                    "moon" : 2,
+                    "fire" : 1,
+                    "air" : 2,
+                    "water" : 0,
+                    "earth" : 0,
+                    "plant" : 0,
+                    "animal" : 0
+                }
+            }
+        },
+        "innate_power_2" : {
+            "name" : "why don't you and then fight",
+            "tier_1" : {
+                "effect" : "This power may be slow.",
+                "threshold" : {
+                    "sun" : 0,
+                    "moon" : 3,
+                    "fire" : 0,
+                    "air" : 0,
+                    "water" : 0,
+                    "earth" : 0,
+                    "plant" : 0,
+                    "animal" : 0
+                }
+            },
+            "tier_2" : {
+                "effect" : "Add 1 strife.",
+                "threshold" : {
+                    "sun" : 0,
+                    "moon" : 0,
+                    "fire" : 0,
+                    "air" : 3,
+                    "water" : 0,
+                    "earth" : 0,
+                    "plant" : 0,
+                    "animal" : 0
+                }
+            },
+            "tier_3" : {
+                "effect" : "1 Invader and 1 Dahan deal Damage to each other.",
+                "threshold" : {
+                    "sun" : "3 or",
+                    "moon" : 0,
+                    "fire" : 3,
+                    "air" : 0,
+                    "water" : 0,
+                    "earth" : 0,
+                    "plant" : 0,
+                    "animal" : 0,
+                }
+            },
+            "tier_4" : {
+                "effect" : "If target land has beast, 2 Damage. Otherwise, you may Gather 1 beast.",
+                "threshold" : {
+                    "sun" : 0,
+                    "moon" : 0,
+                    "fire" : 0,
+                    "air" : 0,
+                    "water" : 0,
+                    "earth" : 0,
+                    "plant" : 0,
+                    "animal" : 3
+                }
+            }
+        }
+    },
+    "Heart of the Wildfire" : {
+        "expansion" : "feather_and_flame",
+        "complexity" : "high"
+    },
+    "Heart of the Wildfire (Transforming)" : {
+        "alt_name" : "Transforming",
+        "aspect_for" : "Heart of the Wildfire",
+        "expansion" : "nature_incarnate",
+        "complexity" : "up",
+        "aspect_art" : "false"
+    },
+    "Hearth-Vigil" : {
+        "expansion" : "nature_incarnate",
+        "complexity" : "moderate"
+    },
+    "Keeper of the Forbidden Wilds" : {
+        "expansion" : "branch_and_claw",
+        "complexity" : "moderate"
+    },
+    "Keeper of the Forbidden Wilds (Spreading Hostility)" : {
+        "alt_name" : "Spreading Hostility",
+        "aspect_for" : "Keeper of the Forbidden Wilds",
+        "expansion" : "nature_incarnate",
+        "complexity" : "up",
+        "aspect_art" : "false"
+    },
+    "Lightning's Swift Strike" : {
+        "expansion" : "base",
+        "complexity" : "low"
+    },
+    "Lightning's Swift Strike (Pandemonium)" : {
+        "alt_name" : "Pandemonium",
+        "aspect_for" : "Lightning's Swift Strike",
+        "expansion" : "jagged_earth",
+        "complexity" : "up",
+        "aspect_art" : "true"
+    },
+    "Lightning's Swift Strike (Wind)" : {
+        "alt_name" : "Wind",
+        "aspect_for" : "Lightning's Swift Strike",
+        "expansion" : "jagged_earth",
+        "complexity" : "up",
+        "aspect_art" : "true"
+    },
+    "Lightning's Swift Strike (Immense)" : {
+        "alt_name" : "Immense",
+        "aspect_for" : "Lightning's Swift Strike",
+        "expansion" : "feather_and_flame",
+        "complexity" : "up",
+        "aspect_art" : "false"
+    },
+    "Lightning's Swift Strike (Sparking)" : {
+        "alt_name" : "Sparking",
+        "aspect_for" : "Lightning's Swift Strike",
+        "expansion" : "nature_incarnate",
+        "complexity" : "up",
+        "aspect_art" : "false"
+    },
+    "Lure of the Deep Wilderness" : {
+        "expansion" : "jagged_earth",
+        "complexity" : "moderate"
+    },
+    "Lure of the Deep Wilderness (Lair)" : {
+        "alt_name" : "Lair",
+        "aspect_for" : "Lure of the Deep Wilderness",
+        "expansion" : "nature_incarnate",
+        "complexity" : "up",
+        "aspect_art" : "false"
+    },
+    "Many Minds Move as One" : {
+        "expansion" : "jagged_earth",
+        "complexity" : "moderate"
+    },
+    "Ocean's Hungry Grasp" : {
+        "expansion" : "base",
+        "complexity" : "high"
+    },
+    "Ocean's Hungry Grasp (Deeps)" : {
+        "alt_name" : "Deeps",
+        "aspect_for" : "Ocean's Hungry Grasp",
+        "expansion" : "nature_incarnate",
+        "complexity" : "up",
+        "aspect_art" : "false"
+    },
+    "Relentless Gaze of the Sun" : {
+        "expansion" : "nature_incarnate",
+        "complexity" : "high"
+    },
+    "Rising Heat of Stone and Sand" : {
+        "expansion" : "horizons_of_spirit_island",
+        "complexity" : "low",
+        "setup" : "Put 2 presence on your starting board, in the highest-numbered Sands. <br>You start with your 4 Unique Power Cards and 0 energy.",
+        "innate_power_1" : {
+            "name" : "scorch with waves of heat",
+            "tier_1" : {
+                "effect" : "2 Damage, to explorer only.",
+                "threshold" : {
+                    "sun" : 0,
+                    "moon" : 0,
+                    "fire" : 2,
+                    "air" : 2,
+                    "water" : 0,
+                    "earth" : 0,
+                    "plant" : 0,
+                    "animal" : 0
+                }
+            },
+            "tier_2" : {
+                "effect" : "2 Damage.",
+                "threshold" : {
+                    "sun" : 0,
+                    "moon" : 0,
+                    "fire" : 3,
+                    "air" : 0,
+                    "water" : 0,
+                    "earth" : 2,
+                    "plant" : 0,
+                    "animal" : 0
+                }
+            },
+            "tier_3" : {
+                "effect" : "2 Damage.",
+                "threshold" : {
+                    "sun" : 0,
+                    "moon" : 0,
+                    "fire" : 4,
+                    "air" : 1,
+                    "water" : 0,
+                    "earth" : 3,
+                    "plant" : 0,
+                    "animal" : 0
+                }
+            },
+            "tier_4" : {
+                "effect" : "1 Damage to each Invader.",
+                "threshold" : {
+                    "sun" : 0,
+                    "moon" : 0,
+                    "fire" : 5,
+                    "air" : 2,
+                    "water" : 0,
+                    "earth" : 3,
+                    "plant" : 0,
+                    "animal" : 0
+                }
+            }
+        }
+    },
+    "River Surges in Sunlight" : {
+        "expansion" : "base",
+        "complexity" : "low"
+    },
+    "River Surges in Sunlight (Sunshine)" : {
+        "alt_name" : "Sunshine",
+        "aspect_for" : "River Surges in Sunlight",
+        "expansion" : "jagged_earth",
+        "complexity" : "up",
+        "aspect_art" : "true"
+    },
+    "River Surges in Sunlight (Travel)" : {
+        "alt_name" : "Travel",
+        "aspect_for" : "River Surges in Sunlight",
+        "expansion" : "feather_and_flame",
+        "complexity" : "up",
+        "aspect_art" : "false"
+    },
+    "River Surges in Sunlight (Haven)" : {
+        "alt_name" : "Haven",
+        "aspect_for" : "River Surges in Sunlight",
+        "expansion" : "nature_incarnate",
+        "complexity" : "up",
+        "aspect_art" : "false"
+    },
+    "Serpent Slumbering Beneath the Island" : {
+        "expansion" : "feather_and_flame",
+        "complexity" : "high"
+    },
+    "Serpent Slumbering Beneath the Island (Locus)" : {
+        "alt_name" : "Locus",
+        "aspect_for" : "Serpent Slumbering Beneath the Island",
+        "expansion" : "nature_incarnate",
+        "complexity" : "up",
+        "aspect_art" : "false"
+    },
+    "Shadows Flicker Like Flame" : {
+        "expansion" : "base",
+        "complexity" : "low"
+    },
+    "Shadows Flicker Like Flame (Madness)" : {
+        "alt_name" : "Madness",
+        "aspect_for" : "Shadows Flicker Like Flame",
+        "expansion" : "jagged_earth",
+        "complexity" : "up",
+        "aspect_art" : "true"
+    },
+    "Shadows Flicker Like Flame (Reach)" : {
+        "alt_name" : "Reach",
+        "aspect_for" : "Shadows Flicker Like Flame",
+        "expansion" : "jagged_earth",
+        "complexity" : "down",
+        "aspect_art" : "true"
+    },
+    "Shadows Flicker Like Flame (Amorphous)" : {
+        "alt_name" : "Amorphous",
+        "aspect_for" : "Shadows Flicker Like Flame",
+        "expansion" : "feather_and_flame",
+        "complexity" : "up",
+        "aspect_art" : "false"
+    },
+    "Shadows Flicker Like Flame (Foreboding)" : {
+        "alt_name" : "Foreboding",
+        "aspect_for" : "Shadows Flicker Like Flame",
+        "expansion" : "feather_and_flame",
+        "complexity" : "up",
+        "aspect_art" : "false"
+    },
+    "Shadows Flicker Like Flame (Dark Fire)" : {
+        "alt_name" : "Dark Fire",
+        "aspect_for" : "Shadows Flicker Like Flame",
+        "expansion" : "nature_incarnate",
+        "complexity" : "up",
+        "aspect_art" : "false"
+    },
+    "Sharp Fangs Behind the Leaves" : {
+        "expansion" : "branch_and_claw",
+        "complexity" : "moderate"
+    },
+    "Sharp Fangs Behind the Leaves (Encircle)" : {
+        "alt_name" : "Encircle",
+        "aspect_for" : "Sharp Fangs Behind the Leaves",
+        "expansion" : "nature_incarnate",
+        "complexity" : "same",
+        "aspect_art" : "false"
+    },
+    "Sharp Fangs Behind the Leaves (Unconstrained)" : {
+        "alt_name" : "Unconstrained",
+        "aspect_for" : "Sharp Fangs Behind the Leaves",
+        "expansion" : "nature_incarnate",
+        "complexity" : "down",
+        "aspect_art" : "false"
+    },
+    "Shifting Memory of Ages" : {
+        "expansion" : "jagged_earth",
+        "complexity" : "moderate"
+    },
+    "Shifting Memory of Ages (Intensify)" : {
+        "alt_name" : "Intensify",
+        "aspect_for" : "Shifting Memory of Ages",
+        "expansion" : "nature_incarnate",
+        "complexity" : "up",
+        "aspect_art" : "false"
+    },
+    "Shifting Memory of Ages (Mentor)" : {
+        "alt_name" : "Mentor",
+        "aspect_for" : "Shifting Memory of Ages",
+        "expansion" : "nature_incarnate",
+        "complexity" : "up",
+        "aspect_art" : "false"
+    },
+    "Shroud of Silent Mist" : {
+        "expansion" : "jagged_earth",
+        "complexity" : "high"
+    },
+    "Shroud of Silent Mist (Stranded)" : {
+        "alt_name" : "Stranded",
+        "aspect_for" : "Shroud of Silent Mist",
+        "expansion" : "nature_incarnate",
+        "complexity" : "down",
+        "aspect_art" : "false"
+    },
+    "Starlight Seeks Its Form" : {
+        "expansion" : "jagged_earth",
+        "complexity" : "very_high"
+    },
+    "Stone's Unyielding Defiance" : {
+        "expansion" : "jagged_earth",
+        "complexity" : "moderate"
+    },
+    "Sun-Bright Whirlwind" : {
+        "expansion" : "horizons_of_spirit_island",
+        "complexity" : "low",
+        "setup" : "Put 3 presence on your starting board: 1 in the highest-numbered Sands, and 2 in the lowest-numbered Mountain. <br>You start with your 4 Unique Power Cards and 0 energy.",
+        "innate_power_1" : {
+            "name" : "violent windstorms",
+            "tier_1" : {
+                "effect" : "Push up to 1 explorer.",
+                "threshold" : {
+                    "sun" : 1,
+                    "moon" : 0,
+                    "fire" : 0,
+                    "air" : 2,
+                    "water" : 0,
+                    "earth" : 0,
+                    "plant" : 0,
+                    "animal" : 0
+                }
+            },
+            "tier_2" : {
+                "effect" : "1 fear. Push up to 2 explorer/town.",
+                "threshold" : {
+                    "sun" : 2,
+                    "moon" : 0,
+                    "fire" : 0,
+                    "air" : 3,
+                    "water" : 0,
+                    "earth" : 0,
+                    "plant" : 0,
+                    "animal" : 0
+                }
+            },
+            "tier_3" : {
+                "effect" : "For each Invader Pushed by this Power, 1 Damage in the land it was Pushed to.",
+                "threshold" : {
+                    "sun" : 2,
+                    "moon" : 0,
+                    "fire" : 0,
+                    "air" : 4,
+                    "water" : 0,
+                    "earth" : 0,
+                    "plant" : 0,
+                    "animal" : 0
+                }
+            },
+            "tier_4" : {
+                "effect" : "4 Damage (<em>in target land</em>).",
+                "threshold" : {
+                    "sun" : 3,
+                    "moon" : 0,
+                    "fire" : 0,
+                    "air" : 5,
+                    "water" : 0,
+                    "earth" : 0,
+                    "plant" : 0,
+                    "animal" : 0
+                }
+            }
+        }
+    },
+    "Towering Roots of the Jungle" : {
+        "expansion" : "nature_incarnate",
+        "complexity" : "moderate"
+    },
+    "Thunderspeaker" : {
+        "expansion" : "base",
+        "complexity" : "moderate"
+    },
+    "Thunderspeaker (Tactician)" : {
+        "alt_name" : "Tactician",
+        "aspect_for" : "Thunderspeaker",
+        "expansion" : "nature_incarnate",
+        "complexity" : "same",
+        "aspect_art" : "false"
+    },
+    "Thunderspeaker (Warrior)" : {
+        "alt_name" : "Warrior",
+        "aspect_for" : "Thunderspeaker",
+        "expansion" : "nature_incarnate",
+        "complexity" : "up",
+        "aspect_art" : "false"
+    },
+    "Vengeance as a Burning Plague" : {
+        "expansion" : "jagged_earth",
+        "complexity" : "high"
+    },
+    "Vital Strength of the Earth" : {
+        "expansion" : "base",
+        "complexity" : "low"
+    },
+    "Vital Strength of the Earth (Resilience)" : {
+        "alt_name" : "Resilience",
+        "aspect_for" : "Vital Strength of the Earth",
+        "expansion" : "jagged_earth",
+        "complexity" : "same",
+        "aspect_art" : "true"
+    },
+    "Vital Strength of the Earth (Might)" : {
+        "alt_name" : "Might",
+        "aspect_for" : "Vital Strength of the Earth",
+        "expansion" : "feather_and_flame",
+        "complexity" : "up",
+        "aspect_art" : "false"
+    },
+    "Vital Strength of the Earth (Nourishing)" : {
+        "alt_name" : "Nourishing",
+        "aspect_for" : "Vital Strength of the Earth",
+        "expansion" : "nature_incarnate",
+        "complexity" : "up",
+        "aspect_art" : "false"
+    },
+    "Volcano Looming High" : {
+        "expansion" : "jagged_earth",
+        "complexity" : "moderate"
+    },
+    "Wandering Voice Keens Delirium" : {
+        "expansion" : "nature_incarnate",
+        "complexity" : "high"
+    },
+    "Wounded Waters Bleeding" : {
+        "expansion" : "nature_incarnate",
+        "complexity" : "high"
+    }
+}
