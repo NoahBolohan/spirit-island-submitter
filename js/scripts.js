@@ -340,6 +340,28 @@ $(document).ready(
     }
 )
 
+function parse_innate_power(innate_power_config, innate_power_number, col_width) {
+
+    var innate_power_col = $("<div>").attr(
+        {
+            class : `col-${col_width}`,
+            id : `col_innate_power_${innate_power_number}`
+        }
+    );
+
+    for (const [key, value] of Object.entries(innate_power_config)) {
+                    
+        if (key == "name") {
+            $("<div>").text(value.toUpperCase()).appendTo(innate_power_col);
+        }
+        else if (key.includes("tier")) {
+            $("<div>").text(value["effect"]).appendTo(innate_power_col);
+        }
+    }
+
+    return innate_power_col;
+}
+
 // Set an event listener for showing player 1's spirit choice image by choosing a spirit for player 1
 $(document).ready(
     $(document).on(
@@ -347,6 +369,8 @@ $(document).ready(
         "#col_input_player_1_spirit",
         function() {
             $.getJSON('https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/refs/heads/master/data/spirits.json', function(data) {
+
+                $("#row_innate_power_cols").empty();
 
                 // Assign appropriate image to player 1 spirit image div
                 var spirit_config = data[$("#col_input_player_1_spirit").val()]
@@ -369,6 +393,38 @@ $(document).ready(
                     "style",
                     `background-image : url(${new_url}); background-size: center; background-size: cover; background-color: rgba(255,255,255,0.6); background-blend-mode: lighten;`
                 );
+
+                var n_innate_powers=0;
+
+                if ("innate_power_5" in spirit_config) {
+                    n_innate_powers = 5;
+                }
+                else if ("innate_power_2" in spirit_config) {
+                    parse_innate_power(
+                        spirit_config["innate_power_1"],
+                        1,
+                        6
+                    ).appendTo(
+                        "#row_innate_power_cols"
+                    )
+
+                    parse_innate_power(
+                        spirit_config["innate_power_2"],
+                        2,
+                        6
+                    ).appendTo(
+                        "#row_innate_power_cols"
+                    )
+                }
+                else if ("innate_power_1" in spirit_config) {
+                    parse_innate_power(
+                        spirit_config["innate_power_1"],
+                        1,
+                        12
+                    ).appendTo(
+                        "#row_innate_power_cols"
+                    )
+                }
             })
         }
     )
