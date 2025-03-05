@@ -333,6 +333,10 @@ $(document).ready(
                 // Assign appropriate image to player 1 spirit image div
                 var spirit_config = data[$("#col_input_player_1_spirit").val()]
 
+                $("#col_input_player_1_spirit").data(
+                    "spirit_config", spirit_config
+                )
+
                 if ("alt_name" in spirit_config & "aspect_art" in spirit_config & spirit_config["aspect_art"] == "true") {
                     var spirit_image_file_name = spirit_config["alt_name"]
                 }
@@ -357,27 +361,30 @@ $(document).ready(
                     `background-image : url(${new_url}); background-size: center; background-size: cover; background-color: rgba(255,255,255,0.6); background-blend-mode: lighten;`
                 );
 
-                var n_innate_powers=0;
-
                 if ("innate_power_5" in spirit_config) {
-                    n_innate_powers = 5;
+                    for (var i = 1; i <= 5; i++) {
+
+                        parse_innate_power(
+                            spirit_config[`innate_power_${i}`],
+                            i,
+                            6
+                        ).appendTo(
+                            "#row_innate_power_cols"
+                        );
+                    }
                 }
                 else if ("innate_power_2" in spirit_config) {
-                    parse_innate_power(
-                        spirit_config["innate_power_1"],
-                        1,
-                        6
-                    ).appendTo(
-                        "#row_innate_power_cols"
-                    )
 
-                    parse_innate_power(
-                        spirit_config["innate_power_2"],
-                        2,
-                        6
-                    ).appendTo(
-                        "#row_innate_power_cols"
-                    )
+                    for (var i = 1; i <= 2; i++) {
+
+                        parse_innate_power(
+                            spirit_config[`innate_power_${i}`],
+                            i,
+                            6
+                        ).appendTo(
+                            "#row_innate_power_cols"
+                        );
+                    }
                 }
                 else if ("innate_power_1" in spirit_config) {
                     parse_innate_power(
@@ -386,7 +393,7 @@ $(document).ready(
                         6
                     ).appendTo(
                         "#row_innate_power_cols"
-                    )
+                    );
                 }
             })
         }

@@ -4,6 +4,10 @@ $(document).ready(
 
         $.getJSON('https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/refs/heads/master/data/config.json', function(data) {
 
+            $("#spirit_island_tracker_body").data(
+                "elements", data["elements"]
+            )
+
             $.each(
                 data["elements"],
                 function(key, element) {
@@ -141,6 +145,8 @@ $(document).ready(
                                     1
                                 )
                             }
+
+                            check_tier_availabilities()
                         }
                     );
                 }
@@ -241,6 +247,8 @@ $(document).ready(
                                     1
                                 )
                             }
+
+                            check_tier_availabilities();
                         }
                     );
                 }
@@ -375,6 +383,8 @@ function generate_element_threshold_button_for_tier(
             id : `button_innate_power_${innate_power_number}_${innate_power_tier}`,
             type : "button"
         }
+    ).prop(
+        "disabled",true
     );
 
     $.each(
@@ -406,4 +416,50 @@ function generate_element_threshold_button_for_tier(
     );
 
     return tier_button;
+}
+
+function check_tier_availabilities() {
+
+    $.each(
+        $("#col_input_player_1_spirit").data("spirit_config"),
+        function(config_variable, value) {
+
+            if (config_variable.includes("innate_power")) {
+
+                $.each(
+                    value,
+                    function(ip_key, ip_value) {
+
+                        if (ip_key.includes("tier")) {
+
+                            var innate_tier_available = true;
+
+                            $.each(
+                                ip_value["threshold"],
+                                function(element, element_threshold) {
+
+                                    if (
+                                        $(`#element_${element}`).data("counter") < element_threshold
+                                    ) {
+                                        innate_tier_available = false;
+                                    }
+                                }
+                            )
+
+                            if (innate_tier_available) {
+                                $(`#button_${config_variable}_${ip_key}`).prop(
+                                    "disabled",false
+                                )
+                            }
+                            else {
+                                $(`#button_${config_variable}_${ip_key}`).prop(
+                                    "disabled",true
+                                )
+                            }
+                        }
+                    }
+                )
+            }
+        }
+    )
 }
