@@ -1,9 +1,12 @@
 // Generate element tracker counters
-
 $(document).ready(
     function() {
 
         $.getJSON('https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/refs/heads/master/data/config.json', function(data) {
+
+            $("#spirit_island_tracker_body").data(
+                "elements", data["elements"]
+            )
 
             $.each(
                 data["elements"],
@@ -142,6 +145,8 @@ $(document).ready(
                                     1
                                 )
                             }
+
+                            check_tier_availabilities()
                         }
                     );
                 }
@@ -242,6 +247,8 @@ $(document).ready(
                                     1
                                 )
                             }
+
+                            check_tier_availabilities();
                         }
                     );
                 }
@@ -294,3 +301,165 @@ $(document).ready(
         );
     }
 );
+
+function parse_innate_power(
+    innate_power_config,
+    innate_power_number, 
+    col_width
+) {
+
+    var innate_power_col = $("<div>").attr(
+        {
+            class : `col-${col_width}`
+        }
+    )
+
+    var innate_power_card = $("<div>").attr(
+        {
+            class : `card margin-auto`,
+            id : `col_innate_power_${innate_power_number}`
+        }
+    ).appendTo(
+        innate_power_col
+    );
+
+    for (const [key, value] of Object.entries(innate_power_config)) {
+                    
+        if (key == "name") {
+            $("<div>").attr(
+                {
+                    class : "card-header text-center mb-1 p-1",
+                }
+            ).text(
+                value.toUpperCase()
+            ).appendTo(
+                innate_power_card
+            );
+        }
+        else if (key.includes("tier")) {
+            parse_innate_tier(
+                innate_power_number,
+                key,
+                value
+            ).appendTo(innate_power_card);
+        }
+    }
+
+    return innate_power_col;
+}
+
+function parse_innate_tier(
+    innate_power_number,
+    innate_power_tier,
+    innate_power_tier_config
+) {
+
+    var tier_row = $("<div>").attr(
+        {
+            class : "row mb-1 mx-1 justify-content-center",
+            id : `row_innate_power_${innate_power_number}_${innate_power_tier}`
+        }
+    );
+
+    generate_element_threshold_button_for_tier(
+        innate_power_number,
+        innate_power_tier,
+        innate_power_tier_config["threshold"]
+    ).appendTo(
+        tier_row
+    );
+
+    return tier_row;
+}
+
+function generate_element_threshold_button_for_tier(
+    innate_power_number,
+    innate_power_tier,
+    threshold
+) {
+    var tier_button = $("<button>").attr(
+        {
+            class : "col btn btn-primary",
+            id : `button_innate_power_${innate_power_number}_${innate_power_tier}`,
+            type : "button"
+        }
+    ).prop(
+        "disabled",true
+    );
+
+    $.each(
+        threshold,
+        function(element, count) {
+
+            if (count > 0) {
+
+                $("<span>").attr(
+                    {
+                        style : "display: inline-block; vertical-align: middle;"
+                    }
+                ).text(
+                    count
+                ).appendTo(
+                    tier_button
+                );
+
+                $("<img>").attr(
+                    {
+                        src : `https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/elements/${element}.png`,
+                        style: "height: 1.5em; display: inline-block; vertical-align: middle;"
+                    }
+                ).appendTo(
+                    tier_button
+                );
+            }
+        }
+    );
+
+    return tier_button;
+}
+
+function check_tier_availabilities() {
+
+    $.each(
+        $("#col_input_player_1_spirit").data("spirit_config"),
+        function(config_variable, value) {
+
+            if (config_variable.includes("innate_power")) {
+
+                $.each(
+                    value,
+                    function(ip_key, ip_value) {
+
+                        if (ip_key.includes("tier")) {
+
+                            var innate_tier_available = true;
+
+                            $.each(
+                                ip_value["threshold"],
+                                function(element, element_threshold) {
+
+                                    if (
+                                        $(`#element_${element}`).data("counter") < element_threshold
+                                    ) {
+                                        innate_tier_available = false;
+                                    }
+                                }
+                            )
+
+                            if (innate_tier_available) {
+                                $(`#button_${config_variable}_${ip_key}`).prop(
+                                    "disabled",false
+                                )
+                            }
+                            else {
+                                $(`#button_${config_variable}_${ip_key}`).prop(
+                                    "disabled",true
+                                )
+                            }
+                        }
+                    }
+                )
+            }
+        }
+    )
+}
