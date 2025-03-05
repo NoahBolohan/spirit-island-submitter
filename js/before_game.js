@@ -149,7 +149,9 @@ $(document).ready(
                 var spirit_select = $("<input>").attr(
                     {
                         class : "col",
+                        type : "text",
                         list : `col_input_player_${i}_spirit_list`,
+                        autocomplete : "on",
                         id : `col_input_player_${i}_spirit`,
                         name : `player_${i}_spirit`,
                         placeholder : "Enter spirit"
@@ -350,6 +352,11 @@ $(document).ready(
                     `background-image : url(${new_url}); background-size: center; background-size: cover; background-color: rgba(255,255,255,0.6); background-blend-mode: lighten;`
                 );
 
+                $("#row_innate_powers").attr(
+                    "style",
+                    `background-image : url(${new_url}); background-size: center; background-size: cover; background-color: rgba(255,255,255,0.6); background-blend-mode: lighten;`
+                );
+
                 var n_innate_powers=0;
 
                 if ("innate_power_5" in spirit_config) {
@@ -376,7 +383,7 @@ $(document).ready(
                     parse_innate_power(
                         spirit_config["innate_power_1"],
                         1,
-                        12
+                        6
                     ).appendTo(
                         "#row_innate_power_cols"
                     )

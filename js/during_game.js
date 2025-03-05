@@ -1,5 +1,4 @@
 // Generate element tracker counters
-
 $(document).ready(
     function() {
 
@@ -294,3 +293,117 @@ $(document).ready(
         );
     }
 );
+
+function parse_innate_power(
+    innate_power_config,
+    innate_power_number, 
+    col_width
+) {
+
+    var innate_power_col = $("<div>").attr(
+        {
+            class : `col-${col_width}`
+        }
+    )
+
+    var innate_power_card = $("<div>").attr(
+        {
+            class : `card margin-auto`,
+            id : `col_innate_power_${innate_power_number}`
+        }
+    ).appendTo(
+        innate_power_col
+    );
+
+    for (const [key, value] of Object.entries(innate_power_config)) {
+                    
+        if (key == "name") {
+            $("<div>").attr(
+                {
+                    class : "card-header text-center mb-1 p-1",
+                }
+            ).text(
+                value.toUpperCase()
+            ).appendTo(
+                innate_power_card
+            );
+        }
+        else if (key.includes("tier")) {
+            parse_innate_tier(
+                innate_power_number,
+                key,
+                value
+            ).appendTo(innate_power_card);
+        }
+    }
+
+    return innate_power_col;
+}
+
+function parse_innate_tier(
+    innate_power_number,
+    innate_power_tier,
+    innate_power_tier_config
+) {
+
+    var tier_row = $("<div>").attr(
+        {
+            class : "row mb-1 mx-1 justify-content-center",
+            id : `row_innate_power_${innate_power_number}_${innate_power_tier}`
+        }
+    );
+
+    generate_element_threshold_button_for_tier(
+        innate_power_number,
+        innate_power_tier,
+        innate_power_tier_config["threshold"]
+    ).appendTo(
+        tier_row
+    );
+
+    return tier_row;
+}
+
+function generate_element_threshold_button_for_tier(
+    innate_power_number,
+    innate_power_tier,
+    threshold
+) {
+    var tier_button = $("<button>").attr(
+        {
+            class : "col btn btn-primary",
+            id : `button_innate_power_${innate_power_number}_${innate_power_tier}`,
+            type : "button"
+        }
+    );
+
+    $.each(
+        threshold,
+        function(element, count) {
+
+            if (count > 0) {
+
+                $("<span>").attr(
+                    {
+                        style : "display: inline-block; vertical-align: middle;"
+                    }
+                ).text(
+                    count
+                ).appendTo(
+                    tier_button
+                );
+
+                $("<img>").attr(
+                    {
+                        src : `https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/elements/${element}.png`,
+                        style: "height: 1.5em; display: inline-block; vertical-align: middle;"
+                    }
+                ).appendTo(
+                    tier_button
+                );
+            }
+        }
+    );
+
+    return tier_button;
+}
