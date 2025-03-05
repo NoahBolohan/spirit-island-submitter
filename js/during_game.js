@@ -1,3 +1,107 @@
+// Generate element tracker counters
+
+$(document).ready(
+    function() {
+
+        $.getJSON('https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/refs/heads/master/data/config.json', function(data) {
+
+            $.each(
+                data["elements"],
+                function(key, element) {
+
+                    var col_for_element = $("<div>").attr(
+                        {
+                            class : "col p-0",
+                            id : `col_${element}_element_counter`
+                        }
+                    ).data(
+                        "locked_count", 0
+                    );
+
+                    var row_for_plus_button = $("<div>").attr(
+                        {
+                            class : "row p-0 justify-content-center margin_auto"
+                        }
+                    );
+
+                    var row_for_element_img = $("<div>").attr(
+                        {
+                            class : "row justify-content-center",
+                            style : "position: relative;"
+                        }
+                    );
+
+                    var row_for_minus_button = $("<div>").attr(
+                        {
+                            class : "row p-0 justify-content-center margin_auto"
+                        }
+                    );
+
+                    $("<button>").attr(
+                        {
+                            class : "col btn btn-xs astext",
+                            id : `button_${element}_plus`,
+                            type : "button"
+                        }
+                    ).text(
+                        "\u2795"
+                    ).appendTo(
+                        row_for_plus_button
+                    );
+
+                    $("<img>").attr(
+                        {
+                            class : "col-1 element_img",
+                            src : `https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/elements/${element}.png`,
+                            id : `element_${element}`
+                        }
+                    ).data(
+                        "counter", 0
+                    ).appendTo(
+                        row_for_element_img
+                    );
+
+                    $("<div>").attr(
+                        {
+                            class : "element_img_text_overlay",
+                            id : `element_${element}_overlay_text`
+                        }
+                    ).appendTo(
+                        row_for_element_img
+                    );
+
+                    $("<button>").attr(
+                        {
+                            class : "col btn btn-xs astext",
+                            id : `button_${element}_minus`,
+                            type : "button"
+                        }
+                    ).text(
+                        "\u2796"
+                    ).appendTo(
+                        row_for_minus_button
+                    );
+
+                    row_for_plus_button.appendTo(
+                        col_for_element
+                    );
+
+                    row_for_element_img.appendTo(
+                        col_for_element
+                    );
+
+                    row_for_minus_button.appendTo(
+                        col_for_element
+                    );
+
+                    col_for_element.appendTo(
+                        $("#row_counters_element_tracker")
+                    );
+                }
+            )
+        });
+    }
+)
 
 // Set an event listener for increasing the element data counters by 1 when the plus button is pressed
 $(document).ready(
