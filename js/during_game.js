@@ -364,7 +364,7 @@ function parse_innate_tier(
     generate_element_threshold_button_for_tier(
         innate_power_number,
         innate_power_tier,
-        innate_power_tier_config["threshold"]
+        innate_power_tier_config
     ).appendTo(
         tier_row
     );
@@ -375,7 +375,7 @@ function parse_innate_tier(
 function generate_element_threshold_button_for_tier(
     innate_power_number,
     innate_power_tier,
-    threshold
+    innate_power_config
 ) {
     var tier_button = $("<button>").attr(
         {
@@ -387,6 +387,32 @@ function generate_element_threshold_button_for_tier(
         "disabled",true
     );
 
+    append_threshold_string(
+        tier_button,
+        innate_power_config["threshold"]
+    );
+
+    assign_modal_to_tier_button(
+        innate_power_number,
+        innate_power_tier,
+        innate_power_config
+    );
+
+    tier_button.on(
+        "click",
+        function() {
+            $(`#model_innate_power_${innate_power_number}_${innate_power_tier}`).modal("show");
+        }
+    )
+
+    return tier_button;
+}
+
+function append_threshold_string(
+    div,
+    threshold
+) {
+    
     $.each(
         threshold,
         function(element, count) {
@@ -400,7 +426,7 @@ function generate_element_threshold_button_for_tier(
                 ).text(
                     count
                 ).appendTo(
-                    tier_button
+                    div
                 );
 
                 $("<img>").attr(
@@ -409,13 +435,84 @@ function generate_element_threshold_button_for_tier(
                         style: "height: 1.5em; display: inline-block; vertical-align: middle;"
                     }
                 ).appendTo(
-                    tier_button
+                    div
                 );
             }
         }
     );
 
-    return tier_button;
+    return div;
+}
+
+function assign_modal_to_tier_button(
+    innate_power_number,
+    innate_power_tier,
+    innate_power_config
+) {
+
+    var modal_for_tier_button = $("<div>").attr(
+        {
+            class : "modal fade",
+            id  : `model_innate_power_${innate_power_number}_${innate_power_tier}`,
+            style: "position: absolute; float: left; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 75%;"
+        }
+    );
+
+    var modal_dialog =$("<div>").attr(
+        {
+            class : "modal-dialog",
+            role : "document"
+        }
+    ).appendTo(
+        modal_for_tier_button
+    );
+
+    var modal_content =$("<div>").attr(
+        {
+            class : "modal-content"
+        }
+    ).appendTo(
+        modal_dialog
+    );
+
+    var modal_header = $("<div>").attr(
+        {
+            class: "modal-header justify-content-center"
+        }
+    ).appendTo(
+        modal_content
+    );
+
+    var modal_title = $("<div>").attr(
+        {
+            class: "modal-title"
+        }
+    );
+    
+    append_threshold_string(
+        modal_title,
+        innate_power_config["threshold"]
+    ).appendTo(
+        modal_header
+    );
+
+    $("<div>").attr(
+        {
+            class: "modal-body"
+        }
+    ).text(
+        innate_power_config["effect"]
+    ).appendTo(
+        modal_content
+    );
+
+    modal_content.appendTo(
+        modal_for_tier_button
+    );
+
+    modal_for_tier_button.appendTo(
+        "#div_modals"
+    );
 }
 
 function check_tier_availabilities() {
