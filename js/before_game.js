@@ -168,18 +168,22 @@ $(document).ready(
                     }
                 ).appendTo(`#row_input_player_${i}_spirit`);
 
-                // Append the spirit options
-                $.getJSON('https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/refs/heads/master/data/spirits.json', function(data) {
-                    $(Object.keys(data)).each(
-                        function() {
-                            $(`#col_input_player_${i}_spirit_list`).append(
-                                $("<option>").text(this)
-                            );
-                        }
-                    );
-                })
+                $.ajax({
+                    url: 'https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/refs/heads/master/data/spirits.json',
+                    async: false,
+                    dataType: 'json',
+                    success: function (json) {
+                        $.each(
+                            json,
+                            function(key, value) {
+                                $(`#col_input_player_${i}_spirit_list`).append(
+                                    `<option value='${key}'>`
+                                );
+                            }
+                        )
+                    }
+                });
                 
-
                 // Reset the select to the first option
                 $(`#col_input_player_${i}_spirit`).prop('selectedIndex',0);
 
