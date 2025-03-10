@@ -21,6 +21,8 @@
 		<script src="js/before_game.js"></script>
 		<script src="js/during_game.js"></script>
 		<script src="js/after_game.js"></script>
+		<script src="js/no_sleep.min.js"></script>
+		<script src="js/no_sleep_script.js"></script>
 	</head>
 
 	<body class="parallax" onload="on_load()" id="spirit_island_tracker_body">
@@ -30,7 +32,24 @@
 			<!-- Background art by Joshua Wright: https://www.tsumea.com/journal/270618/spirit-island-board-game -->
 			<!-- All other images are from the Spirit Island wiki-->
 
-			<div id="div_modals"></div>
+			<div class="modal fade" id="modal_setup">
+
+				<div class="modal-dialog" role="document">
+		
+					<div class="modal-content">
+		
+						<div class="modal-header justify-content-center">
+		
+							<h2 class="modal-title">Spirit setup</h2>
+						</div>
+		
+						<div class="modal-body" id="modal_setup_body">
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div id="div_modals_innate_powers"></div>
 
 			<div class="container-fluid mb-1">
 				
@@ -226,6 +245,24 @@
 				</div>
 
 				<div class="container-fluid tab-pane fade row row margin_auto" id="container_tab_content_during" role="tabpanel" aria-labelledby="during-tab">
+
+					<div class="row mt-1 p-0 justify-content-center margin_auto" id="row_misc_buttons">
+
+						<button class="col-3 btn btn-primary" id="button_show_setup_instructions" type="button">
+							Setup
+						</button>
+
+						<div class="col-5 offset-1 p-0 align-self-center">
+							Prevent screen sleep:
+						</div>
+
+						<div class="col-2 p-0">
+							<label class="switch">
+								<input type="checkbox" id="button_toggle_screen_sleep">
+								<span class="slider round"></span>
+							</label>
+						</div>
+					</div>
 					
 					<div class="row mt-1 p-0 justify-content-center margin_auto" id="row_element_tracker">
 

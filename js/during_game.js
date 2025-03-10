@@ -302,6 +302,28 @@ $(document).ready(
     }
 );
 
+$(document).ready(
+    function() {
+
+        $("#button_show_setup_instructions").on(
+            "click",
+            function() {
+                $("#modal_setup").modal("show");
+            }
+        );
+    }
+)
+
+function assign_spirit_setup_instructions(
+    setup
+) {
+    $("#modal_setup_body").empty();
+
+    $("#modal_setup_body").text(
+        setup
+    );
+}
+
 function parse_innate_power(
     innate_power_config,
     innate_power_number, 
@@ -511,7 +533,7 @@ function assign_modal_to_tier_button(
     );
 
     modal_for_tier_button.appendTo(
-        "#div_modals"
+        "#div_modals_innate_powers"
     );
 }
 

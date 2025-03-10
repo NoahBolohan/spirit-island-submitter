@@ -329,7 +329,7 @@ $(document).ready(
             $.getJSON('https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/refs/heads/master/data/spirits.json', function(data) {
 
                 $("#row_innate_power_cols").empty();
-                $("#div_modals").empty();
+                $("#div_modals_innate_powers").empty();
 
                 // Assign appropriate image to player 1 spirit image div
                 var spirit_config = data[$("#col_input_player_1_spirit").val()]
@@ -396,6 +396,10 @@ $(document).ready(
                         "#row_innate_power_cols"
                     );
                 }
+
+                assign_spirit_setup_instructions(
+                    spirit_config["setup"]
+                );
             })
         }
     )
