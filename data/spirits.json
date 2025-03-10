@@ -4792,7 +4792,7 @@
     "Vengeance as a Burning Plague" : {
         "expansion" : "jagged_earth",
         "complexity" : "high",
-        "setup" : "1 if your PRESENCE starts the game already Destroyed. Put 2 PRESENCE on your starting board: 1 in a land with BLIGHT, 1 in a Wetland without DAHAN.",
+        "setup" : "1 of your PRESENCE starts the game already Destroyed. Put 2 PRESENCE on your starting board: 1 in a land with BLIGHT, 1 in a Wetland without DAHAN.",
         "innate_power_1" : {
             "name" : "epidemics run rampant",
             "tier_1" : {
