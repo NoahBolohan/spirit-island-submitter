@@ -442,26 +442,60 @@ function append_threshold_string(
         threshold,
         function(element, count) {
 
-            if (count > 0) {
+            if (count != 0) {
 
-                $("<span>").attr(
-                    {
-                        style : "display: inline-block; vertical-align: middle;"
-                    }
-                ).text(
-                    count
-                ).appendTo(
-                    div
-                );
-
-                $("<img>").attr(
-                    {
-                        src : `https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/elements/${element}.png`,
-                        style: "height: 1.5em; display: inline-block; vertical-align: middle;"
-                    }
-                ).appendTo(
-                    div
-                );
+                if (count > 0) {
+                    $("<span>").attr(
+                        {
+                            style : "display: inline-block; vertical-align: middle;"
+                        }
+                    ).text(
+                        count
+                    ).appendTo(
+                        div
+                    );
+                }
+                
+                if (element == "COST") {
+                    $("<img>").attr(
+                        {
+                            src : `https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/icons/${count}_cost.png`,
+                            style: "height: 1.5em; display: inline-block; vertical-align: middle;"
+                        }
+                    ).appendTo(
+                        div
+                    );
+                }
+                else if (element == "BEASTS") {
+                    $("<img>").attr(
+                        {
+                            src : "https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/icons/beasts.svg",
+                            style: "height: 1em; display: inline-block; vertical-align: text-top;"
+                        }
+                    ).appendTo(
+                        div
+                    );
+                }
+                else if (element == "DESTROYED_PRESENCE") {
+                    $("<img>").attr(
+                        {
+                            src : "https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/icons/destroyed_presence.svg",
+                            style: "height: 1em; display: inline-block; vertical-align: baseline;"
+                        }
+                    ).appendTo(
+                        div
+                    );
+                }
+                else {
+                    $("<img>").attr(
+                        {
+                            src : `https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/elements/${element}.png`,
+                            style: "height: 1.5em; display: inline-block; vertical-align: middle;"
+                        }
+                    ).appendTo(
+                        div
+                    );
+                }
             }
         }
     );

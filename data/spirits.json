@@ -1219,7 +1219,7 @@
         "innate_power_2" : {
             "name" : "visions of a shifting future",
             "tier_1" : {
-                "effect" : "Look at the top card of  <b>either</b> the Invader Deck of (if relevant) the Event Deck. Return it, then shuffle that desk's top 2 cards. (<em>?For the Invader Deck, differing Invader Stages may give away which card is next.</em>)",
+                "effect" : "Look at the top card of  <b>either</b> the Invader Deck of (if relevant) the Event Deck. Return it, then shuffle that desk's top 2 cards. (<em>For the Invader Deck, differing Invader Stages may give away which card is next.</em>)",
                 "threshold" : {
                     "sun" : 1,
                     "moon" : 2,
@@ -2390,7 +2390,7 @@
         "innate_power_1" : {
             "name" : "the teeming host arrives",
             "tier_1" : {
-                "effect" : "gather up to 1 BEASTS.",
+                "effect" : "Gather up to 1 BEASTS.",
                 "threshold" : {
                     "sun" : 0,
                     "moon" : 0,
@@ -2432,7 +2432,7 @@
         "innate_power_2" : {
             "name" : "beset and confound the invaders",
             "tier_1" : {
-                "effect" : "2 FEAR and DEFEND 2.",
+                "effect" : "2 FEAR and Defend 2.",
                 "threshold" : {
                     "sun" : 0,
                     "moon" : 0,
