@@ -582,3 +582,9 @@ function check_tier_availabilities() {
         }
     )
 }
+
+function spirit_text_keyword_converter(
+    string
+) {
+    return string;
+}

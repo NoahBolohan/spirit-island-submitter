@@ -305,7 +305,7 @@
         "innate_power_1" : {
             "name" : "leave a trail of deathly silence",
             "tier_1" : {
-                "effect" : "1 Damage at INCARNA_BREATH_OF_DARKNESS_DOWN_YOUR_SPINE_BREATH_OF_DARKNESS_DOWN_YOUR_SPINE. You may push INCARNA_BREATH_OF_DARKNESS_DOWN_YOUR_SPINE.",
+                "effect" : "1 Damage at INCARNA_BREATH_OF_DARKNESS_DOWN_YOUR_SPINE. You may push INCARNA_BREATH_OF_DARKNESS_DOWN_YOUR_SPINE.",
                 "threshold" : {
                     "sun" :0,
                     "moon" : 2,
@@ -680,7 +680,7 @@
                 }
             },
             "tier_3" : {
-                "effect" : "If you have at least 3 IMPENDING_CARDS, Add 1 QUAKE in one of your lands.",
+                "effect" : "If you have at least 3 IMPENDING_CARD, Add 1 QUAKE in one of your lands.",
                 "threshold" : {
                     "sun" : 0,
                     "moon" : 1,
