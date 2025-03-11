@@ -354,6 +354,7 @@ function parse_innate_power(
             $("<div>").attr(
                 {
                     class : "card-header text-center mb-1 p-1",
+                    style: "font-size : 13px"
                 }
             ).text(
                 value.toUpperCase()
