@@ -301,7 +301,7 @@
     "Breath of Darkness Down Your Spine" : {
         "expansion" : "nature_incarnate",
         "complexity" : "high",
-        "setup" : "Put 2 PRESENCE and your Incarna (INCARNA_BREATH_OF_DARKNESS_DOWN_YOUR_SPINE), Unempowered (INCARNA_UNEMPOWERED), on your starting boardL 1 PRESENCE and INCARNA_BREATH_OF_DARKNESS_DOWN_YOUR_SPINE in the lowest-numbered Jungle and 1 in the highest-numbered Jungle. Set The Endless Dark (THE_ENDLESS_DARK) tile next to the island with 1 EXPLORER on it.<br>You start with your 4 Unique Power Cards and 0 Energy.",
+        "setup" : "Put 2 PRESENCE and your Incarna (INCARNA_BREATH_OF_DARKNESS_DOWN_YOUR_SPINE), Unempowered (INCARNA_UNEMPOWERED), on your starting board, 1 PRESENCE and INCARNA_BREATH_OF_DARKNESS_DOWN_YOUR_SPINE in the lowest-numbered Jungle and 1 in the highest-numbered Jungle. Set The Endless Dark (THE_ENDLESS_DARK) tile next to the island with 1 EXPLORER on it.<br>You start with your 4 Unique Power Cards and 0 Energy.",
         "innate_power_1" : {
             "name" : "leave a trail of deathly silence",
             "tier_1" : {

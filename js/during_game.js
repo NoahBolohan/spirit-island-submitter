@@ -591,11 +591,11 @@ function check_tier_availabilities() {
 
 function spirit_text_keyword_converter(
     string,
-    height
+    max_size
 ) {
 
     var input_string_array = string.split(
-        /(\.|\s|\/+)/
+        /(\(|\)|\/|\<|\>|\.|\,|\s+)/
     );
 
     var return_html_array = ["<p>"];
@@ -611,7 +611,8 @@ function spirit_text_keyword_converter(
                     
                     if (value in json["keywords"]) {
                         return_html_array.push(
-                            `<object data="static/icons/${json["keywords"][value]}" height="${height}px"></object>`
+                            // `<object data="static/icons/${json["keywords"][value]}" height="${height}px"></object>`
+                            `<object data="static/icons/${json["keywords"][value]}" style="max-height: ${max_size}px; max-width: ${max_size}px;"></object>`
                         )
                     }
                     else {
