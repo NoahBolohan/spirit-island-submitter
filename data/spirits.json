@@ -2,7 +2,7 @@
     "A Spread of Rampant Green" : {
         "expansion" : "base",
         "complexity" : "moderate",
-        "setup" : "Put 2 PRESENCE on your starting board: 1 in the highest-numbered Wetland, and 1 in the Jungle without any DAHAN. (<em>If there is more than 1 such Jungle, you mar choose.</em>)",
+        "setup" : "Put 2 PRESENCE on your starting board: 1 in the highest-numbered Wetland, and 1 in the Jungle without any DAHAN. (<em>If there is more than 1 such Jungle, you may choose.</em>)",
         "innate_power_1" : {
             "name" : "creepers tear into mortar",
             "tier_1" : {
@@ -94,7 +94,7 @@
         "expansion" : "nature_incarnate",
         "complexity" : "up",
         "aspect_art" : "false",
-        "setup" : "Put 2 PRESENCE on your starting board: 1 in the highest-numbered Wetland, and 1 in the Jungle without any DAHAN. (<em>If there is more than 1 such Jungle, you mar choose.</em>) Take 13 DESTROYED_PRESENCE.",
+        "setup" : "Put 2 PRESENCE on your starting board: 1 in the highest-numbered Wetland, and 1 in the Jungle without any DAHAN. (<em>If there is more than 1 such Jungle, you may choose.</em>) Take 13 DESTROYED_PRESENCE.",
         "innate_power_1" : {
             "name" : "creepers tear into mortar",
             "tier_1" : {
@@ -199,7 +199,7 @@
         "expansion" : "nature_incarnate",
         "complexity" : "up",
         "aspect_art" : "false",
-        "setup" : "Put 2 PRESENCE on your starting board: 1 in the highest-numbered Wetland, and 1 in the Jungle without any DAHAN. (<em>If there is more than 1 such Jungle, you mar choose.</em>) Replace GIFT OF PROLIFERATION with BELLIGERENT AND AGGRESSIVE CROPS.",
+        "setup" : "Put 2 PRESENCE on your starting board: 1 in the highest-numbered Wetland, and 1 in the Jungle without any DAHAN. (<em>If there is more than 1 such Jungle, you may choose.</em>) Replace GIFT OF PROLIFERATION with BELLIGERENT AND AGGRESSIVE CROPS.",
         "innate_power_1" : {
             "name" : "impenetrable tangles of greenery",
             "tier_1" : {

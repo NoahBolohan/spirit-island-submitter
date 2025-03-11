@@ -319,8 +319,11 @@ function assign_spirit_setup_instructions(
 ) {
     $("#modal_setup_body").empty();
 
-    $("#modal_setup_body").text(
-        setup
+    $("#modal_setup_body").html(
+        spirit_text_keyword_converter(
+            setup,
+            18
+        )
     );
 }
 
@@ -522,8 +525,11 @@ function assign_modal_to_tier_button(
         {
             class: "modal-body"
         }
-    ).text(
-        innate_power_config["effect"]
+    ).html(
+        spirit_text_keyword_converter(
+            innate_power_config["effect"],
+            18
+        )
     ).appendTo(
         modal_content
     );
@@ -584,7 +590,45 @@ function check_tier_availabilities() {
 }
 
 function spirit_text_keyword_converter(
-    string
+    string,
+    height
 ) {
-    return string;
+
+    var input_string_array = string.split(
+        /(\.|\s|\/+)/
+    );
+
+    var return_html_array = ["<p>"];
+
+    $.ajax({
+        url: 'https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/refs/heads/master/data/config.json',
+        async: false,
+        dataType: 'json',
+        success: function (json) {
+            $.each(
+                input_string_array,
+                function(key, value) {
+                    
+                    if (value in json["keywords"]) {
+                        return_html_array.push(
+                            `<object data="static/icons/${json["keywords"][value]}" height="${height}px"></object>`
+                        )
+                    }
+                    else {
+                        return_html_array.push(
+                            value
+                        )
+                    }
+                }
+            )
+        }
+    });
+
+    return_html_array.push(
+        "</p>"
+    )
+
+    var return_html_string = return_html_array.join("");
+
+    return return_html_string;
 }
