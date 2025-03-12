@@ -470,107 +470,72 @@ $(document).ready(
     )
 )
 
-// Set an event listener for showing player 2's spirit choice image by choosing a spirit for player 2
+// Set an event listener for showing player i's spirit choice image by choosing a spirit for player i
 $(document).ready(
-    $(document).on(
-        "change",
-        "#col_input_player_2_spirit",
-        function() {    
-            $.getJSON('https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/refs/heads/master/data/spirits.json', function(data) {
 
-                // Assign appropriate image to player 2 spirit image div
-                var spirit_config = data[$("#col_input_player_2_spirit").val()]
+    function() {
 
-                if ("alt_name" in spirit_config & "aspect_art" in spirit_config & spirit_config["aspect_art"] == "true") {
-                    var spirit_image_file_name = spirit_config["alt_name"]
+        for (let i=2; i<=4; i++) {
+
+            $(document).on(
+                "change",
+                `#col_input_player_${i}_spirit`,
+                function() {
+
+                    $.ajax({
+                        url: 'https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/refs/heads/master/data/spirits.json',
+                        async: false,
+                        dataType: 'json',
+                        success: function (data) {
+                            if ($(`#col_input_player_${i}_spirit`).val() in data) {
+
+                                // Assign appropriate image to player 2 spirit image div
+                                var spirit_config = data[$(`#col_input_player_${i}_spirit`).val()]
+                
+                                if ("alt_name" in spirit_config & "aspect_art" in spirit_config & spirit_config["aspect_art"] == "true") {
+                                    var spirit_image_file_name = spirit_config["alt_name"]
+                                }
+                                else if ("aspect_for" in spirit_config) {
+                                    var spirit_image_file_name = spirit_config["aspect_for"].split(' ').join('_')
+                                }
+                                else {
+                                    var spirit_image_file_name = $(`#col_input_player_${i}_spirit`).val().split(' ').join('_')
+                                }
+                
+                                var new_url = encodeURI(
+                                    "https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/spirit_images/" + spirit_image_file_name + ".png"
+                                );
+                
+                                new_url = new_url.replace(
+                                    /'/g,
+                                    '%27'
+                                ).replace(
+                                    /\(/g,
+                                    "%28"
+                                ).replace(
+                                    /\)/g,
+                                    "%29"
+                                );
+                
+                                $(`#card_player_${i}_info`).attr(
+                                    "style",
+                                    `background-image : url(${new_url}); background-size: center; background-size: cover; background-color: rgba(255,255,255,0.6); background-blend-mode: lighten;`
+                                );
+                            }
+                            else {
+                                $(`#card_player_${i}_info`).attr(
+                                    "style",
+                                    `background-image : none; background-size: center; background-size: cover; background-color: rgba(255,255,255,0.6); background-blend-mode: lighten;`
+                                );
+                            }
+                        }
+                    });
                 }
-                else if ("aspect_for" in spirit_config) {
-                    var spirit_image_file_name = spirit_config["aspect_for"].split(' ').join('_')
-                }
-                else {
-                    var spirit_image_file_name = $("#col_input_player_2_spirit").val().split(' ').join('_')
-                }
-
-                var new_url = encodeURI("https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/spirit_images/" + spirit_image_file_name + ".png");
-
-                new_url = new_url.replace(/'/g, '%27').replace(/\(/g, "%28").replace(/\)/g, "%29");
-
-                $("#card_player_2_info").attr(
-                    "style",
-                    `background-image : url(${new_url}); background-size: center; background-size: cover; background-color: rgba(255,255,255,0.6); background-blend-mode: lighten;`
-                );
-            })
+            )
         }
-    )
+    }
 )
 
-// Set an event listener for showing player 3's spirit choice image by choosing a spirit for player 3
-$(document).ready(
-    $(document).on(
-        "change",
-        "#col_input_player_3_spirit",
-        function() {    
-            $.getJSON('https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/refs/heads/master/data/spirits.json', function(data) {
-
-                // Assign appropriate image to player 3 spirit image div
-                var spirit_config = data[$("#col_input_player_3_spirit").val()]
-
-                if ("alt_name" in spirit_config & "aspect_art" in spirit_config & spirit_config["aspect_art"] == "true") {
-                    var spirit_image_file_name = spirit_config["alt_name"]
-                }
-                else if ("aspect_for" in spirit_config) {
-                    var spirit_image_file_name = spirit_config["aspect_for"].split(' ').join('_')
-                }
-                else {
-                    var spirit_image_file_name = $("#col_input_player_3_spirit").val().split(' ').join('_')
-                }
-
-                var new_url = encodeURI("https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/spirit_images/" + spirit_image_file_name + ".png");
-
-                new_url = new_url.replace(/'/g, '%27').replace(/\(/g, "%28").replace(/\)/g, "%29");
-
-                $("#card_player_3_info").attr(
-                    "style",
-                    `background-image : url(${new_url}); background-size: center; background-size: cover; background-color: rgba(255,255,255,0.6); background-blend-mode: lighten;`
-                );
-            })
-        }
-    )
-)
-
-// Set an event listener for showing player 4's spirit choice image by choosing a spirit for player 4
-$(document).ready(
-    $(document).on(
-        "change",
-        "#col_input_player_4_spirit",
-        function() {    
-            $.getJSON('https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/refs/heads/master/data/spirits.json', function(data) {
-
-                // Assign appropriate image to player 4 spirit image div
-                var spirit_config = data[$("#col_input_player_4_spirit").val()]
-
-                if ("alt_name" in spirit_config & "aspect_art" in spirit_config & spirit_config["aspect_art"] == "true") {
-                    var spirit_image_file_name = spirit_config["alt_name"]
-                }
-                else if ("aspect_for" in spirit_config) {
-                    var spirit_image_file_name = spirit_config["aspect_for"].split(' ').join('_')
-                }
-                else {
-                    var spirit_image_file_name = $("#col_input_player_4_spirit").val().split(' ').join('_')
-                }
-
-                var new_url = encodeURI("https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/spirit_images/" + spirit_image_file_name + ".png");
-
-                new_url = new_url.replace(/'/g, '%27').replace(/\(/g, "%28").replace(/\)/g, "%29");
-
-                $("#card_player_4_info").attr(
-                    "style",
-                    `background-image : url(${new_url}); background-size: center; background-size: cover; background-color: rgba(255,255,255,0.6); background-blend-mode: lighten;`
-                );
-            })
-        }
-    )
-)
 
 // Set an event listener for enabling adversary 1 level and assigning the adversary 1 background image url by choosing an adversary 1
 $(document).ready(
