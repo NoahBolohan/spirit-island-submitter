@@ -361,12 +361,12 @@ $(document).ready(
 
                     $("#card_player_1_info").attr(
                         "style",
-                        `background-image : url(${new_url}); background-size: center; background-size: cover; background-color: rgba(255,255,255,0.6); background-blend-mode: lighten;`
+                        `background-image : url(${new_url}); background-size: center; background-size: cover; background-color: rgba(255,255,255,0.4); background-blend-mode: lighten;`
                     );
 
                     $("#row_innate_powers").attr(
                         "style",
-                        `background-image : url(${new_url}); background-size: center; background-size: cover; background-color: rgba(255,255,255,0.6); background-blend-mode: lighten;`
+                        `background-image : url(${new_url}); background-size: center; background-size: cover; background-color: rgba(255,255,255,0.4); background-blend-mode: lighten;`
                     );
 
                     if ("innate_power_5" in spirit_config) {
@@ -411,12 +411,12 @@ $(document).ready(
                 else {
                     $("#card_player_1_info").attr(
                         "style",
-                        `background-image : none; background-size: center; background-size: cover; background-color: rgba(255,255,255,0.6); background-blend-mode: lighten;`
+                        `background-image : none; background-size: center; background-size: cover; background-color: rgba(255,255,255,0.4); background-blend-mode: lighten;`
                     );
 
                     $("#row_innate_powers").attr(
                         "style",
-                        `background-image : none; background-size: center; background-size: cover; background-color: rgba(255,255,255,0.6); background-blend-mode: lighten;`
+                        `background-image : none; background-size: center; background-size: cover; background-color: rgba(255,255,255,0.4); background-blend-mode: lighten;`
                     );
 
                     $("#row_innate_power_cols").empty();
@@ -519,13 +519,13 @@ $(document).ready(
                 
                                 $(`#card_player_${i}_info`).attr(
                                     "style",
-                                    `background-image : url(${new_url}); background-size: center; background-size: cover; background-color: rgba(255,255,255,0.6); background-blend-mode: lighten;`
+                                    `background-image : url(${new_url}); background-size: center; background-size: cover; background-color: rgba(255,255,255,0.4); background-blend-mode: lighten;`
                                 );
                             }
                             else {
                                 $(`#card_player_${i}_info`).attr(
                                     "style",
-                                    `background-image : none; background-size: center; background-size: cover; background-color: rgba(255,255,255,0.6); background-blend-mode: lighten;`
+                                    `background-image : none; background-size: center; background-size: cover; background-color: rgba(255,255,255,0.4); background-blend-mode: lighten;`
                                 );
                             }
                         }
@@ -570,7 +570,7 @@ $(document).ready(
                                 "background-position" : "center",
                                 "background-size" : "center",
                                 "background-size" : "cover",
-                                "background-color" : "rgba(255,255,255,0.6)",
+                                "background-color" : "rgba(255,255,255,0.4)",
                                 "background-blend-mode" : "lighten"
                             }
                         );
@@ -686,7 +686,7 @@ $(document).ready(
                                 "background-position" : "center",
                                 "background-size" : "center",
                                 "background-size" : "cover",
-                                "background-color" : "rgba(255,255,255,0.6)",
+                                "background-color" : "rgba(255,255,255,0.4)",
                                 "background-blend-mode" : "lighten"
                             }
                         );
@@ -807,7 +807,7 @@ $(document).ready(
                                     "background-position" : "center",
                                     "background-size" : "center",
                                     "background-size" : "cover",
-                                    "background-color" : "rgba(255,255,255,0.6)",
+                                    "background-color" : "rgba(255,255,255,0.4)",
                                     "background-blend-mode" : "lighten"
                                 }
                             );
