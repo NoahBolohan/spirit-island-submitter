@@ -491,7 +491,7 @@ function append_threshold_string(
                     $("<img>").attr(
                         {
                             src : "https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/icons/power_card.svg",
-                            style: "height: 1em; display: inline-block; vertical-align: middle;"
+                            style: "height: 1em; display: inline-block; vertical-align: text-top;"
                         }
                     ).appendTo(
                         div
