@@ -487,11 +487,11 @@ function append_threshold_string(
                         div
                     );
                 }
-                else if (element == "CARD_IN_PLAY") {
+                else if (element == "CARDS_IN_PLAY") {
                     $("<img>").attr(
                         {
                             src : "https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/icons/power_card.svg",
-                            style: "height: 1em; display: inline-block; vertical-align: baseline;"
+                            style: "height: 1em; display: inline-block; vertical-align: middle;"
                         }
                     ).appendTo(
                         div
