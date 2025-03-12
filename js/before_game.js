@@ -154,7 +154,8 @@ $(document).ready(
                         autocomplete : "on",
                         id : `col_input_player_${i}_spirit`,
                         name : `player_${i}_spirit`,
-                        placeholder : "Enter spirit"
+                        placeholder : "Enter spirit",
+                        type : "search"
                     }
                 ).prop(
                     'required',
@@ -324,7 +325,6 @@ $(document).ready(
     }
 )
 
-
 // Set an event listener for showing player 1's spirit choice image by choosing a spirit for player 1
 $(document).ready(
     $(document).on(
@@ -336,75 +336,135 @@ $(document).ready(
                 $("#row_innate_power_cols").empty();
                 $("#div_modals_innate_powers").empty();
 
-                // Assign appropriate image to player 1 spirit image div
-                var spirit_config = data[$("#col_input_player_1_spirit").val()]
+                if ($("#col_input_player_1_spirit").val() in data) {
 
-                $("#col_input_player_1_spirit").data(
-                    "spirit_config", spirit_config
-                )
+                    // Assign appropriate image to player 1 spirit image div
+                    var spirit_config = data[$("#col_input_player_1_spirit").val()]
 
-                if ("alt_name" in spirit_config & "aspect_art" in spirit_config & spirit_config["aspect_art"] == "true") {
-                    var spirit_image_file_name = spirit_config["alt_name"]
-                }
-                else if ("aspect_for" in spirit_config) {
-                    var spirit_image_file_name = spirit_config["aspect_for"].split(' ').join('_')
-                }
-                else {
-                    var spirit_image_file_name = $("#col_input_player_1_spirit").val().split(' ').join('_')
-                }
+                    $("#col_input_player_1_spirit").data(
+                        "spirit_config", spirit_config
+                    )
 
-                var new_url = encodeURI("https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/spirit_images/" + spirit_image_file_name + ".png");
+                    if ("alt_name" in spirit_config & "aspect_art" in spirit_config & spirit_config["aspect_art"] == "true") {
+                        var spirit_image_file_name = spirit_config["alt_name"]
+                    }
+                    else if ("aspect_for" in spirit_config) {
+                        var spirit_image_file_name = spirit_config["aspect_for"].split(' ').join('_')
+                    }
+                    else {
+                        var spirit_image_file_name = $("#col_input_player_1_spirit").val().split(' ').join('_')
+                    }
 
-                new_url = new_url.replace(/'/g, '%27').replace(/\(/g, "%28").replace(/\)/g, "%29");
+                    var new_url = encodeURI("https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/spirit_images/" + spirit_image_file_name + ".png");
 
-                $("#card_player_1_info").attr(
-                    "style",
-                    `background-image : url(${new_url}); background-size: center; background-size: cover; background-color: rgba(255,255,255,0.6); background-blend-mode: lighten;`
-                );
+                    new_url = new_url.replace(/'/g, '%27').replace(/\(/g, "%28").replace(/\)/g, "%29");
 
-                $("#row_innate_powers").attr(
-                    "style",
-                    `background-image : url(${new_url}); background-size: center; background-size: cover; background-color: rgba(255,255,255,0.6); background-blend-mode: lighten;`
-                );
+                    $("#card_player_1_info").attr(
+                        "style",
+                        `background-image : url(${new_url}); background-size: center; background-size: cover; background-color: rgba(255,255,255,0.6); background-blend-mode: lighten;`
+                    );
 
-                if ("innate_power_5" in spirit_config) {
-                    for (var i = 1; i <= 5; i++) {
+                    $("#row_innate_powers").attr(
+                        "style",
+                        `background-image : url(${new_url}); background-size: center; background-size: cover; background-color: rgba(255,255,255,0.6); background-blend-mode: lighten;`
+                    );
 
+                    if ("innate_power_5" in spirit_config) {
+                        for (var i = 1; i <= 5; i++) {
+
+                            parse_innate_power(
+                                spirit_config[`innate_power_${i}`],
+                                i,
+                                6
+                            ).appendTo(
+                                "#row_innate_power_cols"
+                            );
+                        }
+                    }
+                    else if ("innate_power_2" in spirit_config) {
+
+                        for (var i = 1; i <= 2; i++) {
+
+                            parse_innate_power(
+                                spirit_config[`innate_power_${i}`],
+                                i,
+                                6
+                            ).appendTo(
+                                "#row_innate_power_cols"
+                            );
+                        }
+                    }
+                    else if ("innate_power_1" in spirit_config) {
                         parse_innate_power(
-                            spirit_config[`innate_power_${i}`],
-                            i,
+                            spirit_config["innate_power_1"],
+                            1,
                             6
                         ).appendTo(
                             "#row_innate_power_cols"
                         );
                     }
-                }
-                else if ("innate_power_2" in spirit_config) {
 
-                    for (var i = 1; i <= 2; i++) {
-
-                        parse_innate_power(
-                            spirit_config[`innate_power_${i}`],
-                            i,
-                            6
-                        ).appendTo(
-                            "#row_innate_power_cols"
-                        );
-                    }
-                }
-                else if ("innate_power_1" in spirit_config) {
-                    parse_innate_power(
-                        spirit_config["innate_power_1"],
-                        1,
-                        6
-                    ).appendTo(
-                        "#row_innate_power_cols"
+                    assign_spirit_setup_instructions(
+                        spirit_config["setup"]
                     );
                 }
+                else {
+                    $("#card_player_1_info").attr(
+                        "style",
+                        `background-image : none; background-size: center; background-size: cover; background-color: rgba(255,255,255,0.6); background-blend-mode: lighten;`
+                    );
 
-                assign_spirit_setup_instructions(
-                    spirit_config["setup"]
-                );
+                    $("#row_innate_powers").attr(
+                        "style",
+                        `background-image : none; background-size: center; background-size: cover; background-color: rgba(255,255,255,0.6); background-blend-mode: lighten;`
+                    );
+
+                    $("#row_innate_power_cols").empty();
+                    $("#div_modals_innate_powers").empty();
+                    $("#modal_setup_body").empty();
+
+                    var placeholder_row_innate_power_cols = $("<p>");
+                    var placeholder_modal_setup_body = $("<p>");
+
+                    var fear_object = $("<object>").attr(
+                        {
+                            data : "static/icons/fear.svg",
+                            height : "15px"
+                        }
+                    );
+
+                    placeholder_row_innate_power_cols.append(
+                        fear_object.clone()
+                    );
+
+                    placeholder_row_innate_power_cols.append(
+                        " Select a Spirit to display their innate powers "
+                    );
+
+                    placeholder_row_innate_power_cols.append(
+                        fear_object.clone()
+                    );
+
+                    placeholder_row_innate_power_cols.appendTo(
+                        $("#row_innate_power_cols")
+                    );
+
+                    placeholder_modal_setup_body.append(
+                        fear_object.clone()
+                    );
+
+                    placeholder_modal_setup_body.append(
+                        " Select a Spirit to display their setup instructions "
+                    );
+
+                    placeholder_modal_setup_body.append(
+                        fear_object.clone()
+                    );
+
+                    placeholder_modal_setup_body.appendTo(
+                        $("#modal_setup_body")
+                    );
+                }
             })
         }
     )
