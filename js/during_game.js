@@ -450,8 +450,8 @@ function append_threshold_string(
                         {
                             style : "display: inline-block; vertical-align: middle;"
                         }
-                    ).text(
-                        count
+                    ).html(
+                        "&nbsp;" + count
                     ).appendTo(
                         div
                     );
