@@ -301,7 +301,7 @@
     "Breath of Darkness Down Your Spine" : {
         "expansion" : "nature_incarnate",
         "complexity" : "high",
-        "setup" : "Put 2 PRESENCE and your Incarna (INCARNA_BREATH_OF_DARKNESS_DOWN_YOUR_SPINE), Unempowered (INCARNA_UNEMPOWERED), on your starting board, 1 PRESENCE and INCARNA_BREATH_OF_DARKNESS_DOWN_YOUR_SPINE in the lowest-numbered Jungle and 1 in the highest-numbered Jungle. Set The Endless Dark (THE_ENDLESS_DARK) tile next to the island with 1 EXPLORER on it.<br>You start with your 4 Unique Power Cards and 0 Energy.",
+        "setup" : "Put 2 PRESENCE and your Incarna (INCARNA_BREATH_OF_DARKNESS_DOWN_YOUR_SPINE), Unempowered (INCARNA_UNEMPOWERED), on your starting board, 1 PRESENCE and INCARNA_BREATH_OF_DARKNESS_DOWN_YOUR_SPINE in the lowest-numbered Jungle and 1 in the highest-numbered Jungle. Set The Endless Dark (THE_ENDLESS_DARK) tile next to the island with 1 EXPLORER on it.<br><br>You start with your 4 Unique Power Cards and 0 Energy.",
         "innate_power_1" : {
             "name" : "leave a trail of deathly silence",
             "tier_1" : {
@@ -650,7 +650,7 @@
     "Dances Up Earthquakes" : {
         "expansion" : "nature_incarnate",
         "complexity" : "very_high",
-        "setup" : "Put 1 PRESENCE on your starting board in the highest-numbered land with DAHAN.<br>You start with your <b>6 Unique Power Cards</b> and 0 Energy. Set the Quake tokens (QUAKE) nearby.",
+        "setup" : "Put 1 PRESENCE on your starting board in the highest-numbered land with DAHAN.<br><br>You start with your <b>6 Unique Power Cards</b> and 0 Energy. Set the Quake tokens (QUAKE) nearby.",
         "innate_power_1" : {
             "name" : "land creaks with tension",
             "tier_1" : {
@@ -755,7 +755,7 @@
     "Devouring Teeth Lurk Underfoot" : {
         "expansion" : "horizons_of_spirit_island",
         "complexity" : "low",
-        "setup" : "Put 1 PRESENCE on your starting board, in land #5. <br>You start with your 4 Unique Power Cards and 0 energy.",
+        "setup" : "Put 1 PRESENCE on your starting board, in land #5. <br><br>You start with your 4 Unique Power Cards and 0 energy.",
         "innate_power_1" : {
             "name" : "death approaches from beneath the surface",
             "tier_1" : {
@@ -904,7 +904,7 @@
     "Ember-Eyed Behemoth" : {
         "expansion" : "nature_incarnate",
         "complexity" : "moderate",
-        "setup" : "Put 2 PRESENCE and INCARNA_EMBER_EYED_BEHEMOTH, Unempowered (INCARNA_UNEMPOWERED) side up, in the highest-numbered Wetland on your starting board that is adjacent to <b>any</b> Jungle.<br>You start with your 4 Unique Power Cards and 0 energy.",
+        "setup" : "Put 2 PRESENCE and INCARNA_EMBER_EYED_BEHEMOTH, Unempowered (INCARNA_UNEMPOWERED) side up, in the highest-numbered Wetland on your starting board that is adjacent to <b>any</b> Jungle.<br><br>You start with your 4 Unique Power Cards and 0 energy.",
         "innate_power_1" : {
             "name" : "smash, stomp, and flatten",
             "tier_1" : {
@@ -964,7 +964,7 @@
     "Eyes Watch from the Trees" : {
         "expansion" : "horizons_of_spirit_island",
         "complexity" : "low",
-        "setup" : "Put 2 PRESENCE on your starting board, in the highest-numbered Jungle. <br>You start with your 4 Unique Power Cards and 0 energy.",
+        "setup" : "Put 2 PRESENCE on your starting board, in the highest-numbered Jungle. <br><br>You start with your 4 Unique Power Cards and 0 energy.",
         "innate_power_1" : {
             "name" : "mischief and sabotage",
             "tier_1" : {
@@ -1024,7 +1024,7 @@
     "Fathomless Mud of the Swamp" : {
         "expansion" : "horizons_of_spirit_island",
         "complexity" : "low",
-        "setup" : "Put 2 PRESENCE on your starting board, in the lowest-numbered Wetland. <br>You start with your 4 UNique Power Cards and 0 Energy.",
+        "setup" : "Put 2 PRESENCE on your starting board, in the lowest-numbered Wetland. <br><br>You start with your 4 UNique Power Cards and 0 Energy.",
         "innate_power_1" : {
             "name" : "spreading and dreadful mire",
             "tier_1" : {
@@ -1253,7 +1253,7 @@
         "innate_power_1" : {
             "name" : "let's see what happens",
             "tier_1" : {
-                "effect" : "Discard Minor Powers from the desk until you get one that targets a land. Use its text effects on target land immediately, ignoring normal Range and targeting restrictions. All &quot;up to&quot; must be used at max. value. Treat all &quot;OR&quot; as &quot;AND&quot;s.<br>()<em>It is not considered a card of yours or a card in play. Its effects are treated as performed by this Power, as if its text were copied here.</em>)",
+                "effect" : "Discard Minor Powers from the desk until you get one that targets a land. Use its text effects on target land immediately, ignoring normal Range and targeting restrictions. All &quot;up to&quot; must be used at max. value. Treat all &quot;OR&quot; as &quot;AND&quot;s.<br><br>(<em>It is not considered a card of yours or a card in play. Its effects are treated as performed by this Power, as if its text were copied here.</em>)",
                 "threshold" : {
                     "sun" : 0,
                     "moon" : 1,
@@ -1545,7 +1545,7 @@
     "Hearth-Vigil" : {
         "expansion" : "nature_incarnate",
         "complexity" : "moderate",
-        "setup" : "Put 3 PRESENCE on your starting board: 1 in the highest-numbered land with DAHAN and 2 in the lowest-numbered land with at least 2 DAHAN. Add 1 DAHAN in each of those lands (additional survivors of the Invader' diseases).<br>You start with your 4 Unique Power Cards and 1 <b>Energy</b>.",
+        "setup" : "Put 3 PRESENCE on your starting board: 1 in the highest-numbered land with DAHAN and 2 in the lowest-numbered land with at least 2 DAHAN. Add 1 DAHAN in each of those lands (additional survivors of the Invader' diseases).<br><br>You start with your 4 Unique Power Cards and 1 <b>Energy</b>.",
         "innate_power_1" : {
             "name" : "warn of impending conflict",
             "tier_1" : {
@@ -2301,7 +2301,7 @@
                 }
             },
             "tier_3" : {
-                "effect" : "Once for every 6 EXPLORER?DAHAN present <em>(at INCARNA_LURE_OF_THE_DEEP_WILDERNESS)</em>: Gather any Invader within AIR_RANGE one land towards INCARNA_LURE_OF_THE_DEEP_WILDERNESS.",
+                "effect" : "Once for every 6 EXPLORER/DAHAN present <em>(at INCARNA_LURE_OF_THE_DEEP_WILDERNESS)</em>: Gather any Invader within Range equal to the amount of Air you have one land towards INCARNA_LURE_OF_THE_DEEP_WILDERNESS.",
                 "threshold" : {
                     "sun" : 0,
                     "moon" : 4,
@@ -2673,7 +2673,7 @@
     "Relentless Gaze of the Sun" : {
         "expansion" : "nature_incarnate",
         "complexity" : "high",
-        "setup" : "Put 2 PRESENCE and 1 BADLANDS on your starting board, in the lowest-numbered Sands.<br>You start with your 4 Unique Power Cards and 0 Energy.",
+        "setup" : "Put 2 PRESENCE and 1 BADLANDS on your starting board, in the lowest-numbered Sands.<br><br>You start with your 4 Unique Power Cards and 0 Energy.",
         "innate_power_1" : {
             "name" : "scorching convergence",
             "tier_1" : {
@@ -2788,7 +2788,7 @@
     "Rising Heat of Stone and Sand" : {
         "expansion" : "horizons_of_spirit_island",
         "complexity" : "low",
-        "setup" : "Put 2 PRESENCE on your starting board, in the highest-numbered Sands. <br>You start with your 4 Unique Power Cards and 0 energy.",
+        "setup" : "Put 2 PRESENCE on your starting board, in the highest-numbered Sands. <br><br>You start with your 4 Unique Power Cards and 0 energy.",
         "innate_power_1" : {
             "name" : "scorch with waves of heat",
             "tier_1" : {
@@ -4409,7 +4409,7 @@
     "Sun-Bright Whirlwind" : {
         "expansion" : "horizons_of_spirit_island",
         "complexity" : "low",
-        "setup" : "Put 3 PRESENCE on your starting board: 1 in the highest-numbered Sands, and 2 in the lowest-numbered Mountain. <br>You start with your 4 Unique Power Cards and 0 energy.",
+        "setup" : "Put 3 PRESENCE on your starting board: 1 in the highest-numbered Sands, and 2 in the lowest-numbered Mountain. <br><br>You start with your 4 Unique Power Cards and 0 energy.",
         "innate_power_1" : {
             "name" : "violent windstorms",
             "tier_1" : {
@@ -5266,7 +5266,7 @@
     "Wandering Voice Keens Delirium" : {
         "expansion" : "nature_incarnate",
         "complexity" : "high",
-        "setup" : "Put 2 PRESENCE on your starting board: 1 in land #6 and 1 in land #7. Put INCARNA_WANDERING_VOICE_KEENS_DELIRIUM, Unempowered (INCARNA_UNEMPOWERED) side up, on your starting board in land #6.<br>You start with your 4 Unique Power Cards and 0 Energy.",
+        "setup" : "Put 2 PRESENCE on your starting board: 1 in land #6 and 1 in land #7. Put INCARNA_WANDERING_VOICE_KEENS_DELIRIUM, Unempowered (INCARNA_UNEMPOWERED) side up, on your starting board in land #6.<br><br>You start with your 4 Unique Power Cards and 0 Energy.",
         "innate_power_1" : {
             "name" : "inscrutable journeying",
             "tier_1" : {
@@ -5368,7 +5368,7 @@
     "Wounded Waters Bleeding" : {
         "expansion" : "nature_incarnate",
         "complexity" : "high",
-        "setup" : "On your starting board, put 2 PRESENCE in a land with BLIGHT, then put 2 PRESENCE and 1 BLIGHT (<em>from the box</em>) in the highest-numbered land with a TOWN setup symbol.<br>You start with your 4 Unique Power Cards and <b>4 Energy</b>. Set your 4 Healing Cards nearby.",
+        "setup" : "On your starting board, put 2 PRESENCE in a land with BLIGHT, then put 2 PRESENCE and 1 BLIGHT (<em>from the box</em>) in the highest-numbered land with a TOWN setup symbol.<br><br>You start with your 4 Unique Power Cards and <b>4 Energy</b>. Set your 4 Healing Cards nearby.",
         "innate_power_1" : {
             "name" : "swirl and spill",
             "tier_1" : {

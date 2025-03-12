@@ -487,6 +487,16 @@ function append_threshold_string(
                         div
                     );
                 }
+                else if (element == "CARD_IN_PLAY") {
+                    $("<img>").attr(
+                        {
+                            src : "https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/icons/power_card.svg",
+                            style: "height: 1em; display: inline-block; vertical-align: baseline;"
+                        }
+                    ).appendTo(
+                        div
+                    );
+                }
                 else {
                     $("<img>").attr(
                         {
@@ -630,7 +640,7 @@ function spirit_text_keyword_converter(
 ) {
 
     var input_string_array = string.split(
-        /(\(|\)|\/|\<|\>|\.|\,|\s+)/
+        /(\:|\(|\)|\/|\<|\>|\.|\,|\s+)/
     );
 
     var return_html_array = ["<p>"];
