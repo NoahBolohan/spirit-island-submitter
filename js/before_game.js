@@ -176,8 +176,9 @@ $(document).ready(
                         $.each(
                             json,
                             function(key, value) {
+
                                 $(`#col_input_player_${i}_spirit_list`).append(
-                                    `<option value='${key}'>`
+                                    `<option value="${key}">`
                                 );
                             }
                         )
