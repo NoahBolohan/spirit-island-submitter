@@ -196,6 +196,8 @@ $(document).ready(
                                     0.3
                                 )
                             }
+
+                            check_tier_availabilities();
                         }
                     );
                 }
