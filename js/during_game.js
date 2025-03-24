@@ -2,7 +2,7 @@
 $(document).ready(
     function() {
 
-        $.getJSON('https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/refs/heads/master/data/config.json', function(data) {
+        $.getJSON('https://raw.githubusercontent.com/NoahBolohan/spirit-island-submitter/refs/heads/master/data/config.json', function(data) {
 
             $("#spirit_island_tracker_body").data(
                 "elements", data["elements"]
@@ -55,7 +55,7 @@ $(document).ready(
                     $("<img>").attr(
                         {
                             class : "col-1 element_img",
-                            src : `https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/elements/${element}.png`,
+                            src : `https://raw.githubusercontent.com/NoahBolohan/spirit-island-submitter/master/static/elements/${element}.png`,
                             id : `element_${element}`
                         }
                     ).data(
@@ -109,7 +109,7 @@ $(document).ready(
 // Set an event listener for increasing the element data counters by 1 when the plus button is pressed
 $(document).ready(
     function() {
-        $.getJSON('https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/refs/heads/master/data/config.json', function(data) {
+        $.getJSON('https://raw.githubusercontent.com/NoahBolohan/spirit-island-submitter/refs/heads/master/data/config.json', function(data) {
 
             $.each(
                 data["elements"],
@@ -158,7 +158,7 @@ $(document).ready(
 // Set an event listener for decreasing the element data counters by 1 when the minus button is pressed
 $(document).ready(
     function() {
-        $.getJSON('https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/refs/heads/master/data/config.json', function(data) {
+        $.getJSON('https://raw.githubusercontent.com/NoahBolohan/spirit-island-submitter/refs/heads/master/data/config.json', function(data) {
 
             $.each(
                 data["elements"],
@@ -209,7 +209,7 @@ $(document).ready(
 // Set an event listener for resetting the element data counters when the reset button is pressed
 $(document).ready(
     function() {
-        $.getJSON('https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/refs/heads/master/data/config.json', function(data) {
+        $.getJSON('https://raw.githubusercontent.com/NoahBolohan/spirit-island-submitter/refs/heads/master/data/config.json', function(data) {
 
             $.each(
                 data["elements"],
@@ -271,7 +271,7 @@ $(document).ready(
                     );
                     $("#button_toggle_lock_element_tracker").addClass("btn-secondary").removeClass("btn-primary");
 
-                    $.getJSON('https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/refs/heads/master/data/config.json', function(data) {
+                    $.getJSON('https://raw.githubusercontent.com/NoahBolohan/spirit-island-submitter/refs/heads/master/data/config.json', function(data) {
 
                         $.each(
                             data["elements"],
@@ -288,7 +288,7 @@ $(document).ready(
                     );
                     $("#button_toggle_lock_element_tracker").addClass("btn-primary").removeClass("btn-secondary");
 
-                    $.getJSON('https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/refs/heads/master/data/config.json', function(data) {
+                    $.getJSON('https://raw.githubusercontent.com/NoahBolohan/spirit-island-submitter/refs/heads/master/data/config.json', function(data) {
 
                         $.each(
                             data["elements"],
@@ -462,7 +462,7 @@ function append_threshold_string(
                 if (element == "COST") {
                     $("<img>").attr(
                         {
-                            src : `https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/icons/${count}_cost.png`,
+                            src : `https://raw.githubusercontent.com/NoahBolohan/spirit-island-submitter/master/static/icons/${count}_cost.png`,
                             style: "height: 1.5em; display: inline-block; vertical-align: middle;"
                         }
                     ).appendTo(
@@ -472,7 +472,7 @@ function append_threshold_string(
                 else if (element == "BEASTS") {
                     $("<img>").attr(
                         {
-                            src : "https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/icons/beasts.svg",
+                            src : "https://raw.githubusercontent.com/NoahBolohan/spirit-island-submitter/master/static/icons/beasts.svg",
                             style: "height: 1.3em; display: inline-block; vertical-align: middle;"
                         }
                     ).appendTo(
@@ -482,7 +482,7 @@ function append_threshold_string(
                 else if (element == "DESTROYED_PRESENCE") {
                     $("<img>").attr(
                         {
-                            src : "https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/icons/destroyed_presence.svg",
+                            src : "https://raw.githubusercontent.com/NoahBolohan/spirit-island-submitter/master/static/icons/destroyed_presence.svg",
                             style: "height: 1em; display: inline-block; vertical-align: baseline;"
                         }
                     ).appendTo(
@@ -492,7 +492,7 @@ function append_threshold_string(
                 else if (element == "CARDS_IN_PLAY") {
                     $("<img>").attr(
                         {
-                            src : "https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/icons/power_card.svg",
+                            src : "https://raw.githubusercontent.com/NoahBolohan/spirit-island-submitter/master/static/icons/power_card.svg",
                             style: "height: 1.5em; display: inline-block; vertical-align: middle;"
                         }
                     ).appendTo(
@@ -502,7 +502,7 @@ function append_threshold_string(
                 else {
                     $("<img>").attr(
                         {
-                            src : `https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/elements/${element}.png`,
+                            src : `https://raw.githubusercontent.com/NoahBolohan/spirit-island-submitter/master/static/elements/${element}.png`,
                             style: "height: 1.5em; display: inline-block; vertical-align: middle;"
                         }
                     ).appendTo(
@@ -648,7 +648,7 @@ function spirit_text_keyword_converter(
     var return_html_array = ["<p>"];
 
     $.ajax({
-        url: 'https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/refs/heads/master/data/config.json',
+        url: 'https://raw.githubusercontent.com/NoahBolohan/spirit-island-submitter/refs/heads/master/data/config.json',
         async: false,
         dataType: 'json',
         success: function (json) {

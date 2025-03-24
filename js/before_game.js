@@ -2,7 +2,7 @@
 $(document).ready(
     function() {
 
-        $.getJSON('https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/refs/heads/master/data/config.json', function(data) {
+        $.getJSON('https://raw.githubusercontent.com/NoahBolohan/spirit-island-submitter/refs/heads/master/data/config.json', function(data) {
             // Populate divs for each player
             for (var i=1; i <= data["max_players"]; i++) {
 
@@ -170,7 +170,7 @@ $(document).ready(
                 ).appendTo(`#row_input_player_${i}_spirit`);
 
                 $.ajax({
-                    url: 'https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/refs/heads/master/data/spirits.json',
+                    url: 'https://raw.githubusercontent.com/NoahBolohan/spirit-island-submitter/refs/heads/master/data/spirits.json',
                     async: false,
                     dataType: 'json',
                     success: function (json) {
@@ -208,7 +208,7 @@ $(document).ready(
             }
 
             // Populate adversary selects
-            $.getJSON('https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/refs/heads/master/data/adversaries.json', function(data) {
+            $.getJSON('https://raw.githubusercontent.com/NoahBolohan/spirit-island-submitter/refs/heads/master/data/adversaries.json', function(data) {
 
                 $(Object.keys(data)).each(
                     function() {
@@ -230,7 +230,7 @@ $(document).ready(
 
             // Populate scenario select
 
-            $.getJSON('https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/refs/heads/master/data/scenarios.json', function(data) {
+            $.getJSON('https://raw.githubusercontent.com/NoahBolohan/spirit-island-submitter/refs/heads/master/data/scenarios.json', function(data) {
 
                 $(Object.keys(data)).each(
                     function() {
@@ -331,7 +331,7 @@ $(document).ready(
         "change",
         "#col_input_player_1_spirit",
         function() {
-            $.getJSON('https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/refs/heads/master/data/spirits.json', function(data) {
+            $.getJSON('https://raw.githubusercontent.com/NoahBolohan/spirit-island-submitter/refs/heads/master/data/spirits.json', function(data) {
 
                 $("#row_innate_power_cols").empty();
                 $("#div_modals_innate_powers").empty();
@@ -355,7 +355,7 @@ $(document).ready(
                         var spirit_image_file_name = $("#col_input_player_1_spirit").val().split(' ').join('_')
                     }
 
-                    var new_url = encodeURI("https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/spirit_images/" + spirit_image_file_name + ".png");
+                    var new_url = encodeURI("https://raw.githubusercontent.com/NoahBolohan/spirit-island-submitter/master/static/spirit_images/" + spirit_image_file_name + ".png");
 
                     new_url = new_url.replace(/'/g, '%27').replace(/\(/g, "%28").replace(/\)/g, "%29");
 
@@ -483,7 +483,7 @@ $(document).ready(
                 function() {
 
                     $.ajax({
-                        url: 'https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/refs/heads/master/data/spirits.json',
+                        url: 'https://raw.githubusercontent.com/NoahBolohan/spirit-island-submitter/refs/heads/master/data/spirits.json',
                         async: false,
                         dataType: 'json',
                         success: function (data) {
@@ -503,7 +503,7 @@ $(document).ready(
                                 }
                 
                                 var new_url = encodeURI(
-                                    "https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/spirit_images/" + spirit_image_file_name + ".png"
+                                    "https://raw.githubusercontent.com/NoahBolohan/spirit-island-submitter/master/static/spirit_images/" + spirit_image_file_name + ".png"
                                 );
                 
                                 new_url = new_url.replace(
@@ -543,7 +543,7 @@ $(document).ready(
         $("#row_select_adversary_1").on(
             "change",
             function() {
-                $.getJSON('https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/refs/heads/master/data/adversaries.json', function(data) {
+                $.getJSON('https://raw.githubusercontent.com/NoahBolohan/spirit-island-submitter/refs/heads/master/data/adversaries.json', function(data) {
 
                     // Assign appropriate image to adversary 1 card
                     if ($("#row_select_adversary_1").val() == "") {
@@ -560,7 +560,7 @@ $(document).ready(
 
                         var adversary_image_file_name = $("#row_select_adversary_1").val().split(' ').join('_');
 
-                        var new_url = encodeURI("https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/adversaries/" + adversary_image_file_name + ".png");
+                        var new_url = encodeURI("https://raw.githubusercontent.com/NoahBolohan/spirit-island-submitter/master/static/adversaries/" + adversary_image_file_name + ".png");
 
                         new_url = new_url.replace(/'/g, '%27').replace(/\(/g, "%28").replace(/\)/g, "%29");
 
@@ -659,7 +659,7 @@ $(document).ready(
         $("#row_select_adversary_2").on(
             "change",
             function() {
-                $.getJSON('https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/refs/heads/master/data/adversaries.json', function(data) {
+                $.getJSON('https://raw.githubusercontent.com/NoahBolohan/spirit-island-submitter/refs/heads/master/data/adversaries.json', function(data) {
 
                     // Assign appropriate image to adversary 2 card
                     if ($("#row_select_adversary_2").val() == "") {
@@ -676,7 +676,7 @@ $(document).ready(
 
                         var adversary_image_file_name = $("#row_select_adversary_2").val().split(' ').join('_');
 
-                        var new_url = encodeURI("https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/adversaries/" + adversary_image_file_name + ".png");
+                        var new_url = encodeURI("https://raw.githubusercontent.com/NoahBolohan/spirit-island-submitter/master/static/adversaries/" + adversary_image_file_name + ".png");
 
                         new_url = new_url.replace(/'/g, '%27').replace(/\(/g, "%28").replace(/\)/g, "%29");
 
@@ -760,7 +760,7 @@ $(document).ready(
         $("#col_select_scenario").on(
             "change",
             function() {
-                $.getJSON('https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/refs/heads/master/data/scenarios.json', function(data) {
+                $.getJSON('https://raw.githubusercontent.com/NoahBolohan/spirit-island-submitter/refs/heads/master/data/scenarios.json', function(data) {
                     
                     // Assign appropriate image to scenario card
                     if ($("#col_select_scenario").val() == null) {
@@ -797,7 +797,7 @@ $(document).ready(
                                 var scenario_image_file_name = $("#col_select_scenario").val().split(' ').join('_')
                             }
         
-                            var new_url = encodeURI("https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/master/static/scenarios/" + scenario_image_file_name + ".png");
+                            var new_url = encodeURI("https://raw.githubusercontent.com/NoahBolohan/spirit-island-submitter/master/static/scenarios/" + scenario_image_file_name + ".png");
         
                             new_url = new_url.replace(/'/g, '%27').replace(/\(/g, "%28").replace(/\)/g, "%29");
         
@@ -823,8 +823,8 @@ $(document).ready(
 
 // Difficulty calculator
 function difficulty_calculator() {
-    $.getJSON('https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/refs/heads/master/data/adversaries.json', function(adversaries) {
-        $.getJSON('https://raw.githubusercontent.com/NoahBolohan/spirit-island-tracker/refs/heads/master/data/scenarios.json', function(scenarios) {
+    $.getJSON('https://raw.githubusercontent.com/NoahBolohan/spirit-island-submitter/refs/heads/master/data/adversaries.json', function(adversaries) {
+        $.getJSON('https://raw.githubusercontent.com/NoahBolohan/spirit-island-submitter/refs/heads/master/data/scenarios.json', function(scenarios) {
 
             var total_difficulty = 0;
 

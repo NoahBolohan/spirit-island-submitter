@@ -4,7 +4,7 @@ Web app to track Spirit Island games.
 
 ## Links
 
-- [Github page](https://noahbolohan.github.io/spirit-island-tracker/)
+- [Github page](https://noahbolohan.github.io/spirit-island-submitter/)
 - [Google Sheets tracker](https://docs.google.com/spreadsheets/d/1mB2XEACzrntLOJt7lLXVSPLRd68pCaQZib8xjOhjFSE/edit?gid=0#gid=0)
 
 ## To-do
